@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './pages/BookScreen.dart';
-import './pages/CakeScreen.dart';
-import './pages/CloudScreen.dart';
+import './pages/HomeScreen.dart';
+import './pages/SearchScreen.dart';
+import './pages/SettingScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.mail),
-        title: const Text('Cake'),
+        title: const Text('Mail'),
       ),
     ];
   }
@@ -85,9 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
           },
           // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
           children: [
-            BookScreen(),
-            CloudScreen(),
-            CakeScreen(),
+            HomeScreen(),
+            SearchScreen(),
+            SettingScreen(),
           ]),
       // ページ下部のナビゲーションメニュー
       bottomNavigationBar: BottomNavigationBar(

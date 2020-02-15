@@ -2,39 +2,39 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class CakeScreen extends StatelessWidget {
+class SearchScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Qiita2',
+      title: 'Qiita',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage3(title: 'Qiita2'),
+      home: MyHomePage2(title: 'Qiita'),
     );
   }
 }
 
-class MyHomePage3 extends StatefulWidget {
-  MyHomePage3({Key key, this.title}) : super(key: key);
+class MyHomePage2 extends StatefulWidget {
+  MyHomePage2({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState3 createState() => _MyHomePageState3();
+  _MyHomePageState2 createState() => _MyHomePageState2();
 }
 
 class Item {
   Item({
     this.title,
-    //this.profileImageUrl,
+    this.profileImageUrl,
   });
 
   final String title;
-  //final String profileImageUrl;
+  final String profileImageUrl;
 }
 
-class _MyHomePageState3 extends State<MyHomePage3> {
+class _MyHomePageState2 extends State<MyHomePage2> {
   List<Item> _items = <Item>[];
 
   @override
@@ -52,7 +52,7 @@ class _MyHomePageState3 extends State<MyHomePage3> {
         final issue = element as Map;
         _items.add(Item(
           title: issue['title'] as String,
-          //profileImageUrl: issue['user']['profile_image_url'] as String,
+          profileImageUrl: issue['user']['profile_image_url'] as String,
         ));
       });
     });
@@ -72,9 +72,9 @@ class _MyHomePageState3 extends State<MyHomePage3> {
 
           final issue = _items[index];
           return ListTile(
-            //leading: ClipOval(
-            //  child: Image.network(issue.profileImageUrl),
-            //),
+            leading: ClipOval(
+              child: Image.network(issue.profileImageUrl),
+            ),
             title: Text(issue.title),
           );
         },

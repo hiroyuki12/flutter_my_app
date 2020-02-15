@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Home extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,13 @@ class Home extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage1(title: 'Flutter Issues'),
+      home: MyHomePage(title: 'Flutter Issues'),
     );
   }
 }
 
-class MyHomePage1 extends StatefulWidget {
-  MyHomePage1({Key key, this.title}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
@@ -34,7 +34,7 @@ class Issue {
   final String avatarUrl;
 }
 
-class _MyHomePageState1 extends State<MyHomePage1> {
+class _MyHomePageState1 extends State<MyHomePage> {
   List<Issue> _issues = <Issue>[];
 
   @override
@@ -78,9 +78,9 @@ class _MyHomePageState1 extends State<MyHomePage1> {
                 ),
               ),
               ListTile(
-                title: Text('Los Angeles'),
+                title: Text('Setting'),
                 onTap: () {
-                  setState(() => _city = 'Los Angeles, CA');
+                  setState(() => _city = 'Setting');
                   Navigator.pop(context);
                 },
               ),
