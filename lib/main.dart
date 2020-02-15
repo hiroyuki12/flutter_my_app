@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.cloud),
-        title: const Text('Cloud'),
+        title: const Text('Qiita'),
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.cake),
