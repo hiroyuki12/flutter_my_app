@@ -16,6 +16,12 @@ class MyApp extends StatelessWidget {
       //  primarySwatch: Colors.blue,
       //),
       theme: ThemeData.dark(),
+      initialRoute: '/home',
+      //initialRoute: '/setting',
+      routes: {
+        '/home': (context) => HomeScreen(),
+        '/setting': (context) => SettingScreen(),
+      },
       home: MyHomePage(title: 'BottomNav'),
     );
   }
@@ -75,24 +81,24 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       
       body: PageView(
-          controller: _pageController,
-          // ページ切り替え時に実行する処理
-          // PageViewのonPageChangedはページインデックスを受け取る
-          // 以下ではページインデックスをindexとする
-          onPageChanged: (index) {
-            setState(() {
-              // ページインデックスを更新
-              _screen = index;
-            });
-          },
-          // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
-          children: [
-            HomeScreen(),
-            SearchScreen(),
-            SettingScreen(),
-          ]),
-      // ページ下部のナビゲーションメニュー
-      bottomNavigationBar: BottomNavigationBar(
+        controller: _pageController,
+        // ページ切り替え時に実行する処理
+        // PageViewのonPageChangedはページインデックスを受け取る
+        // 以下ではページインデックスをindexとする
+        onPageChanged: (index) {
+          setState(() {
+            // ページインデックスを更新
+            _screen = index;
+          });
+        },
+        // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
+        children: [
+          HomeScreen(),
+          SearchScreen(),
+          SettingScreen(),
+        ]),
+        // ページ下部のナビゲーションメニュー
+        bottomNavigationBar: BottomNavigationBar(
         // 現在のページインデックス
         currentIndex: _screen,
         // onTapでナビゲーションメニューがタップされた時の処理を定義

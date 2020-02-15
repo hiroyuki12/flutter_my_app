@@ -3,8 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import 'HomeScreen.dart';
+
 void main() => runApp(
-      MaterialApp(home: SettingScreen()),
+      MaterialApp(
+        theme: ThemeData.dark(),
+        home: SettingScreen(),
+      ),
     );
 
 class SettingScreen extends StatefulWidget {
@@ -17,6 +22,7 @@ class SettingScreen extends StatefulWidget {
 enum Fruits { Apple, Orange, Grape }
 
 class _State extends State<SettingScreen> {
+  bool dark = false;
   String _text = 'Enter something...';
   var _radVal = Fruits.Apple;
   String _radValText = "";
@@ -48,252 +54,276 @@ class _State extends State<SettingScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Setting'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: _onPressed,
-      ),
-      body: Container(
-        padding: EdgeInsets.all(30.0),
-        child: Column(
-          children: <Widget>[
-            //テキスト
-            Text('Hello Text'),
-            //チェックボックス
-            Checkbox(
-              value: _checkBox1,
-              onChanged: (bool value) {
-                setState(() {
-                  _checkBox1 = value;
-                });
-              },
-            ),
-            /*
-            //チェックボックスリスト
-            CheckboxListTile(
-              value: _checkBox2,
-              title: Text(
-                'Checkbox 2 Title',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
+    return MaterialApp(
+      theme: dark ? ThemeData.dark() : ThemeData.light(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Setting'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: _onFloattingAddButtonPressed,
+        ),
+        body: Container(
+          padding: EdgeInsets.all(30.0),
+          child: Column(
+            children: <Widget>[
+              //テキスト
+              Text('Hello Text'),
+              //チェックボックス
+              Checkbox(
+                value: _checkBox1,
+                onChanged: (bool value) {
+                  setState(() {
+                    _checkBox1 = value;
+                  });
+                },
               ),
-              controlAffinity: ListTileControlAffinity.leading,
-              onChanged: (bool value) {
-                setState(() {
-                  _checkBox2 = value;
-                });
-              },
-            ),
-            */
-            /*
-            //スイッチ
-            Switch(
-              value: _switchActive,
-              // activeColor: Colors.orange,
-              // activeTrackColor: Colors.red,
-              // inactiveThumbColor: Colors.blue,
-              // inactiveTrackColor: Colors.green,
-              onChanged: _changeSwitch,
-            ),
-            */
-            //スイッチ(iPhoneっぽく)
-            CupertinoSwitch(
-              value: _switchActive,
-              // activeColor: Colors.orange,
-              // activeTrackColor: Colors.red,
-              // inactiveThumbColor: Colors.blue,
-              // inactiveTrackColor: Colors.green,
-              onChanged: _changeSwitch,
-            ),
-            /*
-            //スイッチリスト
-            SwitchListTile(
-              value: _switchValue,
-              title: Text(
-                _switchTitle,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Cursive',
-                ),
-              ),
-              onChanged: (bool value) {
-                setState(() {
-                  _switchValue = value;
-                  _switchTitle = 'Switch value = $_switchValue';
-                });
-              },
-            ),
-            */
-            /*
-            //ボタン
-            RaisedButton(
-                child: Text('OK'),
-                onPressed: _onPressed,
-            ),           
-            Text(_message),
-            */
-            //ボタン(iPhoneっぽく)
-            CupertinoButton(
-                child: Text('OK'),
-                onPressed: _onPressed,
-            ),           
-            Text(_message),
-            /*
-            //テキストフィールド
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Username',
-                //hintText: 'Username',
-                icon: Icon(Icons.account_circle),
-              ),
-              autocorrect: false,
-              autofocus: true,
-              keyboardType: TextInputType.text,
-              onChanged: _userNameChanged,
-              onSubmitted: _userNameSubmitted,
-            ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Password',
-                //hintText: 'Password',
-                icon: Icon(Icons.security),
-              ),
-              autocorrect: false,
-              autofocus: false,
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              onChanged: _passwordChanged,
-              onSubmitted: _passwordSubmitted,
-            ),
-            Text(_text),
-            */
-            /*
-            //ラジオボタン
-            RadioListTile(
-                title: Text('Orange'),
-                value: Fruits.Orange,
-                groupValue: _radVal,
-                onChanged: _onChanged),
-            RadioListTile(
-                title: Text('Apple'),
-                value: Fruits.Apple,
-                groupValue: _radVal,
-                onChanged: _onChanged),
-            RadioListTile(
-                title: Text('Grape'),
-                value: Fruits.Grape,
-                groupValue: _radVal,
-                onChanged: _onChanged),
-            Text(_radValText),
-            */
-            //日付選択
-            IconButton(
-              icon: Icon(Icons.date_range),
-              onPressed: () => _selectDate(context),
-            ),
-            Text(_labelText),
-            /*
-            //日付選択(iPhoneっぽく)
-            IconButton(
-              icon: Icon(Icons.date_range),
-              onPressed: () => _selectDateCupertino(context),
-            ),
-            Text(_labelText),
-            */
-            /*
-            //アラートダイアログ
-            RaisedButton(
-                child: Text(
-                  'AlertDialog',
+              /*
+              //チェックボックスリスト
+              CheckboxListTile(
+                value: _checkBox2,
+                title: Text(
+                  'Checkbox 2 Title',
                   style: TextStyle(
-                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                onPressed: () => _showAlertDialog(context),
-                color: Theme.of(context).primaryColor,
+                controlAffinity: ListTileControlAffinity.leading,
+                onChanged: (bool value) {
+                  setState(() {
+                    _checkBox2 = value;
+                  });
+                },
               ),
-            Text(_label),
-            */
-            //アラートダイアログ(ボタンをiPhoneっぽく)
-            CupertinoButton(
-                child: Text(
-                  'AlertDialog',
+              */
+              /*
+              //スイッチ
+              Switch(
+                value: _switchActive,
+                // activeColor: Colors.orange,
+                // activeTrackColor: Colors.red,
+                // inactiveThumbColor: Colors.blue,
+                // inactiveTrackColor: Colors.green,
+                onChanged: _changeSwitch,
+              ),
+              */
+              //スイッチ(iPhoneっぽく)
+              CupertinoSwitch(
+                value: _switchActive,
+                // activeColor: Colors.orange,
+                // activeTrackColor: Colors.red,
+                // inactiveThumbColor: Colors.blue,
+                // inactiveTrackColor: Colors.green,
+                onChanged: _changeSwitch,
+              ),
+              /*
+              //スイッチリスト
+              SwitchListTile(
+                value: _switchValue,
+                title: Text(
+                  _switchTitle,
                   style: TextStyle(
-                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Cursive',
                   ),
                 ),
-                onPressed: () => _showAlertDialog(context),
-                color: Theme.of(context).primaryColor,
+                onChanged: (bool value) {
+                  setState(() {
+                    _switchValue = value;
+                    _switchTitle = 'Switch value = $_switchValue';
+                  });
+                },
               ),
-            Text(_label),
-            /*
-            //シンプルダイアログ
-            RaisedButton(
-              child: Text('Please select'),
-              onPressed: _showSimpleDialog,
-            ),
-            Text(_labelSimpleDialog),
-            */
-            /*
-            //プログレスインジケーター Indeterminate
-            LinearProgressIndicator(),
-            CircularProgressIndicator(),
-            */
-            //タイマー
-            Text(
-              _time,
-              style: TextStyle(
-                fontSize: 60.0,
-                fontFamily: 'IBMPlexMono',
+              */
+              /*
+              //ボタン
+              RaisedButton(
+                  child: Text('OK'),
+                  onPressed: _onPressed,
+              ),           
+              Text(_message),
+              */
+              //ボタン(iPhoneっぽく)
+              CupertinoButton(
+                  child: Text('OK'),
+                  onPressed: _onOKPressed,
+              ),           
+              Text(_message),
+              //ボタン画面遷移(iPhoneっぽく)
+              CupertinoButton(
+                  child: Text('Flutter Issues(Navigator.pop)'),
+                  //onPressed: () => Navigator.pushNamed(context, '/home'),
+                  onPressed: () => Navigator.pop(context),
+              ),           
+              /*
+              //テキストフィールド
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Username',
+                  //hintText: 'Username',
+                  icon: Icon(Icons.account_circle),
+                ),
+                autocorrect: false,
+                autofocus: true,
+                keyboardType: TextInputType.text,
+                onChanged: _userNameChanged,
+                onSubmitted: _userNameSubmitted,
               ),
-            ),
-            /*
-            //モーダルボトムシート
-            RaisedButton(
-                child: Text('Show options'),
-                onPressed: _showModalBottomSheet,
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  //hintText: 'Password',
+                  icon: Icon(Icons.security),
+                ),
+                autocorrect: false,
+                autofocus: false,
+                keyboardType: TextInputType.text,
+                obscureText: true,
+                onChanged: _passwordChanged,
+                onSubmitted: _passwordSubmitted,
               ),
-            Text(_labelModalBottomSheet),
-            */
-            //iPhoneっぽいボタン
-            CupertinoButton(
-              color: Colors.blue,
-              borderRadius: new BorderRadius.circular(30.0),
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    child: new CupertinoAlertDialog(
-                      title: new Column(
-                        children: <Widget>[
-                          new Text("テストダイアログ"),
-                        ],
-                      ),
-                      //actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => _selectDate(context),)],
-                      actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => Navigator.pop(context))],
-                      
-                    ));
+              Text(_text),
+              */
+              /*
+              //ラジオボタン
+              RadioListTile(
+                  title: Text('Orange'),
+                  value: Fruits.Orange,
+                  groupValue: _radVal,
+                  onChanged: _onChanged),
+              RadioListTile(
+                  title: Text('Apple'),
+                  value: Fruits.Apple,
+                  groupValue: _radVal,
+                  onChanged: _onChanged),
+              RadioListTile(
+                  title: Text('Grape'),
+                  value: Fruits.Grape,
+                  groupValue: _radVal,
+                  onChanged: _onChanged),
+              Text(_radValText),
+              */
+              //日付選択
+              IconButton(
+                icon: Icon(Icons.date_range),
+                onPressed: () => _selectDate(context),
+              ),
+              Text(_labelText),
+              /*
+              //日付選択(iPhoneっぽく)
+              IconButton(
+                icon: Icon(Icons.date_range),
+                onPressed: () => _selectDateCupertino(context),
+              ),
+              Text(_labelText),
+              */
+              /*
+              //アラートダイアログ
+              RaisedButton(
+                  child: Text(
+                    'AlertDialog',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  onPressed: () => _showAlertDialog(context),
+                  color: Theme.of(context).primaryColor,
+                ),
+              Text(_label),
+              */
+              //アラートダイアログ(ボタンをiPhoneっぽく)
+              CupertinoButton(
+                  child: Text(
+                    'AlertDialog',
+                    //style: TextStyle(
+                    //  color: Colors.white,
+                    //),
+                  ),
+                  onPressed: () => _showAlertDialog(context),
+                  //color: Theme.of(context).primaryColor,
+                ),
+              Text(_label),
+              /*
+              //シンプルダイアログ
+              RaisedButton(
+                child: Text('Please select'),
+                onPressed: _showSimpleDialog,
+              ),
+              Text(_labelSimpleDialog),
+              */
+              /*
+              //プログレスインジケーター Indeterminate
+              LinearProgressIndicator(),
+              CircularProgressIndicator(),
+              */
+              //タイマー
+              Text(
+                _time,
+                style: TextStyle(
+                  fontSize: 60.0,
+                  fontFamily: 'IBMPlexMono',
+                ),
+              ),
+              /*
+              //モーダルボトムシート
+              RaisedButton(
+                  child: Text('Show options'),
+                  onPressed: _showModalBottomSheet,
+                ),
+              Text(_labelModalBottomSheet),
+              */
+              //iPhoneっぽいボタン
+              CupertinoButton(
+                //color: Colors.blue,
+                //borderRadius: new BorderRadius.circular(30.0),
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      child: new CupertinoAlertDialog(
+                        title: new Column(
+                          children: <Widget>[
+                            new Text("テストダイアログ"),
+                          ],
+                        ),
+                        //actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => _selectDate(context),)],
+                        actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => Navigator.pop(context, "OK"),)],
+                        //actions: <Widget>[new FlatButton(child: new Text("OK"), onPressed: () => _onOKPressed, )],
+                      ));
+                },
+                child: Text('ダイアログを表示します'),
+              ),
+              //ドロップダウンリスト
+              Text("Please choose a fruit: "),
+              DropdownButton(
+                value: _selectedFruit,
+                items: _dropDownMenuItems,
+                onChanged: changedDropDownItem,
+              ),
+              //
+              CupertinoButton(
+                onPressed: () {
+                  setState(() => dark = !dark);
               },
-              child: Text('ダイアログを表示します'),
+              child: Text('Toggle theme'),
             ),
-            //ドロップダウンリスト
-            Text("Please choose a fruit: "),
-            DropdownButton(
-              value: _selectedFruit,
-              items: _dropDownMenuItems,
-              onChanged: changedDropDownItem,
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 
-  //ボタン押下時
-  void _onPressed() {
+  //OKボタン押下時
+  void _onOKPressed() {
+    setState(() {
+      ++count;
+      _message = 'Tap count $count';
+    });
+  }
+
+  //フローティングの＋ボタン押下時
+  void _onFloattingAddButtonPressed() {
     setState(() {
       ++count;
       _message = 'Tap count $count';
@@ -367,6 +397,7 @@ class _State extends State<SettingScreen> {
     }
   }
   */
+
   //アラートダイアログ
   Future _showAlertDialog(BuildContext context) async {
     return showDialog<void>(

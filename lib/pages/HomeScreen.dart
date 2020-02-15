@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_my_app/pages/SettingScreen.dart';
 import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatelessWidget {
@@ -37,11 +38,45 @@ class Issue {
 class _MyHomePageState1 extends State<MyHomePage> {
   List<Issue> _issues = <Issue>[];
 
+  // ページ切り替え用のコントローラを定義
+  PageController _pageController;
+  // ページインデックス保存用
+  int _screen = 0;
+  // ページ下部に並べるナビゲーションメニューの一覧
+  List<BottomNavigationBarItem> myBottomNavBarItems() {
+    return [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        title: const Text('Flutter Issues'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.search),
+        title: const Text('Qiita Items'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.settings),
+        title: const Text('Setting'),
+      ),
+    ];
+  }
+
   @override
   void initState() {
     super.initState();
+    // コントローラ作成
+    _pageController = PageController(
+      initialPage: _screen, // 初期ページの指定。上記で_screenを１とすれば２番目のページが初期表示される。
+    );
     _load();
   }
+
+  @override
+  void dispose() {
+    // コントローラ破棄
+    _pageController.dispose();
+    super.dispose();
+  }
+
   // This widget is the root of your application.
   Future<void> _load() async {
     final res = await http.get('https://api.github.com/repositories/31792824/issues');
@@ -63,61 +98,46 @@ class _MyHomePageState1 extends State<MyHomePage> {
   var _city = '';
     return Scaffold(
       drawer: Drawer(
-          child: ListView(
-            children: <Widget>[
-              DrawerHeader(
-                child: Text(
-                  'Flutter Issues',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                'Flutter Issues',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
                 ),
               ),
-              ListTile(
-                title: Text('Setting'),
-                onTap: () {
-                  setState(() => _city = 'Setting');
-                  Navigator.pop(context);
-                },
+              decoration: BoxDecoration(
+                color: Colors.blue,
               ),
-              ListTile(
-                title: Text('Honolulu'),
-                onTap: () {
-                  setState(() => _city = 'Honolulu, HI');
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Dallas'),
-                onTap: () {
-                  setState(() => _city = 'Dallas, TX');
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Seattle'),
-                onTap: () {
-                  setState(() => _city = 'Seattle, WA');
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Tokyo'),
-                onTap: () {
-                  setState(() => _city = 'Tokyo, Japan');
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
+            ),
+            ListTile(
+              title: Text('Setting'),
+              onTap: () {
+                //setState(() => _city = 'Setting');
+                Navigator.pop(context);
+                Navigator.pop(context);
+                setState(() => _onPressed);
+              },
+            ),
+            ListTile(
+              title: Text('Honolulu'),
+              onTap: () {
+                setState(() => _city = 'Honolulu, HI');
+                Navigator.pop(context);
+              },
+            ),
+          ],
         ),
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
+      ),
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: _onPressed,
+      ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           if (index >= _issues.length) {
@@ -134,6 +154,16 @@ class _MyHomePageState1 extends State<MyHomePage> {
         },
       ),
     );
+  }
+
+
+  //ボタン押下時
+  void _onPressed() {
+    //Navigator.pushNamed(context, '/setting');
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
+    setState(() {
+
+    });
   }
 }
 
