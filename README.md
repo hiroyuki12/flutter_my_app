@@ -35,3 +35,6 @@ https://flutter.keicode.com/basics/datepicker.php
 
 アラートダイアログ
 https://flutter.keicode.com/basics/alertdialog.php
+
+シンプルダイアログ
+https://flutter.keicode.com/basics/simpledialog.php
