@@ -66,6 +66,8 @@ class _State extends State<SettingScreen> {
                 });
               },
             ),
+            /*
+            //チェックボックスリスト
             CheckboxListTile(
               value: _checkBox2,
               title: Text(
@@ -81,6 +83,7 @@ class _State extends State<SettingScreen> {
                 });
               },
             ),
+            */
             //スイッチ
             Switch(
               value: _switchActive,
@@ -90,6 +93,7 @@ class _State extends State<SettingScreen> {
               // inactiveTrackColor: Colors.green,
               onChanged: _changeSwitch,
             ),
+            /*
             //スイッチリスト
             SwitchListTile(
               value: _switchValue,
@@ -107,12 +111,15 @@ class _State extends State<SettingScreen> {
                 });
               },
             ),
+            */
+            /*
             //ボタン
             RaisedButton(
                 child: Text('OK'),
                 onPressed: _onPressed,
             ),           
             Text(_message),
+            */
             /*
             //テキストフィールド
             TextField(
@@ -180,6 +187,20 @@ class _State extends State<SettingScreen> {
                 color: Theme.of(context).primaryColor,
               ),
             Text(_label),
+            */
+            //アラートダイアログ(ボタンをiPhoneっぽく)
+            CupertinoButton(
+                child: Text(
+                  'AlertDialog',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () => _showAlertDialog(context),
+                color: Theme.of(context).primaryColor,
+              ),
+            Text(_label),
+            /*
             //シンプルダイアログ
             RaisedButton(
               child: Text('Please select'),
@@ -200,33 +221,34 @@ class _State extends State<SettingScreen> {
                 fontFamily: 'IBMPlexMono',
               ),
             ),
+            /*
             //モーダルボトムシート
             RaisedButton(
                 child: Text('Show options'),
                 onPressed: _showModalBottomSheet,
               ),
             Text(_labelModalBottomSheet),
-            //
-
-          CupertinoButton(
-            color: Colors.blue,
-            borderRadius: new BorderRadius.circular(30.0),
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  child: new CupertinoAlertDialog(
-                    title: new Column(
-                      children: <Widget>[
-                        new Text("テストダイアログ"),
-                      ],
-                    ),
-                    //actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => _selectDate(context),)],
-                    actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => Navigator.pop(context))],
-                    
-                  ));
-            },
-            child: Text('ダイアログを表示します'),
-          )
+            */
+            //iPhoneっぽいボタン
+            CupertinoButton(
+              color: Colors.blue,
+              borderRadius: new BorderRadius.circular(30.0),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    child: new CupertinoAlertDialog(
+                      title: new Column(
+                        children: <Widget>[
+                          new Text("テストダイアログ"),
+                        ],
+                      ),
+                      //actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => _selectDate(context),)],
+                      actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => Navigator.pop(context))],
+                      
+                    ));
+              },
+              child: Text('ダイアログを表示します'),
+            )
           ],
         ),
       ),
