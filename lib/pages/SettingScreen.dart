@@ -84,8 +84,19 @@ class _State extends State<SettingScreen> {
               },
             ),
             */
+            /*
             //スイッチ
             Switch(
+              value: _switchActive,
+              // activeColor: Colors.orange,
+              // activeTrackColor: Colors.red,
+              // inactiveThumbColor: Colors.blue,
+              // inactiveTrackColor: Colors.green,
+              onChanged: _changeSwitch,
+            ),
+            */
+            //スイッチ(iPhoneっぽく)
+            CupertinoSwitch(
               value: _switchActive,
               // activeColor: Colors.orange,
               // activeTrackColor: Colors.red,
@@ -120,6 +131,12 @@ class _State extends State<SettingScreen> {
             ),           
             Text(_message),
             */
+            //ボタン(iPhoneっぽく)
+            CupertinoButton(
+                child: Text('OK'),
+                onPressed: _onPressed,
+            ),           
+            Text(_message),
             /*
             //テキストフィールド
             TextField(
@@ -174,6 +191,14 @@ class _State extends State<SettingScreen> {
               onPressed: () => _selectDate(context),
             ),
             Text(_labelText),
+            /*
+            //日付選択(iPhoneっぽく)
+            IconButton(
+              icon: Icon(Icons.date_range),
+              onPressed: () => _selectDateCupertino(context),
+            ),
+            Text(_labelText),
+            */
             /*
             //アラートダイアログ
             RaisedButton(
@@ -314,6 +339,22 @@ class _State extends State<SettingScreen> {
     }
   }
 
+  /*
+  //日付選択ボタン押下時(iPhoneっぽく)
+  Future<void> _selectDateCupertino(BuildContext context) {
+    final DateTime selected = DateTime.now();
+    CupertinoDatePicker(
+      use24hFormat: true,
+      minimumDate: DateTime.now(),
+      onDateTimeChanged: (selected) {},
+    );
+    if (selected != null) {
+      setState(() {
+        _labelText = (DateFormat.yMMMd()).format(selected);
+      });
+    }
+  }
+  */
   //アラートダイアログ
   Future _showAlertDialog(BuildContext context) async {
     return showDialog<void>(
