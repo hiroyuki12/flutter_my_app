@@ -29,6 +29,7 @@ class _State extends State<SettingScreen> {
   var _labelText = 'Select Date';
   String _label = '';
   String _labelSimpleDialog = '';
+  String _labelModalBottomSheet = '';
   String _time = '';
 
   @override
@@ -188,6 +189,7 @@ class _State extends State<SettingScreen> {
             LinearProgressIndicator(),
             CircularProgressIndicator(),
             */
+            //タイマー
             Text(
               _time,
               style: TextStyle(
@@ -195,6 +197,12 @@ class _State extends State<SettingScreen> {
                 fontFamily: 'IBMPlexMono',
               ),
             ),
+            //モーダルボトムシート
+            RaisedButton(
+                child: Text('Show options'),
+                onPressed: _showModalBottomSheet,
+              ),
+            Text(_labelModalBottomSheet),
           ],
         ),
       ),
@@ -376,5 +384,43 @@ class _State extends State<SettingScreen> {
     var formatter = DateFormat('HH:mm:ss');
     var formattedTime = formatter.format(now);
     setState(() => _time = formattedTime);
+  }
+
+  //モーダルボトムシート
+  void _showModalBottomSheet() {
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.share),
+              title: Text('Share'),
+              onTap: () {
+                setState(() => _labelModalBottomSheet = 'You selected Share');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.edit),
+              title: Text('Edit'),
+              onTap: () {
+                setState(() => _labelModalBottomSheet = 'You selected Edit');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.delete),
+              title: Text('Delete'),
+              onTap: () {
+                setState(() => _labelModalBottomSheet = 'You selected Delete');
+                Navigator.pop(context);
+              },
+            )
+          ],
+        );
+      },
+    );
   }
 }
