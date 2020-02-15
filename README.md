@@ -23,3 +23,6 @@ https://flutter.keicode.com/basics/textfield.php
 
 ラジオボタン
 https://flutter.keicode.com/basics/radio.php
+
+スイッチ
+https://flutter.ctrnost.com/basic/interactive/form/switch/
