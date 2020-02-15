@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -166,6 +167,7 @@ class _State extends State<SettingScreen> {
               onPressed: () => _selectDate(context),
             ),
             Text(_labelText),
+            /*
             //アラートダイアログ
             RaisedButton(
                 child: Text(
@@ -184,6 +186,7 @@ class _State extends State<SettingScreen> {
               onPressed: _showSimpleDialog,
             ),
             Text(_labelSimpleDialog),
+            */
             /*
             //プログレスインジケーター Indeterminate
             LinearProgressIndicator(),
@@ -203,6 +206,27 @@ class _State extends State<SettingScreen> {
                 onPressed: _showModalBottomSheet,
               ),
             Text(_labelModalBottomSheet),
+            //
+
+          CupertinoButton(
+            color: Colors.blue,
+            borderRadius: new BorderRadius.circular(30.0),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  child: new CupertinoAlertDialog(
+                    title: new Column(
+                      children: <Widget>[
+                        new Text("テストダイアログ"),
+                      ],
+                    ),
+                    //actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => _selectDate(context),)],
+                    actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => Navigator.pop(context))],
+                    
+                  ));
+            },
+            child: Text('ダイアログを表示します'),
+          )
           ],
         ),
       ),
