@@ -33,7 +33,7 @@ class Item {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Item> _issues = <Item>[];
+  List<Item> _items = <Item>[];
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       final issues = data as List;
       issues.forEach((dynamic element) {
         final issue = element as Map;
-        _issues.add(Item(
+        _items.add(Item(
           title: issue['title'] as String,
         ));
       });
@@ -63,11 +63,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          if (index >= _issues.length) {
+          if (index >= _items.length) {
             return null;
           }
 
-          final issue = _issues[index];
+          final issue = _items[index];
           return ListTile(
             title: Text(issue.title),
           );
