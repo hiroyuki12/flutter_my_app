@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import './pages/BookScreen.dart';
 import './pages/CakeScreen.dart';
 import './pages/CloudScreen.dart';
@@ -30,16 +28,6 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class Issue {
-  Issue({
-    this.title,
-    this.avatarUrl,
-  });
-
-  final String title;
-  final String avatarUrl;
-}
-
 class _MyHomePageState extends State<MyHomePage> {
   // ページ切り替え用のコントローラを定義
   PageController _pageController;
@@ -50,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return [
       BottomNavigationBarItem(
         icon: Icon(Icons.book),
-        title: const Text('Book'),
+        title: const Text('Flutter Issues'),
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.cloud),
@@ -62,8 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     ];
   }
-
-  List<Issue> _issues = <Issue>[];
 
   @override
   void initState() {
@@ -82,27 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 
-  Future<void> _load() async {
-    final res = await http.get('https://api.github.com/repositories/31792824/issues');
-    final data = json.decode(res.body);
-    setState(() {
-      final issues = data as List;
-      issues.forEach((dynamic element) {
-        final issue = element as Map;
-        _issues.add(Issue(
-          title: issue['title'] as String,
-          avatarUrl: issue['user']['avatar_url'] as String,
-        ));
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: PageView(
           controller: _pageController,
           // ページ切り替え時に実行する処理
