@@ -32,3 +32,6 @@ https://qiita.com/taki4227/items/940e947ff741316237bc
 
 日付選択
 https://flutter.keicode.com/basics/datepicker.php
+
+アラートダイアログ
+https://flutter.keicode.com/basics/alertdialog.php
