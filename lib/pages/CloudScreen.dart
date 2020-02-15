@@ -27,9 +27,11 @@ class MyHomePage extends StatefulWidget {
 class Item {
   Item({
     this.title,
+    this.profileImageUrl,
   });
 
   final String title;
+  final String profileImageUrl;
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -50,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         final issue = element as Map;
         _items.add(Item(
           title: issue['title'] as String,
+          profileImageUrl: issue['user']['profile_image_url'] as String,
         ));
       });
     });
@@ -69,6 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
           final issue = _items[index];
           return ListTile(
+            leading: ClipOval(
+              child: Image.network(issue.profileImageUrl),
+            ),
             title: Text(issue.title),
           );
         },
