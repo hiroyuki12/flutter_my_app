@@ -12,6 +12,31 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _State extends State<SettingScreen> {
+  String _text = 'Enter something...';
+
+  void _userNameChanged(String value) {
+    setState(() {
+      _text = 'Changed: $value';
+    });
+  }
+
+  void _userNameSubmitted(String value) {
+    setState(() {
+      _text = 'Submitted $value';
+    });
+  }
+
+  void _passwordChanged(String value) {
+    setState(() {
+      _text = 'Changed: $value';
+    });
+  }
+
+  void _passwordSubmitted(String value) {
+    setState(() {
+      _text = 'Submitted $value';
+    });
+  }
 
   int count = 0;
   String _message = 'Tap this button.';
@@ -31,6 +56,7 @@ class _State extends State<SettingScreen> {
         padding: EdgeInsets.all(30.0),
         child: Column(
           children: <Widget>[
+            //チェックボックス
             Checkbox(
               value: _checkBox1,
               onChanged: (bool value) {
@@ -54,6 +80,7 @@ class _State extends State<SettingScreen> {
                 });
               },
             ),
+            //スイッチリスト
             SwitchListTile(
               value: _switchValue,
               title: Text(
@@ -70,11 +97,40 @@ class _State extends State<SettingScreen> {
                 });
               },
             ),
-            Text(_message),
+
+            //ボタン
             RaisedButton(
                 child: Text('OK'),
                 onPressed: _onPressed,
-              )
+            ),           
+            Text(_message),
+
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Username',
+                //hintText: 'Username',
+                icon: Icon(Icons.account_circle),
+              ),
+              autocorrect: false,
+              autofocus: true,
+              keyboardType: TextInputType.text,
+              onChanged: _userNameChanged,
+              onSubmitted: _userNameSubmitted,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Password',
+                //hintText: 'Password',
+                icon: Icon(Icons.security),
+              ),
+              autocorrect: false,
+              autofocus: false,
+              keyboardType: TextInputType.text,
+              obscureText: true,
+              onChanged: _passwordChanged,
+              onSubmitted: _passwordSubmitted,
+            ),
+            Text(_text),
           ],
         ),
       ),

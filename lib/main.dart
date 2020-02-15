@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Qiita Items'),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.mail),
+        icon: Icon(Icons.settings),
         title: const Text('Setting'),
       ),
     ];
@@ -103,8 +103,9 @@ class _MyHomePageState extends State<MyHomePage> {
             // ページ遷移を定義。
             // curveで指定できるのは以下
             // https://api.flutter.dev/flutter/animation/Curves-class.html
-            _pageController.animateToPage(index,
-                duration: Duration(milliseconds: 300), curve: Curves.easeOut);
+            _pageController.jumpToPage(index);
+            //_pageController.animateToPage(index,
+            //    duration: Duration(milliseconds: 300), curve: Curves.easeOut);
           });
         },
         // 定義済のナビゲーションメニューのアイテムリスト
