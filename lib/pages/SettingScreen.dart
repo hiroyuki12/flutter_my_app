@@ -37,6 +37,8 @@ class _State extends State<SettingScreen> {
 
   var _labelText = 'Select Date';
 
+  String _label = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +111,7 @@ class _State extends State<SettingScreen> {
                 onPressed: _onPressed,
             ),           
             Text(_message),
-
+            /*
             //テキストフィールド
             TextField(
               decoration: InputDecoration(
@@ -137,6 +139,7 @@ class _State extends State<SettingScreen> {
               onSubmitted: _passwordSubmitted,
             ),
             Text(_text),
+            */
             /*
             //ラジオボタン
             RadioListTile(
@@ -162,6 +165,18 @@ class _State extends State<SettingScreen> {
               onPressed: () => _selectDate(context),
             ),
             Text(_labelText),
+
+            RaisedButton(
+                child: Text(
+                  'AlertDialog',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () => _showAlertDialog(context),
+                color: Theme.of(context).primaryColor,
+              ),
+            Text(_label),
           ],
         ),
       ),
@@ -221,5 +236,34 @@ class _State extends State<SettingScreen> {
       });
     }
   }
+
+  Future _showAlertDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Use camera?'),
+          content: Text('Description goes here.'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('CANCEL'),
+              onPressed: () => _useCamera(context, false),
+            ),
+            FlatButton(
+              child: Text('AGREE'),
+              onPressed: () => _useCamera(context, true),
+            ),
+          ],
+        );
+      },
+    );
+  }
   
+  _useCamera(BuildContext context, bool b) {
+    setState(() {
+      _label = 'You select ' + (b ? 'AGREE' : 'CANCEL');
+    });
+    Navigator.pop(context);
+  }
 }
