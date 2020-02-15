@@ -5,13 +5,6 @@ import 'package:intl/intl.dart';
 
 import 'HomeScreen.dart';
 
-void main() => runApp(
-      MaterialApp(
-        theme: ThemeData.dark(),
-        home: SettingScreen(),
-      ),
-    );
-
 class SettingScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -108,15 +101,21 @@ class _State extends State<SettingScreen> {
                 onChanged: _changeSwitch,
               ),
               */
-              //スイッチ(iPhoneっぽく)
-              CupertinoSwitch(
-                value: _switchActive,
-                // activeColor: Colors.orange,
-                // activeTrackColor: Colors.red,
-                // inactiveThumbColor: Colors.blue,
-                // inactiveTrackColor: Colors.green,
-                onChanged: _changeSwitch,
-              ),
+              //スイッチでダークテーマトグル(iPhoneっぽく)
+              //Row(
+              //  mainAxisAlignment: MainAxisAlignment.center,
+              //  children<Widget>[
+                  Text('Dark Theme', style: TextStyle(fontSize: 16.0),),
+                  CupertinoSwitch(
+                    value: _switchActive,
+                    // activeColor: Colors.orange,
+                    // activeTrackColor: Colors.red,
+                    // inactiveThumbColor: Colors.blue,
+                    // inactiveTrackColor: Colors.green,
+                    onChanged: _changeSwitch,
+                  ),
+                //]
+              //),
               /*
               //スイッチリスト
               SwitchListTile(
@@ -353,7 +352,12 @@ class _State extends State<SettingScreen> {
   }
 
   //スイッチ変更時
-  void _changeSwitch(bool e) => setState(() => _switchActive = e);
+  void _changeSwitch(bool newValue) {
+    setState(() {
+      _switchActive = newValue;
+    });
+    applyThemeDate(_switchActive);
+  }
 
   //ラジオボタン変更時
   void _onChanged(Fruits value) {
@@ -568,5 +572,18 @@ class _State extends State<SettingScreen> {
     setState(() {
       _selectedFruit = selectedFruit;
     });
+  }
+
+  //スイッチでダークテーマトグル
+  void applyThemeDate(bool darkTheme){
+    if(darkTheme==true){
+      setState(() {
+        dark = true;
+      });
+    }else{
+      setState(() {
+        dark = false;
+      });
+    }
   }
 }
