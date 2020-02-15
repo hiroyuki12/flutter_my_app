@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(
       MaterialApp(home: SettingScreen()),
@@ -34,11 +35,17 @@ class _State extends State<SettingScreen> {
   var _switchValue = true;
   var _switchTitle = 'Switch Test';
 
+  var _labelText = 'Select Date';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Setting'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: _onPressed,
       ),
       body: Container(
         padding: EdgeInsets.all(30.0),
@@ -96,7 +103,6 @@ class _State extends State<SettingScreen> {
                 });
               },
             ),
-
             //ボタン
             RaisedButton(
                 child: Text('OK'),
@@ -131,7 +137,7 @@ class _State extends State<SettingScreen> {
               onSubmitted: _passwordSubmitted,
             ),
             Text(_text),
-
+            /*
             //ラジオボタン
             RadioListTile(
                 title: Text('Orange'),
@@ -148,8 +154,14 @@ class _State extends State<SettingScreen> {
                 value: Fruits.Grape,
                 groupValue: _radVal,
                 onChanged: _onChanged),
-
             Text(_radValText),
+            */
+            //日付選択
+            IconButton(
+              icon: Icon(Icons.date_range),
+              onPressed: () => _selectDate(context),
+            ),
+            Text(_labelText),
           ],
         ),
       ),
@@ -193,6 +205,21 @@ class _State extends State<SettingScreen> {
     setState(() {
       _radVal = value;
     });
+  }
+
+  //日付選択ボタン押下時
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime selected = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(DateTime.now().year),
+      lastDate: DateTime(DateTime.now().year + 1),
+    );
+    if (selected != null) {
+      setState(() {
+        _labelText = (DateFormat.yMMMd()).format(selected);
+      });
+    }
   }
   
 }
