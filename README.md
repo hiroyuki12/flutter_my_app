@@ -38,3 +38,6 @@ https://flutter.keicode.com/basics/alertdialog.php
 
 シンプルダイアログ
 https://flutter.keicode.com/basics/simpledialog.php
+
+プログレスインジケーター
+https://flutter.keicode.com/basics/progress-indicators.php
