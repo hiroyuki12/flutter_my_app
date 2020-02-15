@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _data = '';
+  List<String> _titles = <String>[];
 
   @override
   void initState() {
@@ -37,17 +38,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _load() async {
     final res = await http.get('https://api.github.com/repositories/31792824/issues');
+    final data = json.decode(res.body);
     setState(() {
-      _data = res.body;
+      final issues = data as List;
+      issues.forEach((dynamic element) {
+        final issue = element as Map;
+        _titles.add(issue['title'] as String);
+      });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Text(_data),
+      body: ListView.builder(
+        itemBuilder: (BuildContext context, int index) {
+          if (index >= _titles.length) {
+            return null;
+          }
+
+          return ListTile(
+            title: Text(_titles[index]),
+          );
+        },
+      ),
     );
   }
 }
