@@ -68,3 +68,6 @@ https://github.com/nisrulz/flutter-examples/blob/master/dropdown_button/lib/main
 
 画面遷移
 https://saharablog.com/mobile-app/flutter-app/navigation1/
+
+device_info
+https://qiita.com/ko2ic/items/2a0aa4301011f8f52275
