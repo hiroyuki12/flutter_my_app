@@ -11,30 +11,16 @@ class SettingScreen extends StatefulWidget {
   }
 }
 
+enum Fruits { Apple, Orange, Grape }
+
 class _State extends State<SettingScreen> {
   String _text = 'Enter something...';
+  var _radVal = Fruits.Apple;
+  String _radValText = "";
 
   void _userNameChanged(String value) {
     setState(() {
       _text = 'Changed: $value';
-    });
-  }
-
-  void _userNameSubmitted(String value) {
-    setState(() {
-      _text = 'Submitted $value';
-    });
-  }
-
-  void _passwordChanged(String value) {
-    setState(() {
-      _text = 'Changed: $value';
-    });
-  }
-
-  void _passwordSubmitted(String value) {
-    setState(() {
-      _text = 'Submitted $value';
     });
   }
 
@@ -105,6 +91,7 @@ class _State extends State<SettingScreen> {
             ),           
             Text(_message),
 
+            //テキストフィールド
             TextField(
               decoration: InputDecoration(
                 labelText: 'Username',
@@ -131,16 +118,64 @@ class _State extends State<SettingScreen> {
               onSubmitted: _passwordSubmitted,
             ),
             Text(_text),
+
+            //ラジオボタン
+            RadioListTile(
+                title: Text('Orange'),
+                value: Fruits.Orange,
+                groupValue: _radVal,
+                onChanged: _onChanged),
+            RadioListTile(
+                title: Text('Apple'),
+                value: Fruits.Apple,
+                groupValue: _radVal,
+                onChanged: _onChanged),
+            RadioListTile(
+                title: Text('Grape'),
+                value: Fruits.Grape,
+                groupValue: _radVal,
+                onChanged: _onChanged),
+
+            Text(_radValText),
           ],
         ),
       ),
     );
   }
 
+  //ボタン押下時
   void _onPressed() {
     setState(() {
       ++count;
       _message = 'Tap count $count';
+    });
+  }
+
+  //テキストフィールド変更時
+  void _userNameSubmitted(String value) {
+    setState(() {
+      _text = 'Submitted $value';
+    });
+  }
+  void _passwordChanged(String value) {
+    setState(() {
+      _text = 'Changed: $value';
+    });
+  }
+  void _passwordSubmitted(String value) {
+    setState(() {
+      _text = 'Submitted $value';
+    });
+  }
+
+  //ラジオボタン変更時
+  void _onChanged(Fruits value) {
+    if(value == Fruits.Orange)  _radValText = "Orange";
+    else if(value == Fruits.Apple)  _radValText = "Apple";
+    else if(value == Fruits.Grape)  _radValText = "Grape";
+
+    setState(() {
+      _radVal = value;
     });
   }
 }
