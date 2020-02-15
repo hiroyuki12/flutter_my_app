@@ -12,10 +12,14 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _State extends State<SettingScreen> {
+
+  int count = 0;
+  String _message = 'Tap this button.';
+
   var _checkBox1 = false;
   var _checkBox2 = false;
   var _switchValue = true;
-  var _switchTitle = 'Setting';
+  var _switchTitle = 'Switch Test';
 
   @override
   Widget build(BuildContext context) {
@@ -65,10 +69,22 @@ class _State extends State<SettingScreen> {
                   _switchTitle = 'Switch value = $_switchValue';
                 });
               },
-            )
+            ),
+            Text(_message),
+            RaisedButton(
+                child: Text('OK'),
+                onPressed: _onPressed,
+              )
           ],
         ),
       ),
     );
+  }
+
+  void _onPressed() {
+    setState(() {
+      ++count;
+      _message = 'Tap count $count';
+    });
   }
 }

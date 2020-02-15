@@ -42,11 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.search),
-        title: const Text('Qiita'),
+        title: const Text('Qiita Items'),
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.mail),
-        title: const Text('Mail'),
+        title: const Text('Setting'),
       ),
     ];
   }
@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     //_load();
   }
+
 
   @override
   void dispose() {
@@ -109,21 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
         // 定義済のナビゲーションメニューのアイテムリスト
         items: myBottomNavBarItems(),
       ),
-      /*body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          if (index >= _issues.length) {
-            return null;
-          }
-
-          final issue = _issues[index];
-          return ListTile(
-            leading: ClipOval(
-              child: Image.network(issue.avatarUrl),
-            ),
-            title: Text(issue.title),
-          );
-        },
-      ),*/
     );
   }
 }

@@ -40,7 +40,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
   @override
   void initState() {
     super.initState();
-    _load();
+    //_load();
   }
   // This widget is the root of your application.
   Future<void> _load() async {
