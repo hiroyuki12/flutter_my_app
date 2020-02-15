@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -18,28 +19,26 @@ class _State extends State<SettingScreen> {
   String _text = 'Enter something...';
   var _radVal = Fruits.Apple;
   String _radValText = "";
-
-  void _userNameChanged(String value) {
-    setState(() {
-      _text = 'Changed: $value';
-    });
-  }
-
   int count = 0;
   String _message = 'Tap this button.';
-
   var _checkBox1 = false;
   var _checkBox2 = false;
-
   bool _switchActive = false;
   var _switchValue = true;
   var _switchTitle = 'Switch Test';
-
   var _labelText = 'Select Date';
-
   String _label = '';
   String _labelSimpleDialog = '';
+  String _time = '';
 
+  @override
+  void initState() {
+    Timer.periodic(
+      Duration(seconds: 1),
+      _onTimer,
+    );
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -184,10 +183,18 @@ class _State extends State<SettingScreen> {
               onPressed: _showSimpleDialog,
             ),
             Text(_labelSimpleDialog),
-
-            // Indeterminate
+            /*
+            //プログレスインジケーター Indeterminate
             LinearProgressIndicator(),
-            CircularProgressIndicator()
+            CircularProgressIndicator(),
+            */
+            Text(
+              _time,
+              style: TextStyle(
+                fontSize: 60.0,
+                fontFamily: 'IBMPlexMono',
+              ),
+            ),
           ],
         ),
       ),
@@ -203,6 +210,11 @@ class _State extends State<SettingScreen> {
   }
 
   //テキストフィールド変更時
+  void _userNameChanged(String value) {
+    setState(() {
+      _text = 'Changed: $value';
+    });
+  }
   void _userNameSubmitted(String value) {
     setState(() {
       _text = 'Submitted $value';
@@ -248,6 +260,7 @@ class _State extends State<SettingScreen> {
     }
   }
 
+  //アラートダイアログ
   Future _showAlertDialog(BuildContext context) async {
     return showDialog<void>(
       context: context,
@@ -355,5 +368,13 @@ class _State extends State<SettingScreen> {
       return;
     }
     setState(() => _labelSimpleDialog = s);
+  }
+
+  //タイマー
+  void _onTimer(Timer timer) {
+    var now = DateTime.now();
+    var formatter = DateFormat('HH:mm:ss');
+    var formattedTime = formatter.format(now);
+    setState(() => _time = formattedTime);
   }
 }
