@@ -7,21 +7,21 @@ class CloudScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Qiita',
+      title: 'Qiita1',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Qiita'),
+      home: MyHomePage2(title: 'Qiita1'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyHomePage2 extends StatefulWidget {
+  MyHomePage2({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageState2 createState() => _MyHomePageState2();
 }
 
 class Item {
@@ -34,7 +34,7 @@ class Item {
   final String profileImageUrl;
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState2 extends State<MyHomePage2> {
   List<Item> _items = <Item>[];
 
   @override

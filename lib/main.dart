@@ -37,15 +37,15 @@ class _MyHomePageState extends State<MyHomePage> {
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
       BottomNavigationBarItem(
-        icon: Icon(Icons.book),
+        icon: Icon(Icons.home),
         title: const Text('Flutter Issues'),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.cloud),
+        icon: Icon(Icons.search),
         title: const Text('Qiita'),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.cake),
+        icon: Icon(Icons.mail),
         title: const Text('Cake'),
       ),
     ];
@@ -71,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: PageView(
           controller: _pageController,
           // ページ切り替え時に実行する処理

@@ -11,17 +11,17 @@ class BookScreen extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Issues'),
+      home: MyHomePage1(title: 'Flutter Issues'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyHomePage1 extends StatefulWidget {
+  MyHomePage1({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageState1 createState() => _MyHomePageState1();
 }
 
 class Issue {
@@ -34,7 +34,7 @@ class Issue {
   final String avatarUrl;
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState1 extends State<MyHomePage1> {
   List<Issue> _issues = <Issue>[];
 
   @override
@@ -60,7 +60,61 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+  var _city = '';
     return Scaffold(
+      drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              DrawerHeader(
+                child: Text(
+                  'Flutter Issues',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                  ),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('Los Angeles'),
+                onTap: () {
+                  setState(() => _city = 'Los Angeles, CA');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Honolulu'),
+                onTap: () {
+                  setState(() => _city = 'Honolulu, HI');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Dallas'),
+                onTap: () {
+                  setState(() => _city = 'Dallas, TX');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Seattle'),
+                onTap: () {
+                  setState(() => _city = 'Seattle, WA');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Tokyo'),
+                onTap: () {
+                  setState(() => _city = 'Tokyo, Japan');
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: Text(widget.title),
         ),
