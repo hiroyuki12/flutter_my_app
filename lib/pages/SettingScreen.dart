@@ -178,12 +178,16 @@ class _State extends State<SettingScreen> {
                 color: Theme.of(context).primaryColor,
               ),
             Text(_label),
-            //
+            //シンプルダイアログ
             RaisedButton(
               child: Text('Please select'),
               onPressed: _showSimpleDialog,
             ),
             Text(_labelSimpleDialog),
+
+            // Indeterminate
+            LinearProgressIndicator(),
+            CircularProgressIndicator()
           ],
         ),
       ),
