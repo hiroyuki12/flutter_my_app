@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -34,6 +35,7 @@ class _State extends State<SettingScreen> {
   List _fruits = ["Apple", "Banana", "Pineapple", "Mango", "Grapes"];
   List<DropdownMenuItem<String>> _dropDownMenuItems;
   String _selectedFruit;
+  String _deviceInfo = '';
 
   @override
   void initState() {
@@ -299,13 +301,20 @@ class _State extends State<SettingScreen> {
                 items: _dropDownMenuItems,
                 onChanged: changedDropDownItem,
               ),
-              //
+              //ボタン Toggle theme
               CupertinoButton(
                 onPressed: () {
                   setState(() => dark = !dark);
-              },
-              child: Text('Toggle theme'),
-            ),
+                },
+                child: Text('Toggle theme3'),
+              ),
+              //ボタン device_info
+              CupertinoButton(
+                onPressed: () => _showDeviceInfo(context),
+                child: Text('device_info'),
+              ),
+              Text(_deviceInfo),
+              
             ],
           ),
         ),
@@ -585,5 +594,33 @@ class _State extends State<SettingScreen> {
         dark = false;
       });
     }
+  }
+
+  //Device Info
+  _showDeviceInfo(BuildContext context) {
+    setState(() {
+      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+
+      if (Theme.of(context).platform == TargetPlatform.android) {
+      }
+      else
+      {
+        deviceInfo.iosInfo.then((IosDeviceInfo info){
+          print("name=${info.name}"); // ko2ic の iPhone
+          _deviceInfo = "name=${info.name}";
+          print("systemName=${info.systemName}"); // iOS
+          print("systemVersion=${info.systemVersion}"); // 12.1
+          print("model=${info.model}"); // iPhone
+          print("localizedModel=${info.localizedModel}"); // iPhone
+          print("identifierForVendor=${info.identifierForVendor}"); // D644A484-CE48-47EE-8A2F-30488E0D71E1
+          print("isPhysicalDevice=${info.isPhysicalDevice}"); // false
+          print("sysname=${info.utsname.sysname}"); // Darwin
+          print("nodename=${info.utsname.nodename}"); // ko2ic-no-iPhone
+          print("release=${info.utsname.release}"); // 18.2.0
+          print("version=${info.utsname.version}"); // Darwin Kernel Version 18.2.0: Mon Nov 12 20:24:46 PST 2018; root:xnu-4903.231.4~2/RELEASE_X86_64
+          print("machine=${info.utsname.machine}"); // x86_64
+        });
+      }
+    });
   }
 }
