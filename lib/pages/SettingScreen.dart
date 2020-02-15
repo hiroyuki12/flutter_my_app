@@ -29,6 +29,8 @@ class _State extends State<SettingScreen> {
 
   var _checkBox1 = false;
   var _checkBox2 = false;
+
+  bool _switchActive = false;
   var _switchValue = true;
   var _switchTitle = 'Switch Test';
 
@@ -42,6 +44,8 @@ class _State extends State<SettingScreen> {
         padding: EdgeInsets.all(30.0),
         child: Column(
           children: <Widget>[
+            //テキスト
+            Text('Hello Text'),
             //チェックボックス
             Checkbox(
               value: _checkBox1,
@@ -65,6 +69,15 @@ class _State extends State<SettingScreen> {
                   _checkBox2 = value;
                 });
               },
+            ),
+            //スイッチ
+            Switch(
+              value: _switchActive,
+              // activeColor: Colors.orange,
+              // activeTrackColor: Colors.red,
+              // inactiveThumbColor: Colors.blue,
+              // inactiveTrackColor: Colors.green,
+              onChanged: _changeSwitch,
             ),
             //スイッチリスト
             SwitchListTile(
@@ -168,6 +181,9 @@ class _State extends State<SettingScreen> {
     });
   }
 
+  //スイッチ変更時
+  void _changeSwitch(bool e) => setState(() => _switchActive = e);
+
   //ラジオボタン変更時
   void _onChanged(Fruits value) {
     if(value == Fruits.Orange)  _radValText = "Orange";
@@ -178,4 +194,5 @@ class _State extends State<SettingScreen> {
       _radVal = value;
     });
   }
+  
 }
