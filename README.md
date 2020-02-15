@@ -47,3 +47,6 @@ https://flutter.keicode.com/basics/timer.php
 
 モーダルボトムシート
 https://flutter.keicode.com/basics/bottomsheet.php
+
+iPhoneっぽいUI
+https://qiita.com/nagahama/items/fe3b6ba210f9bfdb6408
