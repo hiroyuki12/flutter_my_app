@@ -11,3 +11,6 @@ https://qiita.com/yamazaki_sensei/items/1badc515e4a4d6eddebe
 
 drawer
 https://flutter.keicode.com/basics/drawer.php
+
+チェックボックス・ラジオボタン
+https://flutter.keicode.com/basics/checkbox.php
