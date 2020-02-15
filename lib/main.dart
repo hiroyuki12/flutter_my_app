@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'BottomNav',
-      theme: ThemeData(
-        // This is the theme of your application.
-        primarySwatch: Colors.blue,
-      ),
+      //theme: ThemeData(
+      //  // This is the theme of your application.
+      //  primarySwatch: Colors.blue,
+      //),
+      theme: ThemeData.dark(),
       home: MyHomePage(title: 'BottomNav'),
     );
   }
