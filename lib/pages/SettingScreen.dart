@@ -32,9 +32,14 @@ class _State extends State<SettingScreen> {
   String _labelSimpleDialog = '';
   String _labelModalBottomSheet = '';
   String _time = '';
+  List _fruits = ["Apple", "Banana", "Pineapple", "Mango", "Grapes"];
+  List<DropdownMenuItem<String>> _dropDownMenuItems;
+  String _selectedFruit;
 
   @override
   void initState() {
+    _dropDownMenuItems = buildAndGetDropDownMenuItems(_fruits);
+    _selectedFruit = _dropDownMenuItems[0].value;
     Timer.periodic(
       Duration(seconds: 1),
       _onTimer,
@@ -273,6 +278,13 @@ class _State extends State<SettingScreen> {
                     ));
               },
               child: Text('ダイアログを表示します'),
+            ),
+            //ドロップダウンリスト
+            Text("Please choose a fruit: "),
+            DropdownButton(
+              value: _selectedFruit,
+              items: _dropDownMenuItems,
+              onChanged: changedDropDownItem,
             )
           ],
         ),
@@ -509,5 +521,21 @@ class _State extends State<SettingScreen> {
         );
       },
     );
+  }
+
+  //ドロップダウンリスト
+  List<DropdownMenuItem<String>> buildAndGetDropDownMenuItems(List fruits) {
+    List<DropdownMenuItem<String>> items = List();
+    for (String fruit in fruits) {
+      items.add(DropdownMenuItem(value: fruit, child: Text(fruit)));
+    }
+    return items;
+  }
+
+  //ドロップダウンリスト
+  void changedDropDownItem(String selectedFruit) {
+    setState(() {
+      _selectedFruit = selectedFruit;
+    });
   }
 }
