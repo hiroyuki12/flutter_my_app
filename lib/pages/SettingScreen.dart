@@ -38,6 +38,7 @@ class _State extends State<SettingScreen> {
   var _labelText = 'Select Date';
 
   String _label = '';
+  String _labelSimpleDialog = '';
 
   @override
   Widget build(BuildContext context) {
@@ -165,7 +166,7 @@ class _State extends State<SettingScreen> {
               onPressed: () => _selectDate(context),
             ),
             Text(_labelText),
-
+            //アラートダイアログ
             RaisedButton(
                 child: Text(
                   'AlertDialog',
@@ -177,6 +178,12 @@ class _State extends State<SettingScreen> {
                 color: Theme.of(context).primaryColor,
               ),
             Text(_label),
+            //
+            RaisedButton(
+              child: Text('Please select'),
+              onPressed: _showSimpleDialog,
+            ),
+            Text(_labelSimpleDialog),
           ],
         ),
       ),
@@ -260,10 +267,89 @@ class _State extends State<SettingScreen> {
     );
   }
   
+  //アラートダイアログ
   _useCamera(BuildContext context, bool b) {
     setState(() {
       _label = 'You select ' + (b ? 'AGREE' : 'CANCEL');
     });
     Navigator.pop(context);
+  }
+
+  Future _showSimpleDialog() async {
+    String result = "";
+    result = await showDialog(
+      barrierDismissible: true,
+      context: context,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: Text('Select account'),
+          children: <Widget>[
+            SimpleDialogOption(
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: Colors.orange.shade200,
+                  child: Text(
+                    'U1',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                title: Text('user1@keicode.com'),
+              ),
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  "user1",
+                );
+              },
+            ),
+            SimpleDialogOption(
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: Colors.grey.shade400,
+                  child: Text(
+                    'U2',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                title: Text('user2@gmail.com'),
+              ),
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  "user2",
+                );
+              },
+            ),
+            SimpleDialogOption(
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: Colors.grey.shade700,
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+                title: Text('Add account'),
+              ),
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  "Add account",
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
+    _setLabel(result);
+  }
+
+  //シンプルダイアログ
+  void _setLabel(String s) {
+    if (s == null) {
+      return;
+    }
+    setState(() => _labelSimpleDialog = s);
   }
 }
