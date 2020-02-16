@@ -2,10 +2,11 @@ import 'dart:async';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+//import 'package:intl/intl.dart';
 
-import 'QiitaScreen.dart';
-import 'ListViewScreen.dart';
+//import 'ListViewScreen.dart';
+//import 'QiitaScreen.dart';
+//import 'QiitaScreen.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -20,32 +21,34 @@ class _State extends State<SettingScreen> {
   bool dark = false;
   int count = 0;
   String _message = 'Tap this button.';
-  bool _switchActive = false;
+  //bool _switchActive = false;
   String _label = '';
-  List _fruits = ["Apple", "Banana", "Pineapple", "Mango", "Grapes"];
-  List<DropdownMenuItem<String>> _dropDownMenuItems;
+  //List _fruits = ["Apple", "Banana", "Pineapple", "Mango", "Grapes"];
+  //List<DropdownMenuItem<String>> _dropDownMenuItems;
   String _deviceInfo = '';
-  String _selectedFruit;
-  var _checkBox1 = false;
-  var _checkBox2 = false;
-  String _text = 'Enter something...';
-  var _radVal = Fruits.Apple;
-  String _radValText = "";
-  var _switchValue = true;
-  var _switchTitle = 'Switch Test';
-  var _labelText = 'Select Date';
-  String _labelSimpleDialog = '';
-  String _labelModalBottomSheet = '';
-  String _time = '';
+  //String _selectedFruit;
+  //var _checkBox1 = false;
+  //var _checkBox2 = false;
+  //String _text = 'Enter something...';
+  //var _radVal = Fruits.Apple;
+  //String _radValText = "";
+  //var _switchValue = true;
+  //var _switchTitle = 'Switch Test';
+  //var _labelText = 'Select Date';
+  //String _labelSimpleDialog = '';
+  //String _labelModalBottomSheet = '';
+  //String _time = '';
 
   @override
   void initState() {
-    _dropDownMenuItems = buildAndGetDropDownMenuItems(_fruits);
-    _selectedFruit = _dropDownMenuItems[0].value;
+    //_dropDownMenuItems = buildAndGetDropDownMenuItems(_fruits);
+    //_selectedFruit = _dropDownMenuItems[0].value;
+    /*
     Timer.periodic(
       Duration(seconds: 1),
       _onTimer,
     );
+    */
     super.initState();
   }
   @override
@@ -57,6 +60,7 @@ class _State extends State<SettingScreen> {
         appBar: AppBar(
           title: Text('Settings'),
         ),
+        /*
         floatingActionButton: Column(
           verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
           mainAxisSize: MainAxisSize.min,
@@ -75,8 +79,9 @@ class _State extends State<SettingScreen> {
                 onPressed: _onFloattingRemoveButtonPressed,
               ),
             ),
+            
           ],
-        ),
+        ),*/
         body: Container(
           padding: EdgeInsets.all(30.0),
           child: Column(
@@ -379,7 +384,7 @@ class _State extends State<SettingScreen> {
     });
   }
 
-
+/*
   //フローティングのーボタン押下時
   void _onFloattingRemoveButtonPressed() {
     //Navigator.pushNamed(context, '/setting');
@@ -397,7 +402,9 @@ class _State extends State<SettingScreen> {
 
     });
   }
+*/
 
+/*
   //テキストフィールド変更時
   void _userNameChanged(String value) {
     setState(() {
@@ -438,7 +445,9 @@ class _State extends State<SettingScreen> {
       _radVal = value;
     });
   }
+*/
 
+/*
   //日付選択ボタン押下時
   Future<void> _selectDate(BuildContext context) async {
     final DateTime selected = await showDatePicker(
@@ -453,6 +462,7 @@ class _State extends State<SettingScreen> {
       });
     }
   }
+  */
 
   /*
   //日付選択ボタン押下時(iPhoneっぽく)
@@ -503,6 +513,7 @@ class _State extends State<SettingScreen> {
     Navigator.pop(context);
   }
 
+/*
   Future _showSimpleDialog() async {
     String result = "";
     result = await showDialog(
@@ -572,7 +583,8 @@ class _State extends State<SettingScreen> {
     );
     _setLabel(result);
   }
-
+*/
+/*
   //シンプルダイアログ
   void _setLabel(String s) {
     if (s == null) {
@@ -580,7 +592,8 @@ class _State extends State<SettingScreen> {
     }
     setState(() => _labelSimpleDialog = s);
   }
-
+*/
+/*
   //タイマー
   void _onTimer(Timer timer) {
     var now = DateTime.now();
@@ -588,7 +601,9 @@ class _State extends State<SettingScreen> {
     var formattedTime = formatter.format(now);
     setState(() => _time = formattedTime);
   }
+*/
 
+/*
   //モーダルボトムシート
   void _showModalBottomSheet() {
     showModalBottomSheet<void>(
@@ -626,6 +641,7 @@ class _State extends State<SettingScreen> {
       },
     );
   }
+*/
 
   //ドロップダウンリスト
   List<DropdownMenuItem<String>> buildAndGetDropDownMenuItems(List fruits) {
@@ -636,13 +652,14 @@ class _State extends State<SettingScreen> {
     return items;
   }
 
+/*
   //ドロップダウンリスト
   void changedDropDownItem(String selectedFruit) {
     setState(() {
       _selectedFruit = selectedFruit;
     });
   }
-
+*/
   //スイッチでダークテーマトグル
   void applyThemeDate(bool darkTheme){
     if(darkTheme==true){

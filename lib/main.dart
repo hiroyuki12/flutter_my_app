@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/ListView2Screen.dart';
-import 'pages/ListViewScreen.dart';
+//import 'pages/ListViewScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       //  primarySwatch: Colors.blue,
       //),
       theme: ThemeData.dark(),
+      /*
       initialRoute: '/flutterIssues',
       //initialRoute: '/qiita',
       routes: {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/listview': (context) => ListViewScreen(),
         '/listview2': (context) => ListView2Screen(),
       },
+      */
       home: MyHomePage(title: 'BottomNav'),
     );
   }
@@ -53,12 +55,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Flutter Issues'),
       ),
       BottomNavigationBarItem(
+        icon: Icon(Icons.settings),
+        title: const Text('Setting'),
+      ),
+      BottomNavigationBarItem(
         icon: Icon(Icons.search),
         title: const Text('Qiita Items'),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.settings),
-        title: const Text('Setting'),
+        icon: Icon(Icons.add),
+        title: const Text('List View2'),
       ),
     ];
   }
@@ -70,15 +76,15 @@ class _MyHomePageState extends State<MyHomePage> {
     _pageController = PageController(
       initialPage: _screen, // 初期ページの指定。上記で_screenを１とすれば２番目のページが初期表示される。
     );
-    //_load();
   }
-
+/*
   @override
   void dispose() {
     // コントローラ破棄
     _pageController.dispose();
     super.dispose();
   }
+*/
 
   @override
   Widget build(BuildContext context) {
@@ -98,8 +104,9 @@ class _MyHomePageState extends State<MyHomePage> {
         // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
         children: [
           FlutterIssuesScreen(),
-          ListViewScreen(),
           SettingScreen(),
+          QiitaScreen(),
+          ListView2Screen(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

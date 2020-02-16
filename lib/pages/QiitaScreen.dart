@@ -1,10 +1,10 @@
-import 'dart:convert';
+//import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
-import 'FlutterIssuesScreen.dart';
-import 'ListViewScreen.dart';
-import 'SettingScreen.dart';
+//import 'FlutterIssuesScreen.dart';
+//import 'ListViewScreen.dart';
+//import 'SettingScreen.dart';
 
 class QiitaScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -12,9 +12,10 @@ class QiitaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Qiita',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      //theme: ThemeData(
+      //  primarySwatch: Colors.blue,
+      //),
+      theme: ThemeData.dark() ,
       home: MyHomePage(title: 'Qiita'),
     );
   }
@@ -39,13 +40,14 @@ class Item {
  }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Item> _issues = <Item>[];
+  //List<Item> _issues = <Item>[];
 
   @override
   void initState() {
     super.initState();
-    _load();
+    //_load();
   }
+  /*
   // This widget is the root of your application.
   Future<void> _load() async {
     final res = await http.get('http://qiita.com/api/v2/items');
@@ -61,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
       });
     });
   }
+*/
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      /*
       floatingActionButton: Column(
         verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
         mainAxisSize: MainAxisSize.min,
@@ -112,11 +116,11 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text(issue.title),
           );
         },
-      ),
+      ),*/
     );
   }
 
-
+/*
   //フローティングのHOMEボタン押下時
   void _onFloattingSettingsButtonPressed() {
     //Navigator.pushNamed(context, '/setting');
@@ -143,4 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     });
   }
+*/
+
 }

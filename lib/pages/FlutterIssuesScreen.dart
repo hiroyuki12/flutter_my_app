@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_my_app/pages/SettingScreen.dart';
+//import 'package:flutter_my_app/pages/SettingScreen.dart';
 import 'package:http/http.dart' as http;
 
-import 'ListView2Screen.dart';
-import 'ListViewScreen.dart';
-import 'QiitaScreen.dart';
+//import 'ListView2Screen.dart';
+//import 'ListViewScreen.dart';
+//import 'QiitaScreen.dart';
 
 class FlutterIssuesScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -44,7 +44,7 @@ class Issue {
 
 class _MyHomePageState1 extends State<MyHomePage> {
   List<Issue> _issues = <Issue>[];
-
+/*
   // ページ切り替え用のコントローラを定義
   PageController _pageController;
   // ページインデックス保存用
@@ -66,23 +66,26 @@ class _MyHomePageState1 extends State<MyHomePage> {
       ),
     ];
   }
-
+*/
   @override
   void initState() {
     super.initState();
+    /*
     // コントローラ作成
     _pageController = PageController(
       initialPage: _screen, // 初期ページの指定。上記で_screenを１とすれば２番目のページが初期表示される。
     );
+    */
     _load();
   }
-
+/*
   @override
   void dispose() {
     // コントローラ破棄
     _pageController.dispose();
     super.dispose();
   }
+*/
 
   // This widget is the root of your application.
   Future<void> _load() async {
@@ -102,7 +105,7 @@ class _MyHomePageState1 extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-  var _city = '';
+  //var _city = '';
     return Scaffold(
       /*
       drawer: Drawer(
@@ -145,6 +148,7 @@ class _MyHomePageState1 extends State<MyHomePage> {
         verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
+          /*
           FloatingActionButton(
             heroTag: "btn1",
             child: Icon(Icons.add),
@@ -167,7 +171,8 @@ class _MyHomePageState1 extends State<MyHomePage> {
               child: Icon(Icons.settings),
               onPressed: _onFloattingSettingsButtonPressed,
             ),
-          ),
+            
+          ),*/
         ],
       ),
       body: ListView.builder(
@@ -188,6 +193,7 @@ class _MyHomePageState1 extends State<MyHomePage> {
     );
   }
 
+/*
   //フローティングのHOMEボタン押下時
   void _onFloattingSettingsButtonPressed() {
     //Navigator.pushNamed(context, '/setting');
@@ -214,5 +220,7 @@ class _MyHomePageState1 extends State<MyHomePage> {
 
     });
   }
+*/
+
 }
 

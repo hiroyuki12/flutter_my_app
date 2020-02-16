@@ -1,9 +1,9 @@
-import 'dart:convert';
+//import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
-import 'FlutterIssuesScreen.dart';
-import 'SettingScreen.dart';
+//import 'FlutterIssuesScreen.dart';
+//import 'SettingScreen.dart';
 
 class ListViewScreen extends StatefulWidget {
   //MyHomePage2({Key key, this.title}) : super(key: key);
@@ -49,13 +49,14 @@ class _State extends State<ListViewScreen> {
     { "title" : "Title C",  "content" : "Content 3" }
   ];
 
-  List<Item> _items = <Item>[];
+  //List<Item> _items = <Item>[];
 
   @override
   void initState() {
     super.initState();
     //_load();
   }
+  /*
   // This widget is the root of your application.
   Future<void> _load() async {
     final res = await http.get('http://qiita.com/api/v2/items');
@@ -71,6 +72,7 @@ class _State extends State<ListViewScreen> {
       });
     });
   }
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -212,6 +214,7 @@ class _State extends State<ListViewScreen> {
     });
   }
 
+/*
   //フローティングのHOMEボタン押下時
   void _onFloattingHomeButtonPressed() {
     //Navigator.pop(context);
@@ -220,5 +223,7 @@ class _State extends State<ListViewScreen> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => FlutterIssuesScreen()));
     });
   }
+*/
+
 }
 
