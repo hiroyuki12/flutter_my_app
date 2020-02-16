@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'pages/HelloWorld.dart';
+import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
 //import 'pages/ListViewScreen.dart';
 import 'pages/SettingScreen.dart';
@@ -66,6 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
         icon: Icon(Icons.add),
         title: const Text('List View2'),
       ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.remove),
+        title: const Text('Layout'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.repeat),
+        title: const Text('HelloWorld'),
+      ),
     ];
   }
 
@@ -107,6 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
           SettingScreen(),
           QiitaScreen(),
           ListView2Screen(),
+          LayoutScreen(),
+          HelloWorld(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
