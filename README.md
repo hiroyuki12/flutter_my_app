@@ -93,3 +93,6 @@ https://qiita.com/reiji_matsumura/items/c07e95b5793d943229e3
 
 シンプルなメッセージアプリのUI
 https://qiita.com/iketeruhiyoko/items/025c3dea93515ff05762
+
+Quick fix ショートカットキー　command + . でメニュー表示して、Enter
+https://medium.com/flutter-jp/tips-b2487a63a8
