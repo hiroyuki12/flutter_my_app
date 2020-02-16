@@ -105,3 +105,6 @@ https://stackoverflow.com/questions/52379831/how-to-surround-flutter-widget-in-v
 
 基本レイアウト（Row, Column, Stack, ListView) , 配置、装飾（Center, Expanded, SizedBox, Container, SingleChildScrollView)
 http://fuzzy0.hatenablog.com/entry/2019/02/16/151610
+
+Widget構成図
+https://apps-gcp.com/introduction-of-flutter-about-header-and-footer/
