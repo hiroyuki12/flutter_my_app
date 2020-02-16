@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/ListView2Screen.dart';
 import 'pages/ListViewScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         '/flutterIssues': (context) => FlutterIssuesScreen(),
         '/setting': (context) => SettingScreen(),
         '/qiita': (context) => QiitaScreen(),
-        '/search': (context) => ListViewScreen(),
+        '/listview': (context) => ListViewScreen(),
+        '/listview2': (context) => ListView2Screen(),
       },
       home: MyHomePage(title: 'BottomNav'),
     );

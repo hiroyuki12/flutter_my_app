@@ -82,7 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: FloatingActionButton(
             heroTag: "btn2",
               backgroundColor: Colors.redAccent,
-              child: Icon(Icons.remove),
+              //child: Icon(Icons.remove),
+              child: FlutterLogo(),
               onPressed: _onFloattingRemoveButtonPressed,
             ),
           ),
@@ -91,8 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: FloatingActionButton(
             heroTag: "btn3",
               backgroundColor: Colors.redAccent,
-              child: Icon(Icons.home),
-              onPressed: _onFloattingHomeButtonPressed,
+              child: Icon(Icons.settings),
+              onPressed: _onFloattingSettingsButtonPressed,
             ),
           ),
         ],
@@ -117,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   //フローティングのHOMEボタン押下時
-  void _onFloattingHomeButtonPressed() {
+  void _onFloattingSettingsButtonPressed() {
     //Navigator.pushNamed(context, '/setting');
     Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
     setState(() {

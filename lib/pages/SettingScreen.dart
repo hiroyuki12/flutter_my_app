@@ -55,7 +55,7 @@ class _State extends State<SettingScreen> {
     //  theme: dark ? ThemeData.dark() : ThemeData.light(),
     //  home: Scaffold(
         appBar: AppBar(
-          title: Text('Setting'),
+          title: Text('Settings'),
         ),
         floatingActionButton: Column(
           verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置

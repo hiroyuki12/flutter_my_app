@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
 import 'package:http/http.dart' as http;
 
+import 'ListView2Screen.dart';
 import 'ListViewScreen.dart';
 import 'QiitaScreen.dart';
 
@@ -163,8 +164,8 @@ class _MyHomePageState1 extends State<MyHomePage> {
             child: FloatingActionButton(
             heroTag: "btn3",
               backgroundColor: Colors.redAccent,
-              child: Icon(Icons.home),
-              onPressed: _onFloattingHomeButtonPressed,
+              child: Icon(Icons.settings),
+              onPressed: _onFloattingSettingsButtonPressed,
             ),
           ),
         ],
@@ -188,7 +189,7 @@ class _MyHomePageState1 extends State<MyHomePage> {
   }
 
   //フローティングのHOMEボタン押下時
-  void _onFloattingHomeButtonPressed() {
+  void _onFloattingSettingsButtonPressed() {
     //Navigator.pushNamed(context, '/setting');
     Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
     setState(() {
@@ -208,7 +209,7 @@ class _MyHomePageState1 extends State<MyHomePage> {
   //フローティングの＋ボタン押下時
   void _onPressed() {
     //Navigator.pushNamed(context, '/setting');
-    Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewScreen()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ListView2Screen()));
     setState(() {
 
     });
