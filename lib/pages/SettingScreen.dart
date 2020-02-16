@@ -157,9 +157,11 @@ class _State extends State<SettingScreen> {
                   //onPressed: () => Navigator.pushNamed(context, '/home'),
                   onPressed: () => Navigator.pop(context),
               ),           
-              /*
+              
               //テキストフィールド
               TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
                 decoration: InputDecoration(
                   labelText: 'Username',
                   //hintText: 'Username',
@@ -167,10 +169,11 @@ class _State extends State<SettingScreen> {
                 ),
                 autocorrect: false,
                 autofocus: true,
-                keyboardType: TextInputType.text,
+                //keyboardType: TextInputType.text,
                 onChanged: _userNameChanged,
                 onSubmitted: _userNameSubmitted,
               ),
+              /*
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Password',
