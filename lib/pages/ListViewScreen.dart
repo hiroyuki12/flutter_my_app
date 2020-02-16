@@ -2,10 +2,22 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'HomeScreen.dart';
+import 'FlutterIssuesScreen.dart';
 import 'SettingScreen.dart';
 
-class SearchScreen extends StatelessWidget {
+class ListViewScreen extends StatefulWidget {
+  //MyHomePage2({Key key, this.title}) : super(key: key);
+  //final String title;
+
+  //@override
+  //_State createState() => _State();
+  @override
+  State<StatefulWidget> createState() {
+    return _State();
+  }
+}
+/*
+class ListViewScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -18,14 +30,7 @@ class SearchScreen extends StatelessWidget {
     );
   }
 }
-
-class MyHomePage2 extends StatefulWidget {
-  MyHomePage2({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState2 createState() => _MyHomePageState2();
-}
+*/
 
 class Item {
   Item({
@@ -37,7 +42,7 @@ class Item {
   final String profileImageUrl;
 }
 
-class _MyHomePageState2 extends State<MyHomePage2> {
+class _State extends State<ListViewScreen> {
   List<Map<String, dynamic>> items = [
     { "title" : "Title A",  "content" : "Content 1" },
     { "title" : "Title B",  "content" : "Content 2" },
@@ -71,7 +76,8 @@ class _MyHomePageState2 extends State<MyHomePage2> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          //title: Text(widget.title),
+          title: Text("ListView"),
         ),
 
       floatingActionButton: Column(
@@ -93,6 +99,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               onPressed: _onFloattingRemoveButtonPressed,
             ),
           ),
+          /*
           Container( // 余白のためContainerでラップ
             margin: EdgeInsets.only(bottom: 16.0), 
             child: FloatingActionButton(
@@ -101,7 +108,8 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               child: Icon(Icons.home),
               onPressed: _onFloattingHomeButtonPressed,
             ),
-          ),
+            
+          ),*/
         ],
       ),
       /*
@@ -206,9 +214,10 @@ class _MyHomePageState2 extends State<MyHomePage2> {
 
   //フローティングのHOMEボタン押下時
   void _onFloattingHomeButtonPressed() {
+    //Navigator.pop(context);
     setState(() {
-      //Navigator.pop(context);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
+      //Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => FlutterIssuesScreen()));
     });
   }
 }

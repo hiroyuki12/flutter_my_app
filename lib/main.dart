@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import './pages/HomeScreen.dart';
-import './pages/SearchScreen.dart';
-import './pages/SettingScreen.dart';
+import 'pages/ListViewScreen.dart';
+import 'pages/SettingScreen.dart';
+import 'pages/FlutterIssuesScreen.dart';
+import 'pages/QiitaScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,12 +17,12 @@ class MyApp extends StatelessWidget {
       //  primarySwatch: Colors.blue,
       //),
       theme: ThemeData.dark(),
-      initialRoute: '/home',
-      //initialRoute: '/search',
+      initialRoute: '/flutterIssues',
       routes: {
-        '/home': (context) => HomeScreen(),
+        '/flutterIssues': (context) => FlutterIssuesScreen(),
         '/setting': (context) => SettingScreen(),
-        '/search': (context) => SearchScreen(),
+        '/qiita': (context) => QiitaScreen(),
+        '/search': (context) => ListViewScreen(),
       },
       home: MyHomePage(title: 'BottomNav'),
     );
@@ -69,7 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
     //_load();
   }
 
-
   @override
   void dispose() {
     // コントローラ破棄
@@ -94,8 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
         children: [
-          HomeScreen(),
-          SearchScreen(),
+          FlutterIssuesScreen(),
+          ListViewScreen(),
           SettingScreen(),
         ]),
         // ページ下部のナビゲーションメニュー
@@ -111,9 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
             // ページ遷移を定義。
             // curveで指定できるのは以下
             // https://api.flutter.dev/flutter/animation/Curves-class.html
-            _pageController.jumpToPage(index);
-            //_pageController.animateToPage(index,
-            //    duration: Duration(milliseconds: 300), curve: Curves.easeOut);
+            //_pageController.jumpToPage(index);
+            _pageController.animateToPage(index,
+                duration: Duration(milliseconds: 300), curve: Curves.easeOut);
           });
         },
         // 定義済のナビゲーションメニューのアイテムリスト

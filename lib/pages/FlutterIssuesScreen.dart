@@ -3,15 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
 import 'package:http/http.dart' as http;
 
-class HomeScreen extends StatelessWidget {
+import 'ListViewScreen.dart';
+import 'QiitaScreen.dart';
+
+class FlutterIssuesScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Issues',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      //theme: ThemeData(
+      //  primarySwatch: Colors.blue,
+      //),
+      theme: ThemeData.dark() ,
       home: MyHomePage(title: 'Flutter Issues'),
     );
   }
@@ -24,6 +28,8 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState1 createState() => _MyHomePageState1();
 }
+
+
 
 class Issue {
   Issue({
@@ -97,6 +103,7 @@ class _MyHomePageState1 extends State<MyHomePage> {
   Widget build(BuildContext context) {
   var _city = '';
     return Scaffold(
+      /*
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -117,7 +124,6 @@ class _MyHomePageState1 extends State<MyHomePage> {
               onTap: () {
                 //setState(() => _city = 'Setting');
                 Navigator.pop(context);
-                Navigator.pop(context);
                 setState(() => _onPressed);
               },
             ),
@@ -130,13 +136,38 @@ class _MyHomePageState1 extends State<MyHomePage> {
             ),
           ],
         ),
-      ),
+      ),*/
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: _onPressed,
+      floatingActionButton: Column(
+        verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          FloatingActionButton(
+            heroTag: "btn1",
+            child: Icon(Icons.add),
+            onPressed: _onPressed,
+          ),
+          Container( // 余白のためContainerでラップ
+            margin: EdgeInsets.only(bottom: 16.0), 
+            child: FloatingActionButton(
+            heroTag: "btn2",
+              backgroundColor: Colors.redAccent,
+              child: Icon(Icons.remove),
+              onPressed: _onFloattingRemoveButtonPressed,
+            ),
+          ),
+          Container( // 余白のためContainerでラップ
+            margin: EdgeInsets.only(bottom: 16.0), 
+            child: FloatingActionButton(
+            heroTag: "btn3",
+              backgroundColor: Colors.redAccent,
+              child: Icon(Icons.home),
+              onPressed: _onFloattingHomeButtonPressed,
+            ),
+          ),
+        ],
       ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
@@ -156,11 +187,28 @@ class _MyHomePageState1 extends State<MyHomePage> {
     );
   }
 
-
-  //ボタン押下時
-  void _onPressed() {
+  //フローティングのHOMEボタン押下時
+  void _onFloattingHomeButtonPressed() {
     //Navigator.pushNamed(context, '/setting');
     Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
+    setState(() {
+
+    });
+  }
+  
+  //フローティングのーボタン押下時
+  void _onFloattingRemoveButtonPressed() {
+    //Navigator.pushNamed(context, '/setting');
+    Navigator.push(context, MaterialPageRoute(builder: (context) => QiitaScreen()));
+    setState(() {
+
+    });
+  }
+
+  //フローティングの＋ボタン押下時
+  void _onPressed() {
+    //Navigator.pushNamed(context, '/setting');
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewScreen()));
     setState(() {
 
     });

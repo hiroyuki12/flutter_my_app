@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'SearchScreen.dart';
+import 'QiitaScreen.dart';
+import 'ListViewScreen.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -17,25 +18,25 @@ enum Fruits { Apple, Orange, Grape }
 
 class _State extends State<SettingScreen> {
   bool dark = false;
+  int count = 0;
+  String _message = 'Tap this button.';
+  bool _switchActive = false;
+  String _label = '';
+  List _fruits = ["Apple", "Banana", "Pineapple", "Mango", "Grapes"];
+  List<DropdownMenuItem<String>> _dropDownMenuItems;
+  String _deviceInfo = '';
+  String _selectedFruit;
+  var _checkBox1 = false;
+  var _checkBox2 = false;
   String _text = 'Enter something...';
   var _radVal = Fruits.Apple;
   String _radValText = "";
-  int count = 0;
-  String _message = 'Tap this button.';
-  var _checkBox1 = false;
-  var _checkBox2 = false;
-  bool _switchActive = false;
   var _switchValue = true;
   var _switchTitle = 'Switch Test';
   var _labelText = 'Select Date';
-  String _label = '';
   String _labelSimpleDialog = '';
   String _labelModalBottomSheet = '';
   String _time = '';
-  List _fruits = ["Apple", "Banana", "Pineapple", "Mango", "Grapes"];
-  List<DropdownMenuItem<String>> _dropDownMenuItems;
-  String _selectedFruit;
-  String _deviceInfo = '';
 
   @override
   void initState() {
@@ -49,15 +50,32 @@ class _State extends State<SettingScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: dark ? ThemeData.dark() : ThemeData.light(),
-      home: Scaffold(
+    return Scaffold(
+    //return MaterialApp(
+    //  theme: dark ? ThemeData.dark() : ThemeData.light(),
+    //  home: Scaffold(
         appBar: AppBar(
           title: Text('Setting'),
         ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: _onFloattingAddButtonPressed,
+        floatingActionButton: Column(
+          verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            FloatingActionButton(
+              heroTag: "btn1",
+              child: Icon(Icons.add),
+              onPressed: _onFloattingAddButtonPressed,
+            ),
+            Container( // 余白のためContainerでラップ
+              margin: EdgeInsets.only(bottom: 16.0), 
+              child: FloatingActionButton(
+                heroTag: "btn2",
+                backgroundColor: Colors.redAccent,
+                child: Icon(Icons.remove),
+                onPressed: _onFloattingRemoveButtonPressed,
+              ),
+            ),
+          ],
         ),
         body: Container(
           padding: EdgeInsets.all(30.0),
@@ -105,6 +123,7 @@ class _State extends State<SettingScreen> {
                 onChanged: _changeSwitch,
               ),
               */
+              /*
               //スイッチでダークテーマトグル(iPhoneっぽく)
               //Row(
               //  mainAxisAlignment: MainAxisAlignment.center,
@@ -120,6 +139,7 @@ class _State extends State<SettingScreen> {
                   ),
                 //]
               //),
+              */
               /*
               //スイッチリスト
               SwitchListTile(
@@ -153,17 +173,27 @@ class _State extends State<SettingScreen> {
                   onPressed: _onOKPressed,
               ),           
               Text(_message),
+              /*
               //ボタン画面遷移(iPhoneっぽく)
               CupertinoButton(
                   child: Text('Flutter Issues(Navigator.pop)'),
                   //onPressed: () => Navigator.pushNamed(context, '/home'),
                   onPressed: () => Navigator.pop(context),
               ),           
+              */
+              //ボタン画面遷移(iPhoneっぽく)
+              CupertinoButton(
+                  child: Text('Qiita(Navigator.push)'),
+                  //onPressed: () => Navigator.pushNamed(context, '/home'),
+                  onPressed: () => Navigator.push(context, 
+                    MaterialPageRoute(builder: (context) => QiitaScreen())),                
+              ),           
               //ボタン画面遷移(iPhoneっぽく)
               CupertinoButton(
                   child: Text('List Page(Navigator.push)'),
                   //onPressed: () => Navigator.pushNamed(context, '/home'),
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen())),                
+                  onPressed: () => Navigator.push(context, 
+                    MaterialPageRoute(builder: (context) => ListViewScreen())),                
               ),           
               /*
               //テキストフィールド
@@ -317,13 +347,14 @@ class _State extends State<SettingScreen> {
                 onChanged: changedDropDownItem,
               ),
               */
+              /*
               //ボタン Toggle theme
               CupertinoButton(
                 onPressed: () {
                   setState(() => dark = !dark);
                 },
-                child: Text('Toggle theme3'),
-              ),
+                child: Text('Toggle theme'),
+              ),*/
               //ボタン device_info
               CupertinoButton(
                 onPressed: () => _showDeviceInfo(context),
@@ -334,7 +365,7 @@ class _State extends State<SettingScreen> {
             ],
           ),
         ),
-      ),
+      //),
     );
   }
 
@@ -346,11 +377,22 @@ class _State extends State<SettingScreen> {
     });
   }
 
+
+  //フローティングのーボタン押下時
+  void _onFloattingRemoveButtonPressed() {
+    //Navigator.pushNamed(context, '/setting');
+    Navigator.push(context, MaterialPageRoute(builder: (context) => QiitaScreen()));
+    setState(() {
+
+    });
+  }
+
   //フローティングの＋ボタン押下時
   void _onFloattingAddButtonPressed() {
+    //Navigator.pushNamed(context, '/setting');
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewScreen()));
     setState(() {
-      ++count;
-      _message = 'Tap count $count';
+
     });
   }
 
