@@ -80,3 +80,6 @@ https://www.virment.com/flutter-how-to-use-dismissible/
 
 リストビュー（ソース）
 https://github.com/virment/flutter-sample/blob/master/dismissible-sample/main.dart
+
+2つのFloatingActionButton
+https://qiita.com/sekitaka_1214/items/351980e7b354c7e3859e
