@@ -17,10 +17,11 @@ class MyApp extends StatelessWidget {
       //),
       theme: ThemeData.dark(),
       initialRoute: '/home',
-      //initialRoute: '/setting',
+      //initialRoute: '/search',
       routes: {
         '/home': (context) => HomeScreen(),
         '/setting': (context) => SettingScreen(),
+        '/search': (context) => SearchScreen(),
       },
       home: MyHomePage(title: 'BottomNav'),
     );

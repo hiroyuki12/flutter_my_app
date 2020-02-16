@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'NewScreen.dart';
+import 'HomeScreen.dart';
+import 'SettingScreen.dart';
 
 class SearchScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -78,6 +79,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           FloatingActionButton(
+            heroTag: "btn1",
             backgroundColor: Colors.blueAccent,
             child: Icon(Icons.add),
             onPressed: _onFloattingAddButtonPressed,
@@ -85,9 +87,19 @@ class _MyHomePageState2 extends State<MyHomePage2> {
           Container( // 余白のためContainerでラップ
             margin: EdgeInsets.only(bottom: 16.0), 
             child: FloatingActionButton(
+            heroTag: "btn2",
               backgroundColor: Colors.redAccent,
               child: Icon(Icons.remove),
               onPressed: _onFloattingRemoveButtonPressed,
+            ),
+          ),
+          Container( // 余白のためContainerでラップ
+            margin: EdgeInsets.only(bottom: 16.0), 
+            child: FloatingActionButton(
+            heroTag: "btn3",
+              backgroundColor: Colors.redAccent,
+              child: Icon(Icons.home),
+              onPressed: _onFloattingHomeButtonPressed,
             ),
           ),
         ],
@@ -189,6 +201,14 @@ class _MyHomePageState2 extends State<MyHomePage2> {
 
       //Navigator.pop(context);
       //Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen()));
+    });
+  }
+
+  //フローティングのHOMEボタン押下時
+  void _onFloattingHomeButtonPressed() {
+    setState(() {
+      //Navigator.pop(context);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
     });
   }
 }

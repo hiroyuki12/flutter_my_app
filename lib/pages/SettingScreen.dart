@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'HomeScreen.dart';
 import 'SearchScreen.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -64,6 +63,7 @@ class _State extends State<SettingScreen> {
           padding: EdgeInsets.all(30.0),
           child: Column(
             children: <Widget>[
+              /*
               //テキスト
               Text('Hello Text'),
               //チェックボックス
@@ -75,6 +75,7 @@ class _State extends State<SettingScreen> {
                   });
                 },
               ),
+              */
               /*
               //チェックボックスリスト
               CheckboxListTile(
@@ -162,7 +163,7 @@ class _State extends State<SettingScreen> {
               CupertinoButton(
                   child: Text('List Page(Navigator.push)'),
                   //onPressed: () => Navigator.pushNamed(context, '/home'),
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen())),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen())),                
               ),           
               /*
               //テキストフィールド
@@ -214,12 +215,14 @@ class _State extends State<SettingScreen> {
                   onChanged: _onChanged),
               Text(_radValText),
               */
+              /*
               //日付選択
               IconButton(
                 icon: Icon(Icons.date_range),
                 onPressed: () => _selectDate(context),
               ),
               Text(_labelText),
+              */
               /*
               //日付選択(iPhoneっぽく)
               IconButton(
@@ -267,7 +270,8 @@ class _State extends State<SettingScreen> {
               LinearProgressIndicator(),
               CircularProgressIndicator(),
               */
-              //タイマー
+              /*
+              //タイマー 時間表示
               Text(
                 _time,
                 style: TextStyle(
@@ -275,6 +279,7 @@ class _State extends State<SettingScreen> {
                   fontFamily: 'IBMPlexMono',
                 ),
               ),
+              */
               /*
               //モーダルボトムシート
               RaisedButton(
@@ -303,6 +308,7 @@ class _State extends State<SettingScreen> {
                 },
                 child: Text('ダイアログを表示します'),
               ),
+              /*
               //ドロップダウンリスト
               Text("Please choose a fruit: "),
               DropdownButton(
@@ -310,6 +316,7 @@ class _State extends State<SettingScreen> {
                 items: _dropDownMenuItems,
                 onChanged: changedDropDownItem,
               ),
+              */
               //ボタン Toggle theme
               CupertinoButton(
                 onPressed: () {
