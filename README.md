@@ -83,3 +83,6 @@ https://github.com/virment/flutter-sample/blob/master/dismissible-sample/main.da
 
 2つのFloatingActionButton
 https://qiita.com/sekitaka_1214/items/351980e7b354c7e3859e
+
+2つのFloatingActionButton tagを追加
+https://stackoverflow.com/questions/51125024/there-are-multiple-heroes-that-share-the-same-tag-within-a-subtree
