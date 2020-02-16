@@ -96,3 +96,8 @@ https://qiita.com/iketeruhiyoko/items/025c3dea93515ff05762
 
 Quick fix ショートカットキー　command + . でメニュー表示して、Enter
 https://medium.com/flutter-jp/tips-b2487a63a8
+
+Widgetでラップおよび逆にWidgetを削除する機能(Textにカーソルがある状態でcontrol + shift + rでメニュー表示、Containerを削除、メニューのRefactor)
+https://medium.com/flutter-jp/tips-b2487a63a8
+
+
