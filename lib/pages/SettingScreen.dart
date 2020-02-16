@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import 'HomeScreen.dart';
+import 'SearchScreen.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -157,7 +158,13 @@ class _State extends State<SettingScreen> {
                   //onPressed: () => Navigator.pushNamed(context, '/home'),
                   onPressed: () => Navigator.pop(context),
               ),           
-              
+              //ボタン画面遷移(iPhoneっぽく)
+              CupertinoButton(
+                  child: Text('List Page(Navigator.push)'),
+                  //onPressed: () => Navigator.pushNamed(context, '/home'),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen())),
+              ),           
+              /*
               //テキストフィールド
               TextField(
                 keyboardType: TextInputType.multiline,
@@ -173,7 +180,6 @@ class _State extends State<SettingScreen> {
                 onChanged: _userNameChanged,
                 onSubmitted: _userNameSubmitted,
               ),
-              /*
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Password',
