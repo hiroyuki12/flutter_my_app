@@ -111,3 +111,6 @@ https://apps-gcp.com/introduction-of-flutter-about-header-and-footer/
 
 padding
 https://nzigen.com/flutter-reference/2018-04-15-padding.html
+
+SpaceBox カスタムウィジェット　アイコンとタイトルを並べて表示する時にスペース追加
+https://note.com/nbht/n/n768920a8eb1c
