@@ -74,3 +74,9 @@ https://qiita.com/ko2ic/items/2a0aa4301011f8f52275
 
 テキストフィールドで複数行入力
 https://qiita.com/superman9387/items/15757a2c40b7776138b1
+
+リストビュー
+https://www.virment.com/flutter-how-to-use-dismissible/
+
+リストビュー（ソース）
+https://github.com/virment/flutter-sample/blob/master/dismissible-sample/main.dart
