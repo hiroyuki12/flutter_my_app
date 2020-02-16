@@ -1,11 +1,10 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'FlutterIssuesScreen.dart';
 import 'ListViewScreen.dart';
 import 'SettingScreen.dart';
-
 
 class QiitaScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -13,44 +12,40 @@ class QiitaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Qiita',
-      //theme: ThemeData(
-      //  primarySwatch: Colors.blue,
-      //),
-      theme: ThemeData.dark() ,
-      home: MyHomePage2(title: 'Qiita'),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: 'Qiita'),
     );
   }
 }
 
-class MyHomePage2 extends StatefulWidget {
-  MyHomePage2({Key key, this.title}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState2 createState() => _MyHomePageState2();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class Item {
-  Item({
-    this.title,
-    this.profileImageUrl,
-  });
+   Item({
+     this.title,
+     this.profileImageUrl,
+   });
 
-  final String title;
-  final String profileImageUrl;
-}
+   final String title;
+   final String profileImageUrl;
+ }
 
-class _MyHomePageState2 extends State<MyHomePage2> {
-  List<Item> _items = <Item>[];
-
-  get http => null;
+class _MyHomePageState extends State<MyHomePage> {
+  List<Item> _issues = <Item>[];
 
   @override
   void initState() {
     super.initState();
     _load();
   }
-
   // This widget is the root of your application.
   Future<void> _load() async {
     final res = await http.get('http://qiita.com/api/v2/items');
@@ -59,7 +54,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
       final issues = data as List;
       issues.forEach((dynamic element) {
         final issue = element as Map;
-        _items.add(Item(
+        _issues.add(Item(
           title: issue['title'] as String,
           profileImageUrl: issue['user']['profile_image_url'] as String,
         ));
@@ -71,7 +66,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Qiita2'),
+        title: Text(widget.title),
       ),
       floatingActionButton: Column(
         verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
@@ -102,37 +97,21 @@ class _MyHomePageState2 extends State<MyHomePage2> {
           ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.all(30.0),
-        child: Column(
-          children: <Widget>[
-            //テキスト
-            Text('Hello Text'),
-            //ボタン(iPhoneっぽく)
-            CupertinoButton(
-                child: Text('pop'),
-                onPressed: _onPopPressed,
-            ),           
-          ]
-        )
-      ),
-      /*
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          if (index >= _items.length) {
+          if (index >= _issues.length) {
             return null;
           }
 
-          final issue = _items[index];
+          final issue = _issues[index];
           return ListTile(
-            leading: ClipOval(
-              child: Image.network(issue.profileImageUrl),
-            ),
+             leading: ClipOval(
+               child: Image.network(issue.profileImageUrl),
+             ),
             title: Text(issue.title),
           );
         },
       ),
-      */
     );
   }
 
@@ -149,7 +128,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
   //フローティングのーボタン押下時
   void _onFloattingRemoveButtonPressed() {
     //Navigator.pushNamed(context, '/setting');
-    Navigator.push(context, MaterialPageRoute(builder: (context) => QiitaScreen()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => FlutterIssuesScreen()));
     setState(() {
 
     });
@@ -162,13 +141,5 @@ class _MyHomePageState2 extends State<MyHomePage2> {
     setState(() {
 
     });
-  }
-
-  //OKボタン押下時
-  void _onPopPressed() {
-    setState(() {
-      
-    });
-    //Navigator.pop(context);
   }
 }

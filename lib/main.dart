@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       //),
       theme: ThemeData.dark(),
       initialRoute: '/flutterIssues',
+      //initialRoute: '/qiita',
       routes: {
         '/flutterIssues': (context) => FlutterIssuesScreen(),
         '/setting': (context) => SettingScreen(),

@@ -181,6 +181,7 @@ class _State extends State<SettingScreen> {
                   onPressed: () => Navigator.pop(context),
               ),           
               */
+              /*
               //ボタン画面遷移(iPhoneっぽく)
               CupertinoButton(
                   child: Text('Qiita(Navigator.push)'),
@@ -195,6 +196,7 @@ class _State extends State<SettingScreen> {
                   onPressed: () => Navigator.push(context, 
                     MaterialPageRoute(builder: (context) => ListViewScreen())),                
               ),           
+              */
               /*
               //テキストフィールド
               TextField(
