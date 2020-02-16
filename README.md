@@ -103,4 +103,5 @@ https://medium.com/flutter-jp/tips-b2487a63a8
 Widgetでラップおよび逆にWidgetを削除する機能(Textにカーソルがある状態でcontrol + shift + rでメニュー表示、Containerを削除、メニューのRefactor)
 https://stackoverflow.com/questions/52379831/how-to-surround-flutter-widget-in-vscode/52383406
 
-
+基本レイアウト（Row, Column, Stack, ListView) , 配置、装飾（Center, Expanded, SizedBox, Container, SingleChildScrollView)
+http://fuzzy0.hatenablog.com/entry/2019/02/16/151610
