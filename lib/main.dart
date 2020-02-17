@@ -3,6 +3,7 @@ import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
 //import 'pages/ListViewScreen.dart';
+import 'pages/ProviderScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
@@ -74,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('HelloWorld'),
+        title: const Text('Provider'),
       ),
     ];
   }
@@ -118,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
           QiitaScreen(),
           ListView2Screen(),
           LayoutScreen(),
-          HelloWorld(),
+          ProviderScreen(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
