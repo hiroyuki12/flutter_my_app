@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'LayoutHeader.dart';
 
 class LayoutScreen extends StatefulWidget {
   @override
@@ -8,6 +9,8 @@ class LayoutScreen extends StatefulWidget {
 }
 
 class _State extends State<LayoutScreen> {
+  var _count;
+
   @override
   void initState() {
     super.initState();
@@ -15,42 +18,23 @@ class _State extends State<LayoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    //return MaterialApp(
-    //  theme: dark ? ThemeData.dark() : ThemeData.light(),
-    //  home: Scaffold(
-        appBar: AppBar(
-          title: Text('Layout'),
-        ),
-        body: Container(
-          padding: EdgeInsets.all(30.0),
-          child: Column(
+      appBar: Header(),
+      body: 
+          Row(
             children: <Widget>[
-
-              //1
-              Text('Hello World!'),
-
-              //2 wrap with Center
-              Center(child: Text('Hello World2!')),
-
-              //3 wrap with column
-              Column(
-                children: <Widget>[
-                  Text('Hello World3!'),
-                  Text('Hello World4!'),
-                ],
-              ),
-
-              //4 wrap with row
-              Row(
-                children: <Widget>[
-                  Text('Hello World!'),
-                ],
-              ),
-
+              Text("Layout"),
+              SpaceBox.width(16),
+              Text("Layout2"),
             ],
           ),
-        ),
-      //),
-    );
+      );
   }
+}
+
+class SpaceBox extends SizedBox {
+  SpaceBox({double width = 8, double height = 8})
+      : super(width: width, height: height);
+
+  SpaceBox.width([double value = 8]) : super(width: value);
+  SpaceBox.height([double value = 8]) : super(height: value);
 }
