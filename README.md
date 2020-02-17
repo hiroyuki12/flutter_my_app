@@ -108,3 +108,9 @@ http://fuzzy0.hatenablog.com/entry/2019/02/16/151610
 
 Widget構成図。Scaffold Widget の appBar プロパティ
 https://apps-gcp.com/introduction-of-flutter-about-header-and-footer/
+
+padding
+https://nzigen.com/flutter-reference/2018-04-15-padding.html
+
+SpaceBox カスタムウィジェット　アイコンとタイトルを並べて表示する時にスペース追加
+https://note.com/nbht/n/n768920a8eb1c
