@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
-//import 'pages/ListViewScreen.dart';
+import 'pages/ListViewScreen.dart';
+import 'pages/NavigatorScreen.dart';
 import 'pages/ProviderScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
@@ -24,14 +25,17 @@ class MyApp extends StatelessWidget {
       /*
       initialRoute: '/flutterIssues',
       //initialRoute: '/qiita',
+      */
       routes: {
         '/flutterIssues': (context) => FlutterIssuesScreen(),
-        '/setting': (context) => SettingScreen(),
         '/qiita': (context) => QiitaScreen(),
-        '/listview': (context) => ListViewScreen(),
-        '/listview2': (context) => ListView2Screen(),
+        '/setting': (context) => SettingScreen(),
+        '/listView': (context) => ListViewScreen(),
+        '/listView2': (context) => ListView2Screen(),
+        '/layout': (context) => LayoutScreen(),
+        '/navigator': (context) => Login(),
+        '/helloWorld': (context) => HelloWorld(),
       },
-      */
       home: MyHomePage(title: 'BottomNav'),
     );
   }
@@ -54,24 +58,12 @@ class _MyHomePageState extends State<MyHomePage> {
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
       BottomNavigationBarItem(
-        icon: Icon(Icons.home),
-        title: const Text('Flutter Issues'),
-      ),
-      BottomNavigationBarItem(
         icon: Icon(Icons.settings),
         title: const Text('Setting'),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.search),
-        title: const Text('Qiita Items'),
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.add),
-        title: const Text('List View2'),
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.remove),
-        title: const Text('Layout'),
+        icon: Icon(Icons.home),
+        title: const Text('Flutter Issues'),
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
@@ -114,11 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
         children: [
-          FlutterIssuesScreen(),
           SettingScreen(),
-          QiitaScreen(),
-          ListView2Screen(),
-          LayoutScreen(),
+          FlutterIssuesScreen(),
           ProviderScreen(),
         ]),
         // ページ下部のナビゲーションメニュー

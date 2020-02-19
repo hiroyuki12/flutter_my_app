@@ -1,36 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-//import 'package:flutter_my_app/pages/SettingScreen.dart';
 import 'package:http/http.dart' as http;
 
-//import 'ListView2Screen.dart';
-//import 'ListViewScreen.dart';
-//import 'QiitaScreen.dart';
-
-class FlutterIssuesScreen extends StatelessWidget {
-  // This widget is the root of your application.
+class FlutterIssuesScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Issues',
-      //theme: ThemeData(
-      //  primarySwatch: Colors.blue,
-      //),
-      theme: ThemeData.dark() ,
-      home: MyHomePage(title: 'Flutter Issues'),
-    );
+    State<StatefulWidget> createState() {
+    return _State();
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState1 createState() => _MyHomePageState1();
-}
-
-
 
 class Issue {
   Issue({
@@ -42,50 +19,13 @@ class Issue {
   final String avatarUrl;
 }
 
-class _MyHomePageState1 extends State<MyHomePage> {
+class _State extends State<FlutterIssuesScreen> {
   List<Issue> _issues = <Issue>[];
-/*
-  // ページ切り替え用のコントローラを定義
-  PageController _pageController;
-  // ページインデックス保存用
-  int _screen = 0;
-  // ページ下部に並べるナビゲーションメニューの一覧
-  List<BottomNavigationBarItem> myBottomNavBarItems() {
-    return [
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home),
-        title: const Text('Flutter Issues'),
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.search),
-        title: const Text('Qiita Items'),
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.settings),
-        title: const Text('Setting'),
-      ),
-    ];
-  }
-*/
   @override
   void initState() {
     super.initState();
-    /*
-    // コントローラ作成
-    _pageController = PageController(
-      initialPage: _screen, // 初期ページの指定。上記で_screenを１とすれば２番目のページが初期表示される。
-    );
-    */
     _load();
   }
-/*
-  @override
-  void dispose() {
-    // コントローラ破棄
-    _pageController.dispose();
-    super.dispose();
-  }
-*/
 
   // This widget is the root of your application.
   Future<void> _load() async {
@@ -142,37 +82,12 @@ class _MyHomePageState1 extends State<MyHomePage> {
         ),
       ),*/
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Flutter Issues"),
       ),
       floatingActionButton: Column(
         verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          /*
-          FloatingActionButton(
-            heroTag: "btn1",
-            child: Icon(Icons.add),
-            onPressed: _onPressed,
-          ),
-          Container( // 余白のためContainerでラップ
-            margin: EdgeInsets.only(bottom: 16.0), 
-            child: FloatingActionButton(
-            heroTag: "btn2",
-              backgroundColor: Colors.redAccent,
-              child: Icon(Icons.remove),
-              onPressed: _onFloattingRemoveButtonPressed,
-            ),
-          ),
-          Container( // 余白のためContainerでラップ
-            margin: EdgeInsets.only(bottom: 16.0), 
-            child: FloatingActionButton(
-            heroTag: "btn3",
-              backgroundColor: Colors.redAccent,
-              child: Icon(Icons.settings),
-              onPressed: _onFloattingSettingsButtonPressed,
-            ),
-            
-          ),*/
         ],
       ),
       body: ListView.builder(
@@ -192,35 +107,5 @@ class _MyHomePageState1 extends State<MyHomePage> {
       ),
     );
   }
-
-/*
-  //フローティングのHOMEボタン押下時
-  void _onFloattingSettingsButtonPressed() {
-    //Navigator.pushNamed(context, '/setting');
-    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
-    setState(() {
-
-    });
-  }
-  
-  //フローティングのーボタン押下時
-  void _onFloattingRemoveButtonPressed() {
-    //Navigator.pushNamed(context, '/setting');
-    Navigator.push(context, MaterialPageRoute(builder: (context) => QiitaScreen()));
-    setState(() {
-
-    });
-  }
-
-  //フローティングの＋ボタン押下時
-  void _onPressed() {
-    //Navigator.pushNamed(context, '/setting');
-    Navigator.push(context, MaterialPageRoute(builder: (context) => ListView2Screen()));
-    setState(() {
-
-    });
-  }
-*/
-
 }
 

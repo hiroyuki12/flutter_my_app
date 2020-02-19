@@ -1,36 +1,11 @@
-//import 'dart:convert';
 import 'package:flutter/material.dart';
-//import 'package:http/http.dart' as http;
-
-//import 'FlutterIssuesScreen.dart';
-//import 'SettingScreen.dart';
 
 class ListViewScreen extends StatefulWidget {
-  //MyHomePage2({Key key, this.title}) : super(key: key);
-  //final String title;
-
-  //@override
-  //_State createState() => _State();
   @override
   State<StatefulWidget> createState() {
     return _State();
   }
 }
-/*
-class ListViewScreen extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ListView',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage2(title: 'ListView'),
-    );
-  }
-}
-*/
 
 class Item {
   Item({
@@ -78,10 +53,8 @@ class _State extends State<ListViewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          //title: Text(widget.title),
           title: Text("ListView"),
         ),
-
       floatingActionButton: Column(
         verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
         mainAxisSize: MainAxisSize.min,
@@ -101,17 +74,6 @@ class _State extends State<ListViewScreen> {
               onPressed: _onFloattingRemoveButtonPressed,
             ),
           ),
-          /*
-          Container( // 余白のためContainerでラップ
-            margin: EdgeInsets.only(bottom: 16.0), 
-            child: FloatingActionButton(
-            heroTag: "btn3",
-              backgroundColor: Colors.redAccent,
-              child: Icon(Icons.home),
-              onPressed: _onFloattingHomeButtonPressed,
-            ),
-            
-          ),*/
         ],
       ),
       /*
@@ -202,8 +164,6 @@ class _State extends State<ListViewScreen> {
   //フローティングのーボタン押下時
   void _onFloattingRemoveButtonPressed() {
     setState(() {
-      //items.add({"title": "Title G", "content": "Content 7"});
-
       items = [
           {"title": "Title A", "content": "Content 1"},
           {"title": "Title B", "content": "Content 2"},
@@ -213,17 +173,5 @@ class _State extends State<ListViewScreen> {
       //Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen()));
     });
   }
-
-/*
-  //フローティングのHOMEボタン押下時
-  void _onFloattingHomeButtonPressed() {
-    //Navigator.pop(context);
-    setState(() {
-      //Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen()));
-      Navigator.push(context, MaterialPageRoute(builder: (context) => FlutterIssuesScreen()));
-    });
-  }
-*/
-
 }
 

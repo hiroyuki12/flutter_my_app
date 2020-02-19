@@ -1,34 +1,31 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HelloWorld extends StatelessWidget {
+class HelloWorld extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Hello World title',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Hello World title'),
-    );
+    State<StatefulWidget> createState() {
+    return _State();
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _State extends State<HelloWorld> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("HelloWorld"),
       ),
-      body: Text('Hello World body'),
+      body: Column(
+        children: <Widget>[
+              /*
+              CupertinoButton(
+                  child: Text('pop'),
+                  onPressed: ()=> Navigator.popUntil(context, ModalRoute.withName("/setting")),
+              ),
+              */
+          Text('Hello World body'),
+        ],
+      ),
     );
   }
 }
