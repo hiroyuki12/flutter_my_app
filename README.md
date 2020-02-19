@@ -117,3 +117,7 @@ https://note.com/nbht/n/n768920a8eb1c
 
 まだ BLoC で消耗してるの？ package:provider とは
 https://ja.unflf.com/flutter/provider/
+
+画面遷移 pushNamed 遷移先の画面をStatefulWidgetにすると、左上の戻るボタンが表示される
+https://qiita.com/granoeste/items/19c119ffc36a016e6223
+
