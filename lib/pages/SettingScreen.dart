@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_my_app/pages/HelloWorld.dart';
 
 class SettingScreen extends StatefulWidget {
   @override

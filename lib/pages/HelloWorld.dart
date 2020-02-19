@@ -17,13 +17,12 @@ class _State extends State<HelloWorld> {
       ),
       body: Column(
         children: <Widget>[
-              /*
-              CupertinoButton(
-                  child: Text('pop'),
-                  onPressed: ()=> Navigator.popUntil(context, ModalRoute.withName("/setting")),
-              ),
-              */
           Text('Hello World body'),
+          CupertinoButton(
+              child: Text('pop'),
+              //onPressed: ()=> Navigator.popUntil(context, ModalRoute.withName("/setting")),
+              onPressed: ()=> Navigator.of(context).pop(),
+          ),
         ],
       ),
     );
