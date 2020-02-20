@@ -121,3 +121,5 @@ https://ja.unflf.com/flutter/provider/
 画面遷移 pushNamed 遷移先の画面をStatefulWidgetにすると、左上の戻るボタンが表示される
 https://qiita.com/granoeste/items/19c119ffc36a016e6223
 
+FlatButton Icons.favorite
+https://qiita.com/koizumiim/items/fee476e246837e57a5e1
