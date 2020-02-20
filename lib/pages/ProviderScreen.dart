@@ -13,8 +13,11 @@ class CounterStore with ChangeNotifier {
 class Provider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ChangeNotifierProvider(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Provider"),
+      ),
+      body: ChangeNotifierProvider(
         create: (context) => CounterStore(),
         child: MyHomePage(),
       ),
