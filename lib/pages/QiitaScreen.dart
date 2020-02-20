@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class QiitaScreen extends StatefulWidget {
   @override
@@ -18,12 +20,13 @@ class Item {
  }
 
 class _State extends State<QiitaScreen> {
+  List<Item> _items = <Item>[];
   @override
   void initState() {
     super.initState();
-    //_load();
+    _load();
   }
-  /*
+  
   // This widget is the root of your application.
   Future<void> _load() async {
     final res = await http.get('http://qiita.com/api/v2/items');
@@ -32,14 +35,13 @@ class _State extends State<QiitaScreen> {
       final issues = data as List;
       issues.forEach((dynamic element) {
         final issue = element as Map;
-        _issues.add(Item(
+        _items.add(Item(
           title: issue['title'] as String,
           profileImageUrl: issue['user']['profile_image_url'] as String,
         ));
       });
     });
   }
-*/
 
   @override
   Widget build(BuildContext context) {
@@ -47,22 +49,21 @@ class _State extends State<QiitaScreen> {
       appBar: AppBar(
         title: Text("Qiita"),
       ),
-      /*
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          if (index >= _issues.length) {
+          if (index >= _items.length) {
             return null;
           }
 
-          final issue = _issues[index];
+          final issue = _items[index];
           return ListTile(
-             leading: ClipOval(
-               child: Image.network(issue.profileImageUrl),
-             ),
+            leading: ClipOval(
+              child: Image.network(issue.profileImageUrl),
+            ),
             title: Text(issue.title),
           );
         },
-      ),*/
+      ),
     );
   }
 }
