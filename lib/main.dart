@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/CounterScreen.dart';
 import 'pages/FileRWScreen.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
@@ -37,6 +38,8 @@ class MyApp extends StatelessWidget {
         '/navigator': (context) => Login(),
         '/fileRW': (context) => FileRW(),
         '/drawer': (context) => Drawer(),
+        '/provider': (context) => Provider(),
+        '/counter': (context) => Counter(),
       },
       home: MyHomePage(title: 'main'),
     );

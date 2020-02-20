@@ -124,6 +124,20 @@ class _State extends State<SettingScreen> {
                 setState(() => Navigator.pushNamed(context, '/helloWorld'));
               },
             ),
+            ListTile(
+              title: Text('Push Provider'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/provider'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Counter'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/counter'));
+              },
+            ),
           ],
         ),
       ),

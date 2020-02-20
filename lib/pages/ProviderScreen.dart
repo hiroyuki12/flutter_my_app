@@ -10,9 +10,7 @@ class CounterStore with ChangeNotifier {
   }
 }
 
-//void main() => runApp(MyApp());
-
-class ProviderScreen extends StatelessWidget {
+class Provider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
