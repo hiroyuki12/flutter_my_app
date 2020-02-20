@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/layout': (context) => LayoutScreen(),
         '/navigator': (context) => Login(),
         '/fileRW': (context) => FileRW(),
+        '/drawer': (context) => Drawer(),
       },
       home: MyHomePage(title: 'main'),
     );
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('Provider'),
+        title: const Text('Drawer'),
       ),
     ];
   }
@@ -109,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          ProviderScreen(),
+          Drawer(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

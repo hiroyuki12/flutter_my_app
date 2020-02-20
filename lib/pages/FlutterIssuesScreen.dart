@@ -47,40 +47,6 @@ class _State extends State<FlutterIssuesScreen> {
   Widget build(BuildContext context) {
   //var _city = '';
     return Scaffold(
-      /*
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              child: Text(
-                'Flutter Issues',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                ),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            ListTile(
-              title: Text('Setting'),
-              onTap: () {
-                //setState(() => _city = 'Setting');
-                Navigator.pop(context);
-                setState(() => _onPressed);
-              },
-            ),
-            ListTile(
-              title: Text('Honolulu'),
-              onTap: () {
-                setState(() => _city = 'Honolulu, HI');
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),*/
       appBar: AppBar(
         title: Text("Flutter Issues"),
       ),

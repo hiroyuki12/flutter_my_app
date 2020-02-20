@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_my_app/model/chat_model.dart';
-//import 'package:http/http.dart' as http;
 
 class ListView2Screen extends StatefulWidget {
   @override
@@ -14,6 +13,8 @@ class _State extends State<ListView2Screen> {
   void initState() {
     super.initState();
   }
+
+  bool favorite;
 
   @override
   Widget build(BuildContext context) {
@@ -48,16 +49,31 @@ class _State extends State<ListView2Screen> {
                     ],
                   ),
                   subtitle: Text(_model.message),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    size: 14.0,
+                  trailing: new FlatButton(
+                    child: Icon(
+                      //Icons.arrow_forward_ios,
+                      favorite == true ? Icons.favorite : Icons.favorite_border,
+                      color: favorite == true ? Colors.red : Colors.black38,
+                      size: 16.0,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        if (favorite != true) {
+                        //ハートが押されたときにfavoriteにtrueを代入している
+                          favorite = true;
+                        } else {
+                          favorite = false;
+                        }
+                      });
+                    },
                   ),
                 ),
                ],
              );
-
           }),
     );
   }
+
+  
 }
 

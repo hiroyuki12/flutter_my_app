@@ -55,6 +55,78 @@ class _State extends State<SettingScreen> {
         appBar: AppBar(
           title: Text('Settings'),
         ),
+
+      
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            /*
+            DrawerHeader(
+              child: Text(
+                'DrawerHeader',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            */
+            ListTile(
+              title: Text('Push Flutter Issues'),
+              onTap: () {
+                //setState(() => _city = 'Setting');
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/flutterIssues'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Qiita'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/qiita'));
+              },
+            ),
+            ListTile(
+              title: Text('Push ListView'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/listView'));
+              },
+            ),
+            ListTile(
+              title: Text('Push ListView2'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/listView2'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Layout'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/layout'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Navigator'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/navigator'));
+              },
+            ),
+            ListTile(
+              title: Text('Push HelloWorld'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/helloWorld'));
+              },
+            ),
+          ],
+        ),
+      ),
         /*
         floatingActionButton: Column(
           verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
@@ -78,7 +150,8 @@ class _State extends State<SettingScreen> {
           ],
         ),*/
         body: Container(
-          padding: EdgeInsets.all(30.0),
+          color:  Colors.white10,
+          //padding: EdgeInsets.all(0.0),
           child: Column(
             children: <Widget>[
               /*
@@ -172,41 +245,6 @@ class _State extends State<SettingScreen> {
                   child: Text('Push Flutter Issues'),
                   onPressed: ()=> Navigator.pushNamed(context, '/flutterIssues'),
                   //onPressed: _onPushFlutterIssuesPressed,
-              ),
-              //ボタン(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Push Qiita'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/qiita'),
-              ),
-              //ボタン(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Push ListView'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/listView'),
-              ),
-              //ボタン(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Push ListView2'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/listView2'),
-              ),
-              //ボタン(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Push Layout'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/layout'),
-              ),
-              //ボタン(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Push HelloWorld'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/helloWorld'),
-              ),
-              //ボタン(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Push Navigator'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/navigator'),
-              ),
-              //ボタン(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Push FileRW'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/fileRW'),
               ),
 
               //ボタン(iPhoneっぽく)
