@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/FileRWScreen.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
@@ -16,17 +17,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BottomNav',
+      title: 'main',
       //theme: ThemeData(
       //  // This is the theme of your application.
       //  primarySwatch: Colors.blue,
       //),
       theme: ThemeData.dark(),
-      /*
-      initialRoute: '/flutterIssues',
-      //initialRoute: '/qiita',
-      */
+      
+      initialRoute: '/helloWorld',
+      
       routes: {
+        '/helloWorld': (context) => HelloWorld(),
         '/flutterIssues': (context) => FlutterIssuesScreen(),
         '/qiita': (context) => QiitaScreen(),
         '/setting': (context) => SettingScreen(),
@@ -34,9 +35,9 @@ class MyApp extends StatelessWidget {
         '/listView2': (context) => ListView2Screen(),
         '/layout': (context) => LayoutScreen(),
         '/navigator': (context) => Login(),
-        '/helloWorld': (context) => HelloWorld(),
+        '/fileRW': (context) => FileRW(),
       },
-      home: MyHomePage(title: 'BottomNav'),
+      home: MyHomePage(title: 'main'),
     );
   }
 }
@@ -54,16 +55,16 @@ class _MyHomePageState extends State<MyHomePage> {
   PageController _pageController;
   // ページインデックス保存用
   int _screen = 0;
-// ページ下部に並べるナビゲーションメニューの一覧
+  // ページ下部に並べるナビゲーションメニューの一覧
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
       BottomNavigationBarItem(
-        icon: Icon(Icons.settings),
-        title: const Text('Setting'),
+        icon: Icon(Icons.home),
+        title: const Text('HelloWorld'),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.home),
-        title: const Text('Flutter Issues'),
+        icon: Icon(Icons.settings),
+        title: const Text('Setting'),
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
@@ -106,8 +107,8 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
         children: [
+          HelloWorld(),
           SettingScreen(),
-          FlutterIssuesScreen(),
           ProviderScreen(),
         ]),
         // ページ下部のナビゲーションメニュー

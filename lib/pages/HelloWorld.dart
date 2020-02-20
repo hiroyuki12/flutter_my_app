@@ -19,9 +19,10 @@ class _State extends State<HelloWorld> {
         children: <Widget>[
           Text('Hello World body'),
           CupertinoButton(
-              child: Text('pop'),
+              child: Text('push setting'),
               //onPressed: ()=> Navigator.popUntil(context, ModalRoute.withName("/setting")),
-              onPressed: ()=> Navigator.of(context).pop(),
+              //onPressed: ()=> Navigator.of(context).pop(),
+              onPressed: ()=> Navigator.pushNamed(context, '/setting'),
           ),
         ],
       ),
