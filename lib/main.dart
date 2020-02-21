@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/CounterScreen.dart';
+import 'pages/CupertinoScreen.dart';
 import 'pages/FileRWScreen.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/drawer': (context) => Drawer(),
         '/provider': (context) => Provider(),
         '/counter': (context) => Counter(),
+        '/cupertino': (context) => CupertinoScreen(),
       },
       home: MyHomePage(title: 'main'),
     );

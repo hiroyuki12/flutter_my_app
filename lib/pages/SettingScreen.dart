@@ -138,6 +138,13 @@ class _State extends State<SettingScreen> {
                 setState(() => Navigator.pushNamed(context, '/counter'));
               },
             ),
+            ListTile(
+              title: Text('Push Cupertino'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/cupertino'));
+              },
+            ),
           ],
         ),
       ),
@@ -256,15 +263,15 @@ class _State extends State<SettingScreen> {
               */
               //ボタン(iPhoneっぽく)
               CupertinoButton(
-                  child: Text('Push Flutter Issues'),
-                  onPressed: ()=> Navigator.pushNamed(context, '/flutterIssues'),
-                  //onPressed: _onPushFlutterIssuesPressed,
+                child: Text('Push Flutter Issues'),
+                onPressed: ()=> Navigator.pushNamed(context, '/flutterIssues'),
+                //onPressed: _onPushFlutterIssuesPressed,
               ),
 
               //ボタン(iPhoneっぽく)
               CupertinoButton(
-                  child: Text('OK'),
-                  onPressed: _onOKPressed,
+                child: Text('OK'),
+                onPressed: _onOKPressed,
               ),
               Text(_message),
               /*
