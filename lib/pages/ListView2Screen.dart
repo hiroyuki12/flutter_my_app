@@ -8,10 +8,23 @@ class ListView2Screen extends StatefulWidget {
   }
 }
 
-class _State extends State<ListView2Screen> {
+class _State extends State<ListView2Screen> with SingleTickerProviderStateMixin{
+  AnimationController animationController;
+
   @override
   void initState() {
     super.initState();
+    animationController = new AnimationController(
+      value: 1.0,
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+    );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   bool favorite;
@@ -50,11 +63,17 @@ class _State extends State<ListView2Screen> {
                   ),
                   subtitle: Text(_model.message),
                   trailing: new FlatButton(
-                    child: Icon(
-                      //Icons.arrow_forward_ios,
-                      favorite == true ? Icons.favorite : Icons.favorite_border,
-                      color: favorite == true ? Colors.red : Colors.black38,
-                      size: 16.0,
+                    child: new ScaleTransition(
+                      scale: CurvedAnimation(
+                        parent: animationController,
+                        curve: Curves.elasticOut,
+                      ),
+                      child: Icon(
+                        //Icons.arrow_forward_ios,
+                        favorite == true ? Icons.favorite : Icons.favorite_border,
+                        color: favorite == true ? Colors.red : Colors.black38,
+                        size: 16.0,
+                      ),
                     ),
                     onPressed: () {
                       setState(() {
