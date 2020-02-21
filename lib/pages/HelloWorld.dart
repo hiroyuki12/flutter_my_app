@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class HelloWorld extends StatefulWidget {
   @override
@@ -10,12 +10,13 @@ class HelloWorld extends StatefulWidget {
 class _State extends State<HelloWorld> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("HelloWorld"),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Hello World", style: new TextStyle(color: CupertinoColors.white)),
+        backgroundColor: const Color(0xff333333),
       ),
-      body: Center(
-        child: Text('Hello World!'),
+      child: Center(
+        child: Text("Hello World!"),
       ),
     );
   }
