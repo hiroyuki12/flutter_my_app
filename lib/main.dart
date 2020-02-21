@@ -5,6 +5,7 @@ import 'pages/CupertinoActionSheet.dart';
 import 'pages/CupertinoActivityIndicatorScreen.dart';
 import 'pages/CupertinoAlertDialog.dart';
 import 'pages/CupertinoButton.dart';
+import 'pages/CupertinoDatePicker.dart';
 import 'pages/CupertinoScreen.dart';
 import 'pages/CupertinoTabBarScreen.dart';
 import 'pages/FileRWScreen.dart';
@@ -122,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          MyCupertinoAlertDialog(),
+          MyCupertinoDatePicker(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
