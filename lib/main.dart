@@ -14,6 +14,7 @@ import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
 import 'pages/ListViewScreen.dart';
+import 'pages/LoremPicsumScreen.dart';
 import 'pages/NavigatorScreen.dart';
 import 'pages/ProviderScreen.dart';
 import 'pages/SettingScreen.dart';
@@ -124,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          MyCupertinoActionSheet(),
+          LoremPicsum(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
