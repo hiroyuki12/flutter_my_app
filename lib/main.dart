@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'pages/CounterScreen.dart';
+import 'pages/CupertinoActionSheet.dart';
+import 'pages/CupertinoActivityIndicatorScreen.dart';
 import 'pages/CupertinoButton.dart';
 import 'pages/CupertinoScreen.dart';
 import 'pages/CupertinoTabBarScreen.dart';
@@ -119,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          MyCupertinoButton(),
+          MyCupertinoActivityIndicator(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
