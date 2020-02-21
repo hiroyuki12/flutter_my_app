@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'pages/CounterScreen.dart';
+import 'pages/CupertinoButton.dart';
 import 'pages/CupertinoScreen.dart';
+import 'pages/CupertinoTabBarScreen.dart';
 import 'pages/FileRWScreen.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
@@ -42,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/provider': (context) => Provider(),
         '/counter': (context) => Counter(),
         '/cupertino': (context) => CupertinoScreen(),
+        '/cupertinoTabBar': (context) => CupertinoTabBarScreen(),
       },
       home: MyHomePage(title: 'main'),
     );
@@ -74,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('Drawer'),
+        title: const Text('Cupertino'),
       ),
     ];
   }
@@ -115,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          Drawer(),
+          MyCupertinoButton(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
