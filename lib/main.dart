@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          MyCupertinoSlider(),
+          CupertinoTabBarScreen(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
