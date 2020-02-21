@@ -56,10 +56,19 @@ class _State extends State<CupertinoScreen> {
   }
 }
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends StatefulWidget {
   const DetailScreen(this.topic);
   final String topic;
 
+  @override
+  DetailScreenState createState() {
+    return new DetailScreenState();
+  }
+}
+
+class DetailScreenState extends State<DetailScreen> {
+  bool switchValue = false;
+  
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -67,9 +76,49 @@ class DetailScreen extends StatelessWidget {
         middle: Text('Detail'),
       ),
       child: Center(
-        child: Text('Details for $topic',
-        style: CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle)
-      )
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CupertinoButton(
+                child: Text('Launch action sheet'),
+                onPressed: () {
+                  showCupertinoModalPopup<int>(
+                    context: context,
+                    builder: (context) {
+                      return CupertinoActionSheet(
+                        title: Text('Some choices!'),
+                        actions: [
+                          CupertinoActionSheetAction(
+                            child: Text('One!'),
+                            onPressed: () {
+                              Navigator.pop(context, 1);
+                            },
+                            isDefaultAction: true,
+                          ),
+                          CupertinoActionSheetAction(
+                            child: Text('Two!'),
+                            onPressed: () {
+                              Navigator.pop(context, 2);
+                            },
+                          ),
+                          CupertinoActionSheetAction(
+                            child: Text('Three!'),
+                            onPressed: () {
+                              Navigator.pop(context, 3);
+                            },
+                          ),
+                        ],
+                      );
+                    }
+                  );
+                },
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
