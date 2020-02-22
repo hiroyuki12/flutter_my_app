@@ -145,3 +145,6 @@ https://flutter.dev/docs/development/ui/layout#stack
 
 Container(margin: , border: )
 https://flutter.dev/docs/development/ui/layout#container
+
+cupertino_icons
+https://github.com/flutter/cupertino_icons
