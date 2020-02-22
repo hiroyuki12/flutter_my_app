@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import '../HelloWorld.dart';
 
 class CupertinoScreen extends StatefulWidget {
   @override
@@ -55,8 +54,7 @@ Widget _buildCupertinoTabView(BuildContext context, int i) => CupertinoPageScaff
       onPressed: () {
         Navigator.of(context).push(
           CupertinoPageRoute(builder: (context) {
-            //return DetailScreen(i == 0 ? 'Articles' : 'Views');
-            return HelloWorld();
+            return DetailScreen(i == 0 ? 'Articles' : 'Views');
           }),
         );
       },
