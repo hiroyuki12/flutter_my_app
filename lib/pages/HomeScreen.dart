@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
-import 'Cupertino/CupertinoDatePicker.dart';
-import 'Cupertino/CupertinoSwitch.dart';
+import 'Cupertino/CupertinoButton.dart';
 import 'GridViewScreen.dart';
 import 'Cupertino/CupertinoHelloWorld.dart';
 
@@ -41,7 +40,7 @@ class _State extends State<MyHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return Setting();
         else if(i==2)  return MyGridView();
-        else  return MyCupertinoSwitch();
+        else  return MyCupertinoButton();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

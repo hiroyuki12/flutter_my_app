@@ -8,11 +8,17 @@ class MyCupertinoActionSheet extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoActionSheet> {
+  var titleTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  color: CupertinoColors.white);
+  
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Cupertino", style: new TextStyle(color: CupertinoColors.white)),
+        middle: Text("CupertinoActionSheet", style: titleTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(
@@ -25,19 +31,16 @@ class _State extends State<MyCupertinoActionSheet> {
                     CupertinoActionSheetAction(
                       child: Text("Coding"),
                       onPressed: () {
-                        // TODO: do something in here
                       },
                     ),
                     CupertinoActionSheetAction(
                       child: Text("Main Game"),
                       onPressed: () {
-                        // TODO: do something in here
                       },
                     ),
                     CupertinoActionSheetAction(
                       child: Text("Menulis"),
                       onPressed: () {
-                        // TODO: do something in here
                       },
                     ),
                   ],

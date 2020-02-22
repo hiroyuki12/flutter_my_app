@@ -8,11 +8,17 @@ class MyCupertinoActivityIndicator extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoActivityIndicator> {
+  var titleTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  color: CupertinoColors.white);
+  
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Cupertino", style: new TextStyle(color: CupertinoColors.white)),
+        middle: Text("CupertinoActivityIndicator", style: titleTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(
