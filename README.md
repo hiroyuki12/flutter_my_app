@@ -136,3 +136,6 @@ https://note.com/tatsuyayagi/n/n808febb6fb4d
 
 Building layouts
 https://flutter.dev/docs/development/ui/layout/tutorial
+
+Row (n the following example, each of the 3 images is 100 pixels wide. )
+https://flutter.dev/docs/development/ui/layout
