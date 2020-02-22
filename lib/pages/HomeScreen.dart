@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
-import 'BottomNavigationBar.dart';
+import 'Cupertino/CupertinoDatePicker.dart';
+import 'Cupertino/CupertinoSwitch.dart';
 import 'GridViewScreen.dart';
-import 'HelloWorld.dart';
+import 'Cupertino/CupertinoHelloWorld.dart';
 
 class MyHome extends StatefulWidget {
   @override
@@ -16,6 +17,7 @@ class _State extends State<MyHome> {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
+        backgroundColor: const Color(0xff333333),
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
@@ -36,9 +38,10 @@ class _State extends State<MyHome> {
         ]
       ), 
       tabBuilder: (context, i) {
-        if(i==0)  return HelloWorld();
+        if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return Setting();
-        else  return MyGridView();
+        else if(i==2)  return MyGridView();
+        else  return MyCupertinoSwitch();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'HelloWorld.dart';
+import 'Cupertino/CupertinoHelloWorld.dart';
 import 'HomeScreen.dart';
 import 'SettingScreen.dart';
 
@@ -69,7 +69,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         },
         // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
         children: [
-          HelloWorld(),
+          CupertinoHelloWorld(),
           Setting(),
           MyHome(),
         ]),
