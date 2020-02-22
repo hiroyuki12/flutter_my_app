@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_my_app/main.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
+import 'BottomNavigationBar.dart';
+import 'GridViewScreen.dart';
 import 'HelloWorld.dart';
 
 class MyHome extends StatefulWidget {
@@ -18,24 +19,28 @@ class _State extends State<MyHome> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
-            title: Text('Home'),
+            //title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.settings_solid),
-            title: Text('Setting'),
+            icon: Icon(CupertinoIcons.search),
+            //title: Text('Setting'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.refresh),
-            title: Text('Home'),
+            icon: Icon(CupertinoIcons.bell),
+            //title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.mail),
+            //title: Text('Home'),
           ),
         ]
       ), 
       tabBuilder: (context, i) {
         if(i==0)  return HelloWorld();
         else if(i==1)  return Setting();
-        //else  return MyGridView();
-        else  return MyHomePage();
-        
+        else  return MyGridView();
+        //else  return MyBottomNavigationBar();
+
         // return CupertinoTabView(
         //   builder: (context) {
         //     return _buildCupertinoTabView(context, i);
@@ -45,97 +50,3 @@ class _State extends State<MyHome> {
     );
   }
 }
-
-Widget _buildCupertinoTabView(BuildContext context, int i) => CupertinoPageScaffold(
-  navigationBar: CupertinoNavigationBar(
-    middle: Text('Cupertino'),
-  ),
-  child: Center(
-    child: CupertinoButton(
-      child: Text(
-        'This is tab #$i',
-        style: CupertinoTheme.of(context)
-          .textTheme
-          .actionTextStyle
-          .copyWith(fontSize: 32),
-      ),
-      onPressed: () {
-        Navigator.of(context).push(
-          CupertinoPageRoute(builder: (context) {
-            //return DetailScreen(i == 0 ? 'Articles' : 'Views');
-            return HelloWorld();
-          }),
-        );
-      },
-    ),
-  ),
-);
-
-/*
-class DetailScreen extends StatefulWidget {
-  const DetailScreen(this.topic);
-  final String topic;
-
-  @override
-  DetailScreenState createState() {
-    return new DetailScreenState();
-  }
-}
-
-class DetailScreenState extends State<DetailScreen> {
-  bool switchValue = false;
-  
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text('Detail'),
-      ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CupertinoButton(
-                child: Text('Launch action sheet'),
-                onPressed: () {
-                  showCupertinoModalPopup<int>(
-                    context: context,
-                    builder: (context) {
-                      return CupertinoActionSheet(
-                        title: Text('Some choices!'),
-                        actions: [
-                          CupertinoActionSheetAction(
-                            child: Text('One!'),
-                            onPressed: () {
-                              Navigator.pop(context, 1);
-                            },
-                            isDefaultAction: true,
-                          ),
-                          CupertinoActionSheetAction(
-                            child: Text('Two!'),
-                            onPressed: () {
-                              Navigator.pop(context, 2);
-                            },
-                          ),
-                          CupertinoActionSheetAction(
-                            child: Text('Three!'),
-                            onPressed: () {
-                              Navigator.pop(context, 3);
-                            },
-                          ),
-                        ],
-                      );
-                    }
-                  );
-                },
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-*/
