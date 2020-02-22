@@ -20,6 +20,7 @@ import 'pages/ProviderScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
+import 'pages/example/animated_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -84,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('Cupertino'),
+        title: const Text('AnimatedListSample'),
       ),
     ];
   }
@@ -125,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          LoremPicsum(),
+          AnimatedListSample(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
