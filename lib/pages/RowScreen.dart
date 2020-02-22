@@ -17,11 +17,9 @@ class _State extends State<MyRow> {
       ),
       child: Center(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize:  MainAxisSize.min,
           children: [
-            Expanded(
-              child: Image.asset('images/lake.jpg', width: 100,)
-            ),
+            Image.asset('images/lake.jpg', width: 100,),
             Image.asset('images/lake.jpg', width: 100,),
             Image.asset('images/lake.jpg', width: 100,),
           ],
