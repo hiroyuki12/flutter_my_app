@@ -22,6 +22,7 @@ import 'pages/RowScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
+import 'pages/StackScreen.dart';
 import 'pages/example/animated_list.dart';
 import 'pages/example/app_bar_bottom.dart';
 import 'pages/example/basic_app_bar.dart';
@@ -94,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('MyRow'),
+        title: const Text('MyStack'),
       ),
     ];
   }
@@ -135,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          MyRow(),
+          MyStack(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
