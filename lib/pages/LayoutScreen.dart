@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'LayoutHeader.dart';
 
-class LayoutScreen extends StatefulWidget {
+class MyLayout extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<LayoutScreen> {
+class _State extends State<MyLayout> {
   var _count;
 
   @override

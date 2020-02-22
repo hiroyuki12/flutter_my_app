@@ -1,38 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'pages/BuildingLayoutsScreen.dart';
-import 'pages/ContainerScreen.dart';
 import 'pages/CounterScreen.dart';
-import 'pages/Cupertino/CupertinoActionSheet.dart';
-import 'pages/Cupertino/CupertinoActivityIndicatorScreen.dart';
-import 'pages/Cupertino/CupertinoAlertDialog.dart';
-import 'pages/Cupertino/CupertinoButton.dart';
-import 'pages/Cupertino/CupertinoDatePicker.dart';
 import 'pages/Cupertino/CupertinoScreen.dart';
-import 'pages/Cupertino/CupertinoSlider.dart';
 import 'pages/Cupertino/CupertinoTabBarScreen.dart';
 import 'pages/FileRWScreen.dart';
-import 'pages/GridViewScreen.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
 import 'pages/ListViewScreen.dart';
-import 'pages/LoremPicsumScreen.dart';
 import 'pages/NavigatorScreen.dart';
 import 'pages/ProviderScreen.dart';
-import 'pages/RowScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
-import 'pages/StackScreen.dart';
-import 'pages/example/animated_list.dart';
-import 'pages/example/app_bar_bottom.dart';
-import 'pages/example/basic_app_bar.dart';
-import 'pages/example/custom_a11y_traversal.dart';
-import 'pages/example/custom_semantics.dart';
-import 'pages/example/expansion_tile_sample.dart';
-import 'pages/example/tabbed_app_bar.dart';
-import 'pages/stocks/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -52,12 +32,12 @@ class MyApp extends StatelessWidget {
       
       routes: {
         '/helloWorld': (context) => HelloWorld(),
-        '/flutterIssues': (context) => FlutterIssuesScreen(),
-        '/qiita': (context) => QiitaScreen(),
-        '/setting': (context) => SettingScreen(),
-        '/listView': (context) => ListViewScreen(),
-        '/listView2': (context) => ListView2Screen(),
-        '/layout': (context) => LayoutScreen(),
+        '/flutterIssues': (context) => FlutterIssues(),
+        '/qiita': (context) => Qiita(),
+        '/setting': (context) => Setting(),
+        '/listView': (context) => MyListView(),
+        '/listView2': (context) => ListView2(),
+        '/layout': (context) => MyLayout(),
         '/navigator': (context) => Login(),
         '/fileRW': (context) => FileRW(),
         '/drawer': (context) => Drawer(),
@@ -97,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('MyGridView'),
+        title: const Text('ListViewScreen'),
       ),
     ];
   }
@@ -137,8 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
         children: [
           HelloWorld(),
-          SettingScreen(),
-          MyGridView(),
+          Setting(),
+          MyListView(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

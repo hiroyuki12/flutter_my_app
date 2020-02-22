@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ListViewScreen extends StatefulWidget {
+class MyListView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _State();
@@ -17,7 +17,7 @@ class Item {
   final String profileImageUrl;
 }
 
-class _State extends State<ListViewScreen> {
+class _State extends State<MyListView> {
   List<Map<String, dynamic>> items = [
     { "title" : "Title A",  "content" : "Content 1" },
     { "title" : "Title B",  "content" : "Content 2" },

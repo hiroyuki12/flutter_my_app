@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class FlutterIssuesScreen extends StatefulWidget {
+class FlutterIssues extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
@@ -19,7 +19,7 @@ class Issue {
   final String avatarUrl;
 }
 
-class _State extends State<FlutterIssuesScreen> {
+class _State extends State<FlutterIssues> {
   List<Issue> _issues = <Issue>[];
   @override
   void initState() {

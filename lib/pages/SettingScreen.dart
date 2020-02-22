@@ -3,7 +3,7 @@ import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SettingScreen extends StatefulWidget {
+class Setting extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _State();
@@ -12,7 +12,7 @@ class SettingScreen extends StatefulWidget {
 
 enum Fruits { Apple, Orange, Grape }
 
-class _State extends State<SettingScreen> {
+class _State extends State<Setting> {
   bool dark = false;
   int count = 0;
   String _message = 'Tap OK button.';
@@ -138,13 +138,13 @@ class _State extends State<SettingScreen> {
                 setState(() => Navigator.pushNamed(context, '/counter'));
               },
             ),
-            ListTile(
-              title: Text('Push Cupertino'),
-              onTap: () {
-                Navigator.pop(context);
-                setState(() => Navigator.pushNamed(context, '/cupertino'));
-              },
-            ),
+            // ListTile(
+            //   title: Text('Push Cupertino'),
+            //   onTap: () {
+            //     Navigator.pop(context);
+            //     setState(() => Navigator.pushNamed(context, '/cupertino'));
+            //   },
+            // ),
           ],
         ),
       ),

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class QiitaScreen extends StatefulWidget {
+class Qiita extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _State();
@@ -19,7 +19,7 @@ class Item {
    final String profileImageUrl;
  }
 
-class _State extends State<QiitaScreen> {
+class _State extends State<Qiita> {
   List<Item> _items = <Item>[];
   @override
   void initState() {

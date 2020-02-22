@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_my_app/model/chat_model.dart';
 
-class ListView2Screen extends StatefulWidget {
+class ListView2 extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<ListView2Screen> with SingleTickerProviderStateMixin{
+class _State extends State<ListView2> with SingleTickerProviderStateMixin{
   AnimationController animationController;
 
   @override
