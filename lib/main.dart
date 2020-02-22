@@ -21,6 +21,7 @@ import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
 import 'pages/example/animated_list.dart';
+import 'pages/example/app_bar_bottom.dart';
 
 void main() => runApp(MyApp());
 
@@ -85,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('AnimatedListSample'),
+        title: const Text('AppBarBottomSample'),
       ),
     ];
   }
@@ -126,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          AnimatedListSample(),
+          AppBarBottomSample(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
