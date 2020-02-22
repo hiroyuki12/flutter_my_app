@@ -12,6 +12,7 @@ import 'pages/Cupertino/CupertinoScreen.dart';
 import 'pages/Cupertino/CupertinoSlider.dart';
 import 'pages/Cupertino/CupertinoTabBarScreen.dart';
 import 'pages/FileRWScreen.dart';
+import 'pages/GridViewScreen.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
@@ -96,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('MyContainer'),
+        title: const Text('MyGridView'),
       ),
     ];
   }
@@ -137,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          MyContainer(),
+          MyGridView(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
