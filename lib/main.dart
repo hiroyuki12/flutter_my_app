@@ -24,6 +24,7 @@ import 'pages/example/animated_list.dart';
 import 'pages/example/app_bar_bottom.dart';
 import 'pages/example/basic_app_bar.dart';
 import 'pages/example/custom_a11y_traversal.dart';
+import 'pages/example/custom_semantics.dart';
 
 void main() => runApp(MyApp());
 
@@ -88,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('CustomTraversalExample'),
+        title: const Text('AdjustableDropdownExample'),
       ),
     ];
   }
@@ -129,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          CustomTraversalExample(),
+          AdjustableDropdownExample(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
