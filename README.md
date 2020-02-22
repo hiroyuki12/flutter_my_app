@@ -139,3 +139,6 @@ https://flutter.dev/docs/development/ui/layout/tutorial
 
 Row (n the following example, each of the 3 images is 100 pixels wide. )
 https://flutter.dev/docs/development/ui/layout
+
+Satck
+https://flutter.dev/docs/development/ui/layout#stack
