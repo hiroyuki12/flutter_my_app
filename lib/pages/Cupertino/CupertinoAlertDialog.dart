@@ -8,11 +8,17 @@ class MyCupertinoAlertDialog extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoAlertDialog> {
+  var titleTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  color: CupertinoColors.white);
+  
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Cupertino", style: new TextStyle(color: CupertinoColors.white)),
+        middle: Text("CupertinoAlertDialog", style: titleTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(
@@ -28,13 +34,13 @@ class _State extends State<MyCupertinoAlertDialog> {
                         CupertinoDialogAction(
                           child: Text("No"),
                           onPressed: () {
-                            // TODO: do something in here
+                            Navigator.pop(context);
                           },
                         ),
                         CupertinoDialogAction(
                           child: Text("Yes"),
                           onPressed: () {
-                            // TODO: do something in here
+                            Navigator.pop(context);
                           },
                           isDestructiveAction: true,
                         ),
@@ -42,7 +48,7 @@ class _State extends State<MyCupertinoAlertDialog> {
                     );
                   });
             },
-          child: Text("Tap me"),
+          child: Text("Tap me",),
         ),
       ),
     );
