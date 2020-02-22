@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'pages/CounterScreen.dart';
-import 'pages/CupertinoActionSheet.dart';
-import 'pages/CupertinoActivityIndicatorScreen.dart';
-import 'pages/CupertinoAlertDialog.dart';
-import 'pages/CupertinoButton.dart';
-import 'pages/CupertinoDatePicker.dart';
-import 'pages/CupertinoScreen.dart';
-import 'pages/CupertinoSlider.dart';
-import 'pages/CupertinoTabBarScreen.dart';
+import 'pages/Cupertino/CupertinoActionSheet.dart';
+import 'pages/Cupertino/CupertinoActivityIndicatorScreen.dart';
+import 'pages/Cupertino/CupertinoAlertDialog.dart';
+import 'pages/Cupertino/CupertinoButton.dart';
+import 'pages/Cupertino/CupertinoDatePicker.dart';
+import 'pages/Cupertino/CupertinoScreen.dart';
+import 'pages/Cupertino/CupertinoSlider.dart';
+import 'pages/Cupertino/CupertinoTabBarScreen.dart';
 import 'pages/FileRWScreen.dart';
 import 'pages/HelloWorld.dart';
 import 'pages/LayoutScreen.dart';
@@ -27,6 +27,7 @@ import 'pages/example/custom_a11y_traversal.dart';
 import 'pages/example/custom_semantics.dart';
 import 'pages/example/expansion_tile_sample.dart';
 import 'pages/example/tabbed_app_bar.dart';
+import 'pages/stocks/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('TabbedAppBarSample'),
+        title: const Text('StocksApp'),
       ),
     ];
   }
@@ -132,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          TabbedAppBarSample(),
+          StocksApp(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
