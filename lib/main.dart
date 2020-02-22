@@ -5,6 +5,7 @@ import 'pages/Cupertino/CupertinoScreen.dart';
 import 'pages/Cupertino/CupertinoTabBarScreen.dart';
 import 'pages/FileRWScreen.dart';
 import 'pages/HelloWorld.dart';
+import 'pages/HomeScreen.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
 import 'pages/ListViewScreen.dart';
@@ -118,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           Setting(),
-          MyListView(),
+          MyHome(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
