@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'pages/BuildingLayoutsScreen.dart';
 import 'pages/CounterScreen.dart';
 import 'pages/Cupertino/CupertinoActionSheet.dart';
 import 'pages/Cupertino/CupertinoActivityIndicatorScreen.dart';
@@ -92,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('StocksApp'),
+        title: const Text('BuildingLayouts'),
       ),
     ];
   }
@@ -133,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          StocksApp(),
+          BuildingLayouts(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
