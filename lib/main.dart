@@ -46,8 +46,10 @@ class MyApp extends StatelessWidget {
         '/counter': (context) => Counter(),
         '/cupertino': (context) => CupertinoScreen(),
         '/cupertinoTabBar': (context) => CupertinoTabBarScreen(),
+        '/home': (context) => MyHome(),
       },
-      home: MyHomePage(title: 'main'),
+      //home: MyHomePage(title: 'main'),  //BottomNavigationBar
+      home: MyHome(),                     //CupertinoTabBar (Bottom)
     );
   }
 }

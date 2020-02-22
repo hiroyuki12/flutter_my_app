@@ -138,13 +138,13 @@ class _State extends State<Setting> {
                 setState(() => Navigator.pushNamed(context, '/counter'));
               },
             ),
-            // ListTile(
-            //   title: Text('Push Cupertino'),
-            //   onTap: () {
-            //     Navigator.pop(context);
-            //     setState(() => Navigator.pushNamed(context, '/cupertino'));
-            //   },
-            // ),
+            ListTile(
+              title: Text('Push Cupertino Home'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/home'));
+              },
+            ),
           ],
         ),
       ),

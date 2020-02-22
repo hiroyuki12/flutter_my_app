@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_my_app/pages/GridViewScreen.dart';
+import 'package:flutter_my_app/main.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
-
 import 'HelloWorld.dart';
 
 class MyHome extends StatefulWidget {
@@ -27,14 +26,16 @@ class _State extends State<MyHome> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.refresh),
-            title: Text('GridView'),
+            title: Text('Home'),
           ),
         ]
       ), 
       tabBuilder: (context, i) {
         if(i==0)  return HelloWorld();
         else if(i==1)  return Setting();
-        else  return MyGridView();
+        //else  return MyGridView();
+        else  return MyHomePage();
+        
         // return CupertinoTabView(
         //   builder: (context) {
         //     return _buildCupertinoTabView(context, i);
@@ -70,6 +71,7 @@ Widget _buildCupertinoTabView(BuildContext context, int i) => CupertinoPageScaff
   ),
 );
 
+/*
 class DetailScreen extends StatefulWidget {
   const DetailScreen(this.topic);
   final String topic;
@@ -136,3 +138,4 @@ class DetailScreenState extends State<DetailScreen> {
     );
   }
 }
+*/

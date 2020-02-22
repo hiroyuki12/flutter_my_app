@@ -16,7 +16,7 @@ class _State extends State<HelloWorld> {
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(
-        child: Text("Hello World!"),
+        child: Text("Hello World2!"),
       ),
     );
   }
