@@ -19,7 +19,13 @@ class _State extends State<MyRow> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset('images/lake.jpg', width: 100,),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Image.asset('images/lake.jpg', width: 100,),
+                Image.asset('images/lake.jpg', width: 100,),
+              ],
+            ),
             Image.asset('images/lake.jpg', width: 100,),
             Image.asset('images/lake.jpg', width: 100,),
           ],
