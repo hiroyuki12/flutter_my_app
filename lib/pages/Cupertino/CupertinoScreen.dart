@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import '../HelloWorld.dart';
 
 class CupertinoScreen extends StatefulWidget {
   @override
@@ -14,47 +15,54 @@ class _State extends State<CupertinoScreen> {
       tabBar: CupertinoTabBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.book_solid),
-            title: Text('Articles'),
+            icon: Icon(CupertinoIcons.home),
+            title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.eye_solid),
-            title: Text('Views'),
+            icon: Icon(CupertinoIcons.settings_solid),
+            title: Text('Setting'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.refresh),
+            title: Text('ListViewScreen'),
           ),
         ]
       ), 
       tabBuilder: (context, i) {
         return CupertinoTabView(
           builder: (context) {
-            return CupertinoPageScaffold(
-              navigationBar: CupertinoNavigationBar(
-                middle: (i == 0) ? Text('Articles') : Text('Views'),
-              ),
-              child: Center(
-                child: CupertinoButton(
-                  child: Text(
-                    'This is tab #$i',
-                    style: CupertinoTheme.of(context)
-                      .textTheme
-                      .actionTextStyle
-                      .copyWith(fontSize: 32),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      CupertinoPageRoute(builder: (context) {
-                        return DetailScreen(i == 0 ? 'Articles' : 'Views');
-                      }),
-                    );
-                  },
-                ),
-              ),
-            );
+            return _buildCupertinoTabView(context, i);
           }
         );
       }
     );
   }
 }
+
+Widget _buildCupertinoTabView(BuildContext context, int i) => CupertinoPageScaffold(
+  navigationBar: CupertinoNavigationBar(
+    middle: Text('Cupertino'),
+  ),
+  child: Center(
+    child: CupertinoButton(
+      child: Text(
+        'This is tab #$i',
+        style: CupertinoTheme.of(context)
+          .textTheme
+          .actionTextStyle
+          .copyWith(fontSize: 32),
+      ),
+      onPressed: () {
+        Navigator.of(context).push(
+          CupertinoPageRoute(builder: (context) {
+            //return DetailScreen(i == 0 ? 'Articles' : 'Views');
+            return HelloWorld();
+          }),
+        );
+      },
+    ),
+  ),
+);
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen(this.topic);
