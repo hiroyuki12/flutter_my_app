@@ -23,6 +23,7 @@ import 'pages/QiitaScreen.dart';
 import 'pages/example/animated_list.dart';
 import 'pages/example/app_bar_bottom.dart';
 import 'pages/example/basic_app_bar.dart';
+import 'pages/example/custom_a11y_traversal.dart';
 
 void main() => runApp(MyApp());
 
@@ -87,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('BasicAppBarSample'),
+        title: const Text('CustomTraversalExample'),
       ),
     ];
   }
@@ -128,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          BasicAppBarSample(),
+          CustomTraversalExample(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
