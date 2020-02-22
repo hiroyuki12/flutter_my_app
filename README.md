@@ -131,5 +131,8 @@ https://www.youtube.com/watch?v=3PdUaidHc-E
 Flutter Cupertino App
 https://medium.com/nusanet/flutter-cupertino-app-76c33768c242
 
-animated list
+animated list, stocks app, 
 https://note.com/tatsuyayagi/n/n808febb6fb4d
+
+Building layouts
+https://flutter.dev/docs/development/ui/layout/tutorial
