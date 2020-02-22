@@ -18,6 +18,7 @@ import 'pages/ListViewScreen.dart';
 import 'pages/LoremPicsumScreen.dart';
 import 'pages/NavigatorScreen.dart';
 import 'pages/ProviderScreen.dart';
+import 'pages/RowScreen.dart';
 import 'pages/SettingScreen.dart';
 import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
@@ -93,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('BuildingLayouts'),
+        title: const Text('MyRow'),
       ),
     ];
   }
@@ -134,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          BuildingLayouts(),
+          MyRow(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
