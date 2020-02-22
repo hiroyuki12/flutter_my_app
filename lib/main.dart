@@ -26,6 +26,7 @@ import 'pages/example/basic_app_bar.dart';
 import 'pages/example/custom_a11y_traversal.dart';
 import 'pages/example/custom_semantics.dart';
 import 'pages/example/expansion_tile_sample.dart';
+import 'pages/example/tabbed_app_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -90,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('ExpansionTileSample'),
+        title: const Text('TabbedAppBarSample'),
       ),
     ];
   }
@@ -131,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          ExpansionTileSample(),
+          TabbedAppBarSample(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
