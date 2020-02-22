@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_my_app/pages/GridViewScreen.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
 
 import 'HelloWorld.dart';
@@ -26,13 +27,14 @@ class _State extends State<MyHome> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.refresh),
-            title: Text('ListViewScreen'),
+            title: Text('GridView'),
           ),
         ]
       ), 
       tabBuilder: (context, i) {
         if(i==0)  return HelloWorld();
-        else return Setting();
+        else if(i==1)  return Setting();
+        else  return MyGridView();
         // return CupertinoTabView(
         //   builder: (context) {
         //     return _buildCupertinoTabView(context, i);
