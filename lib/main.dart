@@ -22,6 +22,7 @@ import 'pages/FlutterIssuesScreen.dart';
 import 'pages/QiitaScreen.dart';
 import 'pages/example/animated_list.dart';
 import 'pages/example/app_bar_bottom.dart';
+import 'pages/example/basic_app_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -86,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('AppBarBottomSample'),
+        title: const Text('BasicAppBarSample'),
       ),
     ];
   }
@@ -127,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           HelloWorld(),
           SettingScreen(),
-          AppBarBottomSample(),
+          BasicAppBarSample(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
