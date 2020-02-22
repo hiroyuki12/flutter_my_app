@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'pages/BottomNavigationBar.dart';
 import 'pages/CounterScreen.dart';
 import 'pages/Cupertino/CupertinoScreen.dart';
 import 'pages/Cupertino/CupertinoTabBarScreen.dart';
 import 'pages/FileRWScreen.dart';
-import 'pages/HelloWorld.dart';
+import 'pages/Cupertino/CupertinoHelloWorld.dart';
 import 'pages/HomeScreen.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/helloWorld',
       
       routes: {
-        '/helloWorld': (context) => HelloWorld(),
+        '/helloWorld': (context) => CupertinoHelloWorld(),
         '/flutterIssues': (context) => FlutterIssues(),
         '/qiita': (context) => Qiita(),
         '/setting': (context) => Setting(),
