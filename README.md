@@ -143,5 +143,5 @@ https://flutter.dev/docs/development/ui/layout
 Satck
 https://flutter.dev/docs/development/ui/layout#stack
 
-Container
+Container(margin: , border: )
 https://flutter.dev/docs/development/ui/layout#container
