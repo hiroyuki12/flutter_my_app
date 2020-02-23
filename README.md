@@ -35,6 +35,7 @@ https://flutter.keicode.com/basics/datepicker.php
 
 アラートダイアログ
 https://flutter.keicode.com/basics/alertdialog.php
+https://api.flutter.dev/flutter/material/AlertDialog-class.html
 
 シンプルダイアログ
 https://flutter.keicode.com/basics/simpledialog.php
