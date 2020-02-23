@@ -23,11 +23,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'main',
-      //theme: ThemeData(
+      // theme: ThemeData(
       //  // This is the theme of your application.
       //  primarySwatch: Colors.blue,
-      //),
+      // ),
       theme: ThemeData.dark(),
+      //theme: ThemeData.light(),
       
       initialRoute: '/helloWorld',
       
