@@ -158,3 +158,7 @@ https://flutter.dev/docs/development/ui/widgets/cupertino
 CupertinoSwitch
 https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html
 https://flutter.dev/docs/development/ui/widgets/cupertino
+
+CupertinoPicker
+https://dev.classmethod.jp/smartphone/flutter-release-preview-2-cupertinostyle/
+https://api.flutter.dev/flutter/cupertino/CupertinoPicker-class.html
