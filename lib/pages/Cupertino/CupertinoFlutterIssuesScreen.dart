@@ -55,7 +55,6 @@ class _State extends State<CupertinoFlutterIssues> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text("CupertinoFlutterIssues", style: myTextStyle),
-        //trailing: Text("Edit", style: myTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
       child: ListView.builder(
@@ -67,11 +66,18 @@ class _State extends State<CupertinoFlutterIssues> {
           final issue = _issues[index];
           return Row(
             children: <Widget>[
-              ClipOval(
-                child: Image.network(issue.avatarUrl,
-                  width: 50,),
+              Padding(
+                //padding: const EdgeInsets.all(6.0),
+                padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                child: ClipOval(
+                  child: Image.network(issue.avatarUrl,
+                    width: 50,),
+                ),
               ),
-              Text(issue.title, style: myTextStyle,),
+              Expanded(
+                child: Text(issue.title, 
+                  style: myTextStyle,)
+              ),
             ],
           );
         },
