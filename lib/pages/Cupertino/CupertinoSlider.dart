@@ -39,6 +39,9 @@ class MyCupertinoSlider2 extends StatelessWidget {
                   sliderValueStore.changeSliderValue(val);
                   //print(val);
                 },
+                min: 0,
+                max: 100,
+                divisions: 4,
               ),
               Text(sliderValue.toString(), style: myTextStyle),
             ],
