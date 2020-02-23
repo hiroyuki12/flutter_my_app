@@ -439,7 +439,7 @@ class _State extends State<Setting> {
                         //actions: <Widget>[new FlatButton(child: new Text("OK"), onPressed: () => _onOKPressed, )],
                       ));
                 },
-                child: Text('ダイアログを表示します'),
+                child: Text('CupertinoAlertDialog'),
               ),
               /*
               //ドロップダウンリスト

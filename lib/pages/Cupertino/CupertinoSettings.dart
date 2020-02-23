@@ -44,10 +44,6 @@ class MyHomePage extends StatelessWidget {
               ),
               Text('Tap count ${counterStore.count}', style: myTextStyle),
               CupertinoButton(
-                child: Text('CupertinoAlertDialog'),
-                onPressed: counterStore.incrementCounter,
-              ),
-              CupertinoButton(
                 child: Text('device_info'),
                 onPressed: counterStore.incrementCounter,
               ),

@@ -19,6 +19,7 @@ class _State extends State<CupertinoHelloWorld> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text("Cupertino Hello World", style: myTextStyle),
+        //trailing: Text("Edit", style: myTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(
