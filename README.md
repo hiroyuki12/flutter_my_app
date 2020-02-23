@@ -173,3 +173,6 @@ https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
 
 Platform.isIOS
 https://dev.classmethod.jp/smartphone/flutter_platform_ui1/
+
+Expanded
+https://api.flutter.dev/flutter/widgets/Row-class.html
