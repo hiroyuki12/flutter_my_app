@@ -8,16 +8,16 @@ class MyCupertinoSegmentedControl extends StatefulWidget {
 }
 
 var titleTextStyle = new TextStyle(
-fontWeight: FontWeight.w100,
-decoration: TextDecoration.none,
-fontSize: 14,
-color: CupertinoColors.white);
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 14,
+  color: CupertinoColors.white);
 
 var controlTextStyle = new TextStyle(
-fontWeight: FontWeight.w200,
-decoration: TextDecoration.none,
-fontSize: 12,
-color: CupertinoColors.systemBlue);
+  fontWeight: FontWeight.w400,
+  decoration: TextDecoration.none,
+  fontSize: 12,
+  color: CupertinoColors.systemBlue);
 
 class _State extends State<MyCupertinoSegmentedControl> {
 
@@ -28,16 +28,22 @@ class _State extends State<MyCupertinoSegmentedControl> {
         middle: Text("CupertinoSegmentedControl", style: titleTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
-      child: Center(
-        //child: Text("Hello World2!"),
-        child: _buildCupertinoSegmentedControl(),
-      ),
+      child: 
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: _buildCupertinoSegmentedControl(),
+            ),
+          ],
+        ),
     );
   }
 }
 
 Widget _buildCupertinoSegmentedControl() {
    return CupertinoSegmentedControl(
+    //  pressedColor: CupertinoColors.systemBlue,  //文字色がsystemBlue
+     pressedColor: CupertinoColors.systemYellow,
      selectedColor: CupertinoColors.systemRed,  //変わらない
      unselectedColor: CupertinoColors.white,
      children: {
