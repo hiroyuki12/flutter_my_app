@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 var myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,

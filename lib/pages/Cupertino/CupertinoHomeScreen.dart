@@ -4,6 +4,7 @@ import 'CupertinoHelloWorld.dart';
 import 'CupertinoPicker.dart';
 import 'CupertinoSegmentedControl.dart';
 import 'CupertinoSettings.dart';
+import 'CupertinoSlider.dart';
 
 class MyHome extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _State extends State<MyHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return MyCupertinoSegmentedControl();
+        else  return MyCupertinoSlider();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(
