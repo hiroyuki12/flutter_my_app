@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
-import 'CupertinoBuildingLayoutsScreen.dart';
-import 'CupertinoGridViewScreen.dart';
+import '../ProviderScreen.dart';
 import 'CupertinoHelloWorld.dart';
+import 'CupertinoSettings.dart';
 
 class MyHome extends StatefulWidget {
   @override
@@ -38,9 +38,9 @@ class _State extends State<MyHome> {
       ), 
       tabBuilder: (context, i) {
         if(i==0)  return CupertinoHelloWorld();
-        else if(i==1)  return Setting();
-        else if(i==2)  return CupertinoGridView();
-        else  return CupertinoBuildingLayouts();
+        else if(i==1)  return CupertinoSettings();
+        else if(i==2)  return Setting();
+        else  return Provider();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(
