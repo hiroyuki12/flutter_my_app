@@ -5,6 +5,7 @@ import 'CupertinoListView.dart';
 import 'CupertinoPlatform.dart';
 import 'CupertinoHelloWorld.dart';
 import 'CupertinoPicker.dart';
+import 'CupertinoQiita.dart';
 import 'CupertinoSegmentedControl.dart';
 import 'CupertinoSettings.dart';
 import 'CupertinoSlider.dart';
@@ -48,7 +49,7 @@ class _State extends State<CupertinoHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return CupertinoFlutterIssues();
+        else  return CupertinoQiita();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(
