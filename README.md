@@ -169,3 +169,6 @@ https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html
 
 CupertinoTextField
 https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
+
+Platform.isIOS
+https://dev.classmethod.jp/smartphone/flutter_platform_ui1/
