@@ -18,7 +18,7 @@ class _State extends State<CupertinoHelloWorld> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Hello World", style: myTextStyle),
+        middle: Text("Cupertino Hello World", style: myTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(

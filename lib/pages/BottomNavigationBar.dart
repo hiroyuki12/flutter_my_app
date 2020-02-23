@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'CounterScreen.dart';
 import 'Cupertino/CupertinoHelloWorld.dart';
-import 'HomeScreen.dart';
+import 'Cupertino/CupertinoHomeScreen.dart';
+import 'HelloWorldScreen.dart';
 import 'SettingScreen.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
@@ -30,7 +32,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text('ListViewScreen'),
+        title: const Text('Counter'),
       ),
     ];
   }
@@ -69,9 +71,9 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         },
         // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
         children: [
-          CupertinoHelloWorld(),
+          HelloWorld(),
           Setting(),
-          MyHome(),
+          Counter(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

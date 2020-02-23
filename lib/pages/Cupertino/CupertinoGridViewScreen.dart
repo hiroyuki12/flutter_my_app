@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 
-class MyGridView extends StatefulWidget {
+class CupertinoGridView extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<MyGridView> {
+class _State extends State<CupertinoGridView> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("GridView", style: new TextStyle(color: CupertinoColors.white)),
+        middle: Text("CupertinoGridView", style: new TextStyle(color: CupertinoColors.white)),
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(

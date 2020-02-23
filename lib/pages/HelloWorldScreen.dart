@@ -12,10 +12,10 @@ class _State extends State<HelloWorld> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HelloWorld! Material"),
+        title: Text("Material HelloWorld!"),
       ),
       body: Center(
-        child: Text('Hello World!',),
+        child: Text('Hello World2!',),
       ),
     );
   }
