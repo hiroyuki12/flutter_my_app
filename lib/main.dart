@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'pages/CounterScreen.dart';
 import 'pages/Cupertino/CupertinoScreen.dart';
-import 'pages/Cupertino/CupertinoTabBarScreen.dart';
+import 'pages/Cupertino/CupertinoTabBar.dart';
 import 'pages/FileRWScreen.dart';
 import 'pages/Cupertino/CupertinoHelloWorld.dart';
-import 'pages/Cupertino/CupertinoHomeScreen.dart';
+import 'pages/Cupertino/CupertinoHome.dart';
 import 'pages/LayoutScreen.dart';
 import 'pages/ListView2Screen.dart';
 import 'pages/ListViewScreen.dart';
@@ -45,11 +45,11 @@ class MyApp extends StatelessWidget {
         '/provider': (context) => Provider(),
         '/counter': (context) => Counter(),
         '/cupertino': (context) => CupertinoScreen(),
-        '/cupertinoTabBar': (context) => CupertinoTabBarScreen(),
-        '/home': (context) => MyHome(),
+        '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
+        '/home': (context) => CupertinoHome(),
       },
       // home: MyBottomNavigationBar(title: 'main'),  //BottomNavigationBar
-      home: MyHome(),                     //CupertinoTabBar (Bottom)
+      home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
     );
   }
 }

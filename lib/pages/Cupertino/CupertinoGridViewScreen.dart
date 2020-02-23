@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-class CupertinoGridView extends StatefulWidget {
+class MyCupertinoGridView extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<CupertinoGridView> {
+class _State extends State<MyCupertinoGridView> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(

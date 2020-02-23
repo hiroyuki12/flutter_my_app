@@ -5,15 +5,17 @@ import 'CupertinoPicker.dart';
 import 'CupertinoSegmentedControl.dart';
 import 'CupertinoSettings.dart';
 import 'CupertinoSlider.dart';
+import 'CupertinoSwitch.dart';
+import 'CupertinoTabBar.dart';
 
-class MyHome extends StatefulWidget {
+class CupertinoHome extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<MyHome> {
+class _State extends State<CupertinoHome> {
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
@@ -42,7 +44,7 @@ class _State extends State<MyHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return MyCupertinoSlider();
+        else  return MyCupertinoSwitch();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

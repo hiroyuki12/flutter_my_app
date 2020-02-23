@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'CounterScreen.dart';
 import 'Cupertino/CupertinoHelloWorld.dart';
-import 'Cupertino/CupertinoHomeScreen.dart';
+import 'Cupertino/CupertinoHome.dart';
 import 'HelloWorldScreen.dart';
 import 'SettingScreen.dart';
 

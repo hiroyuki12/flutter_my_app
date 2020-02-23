@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-class CupertinoTabBarScreen extends StatefulWidget {
+class MyCupertinoTabBar extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<CupertinoTabBarScreen> {
+class _State extends State<MyCupertinoTabBar> {
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
