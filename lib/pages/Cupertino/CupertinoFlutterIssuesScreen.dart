@@ -22,8 +22,6 @@ class Issue {
 }
 
 class _State extends State<CupertinoFlutterIssues> {
-  List<String> _titles = <String>[];
-
   var myTextStyle = new TextStyle(
     fontWeight: FontWeight.w100,
     decoration: TextDecoration.none,
@@ -44,7 +42,10 @@ class _State extends State<CupertinoFlutterIssues> {
       final issues = data as List;
       issues.forEach((dynamic element) {
         final issue = element as Map;
-        _titles.add(issue['title'] as String);
+        _issues.add(Issue(
+          title: issue['title'] as String,
+          avatarUrl: issue['user']['avatar_url'] as String,
+        ));
       });
     });
   }
@@ -59,11 +60,20 @@ class _State extends State<CupertinoFlutterIssues> {
       ),
       child: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          if (index >= _titles.length) {
+          if (index >= _issues.length) {
             return null;
           }
 
-          return Text(_titles[index], style: myTextStyle,);
+          final issue = _issues[index];
+          return Row(
+            children: <Widget>[
+              ClipOval(
+                child: Image.network(issue.avatarUrl,
+                  width: 50,),
+              ),
+              Text(issue.title, style: myTextStyle,),
+            ],
+          );
         },
       ),
     );
