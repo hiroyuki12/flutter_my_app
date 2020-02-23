@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 
-class CupertinoHelloWorld extends StatefulWidget {
+class MyCupertinoTextField extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<CupertinoHelloWorld> {
+class _State extends State<MyCupertinoTextField> {
+  TextEditingController _textController;
+
   var myTextStyle = new TextStyle(
     fontWeight: FontWeight.w100,
     decoration: TextDecoration.none,
@@ -15,15 +17,21 @@ class _State extends State<CupertinoHelloWorld> {
     color: CupertinoColors.white);
 
   @override
+  void initState() {
+    super.initState();
+    _textController = TextEditingController(text: 'initial text');
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Cupertino Hello World", style: myTextStyle),
-        //trailing: Text("Edit", style: myTextStyle),
+        middle: Text("CupertinoTextField", style: myTextStyle),
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(
-        child: Text("Hello World2!", style: myTextStyle,),
+        child: 
+          CupertinoTextField(controller: _textController,),
       ),
     );
   }
