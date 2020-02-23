@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_my_app/pages/SettingScreen.dart';
+import 'CupertinoFlutterIssuesScreen.dart';
 import 'CupertinoListView.dart';
 import 'CupertinoPlatform.dart';
 import 'CupertinoHelloWorld.dart';
@@ -47,7 +48,7 @@ class _State extends State<CupertinoHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return MyCupertinoListView();
+        else  return CupertinoFlutterIssues();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

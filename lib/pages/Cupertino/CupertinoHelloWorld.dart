@@ -23,7 +23,7 @@ class _State extends State<CupertinoHelloWorld> {
         backgroundColor: const Color(0xff333333),
       ),
       child: Center(
-        child: Text("Hello World2!", style: myTextStyle,),
+        child: Text("Hello World!", style: myTextStyle,),
       ),
     );
   }
