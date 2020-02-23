@@ -166,3 +166,6 @@ https://api.flutter.dev/flutter/cupertino/CupertinoPicker-class.html
 CuperinoSlider
 https://www.youtube.com/watch?v=msQtkpx64j8
 https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html
+
+CupertinoTextField
+https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
