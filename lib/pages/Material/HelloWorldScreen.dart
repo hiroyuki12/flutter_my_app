@@ -15,7 +15,7 @@ class _State extends State<HelloWorld> {
         title: Text("Material HelloWorld!"),
       ),
       body: Center(
-        child: Text('Hello World2!',),
+        child: Text('Hello World!',),
       ),
     );
   }

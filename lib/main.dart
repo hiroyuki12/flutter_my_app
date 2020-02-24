@@ -6,6 +6,7 @@ import 'pages/Cupertino/CupertinoTabBar.dart';
 import 'pages/Material/FileRWScreen.dart';
 import 'pages/Cupertino/CupertinoHelloWorld.dart';
 import 'pages/Cupertino/CupertinoHome.dart';
+import 'pages/Material/HomeMaterial.dart';
 import 'pages/Material/LayoutScreen.dart';
 import 'pages/Material/ListView2Screen.dart';
 import 'pages/Material/ListViewScreen.dart';
@@ -49,8 +50,8 @@ class MyApp extends StatelessWidget {
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
         '/home': (context) => CupertinoHome(),
       },
-      // home: MyBottomNavigationBar(title: 'main'),  //BottomNavigationBar
-      home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
+      home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
+      // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
     );
   }
 }
