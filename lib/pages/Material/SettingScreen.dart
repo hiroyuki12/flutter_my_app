@@ -270,18 +270,7 @@ class _State extends State<Setting> {
                 ),
               Text(_label),
               */
-              //アラートダイアログ(ボタンをiPhoneっぽく)
-              CupertinoButton(
-                  child: Text(
-                    'AlertDialog',
-                    //style: TextStyle(
-                    //  color: Colors.white,
-                    //),
-                  ),
-                  onPressed: () => _showAlertDialog(context),
-                  //color: Theme.of(context).primaryColor,
-                ),
-              Text(_label),
+              
               /*
               //シンプルダイアログ
               RaisedButton(
@@ -448,38 +437,6 @@ class _State extends State<Setting> {
     }
   }
   */
-
-  //アラートダイアログ
-  Future _showAlertDialog(BuildContext context) async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Use camera?'),
-          content: Text('Description goes here.'),
-          actions: <Widget>[
-            FlatButton(
-              child: Text('CANCEL'),
-              onPressed: () => _useCamera(context, false),
-            ),
-            FlatButton(
-              child: Text('AGREE'),
-              onPressed: () => _useCamera(context, true),
-            ),
-          ],
-        );
-      },
-    );
-  }
-  
-  //アラートダイアログ
-  _useCamera(BuildContext context, bool b) {
-    setState(() {
-      _label = 'You select ' + (b ? 'AGREE' : 'CANCEL');
-    });
-    Navigator.pop(context);
-  }
 
 /*
   Future _showSimpleDialog() async {

@@ -18,12 +18,12 @@ class _State extends State<MyAlertDialog> {
         child: RaisedButton(
           child: Text(
             'AlertDialog',
-            style: TextStyle(
-              color: Colors.white,
-            ),
+            //style: TextStyle(
+            //  color: Colors.white,
+            //),
           ),
           onPressed: () => _showAlertDialog(context),
-          color: Theme.of(context).primaryColor,
+          //color: Theme.of(context).primaryColor,
         ),
       ),
     );
