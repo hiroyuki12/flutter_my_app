@@ -21,7 +21,7 @@ https://flutter.keicode.com/basics/checkbox.php
 ボタン(RaisedButton)
 https://flutter.keicode.com/basics/widget-raised-button.php
 
-テキストフィールド
+テキストフィールド(TextField)
 https://flutter.keicode.com/basics/textfield.php
 
 CupertinoTextField
