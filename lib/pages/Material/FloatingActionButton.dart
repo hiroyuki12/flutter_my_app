@@ -20,6 +20,7 @@ class _State extends State<MyFloatingActionButton> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           FloatingActionButton.extended(
+              heroTag: "btn1",
             label: Text('Add'),
             icon: Icon(Icons.add),
             onPressed: () => setState(() => _count++),
@@ -27,6 +28,7 @@ class _State extends State<MyFloatingActionButton> {
           Container(  //余白のため
             margin: EdgeInsets.only(bottom: 16.0),
             child: FloatingActionButton(
+              heroTag: "btn2",
               child: Icon(Icons.remove),
               onPressed: () => setState(() => _count--),
             ),

@@ -53,25 +53,9 @@ class _State extends State<Setting> {
         appBar: AppBar(
           title: Text('Settings'),
         ),
-
-      
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            /*
-            DrawerHeader(
-              child: Text(
-                'DrawerHeader',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                ),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            */
             ListTile(
               title: Text('Push Flutter Issues'),
               onTap: () {
@@ -146,28 +130,6 @@ class _State extends State<Setting> {
           ],
         ),
       ),
-        /*
-        floatingActionButton: Column(
-          verticalDirection: VerticalDirection.up, // childrenの先頭を下に配置
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            FloatingActionButton(
-              heroTag: "btn1",
-              child: Icon(Icons.add),
-              onPressed: _onFloattingAddButtonPressed,
-            ),
-            Container( // 余白のためContainerでラップ
-              margin: EdgeInsets.only(bottom: 16.0), 
-              child: FloatingActionButton(
-                heroTag: "btn2",
-                backgroundColor: Colors.redAccent,
-                child: Icon(Icons.remove),
-                onPressed: _onFloattingRemoveButtonPressed,
-              ),
-            ),
-            
-          ],
-        ),*/
         body: Container(
           color:  Colors.white10,
           //padding: EdgeInsets.all(0.0),
@@ -223,53 +185,6 @@ class _State extends State<Setting> {
               ),           
               */
               /*
-              //ボタン画面遷移(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('Qiita(Navigator.push)'),
-                  //onPressed: () => Navigator.pushNamed(context, '/home'),
-                  onPressed: () => Navigator.push(context, 
-                    MaterialPageRoute(builder: (context) => QiitaScreen())),                
-              ),           
-              //ボタン画面遷移(iPhoneっぽく)
-              CupertinoButton(
-                  child: Text('List Page(Navigator.push)'),
-                  //onPressed: () => Navigator.pushNamed(context, '/home'),
-                  onPressed: () => Navigator.push(context, 
-                    MaterialPageRoute(builder: (context) => ListViewScreen())),                
-              ),           
-              */
-              /*
-              //日付選択
-              IconButton(
-                icon: Icon(Icons.date_range),
-                onPressed: () => _selectDate(context),
-              ),
-              Text(_labelText),
-              */
-              /*
-              //日付選択(iPhoneっぽく)
-              IconButton(
-                icon: Icon(Icons.date_range),
-                onPressed: () => _selectDateCupertino(context),
-              ),
-              Text(_labelText),
-              */
-              /*
-              //アラートダイアログ
-              RaisedButton(
-                  child: Text(
-                    'AlertDialog',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  onPressed: () => _showAlertDialog(context),
-                  color: Theme.of(context).primaryColor,
-                ),
-              Text(_label),
-              */
-              
-              /*
               //シンプルダイアログ
               RaisedButton(
                 child: Text('Please select'),
@@ -293,34 +208,6 @@ class _State extends State<Setting> {
               ),
               */
               /*
-              //モーダルボトムシート
-              RaisedButton(
-                  child: Text('Show options'),
-                  onPressed: _showModalBottomSheet,
-                ),
-              Text(_labelModalBottomSheet),
-              */
-              //iPhoneっぽいボタン
-              CupertinoButton(
-                //color: Colors.blue,
-                //borderRadius: new BorderRadius.circular(30.0),
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      child: new CupertinoAlertDialog(
-                        title: new Column(
-                          children: <Widget>[
-                            new Text("テストダイアログ"),
-                          ],
-                        ),
-                        //actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => _selectDate(context),)],
-                        actions: <Widget>[new FlatButton(child: new Text("OK"),onPressed: () => Navigator.pop(context, "OK"),)],
-                        //actions: <Widget>[new FlatButton(child: new Text("OK"), onPressed: () => _onOKPressed, )],
-                      ));
-                },
-                child: Text('CupertinoAlertDialog'),
-              ),
-              /*
               //ドロップダウンリスト
               Text("Please choose a fruit: "),
               DropdownButton(
@@ -329,14 +216,6 @@ class _State extends State<Setting> {
                 onChanged: changedDropDownItem,
               ),
               */
-              /*
-              //ボタン Toggle theme
-              CupertinoButton(
-                onPressed: () {
-                  setState(() => dark = !dark);
-                },
-                child: Text('Toggle theme'),
-              ),*/
               //ボタン device_info
               CupertinoButton(
                 onPressed: () => _showDeviceInfo(context),
@@ -359,25 +238,6 @@ class _State extends State<Setting> {
     });
   }
 
-/*
-  //フローティングのーボタン押下時
-  void _onFloattingRemoveButtonPressed() {
-    //Navigator.pushNamed(context, '/setting');
-    Navigator.push(context, MaterialPageRoute(builder: (context) => QiitaScreen()));
-    setState(() {
-
-    });
-  }
-
-  //フローティングの＋ボタン押下時
-  void _onFloattingAddButtonPressed() {
-    //Navigator.pushNamed(context, '/setting');
-    Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewScreen()));
-    setState(() {
-
-    });
-  }
-*/
 
 /*
   //スイッチ変更時
@@ -389,39 +249,6 @@ class _State extends State<Setting> {
   }
 */
 
-/*
-  //日付選択ボタン押下時
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime selected = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(DateTime.now().year),
-      lastDate: DateTime(DateTime.now().year + 1),
-    );
-    if (selected != null) {
-      setState(() {
-        _labelText = (DateFormat.yMMMd()).format(selected);
-      });ƒ
-    }
-  }
-  */
-
-  /*
-  //日付選択ボタン押下時(iPhoneっぽく)
-  Future<void> _selectDateCupertino(BuildContext context) {
-    final DateTime selected = DateTime.now();
-    CupertinoDatePicker(
-      use24hFormat: true,
-      minimumDate: DateTime.now(),
-      onDateTimeChanged: (selected) {},
-    );
-    if (selected != null) {
-      setState(() {
-        _labelText = (DateFormat.yMMMd()).format(selected);
-      });
-    }
-  }
-  */
 
 /*
   Future _showSimpleDialog() async {
@@ -510,46 +337,6 @@ class _State extends State<Setting> {
     var formatter = DateFormat('HH:mm:ss');
     var formattedTime = formatter.format(now);
     setState(() => _time = formattedTime);
-  }
-*/
-
-/*
-  //モーダルボトムシート
-  void _showModalBottomSheet() {
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.share),
-              title: Text('Share'),
-              onTap: () {
-                setState(() => _labelModalBottomSheet = 'You selected Share');
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.edit),
-              title: Text('Edit'),
-              onTap: () {
-                setState(() => _labelModalBottomSheet = 'You selected Edit');
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.delete),
-              title: Text('Delete'),
-              onTap: () {
-                setState(() => _labelModalBottomSheet = 'You selected Delete');
-                Navigator.pop(context);
-              },
-            )
-          ],
-        );
-      },
-    );
   }
 */
 

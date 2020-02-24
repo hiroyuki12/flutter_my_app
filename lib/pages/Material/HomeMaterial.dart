@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoGridViewScreen.dart';
 import 'Card.dart';
 import 'HelloWorldScreen.dart';
+import 'Navigator.dart';
 import 'SettingScreen.dart';
 
 class MyHomeMaterial extends StatefulWidget {
@@ -53,7 +55,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyCard(),
+          MyNavigator(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
