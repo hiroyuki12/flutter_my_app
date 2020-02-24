@@ -56,7 +56,7 @@ https://flutter.keicode.com/basics/progress-indicators.php
 タイマー
 https://flutter.keicode.com/basics/timer.php
 
-モーダルボトムシート
+モーダルボトムシート(BottomSheet)
 https://flutter.keicode.com/basics/bottomsheet.php
 
 iPhoneっぽいUI
