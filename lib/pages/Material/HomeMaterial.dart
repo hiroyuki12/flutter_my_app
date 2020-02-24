@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'CheckBox.dart';
 import 'CounterScreen.dart';
+import 'DatePicker.dart';
 import 'HelloWorldScreen.dart';
 import 'RadioListTile.dart';
 import 'RaisedButton.dart';
@@ -60,7 +61,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MySlider(),
+          MyDatePicker(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
