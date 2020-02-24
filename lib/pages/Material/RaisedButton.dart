@@ -24,12 +24,12 @@ class _State extends State<MyRraisedButton> {
     );
   }
 
-void _onPressed() {
-  setState(() {
-    ++count;
-    print(count.toString());
-  });
-}
+  void _onPressed() {
+    setState(() {
+      ++count;
+      print(count.toString());
+    });
+  }
 }
 
 
