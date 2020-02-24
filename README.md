@@ -20,7 +20,6 @@ https://flutter.keicode.com/basics/widget-raised-button.php
 
 テキストフィールド
 https://flutter.keicode.com/basics/textfield.php
-https://github.com/xster/flutter-test/blob/master/t110_cupertino_text_field/lib/main.dart
 
 ラジオボタン
 https://flutter.keicode.com/basics/radio.php
@@ -171,6 +170,7 @@ https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html
 
 CupertinoTextField
 https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
+https://github.com/xster/flutter-test/blob/master/t110_cupertino_text_field/lib/main.dart
 
 Platform.isIOS
 https://dev.classmethod.jp/smartphone/flutter_platform_ui1/
