@@ -67,7 +67,8 @@ class _State extends State<CupertinoBuildingLayouts> {
         /*3*/
         Icon(
           Icons.star,
-          color: Colors.red[500],
+          //color: Colors.red[500],
+          color: CupertinoColors.systemRed,
         ),
         Text('41',
           style: iconTextStyle,),
