@@ -19,8 +19,9 @@ class _State extends State<MyFloatingActionButton> {
         verticalDirection: VerticalDirection.up,  //下に配置
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          FloatingActionButton(
-            child: Icon(Icons.add),
+          FloatingActionButton.extended(
+            label: Text('Add'),
+            icon: Icon(Icons.add),
             onPressed: () => setState(() => _count++),
           ),
           Container(  //余白のため
