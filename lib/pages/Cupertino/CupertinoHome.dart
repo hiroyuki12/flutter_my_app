@@ -1,17 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_my_app/pages/SettingScreen.dart';
-import 'CupertinoFlutterIssuesScreen.dart';
-import 'CupertinoListView.dart';
-import 'CupertinoPlatform.dart';
+import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
 import 'CupertinoHelloWorld.dart';
-import 'CupertinoPicker.dart';
 import 'CupertinoQiita.dart';
-import 'CupertinoSegmentedControl.dart';
 import 'CupertinoSettings.dart';
-import 'CupertinoSlider.dart';
-import 'CupertinoSwitch.dart';
-import 'CupertinoTabBar.dart';
-import 'CupertinoTextField.dart';
 
 class CupertinoHome extends StatefulWidget {
   @override
@@ -49,7 +40,7 @@ class _State extends State<CupertinoHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return CupertinoQiita();
+        else  return CupertinoHelloWorld();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(
