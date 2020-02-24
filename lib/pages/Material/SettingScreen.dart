@@ -121,10 +121,24 @@ class _State extends State<Setting> {
               },
             ),
             ListTile(
-              title: Text('Push Cupertino Home'),
+              title: Text('Push AlertDialog'),
               onTap: () {
                 Navigator.pop(context);
-                setState(() => Navigator.pushNamed(context, '/home'));
+                setState(() => Navigator.pushNamed(context, '/alertDialog'));
+              },
+            ),
+            ListTile(
+              title: Text('Push BottomSheet'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/bottomSheet'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Card'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/card'));
               },
             ),
           ],

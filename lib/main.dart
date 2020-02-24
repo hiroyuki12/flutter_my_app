@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_my_app/pages/Material/BottomSheet.dart';
 import 'package:flutter_my_app/pages/Material/Navigator2.dart';
+import 'pages/Material/AlertDialog.dart';
+import 'pages/Material/Card.dart';
 import 'pages/Material/CounterScreen.dart';
 import 'pages/Cupertino/CupertinoScreen.dart';
 import 'pages/Cupertino/CupertinoTabBar.dart';
 import 'pages/Material/FileRWScreen.dart';
-import 'pages/Cupertino/CupertinoHelloWorld.dart';
 import 'pages/Cupertino/CupertinoHome.dart';
+import 'pages/Material/HelloWorld.dart';
 import 'pages/Material/HomeMaterial.dart';
 import 'pages/Material/LayoutScreen.dart';
 import 'pages/Material/ListView2Screen.dart';
@@ -28,13 +31,13 @@ class MyApp extends StatelessWidget {
       //  // This is the theme of your application.
       //  primarySwatch: Colors.blue,
       // ),
-      theme: ThemeData.dark(),
-      //theme: ThemeData.light(),
+      // theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       
       initialRoute: '/home',
       
       routes: {
-        '/helloWorld': (context) => CupertinoHelloWorld(),
+        '/helloWorld': (context) => HelloWorld(),
         '/flutterIssues': (context) => FlutterIssues(),
         '/qiita': (context) => Qiita(),
         '/setting': (context) => Setting(),
@@ -50,9 +53,12 @@ class MyApp extends StatelessWidget {
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
         '/cupertinoHome': (context) => CupertinoHome(),
         '/home': (context) => MyHomeMaterial(),
+        '/alertDialog': (context) => MyAlertDialog(),
+        '/bottomSheet': (context) => MyBottomSheet(),
+        '/card': (context) => MyCard(),
       },
-      // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
-      home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
+      home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
+      // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
     );
   }
 }
