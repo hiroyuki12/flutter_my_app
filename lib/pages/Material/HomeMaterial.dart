@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'CheckBox.dart';
 import 'CounterScreen.dart';
 import 'DatePicker.dart';
+import 'DrawerScreen.dart';
 import 'FloatingActionButton.dart';
 import 'HelloWorldScreen.dart';
 import 'RadioListTile.dart';
@@ -61,7 +62,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyFloatingActionButton(),
+          MyDrawer(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

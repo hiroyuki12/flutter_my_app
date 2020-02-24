@@ -1,31 +1,53 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Drawer extends StatefulWidget {
+class MyDrawer extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<Drawer> {
+class _State extends State<MyDrawer> {
+  var _city = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HelloWorld"),
+        title: Text("Drawer"),
       ),
-      body: Column(
-        children: <Widget>[
-          Text('Hello World body'),
-          CupertinoButton(
-              child: Text('push setting'),
-              //onPressed: ()=> Navigator.popUntil(context, ModalRoute.withName("/setting")),
-              //onPressed: ()=> Navigator.of(context).pop(),
-              onPressed: ()=> Navigator.pushNamed(context, '/setting'),
-          ),
-        ],
-      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                'My App'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('Los Angeles'),
+              onTap: () {
+                setState(() {
+                  _city = 'Los Angeles, CA';
+                  Navigator.pop(context);
+                });
+              },
+            ),
+            ListTile(
+              title: Text('Honolulu'),
+              onTap: () {
+                setState(() {
+                  _city = 'Honolulu, HI';
+                  Navigator.pop(context);
+                });
+              },
+            ),
+          ],
+        ),),
+      body: Text(_city),
     );
   }
 }
