@@ -201,3 +201,12 @@ https://picsum.photos
 
 ListTile
 https://api.flutter.dev/flutter/material/ListTile-class.html
+
+FlatButton
+https://api.flutter.dev/flutter/material/FlatButton-class.html
+
+OutlineButton
+https://api.flutter.dev/flutter/material/OutlineButton-class.html
+
+Material Design Buttons
+https://material.io/components/buttons/#usage
