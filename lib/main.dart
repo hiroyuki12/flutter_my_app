@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         '/navigator': (context) => MyNavigator2(),
         '/fileRW': (context) => FileRW(),
         '/drawer': (context) => Drawer(),
-        '/provider': (context) => Provider(),
+        '/provider': (context) => MyProvider(),
         '/counter': (context) => Counter(),
         '/cupertino': (context) => CupertinoScreen(),
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),

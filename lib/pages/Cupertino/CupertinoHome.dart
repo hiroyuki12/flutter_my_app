@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_my_app/pages/Material/ProviderScreen.dart';
 import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
+import 'package:provider/provider.dart';
 import 'CupertinoBuildingLayouts.dart';
 import 'CupertinoHelloWorld.dart';
+import 'CupertinoProviderScreen.dart';
 import 'CupertinoSettings.dart';
 
 class CupertinoHome extends StatefulWidget {
@@ -40,7 +43,7 @@ class _State extends State<CupertinoHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return CupertinoBuildingLayouts();
+        else  return CupertinoProvider();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

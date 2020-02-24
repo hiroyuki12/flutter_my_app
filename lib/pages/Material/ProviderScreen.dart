@@ -10,7 +10,7 @@ class CounterStore with ChangeNotifier {
   }
 }
 
-class Provider extends StatelessWidget {
+class MyProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
