@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'AlertDialog.dart';
 import 'BottomSheet.dart';
 import 'CheckBox.dart';
 import 'CounterScreen.dart';
@@ -64,7 +65,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MySnackBar(),
+          MyAlertDialog(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
