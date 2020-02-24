@@ -11,6 +11,7 @@ import 'RadioListTile.dart';
 import 'RaisedButton.dart';
 import 'SettingScreen.dart';
 import 'Slider.dart';
+import 'SnackBar.dart';
 import 'SwitchListTile.dart';
 import 'TextField.dart';
 
@@ -63,7 +64,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyBottomSheet(),
+          MySnackBar(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
