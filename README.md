@@ -12,7 +12,7 @@ https://qiita.com/yamazaki_sensei/items/1badc515e4a4d6eddebe
 drawer
 https://flutter.keicode.com/basics/drawer.php
 
-チェックボックス・ラジオボタン
+チェックボックス(Checkbox)・ラジオボタン
 https://flutter.keicode.com/basics/checkbox.php
 
 SwitchListTitle
@@ -30,6 +30,9 @@ https://github.com/xster/flutter-test/blob/master/t110_cupertino_text_field/lib/
 
 ラジオボタン(RadioListTile)
 https://flutter.keicode.com/basics/radio.php
+
+Slider
+https://flutter.keicode.com/basics/slider.php
 
 スイッチ
 https://flutter.ctrnost.com/basic/interactive/form/switch/
