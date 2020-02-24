@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'CheckBox.dart';
 import 'CounterScreen.dart';
 import 'DatePicker.dart';
+import 'FloatingActionButton.dart';
 import 'HelloWorldScreen.dart';
 import 'RadioListTile.dart';
 import 'RaisedButton.dart';
@@ -45,7 +46,6 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: PageView(
         controller: _pageController,
         // ページ切り替え時に実行する処理
@@ -61,7 +61,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyDatePicker(),
+          MyFloatingActionButton(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
