@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_my_app/pages/Material/ProviderScreen.dart';
 import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
-import 'package:provider/provider.dart';
-import 'CupertinoBuildingLayouts.dart';
 import 'CupertinoHelloWorld.dart';
-import 'CupertinoProviderScreen.dart';
+import 'CupertinoProvider.dart';
 import 'CupertinoSettings.dart';
 
 class CupertinoHome extends StatefulWidget {
