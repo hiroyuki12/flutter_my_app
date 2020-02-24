@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'CheckBox.dart';
 import 'CounterScreen.dart';
 import 'HelloWorldScreen.dart';
+import 'RadioListTile.dart';
 import 'RaisedButton.dart';
 import 'SettingScreen.dart';
 import 'SwitchListTile.dart';
@@ -58,7 +59,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyTextField(),
+          MyRadioListTile(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
