@@ -15,6 +15,9 @@ https://flutter.keicode.com/basics/drawer.php
 チェックボックス・ラジオボタン
 https://flutter.keicode.com/basics/checkbox.php
 
+SwitchListTitle
+https://flutter.keicode.com/basics/checkbox.php
+
 ボタン(RaisedButton)
 https://flutter.keicode.com/basics/widget-raised-button.php
 
