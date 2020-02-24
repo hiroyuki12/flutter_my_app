@@ -176,3 +176,6 @@ https://dev.classmethod.jp/smartphone/flutter_platform_ui1/
 
 Expanded
 https://api.flutter.dev/flutter/widgets/Row-class.html
+
+t95_ios_settings
+https://github.com/xster/flutter-test/tree/master/t95_ios_settings_page
