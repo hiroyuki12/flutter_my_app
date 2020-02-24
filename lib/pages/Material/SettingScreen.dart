@@ -100,6 +100,13 @@ class _State extends State<Setting> {
               },
             ),
             ListTile(
+              title: Text('Push Navigator2'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/navigator2'));
+              },
+            ),
+            ListTile(
               title: Text('Push HelloWorld'),
               onTap: () {
                 Navigator.pop(context);
@@ -167,6 +174,62 @@ class _State extends State<Setting> {
               onTap: () {
                 Navigator.pop(context);
                 setState(() => Navigator.pushNamed(context, '/drawer'));
+              },
+            ),
+            ListTile(
+              title: Text('Push FloatingActionButton'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/floatingActionButton'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Lorem Picsum'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/loremPicsum'));
+              },
+            ),
+            ListTile(
+              title: Text('Push RadioListTile'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/radioListTile'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Row'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/row'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Slider'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/slider'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Stack'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/stack'));
+              },
+            ),
+            ListTile(
+              title: Text('Push SwitchListTile'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/switchListTile'));
+              },
+            ),
+            ListTile(
+              title: Text('Push TextField'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/textField'));
               },
             ),
           ],

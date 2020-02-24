@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'AlertDialog.dart';
 import 'HelloWorld.dart';
+import 'LoremPicsumScreen.dart';
 import 'SettingScreen.dart';
 
 class MyHomeMaterial extends StatefulWidget {
@@ -53,7 +54,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyAlertDialog(),
+          LoremPicsum(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

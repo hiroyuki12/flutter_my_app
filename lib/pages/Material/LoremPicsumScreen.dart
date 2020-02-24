@@ -29,7 +29,7 @@ class _State extends State<LoremPicsum> {
   
   // This widget is the root of your application.
   Future<void> _load() async {
-    final res = await http.get('https://picsum.photos/v2/list?page=2&limit=3');
+    final res = await http.get('https://picsum.photos/v2/list?page=2&limit=20');
     final data = json.decode(res.body);
     setState(() {
       final issues = data as List;

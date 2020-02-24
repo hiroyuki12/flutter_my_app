@@ -1,9 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_my_app/pages/Material/DatePicker.dart';
+import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
+import 'package:flutter_my_app/pages/Material/RadioListTile.dart';
+import 'package:flutter_my_app/pages/Material/TextField.dart';
 import 'pages/Material/BottomSheet.dart';
 import 'pages/Material/Container.dart';
 import 'pages/Material/Drawer.dart';
+import 'pages/Material/LoremPicsumScreen.dart';
+import 'pages/Material/Navigator.dart';
 import 'pages/Material/Navigator2.dart';
 import 'pages/Material/AlertDialog.dart';
 import 'pages/Material/Card.dart';
@@ -19,9 +24,13 @@ import 'pages/Material/LayoutScreen.dart';
 import 'pages/Material/ListView2Screen.dart';
 import 'pages/Material/ListViewScreen.dart';
 import 'pages/Material/ProviderScreen.dart';
+import 'pages/Material/Row.dart';
 import 'pages/Material/SettingScreen.dart';
 import 'pages/Material/FlutterIssuesScreen.dart';
-import 'pages/Material/QiitaScreen.dart';
+import 'pages/Material/Qiita.dart';
+import 'pages/Material/Slider.dart';
+import 'pages/Material/Stack.dart';
+import 'pages/Material/SwitchListTile.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,7 +57,8 @@ class MyApp extends StatelessWidget {
         '/listView': (context) => MyListView(),
         '/listView2': (context) => ListView2(),
         '/layout': (context) => MyLayout(),
-        '/navigator': (context) => MyNavigator2(),
+        '/navigator': (context) => MyNavigator(),
+        '/navigator2': (context) => MyNavigator2(),
         '/fileRW': (context) => FileRW(),
         '/drawer': (context) => Drawer(),
         '/provider': (context) => MyProvider(),
@@ -57,6 +67,8 @@ class MyApp extends StatelessWidget {
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
         '/cupertinoHome': (context) => CupertinoHome(),
         '/home': (context) => MyHomeMaterial(),
+        '/home2': (context) => Home(),
+        '/next': (context) => Next(),
         '/alertDialog': (context) => MyAlertDialog(),
         '/bottomSheet': (context) => MyBottomSheet(),
         '/card': (context) => MyCard(),
@@ -64,6 +76,14 @@ class MyApp extends StatelessWidget {
         '/container': (context) => MyContainer(),
         '/datePicker': (context) => MyDatePicker(),
         '/drawer': (context) => MyDrawer(),
+        '/floatingActionButton': (context) => MyFloatingActionButton(),
+        '/loremPicsum': (context) => LoremPicsum(),
+        '/radioListTile': (context) => MyRadioListTile(),
+        '/row': (context) => MyRow(),
+        '/slider': (context) => MySlider(),
+        '/stack': (context) => MyStack(),
+        '/switchListTile': (context) => MySwitchListTile(),
+        '/textField': (context) => MyTextField(),
       },
       home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
       // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)

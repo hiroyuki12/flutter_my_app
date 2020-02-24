@@ -92,7 +92,7 @@ class _MyNavigator2State extends State<MyNavigator2> {
                     child: const Text('Login'),
                     onPressed: () {
                       // ホーム画面へ
-                      Navigator.of(context).pushReplacementNamed("/home");
+                      Navigator.of(context).pushReplacementNamed("/home2");
                     },
                   ),
                 ),
