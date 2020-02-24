@@ -47,7 +47,22 @@ class _State extends State<MyDrawer> {
             ),
           ],
         ),),
-      body: Text(_city),
+      body: Column(
+        children: <Widget>[
+          Text(_city),
+            RaisedButton(
+            child: Text('Back'),
+            onPressed: _onPressed,
+          ),
+        ],
+      ),
     );
   }
+
+  void _onPressed() {
+    setState(() {
+      Navigator.pop(context);
+    });
+  }
+
 }

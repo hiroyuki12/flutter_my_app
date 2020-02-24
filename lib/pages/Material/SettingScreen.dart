@@ -141,6 +141,34 @@ class _State extends State<Setting> {
                 setState(() => Navigator.pushNamed(context, '/card'));
               },
             ),
+            ListTile(
+              title: Text('Push Checkbox'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/checkbox'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Container'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/container'));
+              },
+            ),
+            ListTile(
+              title: Text('Push DatePicker'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/datePicker'));
+              },
+            ),
+            ListTile(
+              title: Text('Push Drawer'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/drawer'));
+              },
+            ),
           ],
         ),
       ),

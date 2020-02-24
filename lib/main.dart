@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_my_app/pages/Material/BottomSheet.dart';
-import 'package:flutter_my_app/pages/Material/Navigator2.dart';
+import 'package:flutter_my_app/pages/Material/DatePicker.dart';
+import 'pages/Material/BottomSheet.dart';
+import 'pages/Material/Container.dart';
+import 'pages/Material/Drawer.dart';
+import 'pages/Material/Navigator2.dart';
 import 'pages/Material/AlertDialog.dart';
 import 'pages/Material/Card.dart';
+import 'pages/Material/Checkbox.dart';
 import 'pages/Material/CounterScreen.dart';
 import 'pages/Cupertino/CupertinoScreen.dart';
 import 'pages/Cupertino/CupertinoTabBar.dart';
@@ -56,6 +60,10 @@ class MyApp extends StatelessWidget {
         '/alertDialog': (context) => MyAlertDialog(),
         '/bottomSheet': (context) => MyBottomSheet(),
         '/card': (context) => MyCard(),
+        '/checkbox': (context) => MyCheckbox(),
+        '/container': (context) => MyContainer(),
+        '/datePicker': (context) => MyDatePicker(),
+        '/drawer': (context) => MyDrawer(),
       },
       home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
       // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'AlertDialog.dart';
 import 'HelloWorld.dart';
-import 'Navigator.dart';
 import 'SettingScreen.dart';
 
 class MyHomeMaterial extends StatefulWidget {
