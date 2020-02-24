@@ -28,7 +28,7 @@ CupertinoTextField
 https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
 https://github.com/xster/flutter-test/blob/master/t110_cupertino_text_field/lib/main.dart
 
-ラジオボタン
+ラジオボタン(RadioListTile)
 https://flutter.keicode.com/basics/radio.php
 
 スイッチ
