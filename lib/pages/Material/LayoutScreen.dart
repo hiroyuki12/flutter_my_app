@@ -9,8 +9,6 @@ class MyLayout extends StatefulWidget {
 }
 
 class _State extends State<MyLayout> {
-  var _count;
-
   @override
   void initState() {
     super.initState();
@@ -20,13 +18,13 @@ class _State extends State<MyLayout> {
     return Scaffold(
       appBar: Header(),
       body: 
-          Row(
-            children: <Widget>[
-              Text("Layout"),
-              SpaceBox.width(16),
-              Text("Layout2"),
-            ],
-          ),
+        Row(
+          children: <Widget>[
+            Text("Layout"),
+            SpaceBox.width(16),
+            Text("Layout2"),
+          ],
+        ),
       );
   }
 }

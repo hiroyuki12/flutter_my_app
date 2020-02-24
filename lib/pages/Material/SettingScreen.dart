@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,6 @@ class _State extends State<Setting> {
   int count = 0;
   String _message = 'Tap OK button.';
   //bool _switchActive = false;
-  String _label = '';
   //List _fruits = ["Apple", "Banana", "Pineapple", "Mango", "Grapes"];
   //List<DropdownMenuItem<String>> _dropDownMenuItems;
   String _deviceInfo = '';
@@ -351,19 +349,6 @@ class _State extends State<Setting> {
         ),
       //),
     );
-  }
-
-
-  //Pushボタン押下時
-  void _onPushFlutterIssuesPressed() {
-    Navigator.pushNamed(context, '/flutterIssues');
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => FlutterIssuesScreen()));
-    
-    //Navigator.of(context).pushNamed("/helloWorld");
-    //Navigator.pushNamed(context, '/helloWorld');
-    //setState(() {
-
-    //});
   }
 
   //OKボタン押下時

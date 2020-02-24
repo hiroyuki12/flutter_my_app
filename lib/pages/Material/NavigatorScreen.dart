@@ -35,7 +35,6 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-        // TODO: スプラッシュアニメーション
         child: const CircularProgressIndicator(),
       ),
     );
@@ -89,7 +88,6 @@ class _LoginState extends State<Login> {
                   child: new RaisedButton(
                     child: const Text('Login'),
                     onPressed: () {
-                      // TODO: ログイン処理
                       // ホーム画面へ
                       Navigator.of(context).pushReplacementNamed("/home");
                     },

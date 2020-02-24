@@ -1,20 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'AlertDialog.dart';
-import 'BottomSheet.dart';
-import 'CheckBox.dart';
-import 'CounterScreen.dart';
-import 'DatePicker.dart';
-import 'DrawerScreen.dart';
-import 'FloatingActionButton.dart';
+import 'Card.dart';
 import 'HelloWorldScreen.dart';
-import 'RadioListTile.dart';
-import 'RaisedButton.dart';
 import 'SettingScreen.dart';
-import 'Slider.dart';
-import 'SnackBar.dart';
-import 'SwitchListTile.dart';
-import 'TextField.dart';
 
 class MyHomeMaterial extends StatefulWidget {
   MyHomeMaterial({Key key, this.title}) : super(key: key);
@@ -65,7 +53,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyAlertDialog(),
+          MyCard(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

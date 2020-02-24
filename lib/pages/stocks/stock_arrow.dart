@@ -77,7 +77,6 @@ class StockArrow extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 5.0),
       child: CustomPaint(
         painter: StockArrowPainter(
-          // TODO(jackson): This should change colors with the theme
           color: _colorForPercentChange(percentChange),
           percentChange: percentChange,
         ),

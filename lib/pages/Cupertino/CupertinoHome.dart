@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
 import 'CupertinoHelloWorld.dart';
-import 'CupertinoQiita.dart';
 import 'CupertinoSettings.dart';
 
 class CupertinoHome extends StatefulWidget {
