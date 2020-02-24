@@ -13,10 +13,12 @@ class Issue {
   Issue({
     this.title,
     this.avatarUrl,
+    this.id,
   });
 
   final String title;
   final String avatarUrl;
+  final String id;
 }
 
 class _State extends State<FlutterIssues> {
@@ -38,6 +40,7 @@ class _State extends State<FlutterIssues> {
         _issues.add(Issue(
           title: issue['title'] as String,
           avatarUrl: issue['user']['avatar_url'] as String,
+          id: issue['id'].toString() as String,
         ));
       });
     });
@@ -45,7 +48,6 @@ class _State extends State<FlutterIssues> {
 
   @override
   Widget build(BuildContext context) {
-  //var _city = '';
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Issues"),
@@ -68,6 +70,7 @@ class _State extends State<FlutterIssues> {
               child: Image.network(issue.avatarUrl),
             ),
             title: Text(issue.title),
+            subtitle: Text(issue.id),
           );
         },
       ),
