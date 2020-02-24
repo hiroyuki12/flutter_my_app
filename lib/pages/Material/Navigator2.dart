@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+/*
 void main() {
   runApp(new MaterialApp(
     title: 'Navigation with Routes',
@@ -13,6 +14,7 @@ void main() {
     },
   ));
 }
+*/
 
 // ---------
 // スプラッシュ
@@ -49,12 +51,13 @@ class _SplashState extends State<Splash> {
 // ---------
 // ログイン画面
 // ---------
-class Login extends StatefulWidget {
+// class Login extends StatefulWidget {
+class MyNavigator2 extends StatefulWidget {
   @override
-  _LoginState createState() => new _LoginState();
+  _MyNavigator2State createState() => new _MyNavigator2State();
 }
 
-class _LoginState extends State<Login> {
+class _MyNavigator2State extends State<MyNavigator2> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

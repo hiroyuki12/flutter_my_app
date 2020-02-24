@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_my_app/pages/Material/Navigator2.dart';
 import 'pages/Material/CounterScreen.dart';
 import 'pages/Cupertino/CupertinoScreen.dart';
 import 'pages/Cupertino/CupertinoTabBar.dart';
@@ -10,7 +11,6 @@ import 'pages/Material/HomeMaterial.dart';
 import 'pages/Material/LayoutScreen.dart';
 import 'pages/Material/ListView2Screen.dart';
 import 'pages/Material/ListViewScreen.dart';
-import 'pages/Material/NavigatorScreen.dart';
 import 'pages/Material/ProviderScreen.dart';
 import 'pages/Material/SettingScreen.dart';
 import 'pages/Material/FlutterIssuesScreen.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       //theme: ThemeData.light(),
       
-      initialRoute: '/helloWorld',
+      initialRoute: '/home',
       
       routes: {
         '/helloWorld': (context) => CupertinoHelloWorld(),
@@ -41,17 +41,18 @@ class MyApp extends StatelessWidget {
         '/listView': (context) => MyListView(),
         '/listView2': (context) => ListView2(),
         '/layout': (context) => MyLayout(),
-        '/navigator': (context) => Login(),
+        '/navigator': (context) => MyNavigator2(),
         '/fileRW': (context) => FileRW(),
         '/drawer': (context) => Drawer(),
         '/provider': (context) => Provider(),
         '/counter': (context) => Counter(),
         '/cupertino': (context) => CupertinoScreen(),
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
-        '/home': (context) => CupertinoHome(),
+        '/cupertinoHome': (context) => CupertinoHome(),
+        '/home': (context) => MyHomeMaterial(),
       },
-      home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
-      // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
+      // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
+      home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
     );
   }
 }

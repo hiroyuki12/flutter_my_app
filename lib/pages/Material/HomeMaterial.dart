@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_my_app/pages/Cupertino/CupertinoGridViewScreen.dart';
-import 'Card.dart';
 import 'HelloWorldScreen.dart';
 import 'Navigator.dart';
 import 'SettingScreen.dart';
