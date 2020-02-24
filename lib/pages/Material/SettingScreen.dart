@@ -176,37 +176,6 @@ class _State extends State<Setting> {
           child: Column(
             children: <Widget>[
               /*
-              //テキスト
-              Text('Hello Text'),
-              //チェックボックス
-              Checkbox(
-                value: _checkBox1,
-                onChanged: (bool value) {
-                  setState(() {
-                    _checkBox1 = value;
-                  });
-                },
-              ),
-              */
-              /*
-              //チェックボックスリスト
-              CheckboxListTile(
-                value: _checkBox2,
-                title: Text(
-                  'Checkbox 2 Title',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                controlAffinity: ListTileControlAffinity.leading,
-                onChanged: (bool value) {
-                  setState(() {
-                    _checkBox2 = value;
-                  });
-                },
-              ),
-              */
-              /*
               //スイッチ
               Switch(
                 value: _switchActive,
@@ -233,33 +202,6 @@ class _State extends State<Setting> {
                   ),
                 //]
               //),
-              */
-              /*
-              //スイッチリスト
-              SwitchListTile(
-                value: _switchValue,
-                title: Text(
-                  _switchTitle,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Cursive',
-                  ),
-                ),
-                onChanged: (bool value) {
-                  setState(() {
-                    _switchValue = value;
-                    _switchTitle = 'Switch value = $_switchValue';
-                  });
-                },
-              ),
-              */
-              /*
-              //ボタン
-              RaisedButton(
-                  child: Text('OK'),
-                  onPressed: _onPressed,
-              ),           
-              Text(_message),
               */
               //ボタン(iPhoneっぽく)
               CupertinoButton(
@@ -297,56 +239,6 @@ class _State extends State<Setting> {
                   onPressed: () => Navigator.push(context, 
                     MaterialPageRoute(builder: (context) => ListViewScreen())),                
               ),           
-              */
-              /*
-              //テキストフィールド
-              TextField(
-                keyboardType: TextInputType.multiline,
-                maxLines: null,
-                decoration: InputDecoration(
-                  labelText: 'Username',
-                  //hintText: 'Username',
-                  icon: Icon(Icons.account_circle),
-                ),
-                autocorrect: false,
-                autofocus: true,
-                //keyboardType: TextInputType.text,
-                onChanged: _userNameChanged,
-                onSubmitted: _userNameSubmitted,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  //hintText: 'Password',
-                  icon: Icon(Icons.security),
-                ),
-                autocorrect: false,
-                autofocus: false,
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                onChanged: _passwordChanged,
-                onSubmitted: _passwordSubmitted,
-              ),
-              Text(_text),
-              */
-              /*
-              //ラジオボタン
-              RadioListTile(
-                  title: Text('Orange'),
-                  value: Fruits.Orange,
-                  groupValue: _radVal,
-                  onChanged: _onChanged),
-              RadioListTile(
-                  title: Text('Apple'),
-                  value: Fruits.Apple,
-                  groupValue: _radVal,
-                  onChanged: _onChanged),
-              RadioListTile(
-                  title: Text('Grape'),
-                  value: Fruits.Grape,
-                  groupValue: _radVal,
-                  onChanged: _onChanged),
-              Text(_radValText),
               */
               /*
               //日付選択
@@ -514,45 +406,12 @@ class _State extends State<Setting> {
 */
 
 /*
-  //テキストフィールド変更時
-  void _userNameChanged(String value) {
-    setState(() {
-      _text = 'Changed: $value';
-    });
-  }
-  void _userNameSubmitted(String value) {
-    setState(() {
-      _text = 'Submitted $value';
-    });
-  }
-  void _passwordChanged(String value) {
-    setState(() {
-      _text = 'Changed: $value';
-    });
-  }
-  void _passwordSubmitted(String value) {
-    setState(() {
-      _text = 'Submitted $value';
-    });
-  }
-
   //スイッチ変更時
   void _changeSwitch(bool newValue) {
     setState(() {
       _switchActive = newValue;
     });
     applyThemeDate(_switchActive);
-  }
-
-  //ラジオボタン変更時
-  void _onChanged(Fruits value) {
-    if(value == Fruits.Orange)  _radValText = "Orange";
-    else if(value == Fruits.Apple)  _radValText = "Apple";
-    else if(value == Fruits.Grape)  _radValText = "Grape";
-
-    setState(() {
-      _radVal = value;
-    });
   }
 */
 
