@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 const button_size = 17.0;
+const title_font_size = 18.0;
+const text_font_size = 13.0;
+const liked_font_size = 12.0;
+const content_height = 295.5;
 
 class CupertinoTwitterHome extends StatelessWidget {
   final titleTextStyle = new TextStyle(
     fontWeight: FontWeight.w100,
     decoration: TextDecoration.none,
-    fontSize: 18,
+    fontSize: title_font_size,
     color: CupertinoColors.black);
 
   @override
   Widget build(BuildContext context) {
     var _homeListItems = List<HomeListItem>.generate(
-      8,
+      12,
       (i) => HomeListItem(),
     );
     return CupertinoPageScaffold(
@@ -37,149 +41,182 @@ class HomeListItem extends StatelessWidget {
   final myTextStyle = new TextStyle(
     fontWeight: FontWeight.w300,
     decoration: TextDecoration.none,
-    fontSize: 13,
+    fontSize: text_font_size,
     color: CupertinoColors.black
   );
 
   final myBoldTextStyle = new TextStyle(
     fontWeight: FontWeight.w700,
     decoration: TextDecoration.none,
-    fontSize: 13,
+    fontSize: text_font_size,
+    color: CupertinoColors.black
+  );
+
+  final myLikedTextStyle = new TextStyle(
+    fontWeight: FontWeight.w300,
+    decoration: TextDecoration.none,
+    fontSize: liked_font_size,
     color: CupertinoColors.black
   );
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 0.1,
-              color: Colors.grey,
-            ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 12.0, 10.0, 10.0),
-            child: Container(
-              height: 65.0,
-              child: Row(
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(  //外枠
+        border: Border.all(
+          width: 0.1,
+          color: Colors.grey,
+        ),
+      ),
+      child: Container(
+        height: content_height,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            _buildAvater(),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        // Icon(Icons.account_circle, size: 55.0, color: const Color(0xff00aaee)),
-                        Icon(Icons.account_circle, size: 55.0, color: const Color(0xff888888)),
-                        //Expanded(child: Container()),
-                      ],
-                    ),
-                  ),
+                  _buildTopLikedRow(),
+                  _buildTopRow(),
+                  _buildContents(),
+                  _buildImage(),
                   Expanded(
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Column(
-                                  children: <Widget>[
-                                    Row(
-                                      children: <Widget>[
-                                        Container(
-                                          child: Text(
-                                            'あいうえおかきくけ  ',
-                                            // style: TextStyle(
-                                            //     fontSize: 15.0,
-                                            //     fontWeight: FontWeight.bold),
-                                            style: myBoldTextStyle,
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Text(
-                                            '@abcdefghijkl ･ 1h', style: myTextStyle,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      child: Wrap(
-                                        children: <Widget>[
-                                          Text(
-                                            'てすとてすとてすとてすとてすとてすと', style: myTextStyle,
-                                          ),
-                                        ],
-                                      ),
-                                    ), //contents
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Icon(
-                              Icons.expand_more, color: Colors.grey,
-                            )
-                          ],
-                        ),
-                        Expanded(
-                          child: Container(),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Icon(
-                                  Icons.chat_bubble_outline,
-                                  size: button_size,
-                                  color: Colors.grey,
-                                ),
-                                Text(' 712', style: myTextStyle)
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Icon(
-                                  Icons.transform,
-                                  size: button_size,
-                                  color: Colors.grey,
-                                ),
-                                Text(' 29.8K', style: myTextStyle)
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Icon(
-                                  Icons.favorite_border,
-                                  size: button_size,
-                                  color: Colors.grey,
-                                ),
-                                Text(' 96.1K', style: myTextStyle)
-                              ],
-                            ),
-                            Icon(
-                              Icons.save_alt,
-                              size: button_size,
-                              color: Colors.grey,
-                            ),
-                            // Container(),
-                            Row(),
-                            // Icon(
-                            //   Icons.equalizer,
-                            //   size: button_size,
-                            //   color: Colors.grey,
-                            // )
-                          ],
-                        ),
-                      ],
-                    ),
+                    child: Container(),
                   ),
+                  _buildButtonList(),
                 ],
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAvater() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 15.0, 5.0, 0.0),
+      child: Icon(Icons.account_circle, size: 55.0, color: const Color(0xff888888)),
+    );
+  }
+
+  Widget _buildTopLikedRow() {
+    return Row(
+      children: <Widget>[
+        Text(
+          'mnopqrst and 4 others liked', style: myLikedTextStyle,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTopRow() {
+    return Row(
+      children: <Widget>[
+        Container(
+          child: Text(
+            'あいうえおかきくけこ  ',
+            style: myBoldTextStyle,
           ),
         ),
+        Container(
+          child: Text(
+            '@abcdefghijkl ･ 1h', style: myTextStyle,
+          ),
+        ),
+        Expanded(child: Container()),
+        Icon(
+          Icons.expand_more, color: Colors.grey,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildContents() {
+    return Container(
+      margin: const EdgeInsets.only(right: 13.0),
+      child: Wrap(
+        children: <Widget>[
+          Text(
+            'てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと', style: myTextStyle,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildImage()
+  {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(12.0),
+          topRight: Radius.circular(12.0),
+          bottomRight: Radius.circular(12.0),
+          bottomLeft: Radius.circular(12.0),
+        ),
+        child: Align(
+          alignment: Alignment.bottomRight,
+          heightFactor: 0.7,
+          widthFactor: 0.97,
+          child: Image.asset(
+            'images/lake.jpg',
+            width: 480,
+            height: 260,
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+
+  //Reply, Retweet, Like, Shareボタン の列
+  Widget _buildButtonList() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.chat_bubble_outline,
+              size: button_size,
+              color: Colors.grey,
+            ),
+            Text(' 712', style: myTextStyle)
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.transform,
+              size: button_size,
+              color: Colors.grey,
+            ),
+            Text(' 29.8K', style: myTextStyle)
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.favorite_border,
+              size: button_size,
+              color: Colors.grey,
+            ),
+            Text(' 96.1K', style: myTextStyle)
+          ],
+        ),
+        Icon(
+          Icons.save_alt,
+          size: button_size,
+          color: Colors.grey,
+        ),
+        // Container(),
+        Row(),
       ],
     );
   }
