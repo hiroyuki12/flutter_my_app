@@ -184,6 +184,13 @@ class _State extends State<Setting> {
               },
             ),
             ListTile(
+              title: Text('Push FlatButton'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/flatButton'));
+              },
+            ),
+            ListTile(
               title: Text('Push Lorem Picsum'),
               onTap: () {
                 Navigator.pop(context);
@@ -191,10 +198,24 @@ class _State extends State<Setting> {
               },
             ),
             ListTile(
+              title: Text('Push OutlineButton'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/outlineButton'));
+              },
+            ),
+            ListTile(
               title: Text('Push RadioListTile'),
               onTap: () {
                 Navigator.pop(context);
                 setState(() => Navigator.pushNamed(context, '/radioListTile'));
+              },
+            ),
+            ListTile(
+              title: Text('Push RaisedButton'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() => Navigator.pushNamed(context, '/raisedButton'));
               },
             ),
             ListTile(

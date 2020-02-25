@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_my_app/pages/Material/MyTwitter.dart';
 import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
+import 'CupertinoActivityIndicator.dart';
 import 'CupertinoHelloWorld.dart';
 import 'CupertinoProvider.dart';
 import 'CupertinoSettings.dart';
@@ -40,7 +42,7 @@ class _State extends State<CupertinoHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return CupertinoProvider();
+        else  return MyTwitter();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
 
-class MyRraisedButton extends StatefulWidget {
+class MyOutlineButton extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<MyRraisedButton> {
+class _State extends State<MyOutlineButton> {
   int count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("RraisedButton"),
+        title: Text("OutlineButton"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: OutlineButton(
           child: Text('OK'),
-          color: Colors.orange,
-          textColor: Colors.white,
           onPressed: _onPressed,
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'AlertDialog.dart';
 import 'HelloWorld.dart';
 import 'LoremPicsumScreen.dart';
+import 'MyTwitter.dart';
 import 'SettingScreen.dart';
 
 class MyHomeMaterial extends StatefulWidget {
@@ -54,7 +55,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          LoremPicsum(),
+          MyTwitter(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

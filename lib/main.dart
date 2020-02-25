@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_my_app/pages/Material/DatePicker.dart';
 import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
 import 'package:flutter_my_app/pages/Material/RadioListTile.dart';
+import 'package:flutter_my_app/pages/Material/RaisedButton.dart';
 import 'package:flutter_my_app/pages/Material/TextField.dart';
 import 'pages/Material/BottomSheet.dart';
 import 'pages/Material/Container.dart';
 import 'pages/Material/Drawer.dart';
+import 'pages/Material/FlatButton.dart';
 import 'pages/Material/LoremPicsumScreen.dart';
 import 'pages/Material/Navigator.dart';
 import 'pages/Material/Navigator2.dart';
@@ -23,6 +25,7 @@ import 'pages/Material/HomeMaterial.dart';
 import 'pages/Material/LayoutScreen.dart';
 import 'pages/Material/ListView2Screen.dart';
 import 'pages/Material/ListViewScreen.dart';
+import 'pages/Material/OutlineButton.dart';
 import 'pages/Material/ProviderScreen.dart';
 import 'pages/Material/Row.dart';
 import 'pages/Material/SettingScreen.dart';
@@ -77,7 +80,10 @@ class MyApp extends StatelessWidget {
         '/datePicker': (context) => MyDatePicker(),
         '/drawer': (context) => MyDrawer(),
         '/floatingActionButton': (context) => MyFloatingActionButton(),
+        '/flatButton': (context) => MyFlatButton(),
         '/loremPicsum': (context) => LoremPicsum(),
+        '/outlineButton': (context) => MyOutlineButton(),
+        '/raisedButton': (context) => MyRraisedButton(),
         '/radioListTile': (context) => MyRadioListTile(),
         '/row': (context) => MyRow(),
         '/slider': (context) => MySlider(),
@@ -85,8 +91,8 @@ class MyApp extends StatelessWidget {
         '/switchListTile': (context) => MySwitchListTile(),
         '/textField': (context) => MyTextField(),
       },
-      home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
-      // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
+      // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
+      home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
     );
   }
 }
