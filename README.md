@@ -219,3 +219,6 @@ https://material.io/resources/icons/?style=baseline
 
 Flitter
 https://github.com/HeavenOSK/Flitter
+
+Flutter-Twitter-Clone
+https://github.com/devdennysegura/flutter-twitter-clone
