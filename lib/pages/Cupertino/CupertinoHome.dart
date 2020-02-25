@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_my_app/pages/Material/MyTwitter.dart';
 import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
-import 'CupertinoActivityIndicator.dart';
 import 'CupertinoHelloWorld.dart';
-import 'CupertinoProvider.dart';
 import 'CupertinoSettings.dart';
+import 'CupertinoTwitter.dart';
 
 class CupertinoHome extends StatefulWidget {
   @override
@@ -18,7 +16,7 @@ class _State extends State<CupertinoHome> {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        backgroundColor: const Color(0xff333333),
+        //backgroundColor: const Color(0xff333333),
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
@@ -42,7 +40,7 @@ class _State extends State<CupertinoHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return MyTwitter();
+        else  return CupertinoTwitter();
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

@@ -5,6 +5,7 @@ import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
 import 'package:flutter_my_app/pages/Material/RadioListTile.dart';
 import 'package:flutter_my_app/pages/Material/RaisedButton.dart';
 import 'package:flutter_my_app/pages/Material/TextField.dart';
+import 'pages/Cupertino/CupertinoTwitter.dart';
 import 'pages/Material/BottomSheet.dart';
 import 'pages/Material/Container.dart';
 import 'pages/Material/Drawer.dart';
@@ -92,7 +93,8 @@ class MyApp extends StatelessWidget {
         '/textField': (context) => MyTextField(),
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
-      home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
+      // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
+      home: CupertinoTwitter(),                     //CupertinoTabBar (Bottom)
     );
   }
 }
