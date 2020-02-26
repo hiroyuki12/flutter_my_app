@@ -234,3 +234,6 @@ https://flutter-widget.live/widgets/Wrap
 
 FlutterLogo
 https://flutter-widget.live/widgets/FlutterLogo
+
+AmimatedCrossFade
+https://flutter-widget.live/widgets/AnimatedCrossFade
