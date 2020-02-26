@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       //  primarySwatch: Colors.blue,
       // ),
       theme: ThemeData.dark(),
-      //theme: ThemeData.light(),
+      // theme: ThemeData.light(),
       
       initialRoute: '/home',
       
@@ -94,7 +94,7 @@ class MyApp extends StatelessWidget {
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
       home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
-      //home: CupertinoTwitter(),                     //CupertinoTwitter
+      // home: CupertinoTwitter(),                     //CupertinoTwitter
     );
   }
 }

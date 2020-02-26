@@ -117,7 +117,8 @@ class HomeListItem extends StatelessWidget {
   Widget _buildAvater() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0.0, 15.0, 5.0, 0.0),
-      child: Icon(Icons.account_circle, size: 50.0, color: const Color(0xff888888)),
+      // child: Icon(Icons.account_circle, size: 50.0, color: const Color(0xff888888)),
+      child: FlutterLogo(size: 40.0, style: FlutterLogoStyle.markOnly),
     );
   }
 
@@ -136,7 +137,7 @@ class HomeListItem extends StatelessWidget {
       children: <Widget>[
         Container(
           child: Text(
-            'あいうえお世界  ',
+            'こんにちは世界  ',
             style: myBoldTextStyle,
           ),
         ),

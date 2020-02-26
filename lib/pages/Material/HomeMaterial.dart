@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'AnimatedContainer.dart';
 import 'HelloWorld.dart';
 import 'SettingScreen.dart';
 import 'Wrap.dart';
@@ -53,7 +54,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          MyWrap(),
+          MyAnimatedContainer(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(
