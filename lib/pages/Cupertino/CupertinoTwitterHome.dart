@@ -3,8 +3,9 @@ import 'package:flutter/cupertino.dart';
 
 const button_size = 17.0;
 const title_font_size = 18.0;
-const text_font_size = 13.0;
-const liked_font_size = 12.0;
+const username_font_size = 15.0;
+const text_font_size = 14.0;
+const liked_font_size = 14.0;
 const content_height = 295.5;
 
 class CupertinoTwitterHome extends StatelessWidget {
@@ -48,7 +49,7 @@ class HomeListItem extends StatelessWidget {
   final myBoldTextStyle = new TextStyle(
     fontWeight: FontWeight.w700,
     decoration: TextDecoration.none,
-    fontSize: text_font_size,
+    fontSize: username_font_size,
     color: CupertinoColors.black
   );
 
