@@ -5,8 +5,10 @@ const button_size = 17.0;
 const title_font_size = 18.0;
 const username_font_size = 15.0;
 const text_font_size = 14.0;
-const liked_font_size = 14.0;
-const content_height = 295.5;
+const liked_font_size = 13.0;
+const id_font_size = 16.0;
+const number_font_size = 14.0;
+const content_height = 290.5;
 
 class CupertinoTwitterHome extends StatelessWidget {
   final titleTextStyle = new TextStyle(
@@ -53,11 +55,25 @@ class HomeListItem extends StatelessWidget {
     color: CupertinoColors.black
   );
 
+  final myIdTextStyle = new TextStyle(
+    fontWeight: FontWeight.w400,
+    decoration: TextDecoration.none,
+    fontSize: id_font_size,
+    color: CupertinoColors.systemGrey
+  );
+
   final myLikedTextStyle = new TextStyle(
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w400,
     decoration: TextDecoration.none,
     fontSize: liked_font_size,
-    color: CupertinoColors.black
+    color: CupertinoColors.systemGrey
+  );
+
+  final myNumberTextStyle = new TextStyle(
+    fontWeight: FontWeight.w400,
+    decoration: TextDecoration.none,
+    fontSize: number_font_size,
+    color: CupertinoColors.systemGrey
   );
 
   @override
@@ -101,7 +117,7 @@ class HomeListItem extends StatelessWidget {
   Widget _buildAvater() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0.0, 15.0, 5.0, 0.0),
-      child: Icon(Icons.account_circle, size: 55.0, color: const Color(0xff888888)),
+      child: Icon(Icons.account_circle, size: 50.0, color: const Color(0xff888888)),
     );
   }
 
@@ -120,13 +136,13 @@ class HomeListItem extends StatelessWidget {
       children: <Widget>[
         Container(
           child: Text(
-            'あいうえおかきくけこ  ',
+            'あいうえお世界  ',
             style: myBoldTextStyle,
           ),
         ),
         Container(
           child: Text(
-            '@abcdefghijkl ･ 1h', style: myTextStyle,
+            '@abcdefghijkl ･ 1h', style: myIdTextStyle,
           ),
         ),
         Expanded(child: Container()),
@@ -143,7 +159,7 @@ class HomeListItem extends StatelessWidget {
       child: Wrap(
         children: <Widget>[
           Text(
-            'てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと', style: myTextStyle,
+            '【世界】てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと', style: myTextStyle,
           ),
         ],
       ),
@@ -188,7 +204,7 @@ class HomeListItem extends StatelessWidget {
               size: button_size,
               color: Colors.grey,
             ),
-            Text(' 712', style: myTextStyle)
+            Text(' 712', style: myNumberTextStyle)
           ],
         ),
         Row(
@@ -198,7 +214,7 @@ class HomeListItem extends StatelessWidget {
               size: button_size,
               color: Colors.grey,
             ),
-            Text(' 29.8K', style: myTextStyle)
+            Text(' 29.8K', style: myNumberTextStyle)
           ],
         ),
         Row(
@@ -208,7 +224,7 @@ class HomeListItem extends StatelessWidget {
               size: button_size,
               color: Colors.grey,
             ),
-            Text(' 96.1K', style: myTextStyle)
+            Text(' 96.1K', style: myNumberTextStyle)
           ],
         ),
         Icon(
