@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'HelloWorld.dart';
 import 'SettingScreen.dart';
+import 'Wrap.dart';
 
 class MyHomeMaterial extends StatefulWidget {
   MyHomeMaterial({Key key, this.title}) : super(key: key);
@@ -52,7 +53,7 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
         children: [
           HelloWorld(),
           Setting(),
-          Setting(),
+          MyWrap(),
         ]),
         // ページ下部のナビゲーションメニュー
         bottomNavigationBar: BottomNavigationBar(

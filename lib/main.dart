@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
       //  // This is the theme of your application.
       //  primarySwatch: Colors.blue,
       // ),
-      // theme: ThemeData.dark(),
-      theme: ThemeData.light(),
+      theme: ThemeData.dark(),
+      //theme: ThemeData.light(),
       
       initialRoute: '/home',
       

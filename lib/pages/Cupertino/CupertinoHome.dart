@@ -17,7 +17,7 @@ class _State extends State<CupertinoHome> {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        //backgroundColor: const Color(0xff333333),
+        backgroundColor: const Color(0xff333333),  //dark mode
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
@@ -42,7 +42,7 @@ class _State extends State<CupertinoHome> {
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
         //else  return CupertinoTwitter();
-        else  return CupertinoWebView();
+        else  return CupertinoSettings();
         
         //else  return MyBottomNavigationBar();
 
