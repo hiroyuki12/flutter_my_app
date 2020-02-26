@@ -202,9 +202,6 @@ https://picsum.photos
 ListTile
 https://api.flutter.dev/flutter/material/ListTile-class.html
 
-FlutterでWebViewを表示する
-https://qiita.com/rydein/items/1fa1fd6046dbef837375
-
 FlatButton
 https://api.flutter.dev/flutter/material/FlatButton-class.html
 
@@ -225,3 +222,9 @@ https://github.com/HeavenOSK/Flitter
 
 Flutter-Twitter-Clone
 https://github.com/devdennysegura/flutter-twitter-clone
+
+FlutterでWebViewを表示する
+https://qiita.com/rydein/items/1fa1fd6046dbef837375
+
+Google公式Flutter用WebViewプラグインを一通り使ってみた
+https://qiita.com/aoinakanishi/items/e58e7dd537ca1d1b76d6
