@@ -202,6 +202,9 @@ https://picsum.photos
 ListTile
 https://api.flutter.dev/flutter/material/ListTile-class.html
 
+FlutterでWebViewを表示する
+https://qiita.com/rydein/items/1fa1fd6046dbef837375
+
 FlatButton
 https://api.flutter.dev/flutter/material/FlatButton-class.html
 
