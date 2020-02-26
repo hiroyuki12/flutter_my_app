@@ -3,6 +3,7 @@ import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
 import 'CupertinoHelloWorld.dart';
 import 'CupertinoSettings.dart';
 import 'CupertinoTwitter.dart';
+import 'CupertinoWebView.dart';
 
 class CupertinoHome extends StatefulWidget {
   @override
@@ -40,7 +41,9 @@ class _State extends State<CupertinoHome> {
         if(i==0)  return CupertinoHelloWorld();
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
-        else  return CupertinoTwitter();
+        //else  return CupertinoTwitter();
+        else  return CupertinoWebView();
+        
         //else  return MyBottomNavigationBar();
 
         // return CupertinoTabView(

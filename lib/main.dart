@@ -93,8 +93,8 @@ class MyApp extends StatelessWidget {
         '/textField': (context) => MyTextField(),
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
-      // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
-      home: CupertinoTwitter(),                     //CupertinoTabBar (Bottom)
+      home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
+      //home: CupertinoTwitter(),                     //CupertinoTwitter
     );
   }
 }

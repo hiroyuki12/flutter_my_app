@@ -8,7 +8,7 @@ const text_font_size = 14.0;
 const liked_font_size = 13.0;
 const id_font_size = 16.0;
 const number_font_size = 14.0;
-const content_height = 290.5;
+const content_height = 291.0;
 
 class CupertinoTwitterHome extends StatelessWidget {
   final titleTextStyle = new TextStyle(
