@@ -42,7 +42,7 @@ class _State extends State<CupertinoHome> {
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
         //else  return CupertinoTwitter();
-        else  return FlutterIssues();
+        else  return CupertinoFlutterIssues();
         
         //else  return MyBottomNavigationBar();
 
