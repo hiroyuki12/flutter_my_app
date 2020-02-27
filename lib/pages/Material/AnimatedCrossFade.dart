@@ -23,7 +23,7 @@ class _State extends State<MyAnimatedCrossFade> {
             crossFadeState: _first ? CrossFadeState.showFirst : CrossFadeState.showSecond,
           ),
           FlatButton(
-            child: Text('CLICK ME!'),
+            child: Text('Click Me!'),
             onPressed: _onPressed,
           ),
         ],
