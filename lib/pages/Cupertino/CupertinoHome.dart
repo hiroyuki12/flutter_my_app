@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_my_app/pages/Material/LoremPicsumScreen.dart';
 import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
+import 'CupertinoFlutterIssues.dart';
 import 'CupertinoGridView.dart';
 import 'CupertinoHelloWorld.dart';
 import 'CupertinoSettings.dart';
@@ -44,7 +45,7 @@ class _State extends State<CupertinoHome> {
         else if(i==1)  return CupertinoSettings();
         else if(i==2)  return Setting();
         //else  return CupertinoTwitter();
-        else  return LoremPicsum();
+        else  return CupertinoFlutterIssues();
         
         //else  return MyBottomNavigationBar();
 
