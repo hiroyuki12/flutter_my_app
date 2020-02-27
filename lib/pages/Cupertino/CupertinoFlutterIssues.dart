@@ -30,18 +30,26 @@ class Commit {
     this.avatarUrl,
     this.sha,
     this.date,
+    this.login,
   });
 
   final String message;
   final String avatarUrl;
   final String sha;
   final String date;
+  final String login;
 }
 class _State extends State<CupertinoFlutterIssues> {
   var myTextStyle = new TextStyle(
     fontWeight: FontWeight.w100,
     decoration: TextDecoration.none,
     fontSize: 16,
+    color: CupertinoColors.white);
+
+  var mySubTitleTextStyle = new TextStyle(
+    fontWeight: FontWeight.w100,
+    decoration: TextDecoration.none,
+    fontSize: 14,
     color: CupertinoColors.white);
 
   List<Issue> _issues = <Issue>[];
@@ -55,7 +63,6 @@ class _State extends State<CupertinoFlutterIssues> {
   int type = 0;
 
   Future<void> _load(int type) async {
-
     String url = '';
     if(type==0) url = 'https://api.github.com/repositories/31792824/issues';
     else        url = 'https://api.github.com/repositories/31792824/commits';
@@ -83,40 +90,57 @@ class _State extends State<CupertinoFlutterIssues> {
             avatarUrl: commit['author']['avatar_url'] as String,
             sha: commit['sha'] as String,
             date: commit['commit']['committer']['date'] as String,
+            login: commit['author']['login'] as String,
           ));
         });
       }
     });
   }
 
+  String navigationBarTitle = 'Flutter Issues2';
+  String buttonTitle = 'Issues';
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoFlutterIssues", style: myTextStyle),
+        middle: Text(navigationBarTitle, style: myTextStyle),
         trailing: FlatButton(
-          child: Text("Commits", 
+          child: Text(buttonTitle,
             style: myTextStyle) , 
-          onPressed: (){setState(() {
-            type = 1;
+            onPressed: (){setState(() {
+            if(type==0) {
+              navigationBarTitle = 'Flutter Commits';
+              buttonTitle = 'Issues';
+              type = 1;
+            }
+            else {
+              navigationBarTitle = 'Flutter Issues';
+              buttonTitle = 'Commits';
+              type = 0;
+            }
             _load(type);
           });},),
         backgroundColor: const Color(0xff333333),
       ),
       child: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          if(type == 0)
-          {
+          if(type == 0) {
             if (index >= _issues.length) {
               return null;
             }
 
             final issue = _issues[index];
+            String title = issue.title;
+            int maxLength = 80;
+            if(title.length > maxLength) {
+              title = issue.title.substring(0, maxLength);
+            }
             return Row(
               children: <Widget>[
                 Padding(
-                  //padding: const EdgeInsets.all(6.0),
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  padding: const EdgeInsets.all(6.0),
+                  // padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ClipOval(
                     child: Image.network(issue.avatarUrl,
                       width: 50,),
@@ -124,11 +148,12 @@ class _State extends State<CupertinoFlutterIssues> {
                 ),
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(issue.title, 
                         style: myTextStyle,),
-                      Text(issue.updated_at, 
-                        style: myTextStyle,),
+                      Text('#' + issue.number + '  opened  ' + issue.updated_at, 
+                        style: mySubTitleTextStyle,),
                     ],
                   )
                 ),
@@ -143,33 +168,38 @@ class _State extends State<CupertinoFlutterIssues> {
 
             final commit = _commits[index];
             String message = commit.message;
-            if(message.length > 60) {
-              message = commit.message.substring(0,50);
+            int maxLength = 80;
+            if(message.length > maxLength) {
+              message = commit.message.substring(0, maxLength);
             }
             return Row(
               children: <Widget>[
                 Padding(
-                  //padding: const EdgeInsets.all(6.0),
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  padding: const EdgeInsets.all(6.0),
+                  // padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ClipOval(
                     child: Image.network(commit.avatarUrl,
-                      width: 50,),
+                      width: 50,height: 55,),
                   ),
                 ),
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text(message , 
-                        style: myTextStyle,),
-                      // Text(commit.date, 
-                      //   style: myTextStyle,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(message , 
+                            style: myTextStyle,),
+                          Text(commit.login + ' committed  ' + commit.date , 
+                            style: mySubTitleTextStyle,),
+                        ],
+                      ),
                     ],
                   )
                 ),
               ],
             );
           }
-
         },
       ),
     );
