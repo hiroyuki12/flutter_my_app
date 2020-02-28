@@ -34,7 +34,13 @@ class _State extends State<CupertinoFlutterIssues> {
         trailing: _buildTrailingButton(),
         backgroundColor: const Color(0xff333333),
       ),
-      child: ListView.builder(
+      child: _buildListView(context),
+    );
+  }
+
+  Widget _buildListView(BuildContext context)
+  {
+    return ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           if(type == 0) {
             if (index >= _issues.length) {
@@ -42,7 +48,7 @@ class _State extends State<CupertinoFlutterIssues> {
             }
 
             final issue = _issues[index];
-            return _buildIssueRow(issue);
+            return _buildIssuesRow(issue);
           }
           else {
             if (index >= _commits.length) {
@@ -58,8 +64,7 @@ class _State extends State<CupertinoFlutterIssues> {
             return _buildCommitRow(commit, message);
           }
         },
-      ),
-    );
+      );
   }
 
   Widget _buildTrailingButton() {
@@ -83,7 +88,7 @@ class _State extends State<CupertinoFlutterIssues> {
     );
   }
 
-  Widget _buildIssueRow(Issue issue) {
+  Widget _buildIssuesRow(Issue issue) {
     return Row(
       children: <Widget>[
         Padding(
@@ -140,6 +145,40 @@ class _State extends State<CupertinoFlutterIssues> {
   }
 }
 
+void _buildIssuesCommits(final data)
+{
+  if(type==0) {
+    final issues = data as List;
+    issues.forEach((dynamic element) {
+      final issue = element as Map;
+      _issues.add(Issue(
+        title: issue['title'] as String,
+        avatarUrl: issue['user']['avatar_url'] as String,
+        number: issue['number'].toString() as String,
+        updatedAt: issue['updated_at'] as String,
+      ));
+    });
+  }
+  else {
+    final commits = data as List;
+    commits.forEach((dynamic element) {
+      final commit = element as Map;
+      _commits.add(Commit(
+        message: commit['commit']['message'] as String,
+        avatarUrl: commit['author']['avatar_url'] as String,
+        sha: commit['sha'] as String,
+        date: commit['commit']['committer']['date'] as String,
+        login: commit['author']['login'] as String,
+      ));
+    });
+  }
+}
+
+String navigationBarTitle = 'Flutter Issues';
+String buttonTitle = 'Commits';
+
+String url = '';
+
 class Issue {
   Issue({
     this.title,
@@ -179,8 +218,8 @@ var myTextStyle = new TextStyle(
 var mySubTitleTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
-  fontSize: 14,
-  color: CupertinoColors.white);
+  fontSize: 13,
+  color: CupertinoColors.systemBlue);
 
 // 0:Flutter Issues
 // 1:Flutter Commits
@@ -188,37 +227,3 @@ int type = 0;
 
 List<Issue> _issues = <Issue>[];
 List<Commit> _commits = <Commit>[];
-
-void _buildIssuesCommits(final data)
-{
-  if(type==0) {
-    final issues = data as List;
-    issues.forEach((dynamic element) {
-      final issue = element as Map;
-      _issues.add(Issue(
-        title: issue['title'] as String,
-        avatarUrl: issue['user']['avatar_url'] as String,
-        number: issue['number'].toString() as String,
-        updatedAt: issue['updatedAt'] as String,
-      ));
-    });
-  }
-  else {
-    final commits = data as List;
-    commits.forEach((dynamic element) {
-      final commit = element as Map;
-      _commits.add(Commit(
-        message: commit['commit']['message'] as String,
-        avatarUrl: commit['author']['avatar_url'] as String,
-        sha: commit['sha'] as String,
-        date: commit['commit']['committer']['date'] as String,
-        login: commit['author']['login'] as String,
-      ));
-    });
-  }
-}
-
-String navigationBarTitle = 'Flutter Issues';
-String buttonTitle = 'Commits';
-
-String url = '';
