@@ -1,23 +1,20 @@
 import 'dart:io';
-
 import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-var myTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 16,
-  color: CupertinoColors.white);
+import 'DarkModeColor.dart';
 
 class CupertinoSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    isDarkMode = false;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoSetting", style: myTextStyle),
-        backgroundColor: const Color(0xff333333),
+        middle: Text("CupertinoSetting", style: _buildFont()),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: ChangeNotifierProvider(
         create: (context) => CounterStore(),
@@ -33,6 +30,7 @@ class MyHomePage extends StatelessWidget {
     return Consumer<CounterStore>(
       builder: (context, counterStore, _) {
         return CupertinoPageScaffold(
+          backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
           child: Column(
             children: <Widget>[
               CupertinoButton(
@@ -127,4 +125,15 @@ class CounterStore with ChangeNotifier {
 
     return;
   }
+}
+
+var myTextStyle = new TextStyle();
+TextStyle _buildFont() {
+  return myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
 }

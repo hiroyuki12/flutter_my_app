@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'CupertinoTwitterHome.dart';
+import 'DarkModeColor.dart';
 
 class CupertinoTwitter extends StatefulWidget {
   @override
@@ -28,6 +28,7 @@ class _State extends State<CupertinoTwitter> {
   ];
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoTabScaffold(
       tabBar: _buildTabBar(),
       tabBuilder: (BuildContext context, int index) {
@@ -44,7 +45,7 @@ class _State extends State<CupertinoTwitter> {
 
   CupertinoTabBar _buildTabBar() {
     return CupertinoTabBar(
-      //backgroundColor: Colors.white,
+      backgroundColor: isDarkMode ? darkModeBackColor :  backColor,  //darkMode = black
       activeColor: Colors.blue,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(

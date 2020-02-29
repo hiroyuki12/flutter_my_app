@@ -1,30 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-const button_size = 17.0;
-const title_font_size = 18.0;
-const username_font_size = 15.0;
-const text_font_size = 14.0;
-const liked_font_size = 13.0;
-const id_font_size = 16.0;
-const number_font_size = 14.0;
-const content_height = 291.0;
+import 'DarkModeColor.dart';
 
 class CupertinoTwitterHome extends StatelessWidget {
-  final titleTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: title_font_size,
-    color: CupertinoColors.black);
-
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
+    _buildFont();
     var _homeListItems = List<HomeListItem>.generate(
       12,
       (i) => HomeListItem(),
     );
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         // leading: Icon(Icons.account_circle, size: 40.0, color: const Color(0xff26a7de)),
         // leading: Icon(Icons.account_circle, size: 40.0, color: const Color(0xff00aaee)),
         leading: Icon(Icons.account_circle, size: 40.0, color: const Color(0xff888888)),
@@ -41,53 +31,20 @@ class CupertinoTwitterHome extends StatelessWidget {
 }
 
 class HomeListItem extends StatelessWidget {
-  final myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w300,
-    decoration: TextDecoration.none,
-    fontSize: text_font_size,
-    color: CupertinoColors.black
-  );
-
-  final myBoldTextStyle = new TextStyle(
-    fontWeight: FontWeight.w700,
-    decoration: TextDecoration.none,
-    fontSize: username_font_size,
-    color: CupertinoColors.black
-  );
-
-  final myIdTextStyle = new TextStyle(
-    fontWeight: FontWeight.w400,
-    decoration: TextDecoration.none,
-    fontSize: id_font_size,
-    color: CupertinoColors.systemGrey
-  );
-
-  final myLikedTextStyle = new TextStyle(
-    fontWeight: FontWeight.w400,
-    decoration: TextDecoration.none,
-    fontSize: liked_font_size,
-    color: CupertinoColors.systemGrey
-  );
-
-  final myNumberTextStyle = new TextStyle(
-    fontWeight: FontWeight.w400,
-    decoration: TextDecoration.none,
-    fontSize: number_font_size,
-    color: CupertinoColors.systemGrey
-  );
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(  //外枠
+        color: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         border: Border.all(
           width: 0.1,
           color: Colors.grey,
         ),
       ),
       child: Container(
+        color: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         height: content_height,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -239,3 +196,62 @@ class HomeListItem extends StatelessWidget {
     );
   }
 }
+
+
+
+const button_size = 17.0;
+const title_font_size = 18.0;
+const username_font_size = 15.0;
+const text_font_size = 14.0;
+const liked_font_size = 13.0;
+const id_font_size = 16.0;
+const number_font_size = 14.0;
+const content_height = 291.0;
+
+TextStyle titleTextStyle = new TextStyle();
+TextStyle myTextStyle = new TextStyle();
+TextStyle myBoldTextStyle = new TextStyle();
+void _buildFont()
+{
+  myBoldTextStyle = new TextStyle(
+    fontWeight: FontWeight.w700,
+    decoration: TextDecoration.none,
+    fontSize: username_font_size,
+    color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
+  
+  myTextStyle = new TextStyle(
+    fontWeight: FontWeight.w300,
+    decoration: TextDecoration.none,
+    fontSize: text_font_size,
+    color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
+
+  titleTextStyle = new TextStyle(
+    fontWeight: FontWeight.w100,
+    decoration: TextDecoration.none,
+    fontSize: title_font_size,
+    color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+    );
+}
+
+final myIdTextStyle = new TextStyle(
+  fontWeight: FontWeight.w400,
+  decoration: TextDecoration.none,
+  fontSize: id_font_size,
+  color: CupertinoColors.systemGrey
+);
+
+final myLikedTextStyle = new TextStyle(
+  fontWeight: FontWeight.w400,
+  decoration: TextDecoration.none,
+  fontSize: liked_font_size,
+  color: CupertinoColors.systemGrey
+);
+
+final myNumberTextStyle = new TextStyle(
+  fontWeight: FontWeight.w400,
+  decoration: TextDecoration.none,
+  fontSize: number_font_size,
+  color: CupertinoColors.systemGrey
+);

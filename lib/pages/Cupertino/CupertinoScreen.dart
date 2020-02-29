@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'DarkModeColor.dart';
 
 class CupertinoScreen extends StatefulWidget {
   @override
@@ -10,8 +11,11 @@ class CupertinoScreen extends StatefulWidget {
 class _State extends State<CupertinoScreen> {
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoTabScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       tabBar: CupertinoTabBar(
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
@@ -40,7 +44,8 @@ class _State extends State<CupertinoScreen> {
 
 Widget _buildCupertinoTabView(BuildContext context, int i) => CupertinoPageScaffold(
   navigationBar: CupertinoNavigationBar(
-    middle: Text('Cupertino'),
+    backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+    middle: Text('Cupertino', style: _buildFont()),
   ),
   child: Center(
     child: CupertinoButton(
@@ -127,4 +132,15 @@ class DetailScreenState extends State<DetailScreen> {
       ),
     );
   }
+}
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildFont() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
 }

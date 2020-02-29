@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'DarkModeColor.dart';
+
 class CupertinoFlutterIssues extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -17,9 +19,9 @@ class _State extends State<CupertinoFlutterIssues> {
   }
 
   Future<void> _load() async {
-    if(type==0) url = 'https://api.github.com/repositories/31792824/issues';
-    else        url = 'https://api.github.com/repositories/31792824/commits';
-    final res = await http.get(url);
+    if(_type==0) _url = 'https://api.github.com/repositories/31792824/issues';
+    else        _url = 'https://api.github.com/repositories/31792824/commits';
+    final res = await http.get(_url);
     final data = json.decode(res.body);
     setState(() {
       _buildIssuesCommits(data);
@@ -28,11 +30,14 @@ class _State extends State<CupertinoFlutterIssues> {
 
   @override
   Widget build(BuildContext context) {
+    isDarkMode = false;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text(navigationBarTitle, style: myTextStyle),
+        middle: Text(_navigationBarTitle, style: _buildTextStyle()),
         trailing: _buildTrailingButton(),
-        backgroundColor: const Color(0xff333333),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: _buildListView(context),
     );
@@ -42,7 +47,7 @@ class _State extends State<CupertinoFlutterIssues> {
   {
     return ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          if(type == 0) {
+          if(_type == 0) {
             if (index >= _issues.length) {
               return null;
             }
@@ -69,18 +74,18 @@ class _State extends State<CupertinoFlutterIssues> {
 
   Widget _buildTrailingButton() {
     return FlatButton(
-      child: Text(buttonTitle,
-        style: myTextStyle) , 
+      child: Text(_buttonTitle,
+        style: _myTextStyle) , 
         onPressed: (){setState(() {
-          if(type==0) {
-            navigationBarTitle = 'Flutter Commits';
-            buttonTitle = 'Issues';
-            type = 1;
+          if(_type==0) {
+            _navigationBarTitle = 'Flutter Commits';
+            _buttonTitle = 'Issues';
+            _type = 1;
           }
           else {
-            navigationBarTitle = 'Flutter Issues';
-            buttonTitle = 'Commits';
-            type = 0;
+            _navigationBarTitle = 'Flutter Issues';
+            _buttonTitle = 'Commits';
+            _type = 0;
           }
           _load();
         });
@@ -104,9 +109,9 @@ class _State extends State<CupertinoFlutterIssues> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(issue.title, 
-                style: myTextStyle,),
+                style: _myTextStyle,),
               Text('#' + issue.number + '  opened  ' + issue.updatedAt, 
-                style: mySubTitleTextStyle,),
+                style: _mySubTitleTextStyle,),
             ],
           )
         ),
@@ -132,9 +137,9 @@ class _State extends State<CupertinoFlutterIssues> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(message , 
-                    style: myTextStyle,),
+                    style: _myTextStyle,),
                   Text(commit.login + ' committed  ' + commit.date , 
-                    style: mySubTitleTextStyle,),
+                    style: _mySubTitleTextStyle,),
                 ],
               ),
             ],
@@ -147,7 +152,7 @@ class _State extends State<CupertinoFlutterIssues> {
 
 void _buildIssuesCommits(final data)
 {
-  if(type==0) {
+  if(_type==0) {
     final issues = data as List;
     issues.forEach((dynamic element) {
       final issue = element as Map;
@@ -174,10 +179,10 @@ void _buildIssuesCommits(final data)
   }
 }
 
-String navigationBarTitle = 'Flutter Issues';
-String buttonTitle = 'Commits';
+String _navigationBarTitle = 'Flutter Issues';
+String _buttonTitle = 'Commits';
 
-String url = '';
+String _url = '';
 
 class Issue {
   Issue({
@@ -209,13 +214,18 @@ class Commit {
   final String login;
 }
 
-var myTextStyle = new TextStyle(
+var _myTextStyle = new TextStyle();
+TextStyle _buildTextStyle() {
+  return _myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,
-  color: CupertinoColors.white);
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
+}
 
-var mySubTitleTextStyle = new TextStyle(
+var _mySubTitleTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 13,
@@ -223,7 +233,7 @@ var mySubTitleTextStyle = new TextStyle(
 
 // 0:Flutter Issues
 // 1:Flutter Commits
-int type = 0;
+int _type = 0;
 
 List<Issue> _issues = <Issue>[];
 List<Commit> _commits = <Commit>[];

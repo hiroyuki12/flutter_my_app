@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import 'DarkModeColor.dart';
+
 class MyCupertinoGridView extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -10,10 +12,13 @@ class MyCupertinoGridView extends StatefulWidget {
 class _State extends State<MyCupertinoGridView> {
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         middle: Text("CupertinoGridView", style: new TextStyle(color: CupertinoColors.white)),
-        backgroundColor: const Color(0xff333333),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
         child: _buildGrid(),

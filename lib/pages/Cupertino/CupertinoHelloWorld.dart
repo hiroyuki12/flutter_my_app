@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'DarkModeColor.dart';
 
 class CupertinoHelloWorld extends StatefulWidget {
   @override
@@ -8,23 +9,31 @@ class CupertinoHelloWorld extends StatefulWidget {
 }
 
 class _State extends State<CupertinoHelloWorld> {
-  var myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white);
-
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Cupertino Hello World", style: myTextStyle),
+        middle: Text("Cupertino Hello World", style: _buildTextStyle()),
         //trailing: Text("Edit", style: myTextStyle),
-        backgroundColor: const Color(0xff333333),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
-        child: Text("Hello World!", style: myTextStyle,),
+        child: Text("Hello World!", style: _buildTextStyle(),),
       ),
     );
   }
+}
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildTextStyle() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
 }

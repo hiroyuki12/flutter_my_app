@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import 'DarkModeColor.dart';
+
 class MyCupertinoButton extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -8,26 +10,15 @@ class MyCupertinoButton extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoButton> {
-  var titleTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white
-  );
-
-  var buttonTextStyle = new TextStyle(
-    //fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white
-  );
-
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Cupertino", style: titleTextStyle),
-        backgroundColor: const Color(0xff333333),
+        middle: Text("Cupertino", style: _buildTextStyle()),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
         child: CupertinoButton(
@@ -35,9 +26,28 @@ class _State extends State<MyCupertinoButton> {
           borderRadius: new BorderRadius.circular(30.0),
           onPressed: () {
           },
-          child: Text('ダイアログを表示します', style: buttonTextStyle),
+          child: Text('ダイアログを表示します', style: _buttonTextStyle),
         ),
       ),
     );
   }
 }
+
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildTextStyle() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
+}
+
+var _buttonTextStyle = new TextStyle(
+  //fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  color: CupertinoColors.white
+);

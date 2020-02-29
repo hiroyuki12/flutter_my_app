@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'DarkModeColor.dart';
+
 class MyCupertinoListView extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -8,42 +10,22 @@ class MyCupertinoListView extends StatefulWidget {
   }
 }
 
-class Item {
-  Item({
-    this.title,
-    this.profileImageUrl,
-  });
-
-  final String title;
-  final String profileImageUrl;
-}
-
 class _State extends State<MyCupertinoListView> {
-  List<Map<String, dynamic>> items = [
-    { "title" : "Title A",  "content" : "Content 1" },
-    { "title" : "Title B",  "content" : "Content 2" },
-    { "title" : "Title C",  "content" : "Content 3" }
-  ];
-
-  var myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white);
-
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoListView", style: myTextStyle),
-        backgroundColor: const Color(0xff333333),
+        middle: Text("CupertinoListView", style: _myTextStyle),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
         child: 
         ListView.builder(
-          itemCount: items.length,
+          itemCount: _items.length,
           itemBuilder: (BuildContext context, int index) {
-            final item = items[index];
+            final item = _items[index];
             return Dismissible(
               // KeyはFlutterが要素を一意に特定できるようにするための値を設定する。
               key: Key(item["title"]),
@@ -61,3 +43,16 @@ class _State extends State<MyCupertinoListView> {
     );
   }
 }
+
+List<Map<String, dynamic>> _items = [
+  { "title" : "Title A",  "content" : "Content 1" },
+  { "title" : "Title B",  "content" : "Content 2" },
+  { "title" : "Title C",  "content" : "Content 3" }
+];
+
+var _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  color: CupertinoColors.white
+);

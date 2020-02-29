@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'DarkModeColor.dart';
 
 class MyCupertinoActivityIndicator extends StatefulWidget {
   @override
@@ -16,14 +17,27 @@ class _State extends State<MyCupertinoActivityIndicator> {
   
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoActivityIndicator", style: titleTextStyle),
-        backgroundColor: const Color(0xff333333),
+        middle: Text("CupertinoActivityIndicator", style: _buildTextStyle()),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
         child: CupertinoActivityIndicator(),
       ),
     );
   }
+}
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildTextStyle() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
 }

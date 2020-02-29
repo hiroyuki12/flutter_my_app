@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import 'DarkModeColor.dart';
+
 class MyCupertinoTabBar extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -10,14 +12,19 @@ class MyCupertinoTabBar extends StatefulWidget {
 class _State extends State<MyCupertinoTabBar> {
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoTabScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       tabBar: CupertinoTabBar(
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         items: [
           BottomNavigationBarItem(
+            backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
             icon: Icon(CupertinoIcons.book_solid),
             title: Text('Articles'),
           ),
           BottomNavigationBarItem(
+            backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
             icon: Icon(CupertinoIcons.eye_solid),
             title: Text('Views'),
           ),
@@ -27,8 +34,10 @@ class _State extends State<MyCupertinoTabBar> {
         return CupertinoTabView(
           builder: (context) {
             return CupertinoPageScaffold(
+              backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
               navigationBar: CupertinoNavigationBar(
-                middle: (i == 0) ? Text('Articles') : Text('Views'),
+                backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+                middle: (i == 0) ? Text('Articles', style: _buildTextStyle()) : Text('Views', style: _buildTextStyle()),
               ),
               child: Center(
                 child: CupertinoButton(
@@ -50,4 +59,15 @@ class _State extends State<MyCupertinoTabBar> {
       }
     );
   }
+}
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildTextStyle() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
 }

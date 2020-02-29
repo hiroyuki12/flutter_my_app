@@ -44,11 +44,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'main',
-      // theme: ThemeData(
-      //  // This is the theme of your application.
-      //  primarySwatch: Colors.blue,
-      // ),
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+       // This is the theme of your application.
+       primarySwatch: Colors.blue,
+       backgroundColor: CupertinoColors.black,
+       scaffoldBackgroundColor: CupertinoColors.black,
+       dialogBackgroundColor: CupertinoColors.black,
+      ),
+      // theme: ThemeData.dark(),
       // theme: ThemeData.light(),
       
       initialRoute: '/home',

@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'DarkModeColor.dart';
+
 class CupertinoQiita extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -10,25 +12,7 @@ class CupertinoQiita extends StatefulWidget {
   }
 }
 
-class Item {
-   Item({
-     this.title,
-     this.profileImageUrl,
-   });
-
-   final String title;
-   final String profileImageUrl;
- }
-
 class _State extends State<CupertinoQiita> {
-  var myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white);
-
-  List<Item> _items = <Item>[];
-
   @override
   void initState() {
     super.initState();
@@ -52,10 +36,13 @@ class _State extends State<CupertinoQiita> {
 
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoQiita", style: myTextStyle),
-        backgroundColor: const Color(0xff333333),
+        middle: Text("CupertinoQiita", style: _buildFont()),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
@@ -76,7 +63,7 @@ class _State extends State<CupertinoQiita> {
               ),
               Expanded(
                 child: Text(issue.title, 
-                  style: myTextStyle,)
+                  style: _buildFont(),)
               ),
             ],
           );
@@ -84,4 +71,33 @@ class _State extends State<CupertinoQiita> {
       ),
     );
   }
+}
+
+class Item {
+   Item({
+     this.title,
+     this.profileImageUrl,
+   });
+
+   final String title;
+   final String profileImageUrl;
+ }
+
+var myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  color: CupertinoColors.white);
+
+List<Item> _items = <Item>[];
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildFont() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
 }

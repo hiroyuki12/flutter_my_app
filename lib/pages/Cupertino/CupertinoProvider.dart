@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 
+import 'DarkModeColor.dart';
+
 class CounterStore with ChangeNotifier {
   var count = 0;
 
@@ -11,18 +13,15 @@ class CounterStore with ChangeNotifier {
 }
 
 class CupertinoProvider extends StatelessWidget {
-  final myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white);
-
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoProvider", style: myTextStyle),
-        backgroundColor: const Color(0xff333333),
+        middle: Text("CupertinoProvider", style: _buildFont()),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: ChangeNotifierProvider(
         create: (context) => CounterStore(),
@@ -33,12 +32,6 @@ class CupertinoProvider extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white);
-
   @override
   Widget build(BuildContext context) {
     return Consumer<CounterStore>(
@@ -47,7 +40,7 @@ class MyHomePage extends StatelessWidget {
           child: Center(
             child: Column(
               children: <Widget>[
-                Text('${counterStore.count}', style: myTextStyle,),
+                Text('${counterStore.count}', style: _buildFont(),),
                 CupertinoButton(
                   child: Text('Count up'),
                   onPressed: counterStore.incrementCounter,
@@ -59,4 +52,15 @@ class MyHomePage extends StatelessWidget {
       },
     );
   }
+}
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildFont() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
 }

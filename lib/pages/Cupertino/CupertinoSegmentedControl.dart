@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import 'DarkModeColor.dart';
+
 class MyCupertinoSegmentedControl extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -7,26 +9,16 @@ class MyCupertinoSegmentedControl extends StatefulWidget {
   }
 }
 
-var titleTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 14,
-  color: CupertinoColors.white);
-
-var controlTextStyle = new TextStyle(
-  fontWeight: FontWeight.w400,
-  decoration: TextDecoration.none,
-  fontSize: 12,
-  color: CupertinoColors.systemBlue);
-
 class _State extends State<MyCupertinoSegmentedControl> {
-
   @override
   Widget build(BuildContext context) {
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
+      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoSegmentedControl", style: titleTextStyle),
-        backgroundColor: const Color(0xff333333),
+        middle: Text("CupertinoSegmentedControl", style: _buildFont()),
+        // backgroundColor: const Color(0xff333333),
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: 
         Row(
@@ -63,3 +55,22 @@ Widget _buildCupertinoSegmentedControl() {
        }
    },);
  }
+
+
+var _myTextStyle = new TextStyle();
+TextStyle _buildFont() {
+  return _myTextStyle = new TextStyle(
+  fontWeight: FontWeight.w100,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+  );
+}
+
+
+var controlTextStyle = new TextStyle(
+  fontWeight: FontWeight.w400,
+  decoration: TextDecoration.none,
+  fontSize: 12,
+  color: CupertinoColors.systemBlue);
