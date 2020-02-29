@@ -14,13 +14,13 @@ class Issue {
     this.title,
     this.avatarUrl,
     this.number,
-    this.updated_at,
+    this.updatedAt,
   });
 
   final String title;
   final String avatarUrl;
   final String number;
-  final String updated_at;
+  final String updatedAt;
 }
 
 class _State extends State<FlutterIssues> {
@@ -43,7 +43,7 @@ class _State extends State<FlutterIssues> {
           title: issue['title'] as String,
           avatarUrl: issue['user']['avatar_url'] as String,
           number: issue['number'].toString() as String,
-          updated_at: issue['updated_at'] as String,
+          updatedAt: issue['updated_at'] as String,
         ));
       });
     });
@@ -73,7 +73,7 @@ class _State extends State<FlutterIssues> {
               child: Image.network(issue.avatarUrl),
             ),
             title: Text(issue.title),
-            subtitle: Text('#' + issue.number + ' opened ' + issue.updated_at),
+            subtitle: Text('#' + issue.number + ' opened ' + issue.updatedAt),
           );
         },
       ),

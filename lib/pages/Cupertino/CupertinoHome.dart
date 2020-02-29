@@ -1,31 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_my_app/pages/Material/FlutterIssuesScreen.dart';
-import 'package:flutter_my_app/pages/Material/LoremPicsumScreen.dart';
 import 'package:flutter_my_app/pages/Material/SettingScreen.dart';
-import 'CupertinoActionSheet.dart';
-import 'CupertinoActivityIndicator.dart';
-import 'CupertinoAlertDialog.dart';
-import 'CupertinoBuildingLayouts.dart';
-import 'CupertinoButton.dart';
-import 'CupertinoDatePicker.dart';
 import 'CupertinoFlutterIssues.dart';
-import 'CupertinoGridView.dart';
 import 'CupertinoHelloWorld.dart';
-import 'CupertinoListView.dart';
-import 'CupertinoPicker.dart';
-import 'CupertinoPlatform.dart';
-import 'CupertinoProvider.dart';
-import 'CupertinoQiita.dart';
-import 'CupertinoScreen.dart';
-import 'CupertinoSegmentedControl.dart';
 import 'CupertinoSettings.dart';
-import 'CupertinoSlider.dart';
-import 'CupertinoSwitch.dart';
-import 'CupertinoTabBar.dart';
-import 'CupertinoTextField.dart';
-import 'CupertinoTwitter.dart';
-import 'CupertinoTwitterHome.dart';
-import 'CupertinoWebView.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoHome extends StatefulWidget {
@@ -65,7 +42,7 @@ class _State extends State<CupertinoHome> {
         else if(i==2)  return Setting();
         // else  return CupertinoTwitterHome();
         // else  return CupertinoTwitter();
-        else  return CupertinoWebView();
+        else  return CupertinoFlutterIssues();
         
         //else  return MyBottomNavigationBar();
 

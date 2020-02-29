@@ -289,13 +289,14 @@ class _State extends State<Setting> {
                 //]
               //),
               */
+              /*
               //ボタン(iPhoneっぽく)
               CupertinoButton(
                 child: Text('Push Flutter Issues'),
                 onPressed: ()=> Navigator.pushNamed(context, '/flutterIssues'),
                 //onPressed: _onPushFlutterIssuesPressed,
               ),
-
+              */
               //ボタン(iPhoneっぽく)
               CupertinoButton(
                 child: Text('OK'),

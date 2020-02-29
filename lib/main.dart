@@ -5,6 +5,7 @@ import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
 import 'package:flutter_my_app/pages/Material/RadioListTile.dart';
 import 'package:flutter_my_app/pages/Material/RaisedButton.dart';
 import 'package:flutter_my_app/pages/Material/TextField.dart';
+import 'pages/Cupertino/CupertinoFlutterIssues.dart';
 import 'pages/Cupertino/CupertinoTwitter.dart';
 import 'pages/Material/BottomSheet.dart';
 import 'pages/Material/Container.dart';
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/helloWorld': (context) => HelloWorld(),
         '/flutterIssues': (context) => FlutterIssues(),
+        '/cupertinoFlutterIssues': (context) => CupertinoFlutterIssues(),
         '/qiita': (context) => Qiita(),
         '/setting': (context) => Setting(),
         '/listView': (context) => MyListView(),
@@ -94,6 +96,7 @@ class MyApp extends StatelessWidget {
         '/stack': (context) => MyStack(),
         '/switchListTile': (context) => MySwitchListTile(),
         '/textField': (context) => MyTextField(),
+        '/cupertinoTwitter': (context) => CupertinoTwitter(),
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
       home: CupertinoHome(),                     //CupertinoTabBar (Bottom)

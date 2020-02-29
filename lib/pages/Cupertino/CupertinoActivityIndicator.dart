@@ -31,9 +31,9 @@ class _State extends State<MyCupertinoActivityIndicator> {
   }
 }
 
-var _myTextStyle = new TextStyle();
+var myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {
-  return _myTextStyle = new TextStyle(
+  return myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,

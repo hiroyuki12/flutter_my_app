@@ -3,12 +3,6 @@ import 'package:provider/provider.dart';
 
 import 'DarkModeColor.dart';
 
-var myTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 16,
-  color: CupertinoColors.white);
-
 class MyCupertinoSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -65,9 +59,9 @@ class SliderValueStore with ChangeNotifier {
   }
 }
 
-var _myTextStyle = new TextStyle();
+var myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {
-  return _myTextStyle = new TextStyle(
+  return myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,

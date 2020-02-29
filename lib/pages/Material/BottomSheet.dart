@@ -8,7 +8,7 @@ class MyBottomSheet extends StatefulWidget {
 }
 
 class _State extends State<MyBottomSheet> {
-  var _label = '';
+  var label = '';
   
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _State extends State<MyBottomSheet> {
               leading: Icon(Icons.share),
               title: Text('Share'),
               onTap: () {
-                setState(() => _label = 'You selected Share');
+                setState(() => label = 'You selected Share');
                 Navigator.pop(context);
               },
             ),
@@ -44,7 +44,7 @@ class _State extends State<MyBottomSheet> {
               leading: Icon(Icons.edit),
               title: Text('Edit'),
               onTap: () {
-                setState(() => _label = 'You selected Edit');
+                setState(() => label = 'You selected Edit');
                 Navigator.pop(context);
               },
             ),
@@ -52,7 +52,7 @@ class _State extends State<MyBottomSheet> {
               leading: Icon(Icons.delete),
               title: Text('Delete'),
               onTap: () {
-                setState(() => _label = 'You selected Delete');
+                setState(() => label = 'You selected Delete');
                 Navigator.pop(context);
               },
             )

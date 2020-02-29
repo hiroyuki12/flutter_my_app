@@ -12,11 +12,11 @@ class LoremPicsum extends StatefulWidget {
 class Item {
    Item({
      this.author,
-     this.download_url,
+     this.downloadUrl,
    });
 
    final String author;
-   final String download_url;
+   final String downloadUrl;
  }
 
 class _State extends State<LoremPicsum> {
@@ -37,7 +37,7 @@ class _State extends State<LoremPicsum> {
         final item = element as Map;
         _items.add(Item(
           author: item['author'] as String,
-          download_url: item['download_url'] as String,
+          downloadUrl: item['download_url'] as String,
         ));
       });
     });
@@ -46,24 +46,24 @@ class _State extends State<LoremPicsum> {
   @override
   Widget build(BuildContext context) {
     var list = [
-      _photoItem(_items[0].download_url, _items[0].author),
-      _photoItem(_items[1].download_url, _items[1].author),
-      _photoItem(_items[2].download_url, _items[2].author),
-      _photoItem(_items[3].download_url, _items[3].author),
-      _photoItem(_items[4].download_url, _items[4].author),
-      _photoItem(_items[5].download_url, _items[5].author),
-      _photoItem(_items[6].download_url, _items[6].author),
-      _photoItem(_items[7].download_url, _items[7].author),
-      _photoItem(_items[8].download_url, _items[8].author),
-      _photoItem(_items[9].download_url, _items[9].author),
-      _photoItem(_items[10].download_url, _items[10].author),
-      _photoItem(_items[11].download_url, _items[11].author),
-      _photoItem(_items[12].download_url, _items[12].author),
-      _photoItem(_items[13].download_url, _items[13].author),
-      _photoItem(_items[14].download_url, _items[14].author),
-      _photoItem(_items[15].download_url, _items[15].author),
-      _photoItem(_items[16].download_url, _items[16].author),
-      _photoItem(_items[17].download_url, _items[17].author),
+      _photoItem(_items[0].downloadUrl, _items[0].author),
+      _photoItem(_items[1].downloadUrl, _items[1].author),
+      _photoItem(_items[2].downloadUrl, _items[2].author),
+      _photoItem(_items[3].downloadUrl, _items[3].author),
+      _photoItem(_items[4].downloadUrl, _items[4].author),
+      _photoItem(_items[5].downloadUrl, _items[5].author),
+      _photoItem(_items[6].downloadUrl, _items[6].author),
+      _photoItem(_items[7].downloadUrl, _items[7].author),
+      _photoItem(_items[8].downloadUrl, _items[8].author),
+      _photoItem(_items[9].downloadUrl, _items[9].author),
+      _photoItem(_items[10].downloadUrl, _items[10].author),
+      _photoItem(_items[11].downloadUrl, _items[11].author),
+      _photoItem(_items[12].downloadUrl, _items[12].author),
+      _photoItem(_items[13].downloadUrl, _items[13].author),
+      _photoItem(_items[14].downloadUrl, _items[14].author),
+      _photoItem(_items[15].downloadUrl, _items[15].author),
+      _photoItem(_items[16].downloadUrl, _items[16].author),
+      _photoItem(_items[17].downloadUrl, _items[17].author),
     ];
     return Scaffold(
       appBar: AppBar(

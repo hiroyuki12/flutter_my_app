@@ -142,9 +142,9 @@ class _State extends State<CupertinoBuildingLayouts> {
 
 }
 
-var _myTextStyle = new TextStyle();
+var myTextStyle = new TextStyle();
 TextStyle _buildFont() {
-  return _myTextStyle = new TextStyle(
+  return myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,
@@ -153,9 +153,9 @@ TextStyle _buildFont() {
   );
 }
 
-var _iconTextStyle = new TextStyle();
+var iconTextStyle = new TextStyle();
 TextStyle _buildIconTextStyle() {
-  return _iconTextStyle = new TextStyle(
+  return iconTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 12,
@@ -164,9 +164,9 @@ TextStyle _buildIconTextStyle() {
   );
 }
 
-var _titleTextStyle = new TextStyle();
+var titleTextStyle = new TextStyle();
 TextStyle _buildTitleStyle() {
-  return _titleTextStyle = new TextStyle(
+  return titleTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 20,

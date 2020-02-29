@@ -83,17 +83,11 @@ class Item {
    final String profileImageUrl;
  }
 
-var myTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 16,
-  color: CupertinoColors.white);
-
 List<Item> _items = <Item>[];
 
-var _myTextStyle = new TextStyle();
+var myTextStyle = new TextStyle();
 TextStyle _buildFont() {
-  return _myTextStyle = new TextStyle(
+  return myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,

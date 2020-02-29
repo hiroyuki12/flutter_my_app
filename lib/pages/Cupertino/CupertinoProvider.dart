@@ -54,9 +54,9 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-var _myTextStyle = new TextStyle();
+var myTextStyle = new TextStyle();
 TextStyle _buildFont() {
-  return _myTextStyle = new TextStyle(
+  return myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,

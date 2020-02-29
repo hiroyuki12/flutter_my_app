@@ -8,7 +8,7 @@ import 'DarkModeColor.dart';
 class CupertinoSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    isDarkMode = false;  // switch darkMode
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
@@ -33,10 +33,14 @@ class MyHomePage extends StatelessWidget {
           backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
           child: Column(
             children: <Widget>[
-              CupertinoButton(
-                child: Text('Push Flutter Issues'),
-                onPressed: ()=> Navigator.pushNamed(context, '/flutterIssues'),
-              ),
+              // CupertinoButton(
+              //   child: Text('Push Cupertino Flutter Issues'),
+              //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoFlutterIssues'),
+              // ),
+              // CupertinoButton(
+              //   child: Text('Push Cupertino Twitter'),
+              //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
+              // ),
               CupertinoButton(
                 child: Text('Count up'),
                 onPressed: counterStore.incrementCounter,
