@@ -65,6 +65,18 @@ class _State extends State<CupertinoMenu2> {
               child: Text('Push Cupertino Twitter'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
             ),
+            CupertinoButton(
+              child: Text('Push Cupertino TabBar'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
+            ),
+            CupertinoButton(
+              child: Text('Push CupertinoSlidingSegmentedControl'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSlidingSegmentedControl'),
+            ),
+            CupertinoButton(
+              child: Text('Push cupertinoSegmentedControlDemo'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSegmentedControlDemo'),
+            ),
 
             
           ],

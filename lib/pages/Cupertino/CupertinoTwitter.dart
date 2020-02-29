@@ -17,8 +17,8 @@ class _State extends State<CupertinoTwitter> {
     CupertinoTwitterHome(),
 
     ///Home画面以外は,　今後作成する
-    CupertinoClose(),
     MyCupertinoTabBar(),
+    Container(),
     Container(),
   ];
   @override

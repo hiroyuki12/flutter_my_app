@@ -28,6 +28,7 @@ import 'pages/Cupertino/CupertinoSwitch.dart';
 import 'pages/Cupertino/CupertinoTextField.dart';
 import 'pages/Cupertino/CupertinoTwitter.dart';
 import 'pages/Cupertino/CupertinoWebView.dart';
+import 'pages/Gallery/CupertinoSegmentedControlDemo.dart';
 import 'pages/Material/BottomSheet.dart';
 import 'pages/Material/Container.dart';
 import 'pages/Material/Drawer.dart';
@@ -140,6 +141,8 @@ class MyApp extends StatelessWidget {
         '/cupertinoSwitch': (context) => MyCupertinoSwitch(),
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
         '/cupertinoWebView': (context) => MyCupertinoWebView(),
+        '/cupertinoSegmentedControlDemo': (context) => CupertinoSegmentedControlDemo(),
+        
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
       

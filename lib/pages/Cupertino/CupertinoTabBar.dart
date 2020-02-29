@@ -36,7 +36,8 @@ class _State extends State<MyCupertinoTabBar> {
               backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
               navigationBar: CupertinoNavigationBar(
                 backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
-                middle: (i == 0) ? Text('Articles', style: _buildTextStyle()) : Text('Views', style: _buildTextStyle()),
+                // middle: (i == 0) ? Text('Articles', style: _buildTextStyle()) : Text('Views', style: _buildTextStyle()),
+                middle: Text('CupertinoTabBar', style: _buildTextStyle()),
               ),
               child: Center(
                 child: CupertinoButton(
@@ -66,7 +67,6 @@ TextStyle _buildTextStyle() {
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,
-  // color: CupertinoColors.white
   color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
   );
 }
