@@ -17,7 +17,7 @@ class CupertinoTwitterHome extends StatelessWidget {
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         // leading: Icon(Icons.account_circle, size: 40.0, color: const Color(0xff26a7de)),
         // leading: Icon(Icons.account_circle, size: 40.0, color: const Color(0xff00aaee)),
-        leading: Icon(Icons.account_circle, size: 40.0, color: const Color(0xff888888)),
+        // leading: Icon(Icons.account_circle, size: 40.0, color: const Color(0xff888888)),
         middle: Text('Home', style: titleTextStyle,),
         trailing: Icon(Icons.star_border, size:25.0, color: Colors.blue),
       ),

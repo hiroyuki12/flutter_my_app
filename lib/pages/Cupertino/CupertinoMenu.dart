@@ -26,6 +26,10 @@ class _State extends State<CupertinoMenu> {
         child: Column(
           children: <Widget>[
             CupertinoButton(
+              child: Text('Push Cupertino Home'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoHome'),
+            ),
+            CupertinoButton(
               child: Text('Push Hello World'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoHelloWorld'),
             ),
@@ -53,14 +57,6 @@ class _State extends State<CupertinoMenu> {
               child: Text('Push Cupertino Provider'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoProvider'),
             ),
-            // CupertinoButton(
-            //   child: Text('Push Cupertino TabBar'),
-            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTabBar'),
-            // ),
-            CupertinoButton(
-              child: Text('Push Cupertino Home'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoHome'),
-            ),
             CupertinoButton(
               child: Text('Push CupertinoAlertDialog'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoAlertDialog'),
@@ -80,14 +76,6 @@ class _State extends State<CupertinoMenu> {
             CupertinoButton(
               child: Text('Push CupertinoTextField'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTextField'),
-            ),
-            // CupertinoButton(
-            //   child: Text('Push Cupertino Twitter'),
-            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
-            // ),
-            CupertinoButton(
-              child: Text('Push CupertinoActionSheet'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoActionSheet'),
             ),
             CupertinoButton(
               child: Text('NEXT PAGE ( Push CupertinoMenu2)'),

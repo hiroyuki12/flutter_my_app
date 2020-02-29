@@ -130,6 +130,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoPlartform': (context) => CuperinoPlatform(),
         '/cupertinoActionSheet': (context) => MyCupertinoActionSheet(),
 
+        '/cupertinoMenu': (context) => CupertinoMenu(),
         '/cupertinoMenu2': (context) => CupertinoMenu2(),
         '/cupertinoActivityIndicator': (context) => MyCupertinoActivityIndicator(),
         '/cupertinoBuildingLayouts': (context) => CupertinoBuildingLayouts(),

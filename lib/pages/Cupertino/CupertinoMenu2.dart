@@ -26,6 +26,10 @@ class _State extends State<CupertinoMenu2> {
         child: Column(
           children: <Widget>[
             CupertinoButton(
+              child: Text('Push CupertinoActionSheet'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoActionSheet'),
+            ),
+            CupertinoButton(
               child: Text('Push CupertinoActivityIndicator'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoActivityIndicator'),
             ),
@@ -56,6 +60,10 @@ class _State extends State<CupertinoMenu2> {
             CupertinoButton(
               child: Text('Push Cupertino WebView'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoWebView'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino Twitter'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
             ),
 
             
