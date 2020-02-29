@@ -16,7 +16,7 @@ class _State extends State<MyCupertinoSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    isDarkMode = false;  // switch darkMode
+    isDarkMode = true;  // switch darkMode
 
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black

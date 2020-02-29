@@ -10,15 +10,10 @@ class MyCupertinoPicker extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoPicker> {
-  var myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white);
 
   @override
   Widget build(BuildContext context) {
-    isDarkMode = false;  // switch darkMode
+    isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(

@@ -41,7 +41,7 @@ class MyCupertinoSlider2 extends StatelessWidget {
                 },
                 min: 0,
                 max: 100,
-                divisions: 4,
+                divisions: 100,
               ),
               Text(sliderValue.toString(), style: _buildTextStyle()),
             ],

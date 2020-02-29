@@ -60,7 +60,7 @@ class _State extends State<MyListView> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           FloatingActionButton(
-            heroTag: "btn1",
+            heroTag: "btn3",
             backgroundColor: Colors.blueAccent,
             child: Icon(Icons.add),
             onPressed: _onFloattingAddButtonPressed,
@@ -68,7 +68,7 @@ class _State extends State<MyListView> {
           Container( // 余白のためContainerでラップ
             margin: EdgeInsets.only(bottom: 16.0), 
             child: FloatingActionButton(
-            heroTag: "btn2",
+            heroTag: "btn4",
               backgroundColor: Colors.redAccent,
               child: Icon(Icons.remove),
               onPressed: _onFloattingRemoveButtonPressed,

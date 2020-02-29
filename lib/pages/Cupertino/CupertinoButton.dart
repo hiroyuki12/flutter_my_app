@@ -16,7 +16,7 @@ class _State extends State<MyCupertinoButton> {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Cupertino", style: _buildTextStyle()),
+        middle: Text("CupertinoButton", style: _buildTextStyle()),
         // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
@@ -26,7 +26,7 @@ class _State extends State<MyCupertinoButton> {
           borderRadius: new BorderRadius.circular(30.0),
           onPressed: () {
           },
-          child: Text('ダイアログを表示します', style: _buttonTextStyle),
+          child: Text('CupertinoButton', style: _buttonTextStyle),
         ),
       ),
     );
