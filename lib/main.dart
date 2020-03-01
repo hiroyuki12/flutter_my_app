@@ -17,6 +17,7 @@ import 'pages/Cupertino/CupertinoHelloWorld.dart';
 import 'pages/Cupertino/CupertinoListView.dart';
 import 'pages/Cupertino/CupertinoMenu.dart';
 import 'pages/Cupertino/CupertinoMenu2.dart';
+import 'pages/Cupertino/CupertinoMenu3.dart';
 import 'pages/Cupertino/CupertinoPicker.dart';
 import 'pages/Cupertino/CupertinoPlatform.dart';
 import 'pages/Cupertino/CupertinoProvider.dart';
@@ -26,8 +27,10 @@ import 'pages/Cupertino/CupertinoSettings.dart';
 import 'pages/Cupertino/CupertinoSlider.dart';
 import 'pages/Cupertino/CupertinoSwitch.dart';
 import 'pages/Cupertino/CupertinoTextField.dart';
+import 'pages/Cupertino/CupertinoTimePicker.dart';
 import 'pages/Cupertino/CupertinoTwitter.dart';
 import 'pages/Cupertino/CupertinoWebView.dart';
+import 'pages/Gallery/CupertinoNavigationBar.dart';
 import 'pages/Gallery/CupertinoSegmentedControlDemo.dart';
 import 'pages/Material/BottomSheet.dart';
 import 'pages/Material/Container.dart';
@@ -133,6 +136,7 @@ class MyApp extends StatelessWidget {
 
         '/cupertinoMenu': (context) => CupertinoMenu(),
         '/cupertinoMenu2': (context) => CupertinoMenu2(),
+        '/cupertinoMenu3': (context) => CupertinoMenu3(),
         '/cupertinoActivityIndicator': (context) => MyCupertinoActivityIndicator(),
         '/cupertinoBuildingLayouts': (context) => CupertinoBuildingLayouts(),
         '/cupertinoGridView': (context) => MyCupertinoGridView(),
@@ -142,6 +146,9 @@ class MyApp extends StatelessWidget {
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
         '/cupertinoWebView': (context) => MyCupertinoWebView(),
         '/cupertinoSegmentedControlDemo': (context) => CupertinoSegmentedControlDemo(),
+        '/cupertinoNavigationBarDemo': (context) => CupertinoNavigationBarDemo(),
+        '/cupertinoTimerPicker': (context) => MyCupertinoTimePicker(),
+        
         
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
