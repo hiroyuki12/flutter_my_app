@@ -1,14 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
 import 'DarkModeColor.dart';
 
 class MyCupertinoWebView extends StatefulWidget {
+  MyCupertinoWebView({Key key, this.url}) : super(key: key);
+
+  final String url;
+
   @override
     State<StatefulWidget> createState() {
     return _State();
   }
 }
+
 
 class _State extends State<MyCupertinoWebView> {
   WebViewController _controller;
@@ -30,6 +34,7 @@ class _State extends State<MyCupertinoWebView> {
         trailing: CupertinoButton(
           onPressed: () {
             _controller.loadUrl('https://flutter.dev/');
+            // _controller.loadUrl(widget.url);
           },
           child: Text('Flutter', style: _buildTextStyle()),
         ),
@@ -38,7 +43,8 @@ class _State extends State<MyCupertinoWebView> {
       ),
       child: Center(
         child: WebView(
-          initialUrl: 'https://youtube.com/',
+          // initialUrl: 'https://youtube.com/',
+          initialUrl: widget.url,
           javascriptMode: JavascriptMode.unrestricted,
           onWebViewCreated: (WebViewController controller) {
             _controller = controller;
@@ -49,13 +55,14 @@ class _State extends State<MyCupertinoWebView> {
   }
 }
 
+var url2;
+
 var myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {
   return myTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,
-  // color: CupertinoColors.white
   color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
   );
 }
