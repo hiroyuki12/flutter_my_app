@@ -17,7 +17,6 @@ class _State extends State<MyCupertinoGridView> {
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         middle: Text("CupertinoGridView", style: new TextStyle(color: CupertinoColors.white)),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(

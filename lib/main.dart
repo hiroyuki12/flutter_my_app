@@ -27,7 +27,7 @@ import 'pages/Cupertino/CupertinoSettings.dart';
 import 'pages/Cupertino/CupertinoSlider.dart';
 import 'pages/Cupertino/CupertinoSwitch.dart';
 import 'pages/Cupertino/CupertinoTextField.dart';
-import 'pages/Cupertino/CupertinoTimePicker.dart';
+import 'pages/Cupertino/CupertinoTimerPicker.dart';
 import 'pages/Cupertino/CupertinoTwitter.dart';
 import 'pages/Cupertino/CupertinoWebView.dart';
 import 'pages/Gallery/CupertinoNavigationBar.dart';
@@ -147,7 +147,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoWebView': (context) => MyCupertinoWebView(),
         '/cupertinoSegmentedControlDemo': (context) => CupertinoSegmentedControlDemo(),
         '/cupertinoNavigationBarDemo': (context) => CupertinoNavigationBarDemo(),
-        '/cupertinoTimerPicker': (context) => MyCupertinoTimePicker(),
+        '/cupertinoTimerPicker': (context) => MyCupertinoTimerPicker(),
         
         
       },

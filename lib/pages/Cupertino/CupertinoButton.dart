@@ -17,16 +17,27 @@ class _State extends State<MyCupertinoButton> {
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         middle: Text("CupertinoButton", style: _buildTextStyle()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
-        child: CupertinoButton(
-          color: CupertinoColors.activeBlue,
-          borderRadius: new BorderRadius.circular(30.0),
-          onPressed: () {
-          },
-          child: Text('CupertinoButton', style: _buttonTextStyle),
+        child: Column(
+          children: <Widget>[
+            CupertinoButton(
+              //color: CupertinoColors.activeBlue,
+              //borderRadius: new BorderRadius.circular(30.0),
+              onPressed: () {
+              },
+              child: Text('No color', style: _buttonTextStyleNoBackground),
+            ),
+            SizedBox(height: 32,),
+            CupertinoButton(
+              color: CupertinoColors.activeBlue,  //backgroundColor
+              borderRadius: new BorderRadius.circular(30.0),
+              onPressed: () {
+              },
+              child: Text('With color', style: _buttonTextStyleWithBagckground),
+            ),
+          ],
         ),
       ),
     );
@@ -45,9 +56,17 @@ TextStyle _buildTextStyle() {
   );
 }
 
-var _buttonTextStyle = new TextStyle(
+var _buttonTextStyleWithBagckground = new TextStyle(
   //fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,
   color: CupertinoColors.white
+);
+
+TextStyle  _buttonTextStyleNoBackground = new TextStyle(
+  fontWeight: FontWeight.w300,
+  decoration: TextDecoration.none,
+  fontSize: 16,
+  // color: CupertinoColors.white
+  color: CupertinoColors.activeBlue,  //black , darkMode=white
 );

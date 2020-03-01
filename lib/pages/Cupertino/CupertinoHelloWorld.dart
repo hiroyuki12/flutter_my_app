@@ -15,10 +15,9 @@ class _State extends State<CupertinoHelloWorld> {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         middle: Text("Cupertino Hello World", style: _buildTextStyle()),
         //trailing: Text("Edit", style: myTextStyle),
-        // backgroundColor: const Color(0xff333333),
-        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
         child: Text("Hello World!", style: _buildTextStyle(),),

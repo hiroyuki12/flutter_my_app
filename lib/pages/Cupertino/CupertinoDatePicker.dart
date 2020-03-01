@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import 'DarkModeColor.dart';
 
 class MyCupertinoDatePicker extends StatefulWidget {
@@ -16,33 +15,43 @@ class _State extends State<MyCupertinoDatePicker> {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoDatePicker", style: _buildTextStyle()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoDatePicker", style: _buildTextStyle()),
       ),
       child: Center(
-        child: CupertinoButton(
-          onPressed: () {
-            showCupertinoModalPopup(
-              context: context,
-              builder: (context) {
-                return Container(
-                  height: 300.0,
-                  child: CupertinoDatePicker(
-                    //backgroundColor: CupertinoColors.systemRed,
-                    initialDateTime: DateTime.now(),
-                    onDateTimeChanged: (dateTime) {
-                    },
-                  ),
-                );
-              }
-            );
-          },
-          child: Text("Tap me"),
+        child: Column(
+          children: <Widget>[
+            _buildButton(context, CupertinoDatePickerMode.dateAndTime, 'dateAndTime'),
+            _buildButton(context, CupertinoDatePickerMode.date, 'date'),
+            _buildButton(context, CupertinoDatePickerMode.time, 'time'),
+          ],
         ),
       ),
     );
   }
+}
+
+Widget _buildButton(BuildContext context, CupertinoDatePickerMode mode, String text) {
+  return CupertinoButton(
+    onPressed: () {
+      showCupertinoModalPopup(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 300.0,
+            child: CupertinoDatePicker(
+              // backgroundColor: CupertinoColors.systemRed,
+              initialDateTime: DateTime.now(),
+              mode: mode, //date, dateAndTime, time
+              onDateTimeChanged: (dateTime) {
+              },
+            ),
+          );
+        }
+      );
+    },
+    child: Text(text),
+  );
 }
 
 var myTextStyle = new TextStyle();

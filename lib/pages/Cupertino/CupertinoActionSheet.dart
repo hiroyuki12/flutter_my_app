@@ -14,41 +14,45 @@ class _State extends State<MyCupertinoActionSheet> {
     isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoActionSheet", style: _buildTextStyle()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoActionSheet", style: _buildTextStyle()),
       ),
       child: Center(
-        child: CupertinoButton(
-          onPressed: () {showCupertinoModalPopup(context: context, builder: (context) {
-                return CupertinoActionSheet(
-                  title: Text("Hobbies"),
-                  message: Text("Select your hobbie"),
-                  actions: <Widget>[
-                    CupertinoActionSheetAction(
-                      child: Text("Coding"),
-                      onPressed: () {
-                      },
-                    ),
-                    CupertinoActionSheetAction(
-                      child: Text("Main Game"),
-                      onPressed: () {
-                      },
-                    ),
-                    CupertinoActionSheetAction(
-                      child: Text("Menulis"),
-                      onPressed: () {
-                      },
-                    ),
-                  ],
-                );
-              });
-            },
-          child: Text("Tap me"),
-        ),
+        child: _buildCupertinoButton(context),
       ),
     );
   }
+}
+
+Widget _buildCupertinoButton(BuildContext context) {
+  return CupertinoButton(
+    onPressed: () {
+      showCupertinoModalPopup(context: context, builder: (context) {
+        return CupertinoActionSheet(
+          title: Text("Hobbies"),
+          message: Text("Select your hobbie"),
+          actions: <Widget>[
+            CupertinoActionSheetAction(
+              child: Text("Coding"),
+              onPressed: () {
+              },
+            ),
+            CupertinoActionSheetAction(
+              child: Text("Main Game"),
+              onPressed: () {
+              },
+            ),
+            CupertinoActionSheetAction(
+              child: Text("Menulis"),
+              onPressed: () {
+              },
+            ),
+          ],
+        );
+      });
+    },
+    child: Text("Tap me"),
+  );
 }
 
 var myTextStyle = new TextStyle();

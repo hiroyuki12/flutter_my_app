@@ -16,9 +16,8 @@ class _State extends State<MyCupertinoListView> {
     isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoListView", style: _myTextStyle),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoListView", style: _myTextStyle),
       ),
       child: Center(
         child: 

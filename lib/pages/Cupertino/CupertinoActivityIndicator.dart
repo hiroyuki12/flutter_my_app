@@ -9,20 +9,13 @@ class MyCupertinoActivityIndicator extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoActivityIndicator> {
-  var titleTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 16,
-  color: CupertinoColors.white);
-  
   @override
   Widget build(BuildContext context) {
     isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoActivityIndicator", style: _buildTextStyle()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoActivityIndicator", style: _buildTextStyle()),
       ),
       child: Center(
         child: CupertinoActivityIndicator(),
@@ -41,3 +34,9 @@ TextStyle _buildTextStyle() {
   color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
   );
 }
+
+var titleTextStyle = new TextStyle(
+fontWeight: FontWeight.w100,
+decoration: TextDecoration.none,
+fontSize: 16,
+color: CupertinoColors.white);

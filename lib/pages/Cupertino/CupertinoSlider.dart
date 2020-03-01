@@ -10,9 +10,8 @@ class MyCupertinoSlider extends StatelessWidget {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoSlider", style: _buildTextStyle()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoSlider", style: _buildTextStyle()),
       ),
       child: ChangeNotifierProvider(
         create: (context) => SliderValueStore(),

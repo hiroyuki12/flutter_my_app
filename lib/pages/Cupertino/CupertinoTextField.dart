@@ -11,12 +11,6 @@ class MyCupertinoTextField extends StatefulWidget {
 class _State extends State<MyCupertinoTextField> {
   TextEditingController _textController;
 
-  var myTextStyle = new TextStyle(
-    fontWeight: FontWeight.w100,
-    decoration: TextDecoration.none,
-    fontSize: 16,
-    color: CupertinoColors.white);
-
   @override
   void initState() {
     super.initState();
@@ -29,9 +23,8 @@ class _State extends State<MyCupertinoTextField> {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoTextField", style: _buildTextStyle()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoTextField", style: _buildTextStyle()),
       ),
       child: Center(
         child: 
@@ -47,7 +40,6 @@ TextStyle _buildTextStyle() {
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,
-  // color: CupertinoColors.white
   color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
   );
 }

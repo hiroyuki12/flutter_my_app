@@ -15,14 +15,11 @@ class _State extends State<CupertinoMenu2> {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
+        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         middle: Text("Cupertino Menu2", style: _buildTextStyle()),
         //trailing: Text("Edit", style: myTextStyle),
-        // backgroundColor: const Color(0xff333333),
-        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       ),
       child: Center(
-        // child: Text("Hello World!", style: _buildTextStyle(),),
-
         child: Column(
           children: <Widget>[
             CupertinoButton(
@@ -77,8 +74,14 @@ class _State extends State<CupertinoMenu2> {
               child: Text('Push cupertinoSegmentedControlDemo'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSegmentedControlDemo'),
             ),
-
-            
+            // CupertinoButton(
+            //   child: Text('Push cupertinoNavigationBarDemo'),
+            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoNavigationBarDemo'),
+            // ),
+            CupertinoButton(
+              child: Text('NEXT PAGE ( Push CupertinoMenu3)'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMenu3'),
+            ),
           ],
         ),
       ),

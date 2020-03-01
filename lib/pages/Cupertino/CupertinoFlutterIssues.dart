@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 import 'DarkModeColor.dart';
 
 class CupertinoFlutterIssues extends StatefulWidget {
@@ -229,7 +228,9 @@ var _mySubTitleTextStyle = new TextStyle(
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 13,
-  color: CupertinoColors.systemBlue);
+  // color: CupertinoColors.systemBlue,
+  color: CupertinoColors.systemYellow,
+);
 
 // 0:Flutter Issues
 // 1:Flutter Commits

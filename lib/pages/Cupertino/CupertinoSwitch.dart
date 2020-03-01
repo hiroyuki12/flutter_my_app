@@ -21,9 +21,8 @@ class _State extends State<MyCupertinoSwitch> {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoSwitch", style: _buildTextStyle()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoSwitch", style: _buildTextStyle()),
       ),
       child: Row(
         children: [
@@ -44,7 +43,6 @@ TextStyle _buildTextStyle() {
   fontWeight: FontWeight.w100,
   decoration: TextDecoration.none,
   fontSize: 16,
-  // color: CupertinoColors.white
   color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
   );
 }

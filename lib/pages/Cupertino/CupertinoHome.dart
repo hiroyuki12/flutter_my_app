@@ -18,7 +18,6 @@ class _State extends State<CupertinoHome> {
     isDarkMode = true;  // switch darkMode
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        // backgroundColor: const Color(0xff333333),  //dark mode
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         items: [
           BottomNavigationBarItem(

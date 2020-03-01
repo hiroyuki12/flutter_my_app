@@ -16,9 +16,8 @@ class _State extends State<MyCupertinoSegmentedControl> {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoSegmentedControl", style: _buildFont()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoSegmentedControl", style: _buildFont()),
       ),
       child: 
         Row(

@@ -19,9 +19,8 @@ class CupertinoProvider extends StatelessWidget {
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        middle: Text("CupertinoProvider", style: _buildFont()),
-        // backgroundColor: const Color(0xff333333),
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        middle: Text("CupertinoProvider", style: _buildFont()),
       ),
       child: ChangeNotifierProvider(
         create: (context) => CounterStore(),
