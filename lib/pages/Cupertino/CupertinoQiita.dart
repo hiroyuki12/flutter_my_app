@@ -71,27 +71,28 @@ class _State extends State<CupertinoQiita> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(issue.title, style: _buildTextStyle(),),
+                    Material(  //for InkWell
+                      type: MaterialType.transparency,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => MyCupertinoWebView(
+                                // url: 'https://www.yahoo.co.jp/',
+                                url: issue.url,
+                              ),
+                            ),
+                          );
+                        },
+                        child: Text(issue.title, 
+                          style: _buildTextStyle(),),
+                      ),
+                    ),
                     Text(issue.createdAt + ' ' + issue.id, style: _buildSubTitleTextStyle(),),
                     Row(
                       children: <Widget>[
                         Text(issue.likesCount + ' likes', style: _buildSubTitleTextStyle(),),
                       ],
-                    ),
-                    CupertinoButton(
-                      //color: CupertinoColors.activeBlue,
-                      //borderRadius: new BorderRadius.circular(30.0),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => MyCupertinoWebView(
-                              // url: 'https://www.yahoo.co.jp/',
-                              url: issue.url,
-                            ),
-                          ),
-                        );
-                      },
-                      child: Text('link', style: _buildTextStyle()),
                     ),
                   ],
                 )
