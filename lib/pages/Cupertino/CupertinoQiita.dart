@@ -13,19 +13,28 @@ class CupertinoQiita extends StatefulWidget {
 }
 
 class _State extends State<CupertinoQiita> {
+  var tags = 'flutter';
+  var tagsAll = 'all';
   @override
   void initState() {
     super.initState();
-    _load();
+    _load(tags);
+    tags = tagsAll;
   }
 
-  Future<void> _load() async {
-    // final res = await http.get('http://qiita.com/api/v2/items');
-    final res = await http.get('https://qiita.com/api/v2/tags/flutter/items');
+  Future<void> _load(String _tags) async {
+    var res;
+    if(_tags == tagsAll) {
+      res = await http.get('http://qiita.com/api/v2/items?per_page=100');
+    }
+    else {
+      res = await http.get('https://qiita.com/api/v2/tags/flutter/items?per_page=100');
+    }
     final data = json.decode(res.body);
     setState(() {
-      final issues = data as List;
-      issues.forEach((dynamic element) {
+      final items = data as List;
+      _items.clear();
+      items.forEach((dynamic element) {
         final issue = element as Map;
         _items.add(Item(
           title: issue['title'] as String,
@@ -47,6 +56,14 @@ class _State extends State<CupertinoQiita> {
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         middle: Text("CupertinoQiita", style: _buildTextStyle()),
+        trailing: CupertinoButton(
+          onPressed: () {
+            _load(tags);
+            if(tags == 'flutter')  tags = tagsAll;
+            else tags = 'flutter';
+          },
+          child: Text(tags, style: _buildTextStyle()),
+        ),
       ),
       child: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
