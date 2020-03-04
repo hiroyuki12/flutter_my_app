@@ -243,3 +243,6 @@ https://flutter.ctrnost.com/basic/layout/gridview/
 
 InkWell Cupertino
 https://stackoverflow.com/questions/51463515/inkwell-not-showing-ripple-when-used-with-container-decoration
+
+Qiita Trend API Netlify Functions
+https://qiita.com/7ma7X/items/803f9599cde72810f1a8
