@@ -15,6 +15,7 @@ import 'pages/Cupertino/CupertinoDatePicker.dart';
 import 'pages/Cupertino/CupertinoFlutterIssues.dart';
 import 'pages/Cupertino/CupertinoHelloWorld.dart';
 import 'pages/Cupertino/CupertinoListView.dart';
+import 'pages/Cupertino/CupertinoLocalAuthentication.dart';
 import 'pages/Cupertino/CupertinoMenu.dart';
 import 'pages/Cupertino/CupertinoMenu2.dart';
 import 'pages/Cupertino/CupertinoMenu3.dart';
@@ -150,6 +151,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoSegmentedControlDemo': (context) => CupertinoSegmentedControlDemo(),
         '/cupertinoNavigationBarDemo': (context) => CupertinoNavigationBarDemo(),
         '/cupertinoTimerPicker': (context) => MyCupertinoTimerPicker(),
+        '/cupertinoLocalAuthentication': (context) => CupertinoLocalAuthentication(),
         
         
       },
