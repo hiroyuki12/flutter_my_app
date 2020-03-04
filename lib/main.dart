@@ -80,7 +80,9 @@ class MyApp extends StatelessWidget {
       // theme: ThemeData.dark(),
       // theme: ThemeData.light(),
       
-      initialRoute: '/home',
+      // initialRoute: '/home',
+      // initialRoute: '/cupertinoMenu',
+      initialRoute: '/cupertinoQiita',
       
       routes: {
         '/helloWorld': (context) => HelloWorld(),

@@ -5,6 +5,15 @@ import 'package:http/http.dart' as http;
 import 'DarkModeColor.dart';
 import 'CupertinoWebView.dart';
 
+class CupertinoQiita2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoQiita(
+      
+    );
+  }
+}
+
 class CupertinoQiita extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -14,38 +23,62 @@ class CupertinoQiita extends StatefulWidget {
 
 class _State extends State<CupertinoQiita> {
   var tags = 'flutter';
-  var tagsAll = 'all';
+  var tagsTrends = 'trends';
+  var tagsFlutter = 'flutter';
+  int page = 1;
   @override
   void initState() {
     super.initState();
-    _load(tags);
-    tags = tagsAll;
+    _load(tags, page);
   }
 
-  Future<void> _load(String _tags) async {
+  Future<void> _load(String _tags, int _page) async {
     var res;
-    if(_tags == tagsAll) {
-      res = await http.get('http://qiita.com/api/v2/items?per_page=100');
+    if(_tags == tagsTrends) {
+      // res = await http.get('http://qiita.com/api/v2/items' + 
+      res = await http.get('https://qiita-api.netlify.com/trend.json');
+      if(res.statusCode == 200)
+      {
+        final data = json.decode(res.body);
+        setState(() {
+          final items = data as List;
+          _items.clear();
+          items.forEach((dynamic element) {
+            final issue = element as Map;
+            _items.add(Item(
+              title: issue['node']['title'] as String,
+              profileImageUrl: issue['node']['author']['profileImageUrl'] as String,
+              id: issue['node']['author']['urlName'] as String,
+              likesCount: issue['node']['likesCount'].toString() as String,
+              createdAt: issue['node']['createdAt'] as String,
+              url: 'https://qiita.com/items/' + issue['node']['uuid'] as String,
+            ));
+          });
+        });
+      }
     }
     else {
-      res = await http.get('https://qiita.com/api/v2/tags/flutter/items?per_page=100');
+      res = await http.get('https://qiita.com/api/v2/tags/flutter/items?page=' + page.toString() + '&per_page=10');
+      if(res.statusCode == 200)
+      {
+        final data = json.decode(res.body);
+        setState(() {
+          final items = data as List;
+          _items.clear();
+          items.forEach((dynamic element) {
+            final issue = element as Map;
+            _items.add(Item(
+              title: issue['title'] as String,
+              profileImageUrl: issue['user']['profile_image_url'] as String,
+              id: issue['user']['id'] as String,
+              likesCount: issue['likes_count'].toString() as String,
+              createdAt: issue['created_at'] as String,
+              url: issue['url'] as String,
+            ));
+          });
+        });
+      }
     }
-    final data = json.decode(res.body);
-    setState(() {
-      final items = data as List;
-      _items.clear();
-      items.forEach((dynamic element) {
-        final issue = element as Map;
-        _items.add(Item(
-          title: issue['title'] as String,
-          profileImageUrl: issue['user']['profile_image_url'] as String,
-          id: issue['user']['id'] as String,
-          likesCount: issue['likes_count'].toString() as String,
-          createdAt: issue['created_at'] as String,
-          url: issue['url'] as String,
-        ));
-      });
-    });
   }
 
   @override
@@ -56,13 +89,78 @@ class _State extends State<CupertinoQiita> {
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         middle: Text("CupertinoQiita", style: _buildTextStyle()),
+        // trailing: CupertinoButton(
+        //   onPressed: () {
+        //     _load(tags);
+        //     if(tags == 'flutter')  tags = tagsAll;
+        //     else tags = 'flutter';
+        //   },
+        //   child: Text(tags, style: _buildTextStyle()),
+        // ),
+        ////////////////////////////////////////////////////////
         trailing: CupertinoButton(
           onPressed: () {
-            _load(tags);
-            if(tags == 'flutter')  tags = tagsAll;
-            else tags = 'flutter';
+            showCupertinoModalPopup(
+              context: context,
+              builder: (BuildContext context) {
+                return CupertinoActionSheet(
+                  //title: const Text('選択した項目が画面に表示されます'),
+                  actions: <Widget>[
+                    CupertinoActionSheetAction(
+                      child: const Text('Next Page'),
+                      onPressed: () {
+                        page++;
+                        _load(tags, page);
+                        Navigator.pop(context, 'Next Page');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('Next 5Page'),
+                      onPressed: () {
+                        page += 5;
+                        _load(tags, page);
+                        Navigator.pop(context, 'Next Page');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('Prev Page'),
+                      onPressed: () {
+                        page--;
+                        if(page < 1)  page = 1;
+                        _load(tags, page);
+                        Navigator.pop(context, 'Prev Page');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('Flutter'),
+                      onPressed: () {
+                        page = 1;
+                        tags = tagsFlutter;
+                        _load(tags, page);
+                        Navigator.pop(context, 'Flutter');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('Trends'),
+                      onPressed: () {
+                        page = 1;
+                        tags = tagsTrends;
+                        _load(tags, page);
+                        Navigator.pop(context, 'Trends');
+                      },
+                    ),
+                  ],
+                  // cancelButton: CupertinoActionSheetAction(
+                  //   child: const Text('Cancel'),
+                  //   isDefaultAction: true,
+                  //   onPressed: () {
+                  //     Navigator.pop(context, 'Cancel');
+                  //   },
+                  // ),
+                );
+              });
           },
-          child: Text(tags, style: _buildTextStyle()),
+          child: Text('menu'),
         ),
       ),
       child: ListView.builder(
@@ -82,7 +180,7 @@ class _State extends State<CupertinoQiita> {
                 //     width: 50,),
                 // ),
                 child: Image.network(issue.profileImageUrl,
-                  width: 50,),
+                  width: 70,),
               ),
               Expanded(
                 child: Column(
@@ -121,6 +219,35 @@ class _State extends State<CupertinoQiita> {
     );
   }
 }
+
+var myValue;
+
+// Widget _buildPickerButton(BuildContext context) {
+//   return CupertinoButton(
+//     onPressed: () {
+//       showCupertinoModalPopup(
+//         context: context,
+//         builder: (context) {
+//           return Container(
+//             height: 300.0,
+//             child: CupertinoPicker(
+//               onSelectedItemChanged: (value) {myValue = value;},
+//               itemExtent: 30.0,
+//               children: <Widget>[
+//                 Center(child: Text("Next Page")),
+//                 Center(child: Text("Prev Page")),
+//                 Center(child: Text("--------")),
+//                 Center(child: Text("Trends")),
+//                 Center(child: Text("Flutter")),
+//               ],
+//             ),
+//           );
+//         }
+//       );
+//     },
+//     child: Text("Tap me"),
+//   );
+// }
 
 class Item {
    Item({
@@ -161,3 +288,13 @@ TextStyle _buildSubTitleTextStyle() {
   color: CupertinoColors.systemYellow,  //black , darkMode=white
   );
 }
+
+// var pickerTextStyle = new TextStyle();
+// TextStyle _buildSubTitleTextStyle() {
+//   return subTitleTextStyle = new TextStyle(
+//   fontWeight: FontWeight.w100,
+//   decoration: TextDecoration.none,
+//   fontSize: 13,
+//   color: CupertinoColors.systemYellow,  //black , darkMode=white
+//   );
+// }
