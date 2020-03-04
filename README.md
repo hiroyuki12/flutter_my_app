@@ -246,3 +246,7 @@ https://stackoverflow.com/questions/51463515/inkwell-not-showing-ripple-when-use
 
 Qiita Trend API Netlify Functions
 https://qiita.com/7ma7X/items/803f9599cde72810f1a8
+
+顔認証
+https://qiita.com/coka__01/items/76af4ea73a6a8c8fa135
+https://github.com/k-kobayashi01/auth_app/blob/master/lib/auth.dart
