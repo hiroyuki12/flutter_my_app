@@ -257,3 +257,6 @@ https://qiita.com/quqjp/items/ee8f22ac9786acfb89df
 Flutter 正方形にカメラの映像を表示させるサンプル
 https://qiita.com/quqjp/items/3f8944de6f7fc55e713a
 https://pub.dev/packages/camera#-changelog-tab-
+
+flutterでバーコードリーダーを作ってみた　-iOSとandroid両方で導入済み-
+https://qiita.com/Renkon117/items/39c031c7123ecc193294
