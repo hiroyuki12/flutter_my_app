@@ -32,7 +32,7 @@ dependencies:
   # Use to access the local path.
   path_provider: ^1.6.0
   path: ^1.6.4
-  camera: ^0.2.4
+  camera: ^0.5.7+2
   webview_flutter: ^0.3.0
   local_auth: ^0.6.1+3
   

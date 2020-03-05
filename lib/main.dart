@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_my_app/pages/Cupertino/CupertinoGridView.dart';
 import 'package:flutter_my_app/pages/Material/DatePicker.dart';
 import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
@@ -11,6 +12,7 @@ import 'pages/Cupertino/CupertinoActivityIndicator.dart';
 import 'pages/Cupertino/CupertinoAlertDialog.dart';
 import 'pages/Cupertino/CupertinoBuildingLayouts.dart';
 import 'pages/Cupertino/CupertinoButton.dart';
+import 'pages/Cupertino/CupertinoCamera.dart';
 import 'pages/Cupertino/CupertinoDatePicker.dart';
 import 'pages/Cupertino/CupertinoFlutterIssues.dart';
 import 'pages/Cupertino/CupertinoHelloWorld.dart';
@@ -153,6 +155,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoNavigationBarDemo': (context) => CupertinoNavigationBarDemo(),
         '/cupertinoTimerPicker': (context) => MyCupertinoTimerPicker(),
         '/cupertinoLocalAuthentication': (context) => CupertinoLocalAuthentication(),
+        '/cupertinoCamera': (context) => CupertinoCamera(),
         
         
       },

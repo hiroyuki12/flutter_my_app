@@ -34,6 +34,10 @@ class _State extends State<CupertinoMenu3> {
               child: Text('Push CupertinoLocalAuthentication'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoLocalAuthentication'),
             ),
+            CupertinoButton(
+              child: Text('Push Cupertino Camera'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoCamera'),
+            ),
             
 
             
