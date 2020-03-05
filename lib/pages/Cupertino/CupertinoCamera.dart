@@ -6,11 +6,6 @@ import 'DarkModeColor.dart';
 
 
 class CupertinoCamera extends StatefulWidget {
-  CupertinoCamera({Key key, this.title}) : super(key: key);
-
-  // タイトル
-  final String title;
-
   @override
     State<StatefulWidget> createState() {
     return _State();
@@ -18,19 +13,12 @@ class CupertinoCamera extends StatefulWidget {
 }
 
 class _State extends State<CupertinoCamera> {
-  //カメラリスト
-  List<CameraDescription> _cameras;
-
-  //カメラコントローラ
-  CameraController _controller;
-  
-  //
-  double _aspectRatio = 1.0;
+  List<CameraDescription> _cameras;   //カメラリスト
+  CameraController _controller;       //カメラコントローラ
 
   @override
   void initState() {
     super.initState();
-
     initCamera();
   }
 
@@ -46,20 +34,10 @@ class _State extends State<CupertinoCamera> {
         if (!mounted) {
           return;
         }
-
-        //カメラ接続時にbuildするようsetStateを呼び出し
-        setState(() {});
+        
+        setState(() {});  //カメラ接続時にbuildするようsetStateを呼び出し
       });
     }
-  }
-
-  //
-  // カメラの表示比率を変更する
-  //
-  _toggle() {
-    setState(() {
-      _aspectRatio = _aspectRatio == 1.0 ? 0.7 : 1.0;
-    });
   }
 
   @override
@@ -70,39 +48,19 @@ class _State extends State<CupertinoCamera> {
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.of(context).size.width;
     isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         middle: Text("Cupertino Camera", style: _buildTextStyle()),
-        trailing: RaisedButton(onPressed: _toggle(), 
-          child: Text("Toggle", style: _buildTextStyle()),) 
+        // trailing: Text("Edit", style: _buildTextStyle()),
       ),
       child: _controller != null && _controller.value.isInitialized
         ? AspectRatio(
-        aspectRatio:
-        _controller.value.aspectRatio,
-        child: CameraPreview(_controller)) : Container(),
-      /*child: Container(
-        alignment: Alignment.center,
-        child: AspectRatio(
-          aspectRatio: _aspectRatio,
-          child: FittedBox(
-            alignment: Alignment.center,
-            fit: BoxFit.fitWidth,
-            child: _controller != null && _controller.value.isInitialized
-              ? Container(
-                  width: size,
-                  height: size / _controller.value.aspectRatio,
-                  child: CameraPreview(_controller))
-              : Container(),
-          ),
-        ),
-      ),*/
-
-
+          aspectRatio:
+          _controller.value.aspectRatio,
+          child: CameraPreview(_controller)) : Container(),
     );
   }
 }
