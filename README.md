@@ -250,3 +250,6 @@ https://qiita.com/7ma7X/items/803f9599cde72810f1a8
 顔認証
 https://qiita.com/coka__01/items/76af4ea73a6a8c8fa135
 https://github.com/k-kobayashi01/auth_app/blob/master/lib/auth.dart
+
+Flutter iOS dark modeが設定された環境では起動画面を黒くする
+https://qiita.com/quqjp/items/ee8f22ac9786acfb89df
