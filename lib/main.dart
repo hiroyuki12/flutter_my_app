@@ -80,6 +80,7 @@ class MyApp extends StatelessWidget {
       ),
       // theme: ThemeData.dark(),
       // theme: ThemeData.light(),
+      // debugShowCheckedModeBanner: false,
       
       // initialRoute: '/home',
       // initialRoute: '/cupertinoMenu',
