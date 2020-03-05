@@ -253,3 +253,7 @@ https://github.com/k-kobayashi01/auth_app/blob/master/lib/auth.dart
 
 Flutter iOS dark modeが設定された環境では起動画面を黒くする
 https://qiita.com/quqjp/items/ee8f22ac9786acfb89df
+
+Flutter 正方形にカメラの映像を表示させるサンプル
+https://qiita.com/quqjp/items/3f8944de6f7fc55e713a
+https://pub.dev/packages/camera#-changelog-tab-
