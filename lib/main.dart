@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_my_app/pages/Cupertino/CupertinoGridView.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoSignInButton.dart';
 import 'package:flutter_my_app/pages/Material/DatePicker.dart';
 import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
 import 'package:flutter_my_app/pages/Material/RadioListTile.dart';
@@ -158,6 +159,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoLocalAuthentication': (context) => CupertinoLocalAuthentication(),
         '/cupertinoCamera': (context) => CupertinoCamera(),
         '/cupertinoBarcodeReader': (context) => CupertinoBarcodeReader(),
+        '/cupertinoSignInButton': (context) => CupertinoSignInButton(),
         
         
       },
