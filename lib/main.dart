@@ -10,6 +10,7 @@ import 'package:flutter_my_app/pages/Material/TextField.dart';
 import 'pages/Cupertino/CupertinoActionSheet.dart';
 import 'pages/Cupertino/CupertinoActivityIndicator.dart';
 import 'pages/Cupertino/CupertinoAlertDialog.dart';
+import 'pages/Cupertino/CupertinoBarcodeReader.dart';
 import 'pages/Cupertino/CupertinoBuildingLayouts.dart';
 import 'pages/Cupertino/CupertinoButton.dart';
 import 'pages/Cupertino/CupertinoCamera.dart';
@@ -156,6 +157,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoTimerPicker': (context) => MyCupertinoTimerPicker(),
         '/cupertinoLocalAuthentication': (context) => CupertinoLocalAuthentication(),
         '/cupertinoCamera': (context) => CupertinoCamera(),
+        '/cupertinoBarcodeReader': (context) => CupertinoBarcodeReader(),
         
         
       },
