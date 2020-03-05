@@ -260,3 +260,7 @@ https://pub.dev/packages/camera#-changelog-tab-
 
 flutterでバーコードリーダーを作ってみた　-iOSとandroid両方で導入済み-
 https://qiita.com/Renkon117/items/39c031c7123ecc193294
+
+良くみるボタンを簡単に使えるpluginを発見しました
+https://qiita.com/hippopopopo/items/67721fa9528370fee9c9
+https://pub.dev/packages/flutter_signin_button#-example-tab-
