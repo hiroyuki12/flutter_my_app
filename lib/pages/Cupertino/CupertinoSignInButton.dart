@@ -17,7 +17,7 @@ class _State extends State<CupertinoSignInButton> {
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
-        middle: Text("Cupertino Hello World", style: _buildTextStyle()),
+        middle: Text("Cupertino Signin Button", style: _buildTextStyle()),
         //trailing: Text("Edit", style: myTextStyle),
       ),
       child: Center(
