@@ -5,15 +5,18 @@ import 'package:flutter_my_app/pages/Cupertino/CupertinoGridView.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoSignInButton.dart';
 import 'package:flutter_my_app/pages/Material/DatePicker.dart';
 import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
+import 'package:flutter_my_app/pages/Material/LastDayListView.dart';
 import 'package:flutter_my_app/pages/Material/RadioListTile.dart';
 import 'package:flutter_my_app/pages/Material/RaisedButton.dart';
 import 'package:flutter_my_app/pages/Material/TextField.dart';
+import 'package:provider/provider.dart';
 import 'pages/Cupertino/CupertinoActionSheet.dart';
 import 'pages/Cupertino/CupertinoActivityIndicator.dart';
 import 'pages/Cupertino/CupertinoAlertDialog.dart';
 import 'pages/Cupertino/CupertinoBarcodeReader.dart';
 import 'pages/Cupertino/CupertinoBuildingLayouts.dart';
 import 'pages/Cupertino/CupertinoButton.dart';
+// import 'pages/Cupertino/CupertinoButton2.dart';
 import 'pages/Cupertino/CupertinoCamera.dart';
 import 'pages/Cupertino/CupertinoDatePicker.dart';
 import 'pages/Cupertino/CupertinoFlutterIssues.dart';
@@ -66,6 +69,7 @@ import 'pages/Material/Qiita.dart';
 import 'pages/Material/Slider.dart';
 import 'pages/Material/Stack.dart';
 import 'pages/Material/SwitchListTile.dart';
+import 'repositories/LastDayBloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -75,15 +79,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'main',
-      theme: ThemeData(
-       // This is the theme of your application.
-       primarySwatch: Colors.blue,
-       backgroundColor: CupertinoColors.black,
-       scaffoldBackgroundColor: CupertinoColors.black,
-       dialogBackgroundColor: CupertinoColors.black,
-      ),
+      // theme: ThemeData(
+      //  // This is the theme of your application.
+      //  primarySwatch: Colors.blue,
+      //  backgroundColor: CupertinoColors.black,
+      //  scaffoldBackgroundColor: CupertinoColors.black,
+      //  dialogBackgroundColor: CupertinoColors.black,
+      // ),
       // theme: ThemeData.dark(),
-      // theme: ThemeData.light(),
+      theme: ThemeData.light(),
       // debugShowCheckedModeBanner: false,
       
       // initialRoute: '/home',
@@ -160,14 +164,23 @@ class MyApp extends StatelessWidget {
         '/cupertinoCamera': (context) => CupertinoCamera(),
         '/cupertinoBarcodeReader': (context) => CupertinoBarcodeReader(),
         '/cupertinoSignInButton': (context) => CupertinoSignInButton(),
+        // '/cupertinoButton2': (context) => MyCupertinoButton2(),
+        '/lastDayListView': (context) => LastDayListView(),
         
         
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
       
-      home: CupertinoMenu(),                     //CupertinoMenu (no BottomBar)
+      // home: CupertinoMenu(),                     //CupertinoMenu (no BottomBar)
       // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
       
+
+      home: Provider<LastDayBloc>(
+        create: (context) => new LastDayBloc(),
+        dispose: (context, bloc) => bloc.dispose(),
+        child: LastDayListView()
+      ),
+
       // Twitter
       // home: CupertinoTwitter(),                     //CupertinoTwitter
     );

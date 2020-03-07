@@ -49,5 +49,13 @@
 	<string>Can I use the camera please?</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Can I use the mic please?</string>
+	<key>CFBundleTypeRole</key>
+	<string>Editor</string>
+	<key>CFBundleURLSchemes</key>
+	<array>
+		<!-- TODO Replace this value: -->
+		<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+		<string>com.googleusercontent.apps.607709556062-vfbv8pr7ltursf5d62mq5bloepfm2eiv</string>
+    </array>
 </dict>
 </plist>
