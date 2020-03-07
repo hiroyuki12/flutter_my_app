@@ -264,3 +264,9 @@ https://qiita.com/Renkon117/items/39c031c7123ecc193294
 良くみるボタンを簡単に使えるpluginを発見しました
 https://qiita.com/hippopopopo/items/67721fa9528370fee9c9
 https://pub.dev/packages/flutter_signin_button#-example-tab-
+
+Flutterでsqliteを使ったTodoアプリを作る
+https://qiita.com/popy1017/items/7ada79b07281f4a8e544
+
+popy1017/flutter-sqlite-todo-app
+https://github.com/popy1017/flutter-sqlite-todo-app
