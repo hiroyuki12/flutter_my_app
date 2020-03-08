@@ -37,6 +37,14 @@ class _State extends State<MyCupertinoButton> {
               },
               child: Text('With color', style: _buttonTextStyleWithBagckground),
             ),
+            SizedBox(height: 32,),
+            CupertinoButton(
+              color: CupertinoColors.activeBlue,  //backgroundColor
+              borderRadius: new BorderRadius.circular(30.0),
+              disabledColor: CupertinoColors.systemGrey,
+              onPressed: null,
+              child: Text('Disabled', style: _buttonTextStyleWithBagckground),
+            ),
           ],
         ),
       ),
