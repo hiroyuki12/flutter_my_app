@@ -15,6 +15,7 @@ class _State extends State<CupertinoSnackBar> {
   Widget build(BuildContext context) {
     isDarkMode = true;  // switch darkMode
     return MaterialApp(
+      theme: isDarkMode ? ThemeData.dark() : ThemeData.light(),
       home: CupertinoPageScaffold(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         navigationBar: CupertinoNavigationBar(

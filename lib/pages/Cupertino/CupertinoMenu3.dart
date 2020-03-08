@@ -67,10 +67,6 @@ class _State extends State<CupertinoMenu3> {
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSnackBar'),
             ),
             
-            
-            
-
-            
           ],
         ),
       ),
