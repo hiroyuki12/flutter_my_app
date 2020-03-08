@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_my_app/pages/Cupertino/CupertinoGridView.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoLocalFile.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoSignInButton.dart';
 import 'package:flutter_my_app/pages/Material/DatePicker.dart';
 import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
@@ -175,6 +176,7 @@ class MyApp extends StatelessWidget {
         // '/cupertinoButton2': (context) => MyCupertinoButton2(),
         '/lastDayListView': (context) => LastDayListView(),
         '/sqliteViewer': (context) => SqliteViewer(),
+        '/cupertinoLocalFile': (context) => CupertinoLocalFile(),
         
         
       },

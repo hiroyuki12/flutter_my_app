@@ -58,6 +58,10 @@ class _State extends State<CupertinoMenu3> {
               child: Text('Push SqliteViewer'),
               onPressed: ()=> Navigator.pushNamed(context, '/sqliteViewer'),
             ),
+            CupertinoButton(
+              child: Text('Push Cupertino LocalFile'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoLocalFile'),
+            ),
             
             
 
