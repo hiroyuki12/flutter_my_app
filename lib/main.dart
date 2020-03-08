@@ -34,6 +34,7 @@ import 'pages/Cupertino/CupertinoProvider.dart';
 import 'pages/Cupertino/CupertinoQiita.dart';
 import 'pages/Cupertino/CupertinoSegmentedControl.dart';
 import 'pages/Cupertino/CupertinoSettings.dart';
+import 'pages/Cupertino/CupertinoSharedPreferences.dart';
 import 'pages/Cupertino/CupertinoSlider.dart';
 import 'pages/Cupertino/CupertinoSnackBar.dart';
 import 'pages/Cupertino/CupertinoSwitch.dart';
@@ -178,6 +179,7 @@ class MyApp extends StatelessWidget {
         '/sqliteViewer': (context) => SqliteViewer(),
         '/cupertinoLocalFile': (context) => CupertinoLocalFile(),
         '/cupertinoSnackBar': (context) => CupertinoSnackBar(),
+        '/cupertinoSharedPreferences': (context) => CupertinoSharedPreferences(),
         
         
       },

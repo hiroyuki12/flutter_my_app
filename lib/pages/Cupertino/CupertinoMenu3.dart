@@ -62,9 +62,13 @@ class _State extends State<CupertinoMenu3> {
               child: Text('Push Cupertino LocalFile'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoLocalFile'),
             ),
+            // CupertinoButton(
+            //   child: Text('Push Cupertino SnackBar'),
+            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSnackBar'),
+            // ),
             CupertinoButton(
-              child: Text('Push Cupertino SnackBar'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSnackBar'),
+              child: Text('Push Cupertino SharedPreferences'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSharedPreferences'),
             ),
             
           ],

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'CupertinoMenu3.dart';
 import 'DarkModeColor.dart';
+import '../../main.dart';
 
 class CupertinoSnackBar extends StatefulWidget {
   @override
@@ -60,6 +62,13 @@ class _SnackBarBodyState extends State<SnackBarBody> {
               Scaffold.of(context).showSnackBar(snackBar);
             },
             child: Text('Show SnackBar', style: _buttonTextStyleNoBackground),
+          ),
+          CupertinoButton(
+            onPressed: () {
+              //Navigator.pop(context);
+              //Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => CupertinoMenu3()));
+            },
+            child: Text('close', style: _buttonTextStyleNoBackground), 
           ),
         ],
       ),
