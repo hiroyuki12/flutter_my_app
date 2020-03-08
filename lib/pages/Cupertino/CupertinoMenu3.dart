@@ -50,9 +50,13 @@ class _State extends State<CupertinoMenu3> {
               child: Text('Push Cupertino CupertinoButton2'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoButton2'),
             ),
+            // CupertinoButton(
+            //   child: Text('Push Last Day'),
+            //   onPressed: ()=> Navigator.pushNamed(context, '/lastDayListView'),
+            // ),
             CupertinoButton(
-              child: Text('Push Last Day'),
-              onPressed: ()=> Navigator.pushNamed(context, '/lastDayListView'),
+              child: Text('Push SqliteViewer'),
+              onPressed: ()=> Navigator.pushNamed(context, '/sqliteViewer'),
             ),
             
             

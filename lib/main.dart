@@ -9,6 +9,7 @@ import 'package:flutter_my_app/pages/Material/FloatingActionButton.dart';
 import 'package:flutter_my_app/pages/Material/LastDayListView.dart';
 import 'package:flutter_my_app/pages/Material/RadioListTile.dart';
 import 'package:flutter_my_app/pages/Material/RaisedButton.dart';
+import 'package:flutter_my_app/pages/Material/SqliteViewer.dart';
 import 'package:flutter_my_app/pages/Material/TextField.dart';
 import 'package:provider/provider.dart';
 import 'pages/Cupertino/CupertinoActionSheet.dart';
@@ -173,6 +174,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoSignInButton': (context) => CupertinoSignInButton(),
         // '/cupertinoButton2': (context) => MyCupertinoButton2(),
         '/lastDayListView': (context) => LastDayListView(),
+        '/sqliteViewer': (context) => SqliteViewer(),
         
         
       },

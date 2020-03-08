@@ -42,9 +42,11 @@ dependencies:
 
   # For using uuid
   uuid: 2.0.4
-
+  # LastDay
   sqflite: ^1.2.0
   datetime_picker_formfield: ^1.0.0
+
+  sqlite_viewer: ^1.0.2
 
 dev_dependencies:
   flutter_test:
