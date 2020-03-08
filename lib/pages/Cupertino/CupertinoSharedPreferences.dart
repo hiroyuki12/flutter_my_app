@@ -12,6 +12,15 @@ class CupertinoSharedPreferences extends StatefulWidget {
 }
 
 class _State extends State<CupertinoSharedPreferences> {
+  int _counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // 初期化時にShared Preferencesに保存している値を読み込む
+    _getCounter();
+  }
+
   @override
   Widget build(BuildContext context) {
     isDarkMode = true;  // switch darkMode
@@ -28,18 +37,41 @@ class _State extends State<CupertinoSharedPreferences> {
               onPressed: _incrementCounter,
               child: Text('Increment Counter', style: _buttonTextStyleNoBackground),
             ),
+            Text(_counter.toString(), style: _buildTextStyle()),
+            CupertinoButton(
+              onPressed: _removeCounter,
+              child: Text('Remove Counter', style: _buttonTextStyleNoBackground),
+            ),
           ],
         ),
       ),
     );
   }
-}
 
-void _incrementCounter() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  int counter = (prefs.getInt('counter') ?? 0) + 1;
-  print('Pressed $counter times.');
-  await prefs.setInt('counter', counter);
+  void _getCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _counter = (prefs.getInt('counter') ?? 0);
+    });
+  }
+
+  void _incrementCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _counter = (prefs.getInt('counter') ?? 0) + 1;
+    });
+    print('Pressed $_counter times.');
+    await prefs.setInt('counter', _counter);
+  }
+
+  void _removeCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _counter = 0;
+    });
+    print('Removed counter.');
+    await prefs.remove('counter');
+  }
 }
 
 var myTextStyle = new TextStyle();
