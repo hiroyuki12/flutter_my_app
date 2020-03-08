@@ -19,7 +19,6 @@ import 'pages/Cupertino/CupertinoAlertDialog.dart';
 import 'pages/Cupertino/CupertinoBarcodeReader.dart';
 import 'pages/Cupertino/CupertinoBuildingLayouts.dart';
 import 'pages/Cupertino/CupertinoButton.dart';
-// import 'pages/Cupertino/CupertinoButton2.dart';
 import 'pages/Cupertino/CupertinoCamera.dart';
 import 'pages/Cupertino/CupertinoDatePicker.dart';
 import 'pages/Cupertino/CupertinoFlutterIssues.dart';
@@ -36,6 +35,7 @@ import 'pages/Cupertino/CupertinoQiita.dart';
 import 'pages/Cupertino/CupertinoSegmentedControl.dart';
 import 'pages/Cupertino/CupertinoSettings.dart';
 import 'pages/Cupertino/CupertinoSlider.dart';
+import 'pages/Cupertino/CupertinoSnackBar.dart';
 import 'pages/Cupertino/CupertinoSwitch.dart';
 import 'pages/Cupertino/CupertinoTextField.dart';
 import 'pages/Cupertino/CupertinoTimerPicker.dart';
@@ -177,6 +177,7 @@ class MyApp extends StatelessWidget {
         '/lastDayListView': (context) => LastDayListView(),
         '/sqliteViewer': (context) => SqliteViewer(),
         '/cupertinoLocalFile': (context) => CupertinoLocalFile(),
+        '/cupertinoSnackBar': (context) => CupertinoSnackBar(),
         
         
       },
