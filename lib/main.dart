@@ -20,7 +20,9 @@ import 'pages/Cupertino/CupertinoBarcodeReader.dart';
 import 'pages/Cupertino/CupertinoBuildingLayouts.dart';
 import 'pages/Cupertino/CupertinoButton.dart';
 import 'pages/Cupertino/CupertinoCamera.dart';
+import 'pages/Cupertino/CupertinoDarkModeFlag.dart';
 import 'pages/Cupertino/CupertinoDatePicker.dart';
+import 'pages/Cupertino/CupertinoDynamicTheme.dart';
 import 'pages/Cupertino/CupertinoFlutterIssues.dart';
 import 'pages/Cupertino/CupertinoHelloWorld.dart';
 import 'pages/Cupertino/CupertinoListView.dart';
@@ -180,6 +182,8 @@ class MyApp extends StatelessWidget {
         '/cupertinoLocalFile': (context) => CupertinoLocalFile(),
         '/cupertinoSnackBar': (context) => CupertinoSnackBar(),
         '/cupertinoSharedPreferences': (context) => CupertinoSharedPreferences(),
+        '/cupertinoDynamicTheme': (context) => MyCupertinoDynamicTheme(),
+        '/cupertinoDarkModeFlag': (context) => CupertinoDarkModeFlag(),
         
         
       },

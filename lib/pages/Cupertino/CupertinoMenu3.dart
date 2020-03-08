@@ -70,6 +70,14 @@ class _State extends State<CupertinoMenu3> {
               child: Text('Push Cupertino SharedPreferences'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSharedPreferences'),
             ),
+            CupertinoButton(
+              child: Text('Push Cupertino DynamicTheme'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDynamicTheme'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino DarkMode Flag'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDarkModeFlag'),
+            ),
             
           ],
         ),
