@@ -37,9 +37,11 @@ class LastDayListView extends StatelessWidget {
                       onTap: (){ 
                         _moveToEditView(context, _bloc, lastDay); 
                       },
-                      title: Text("${lastDay.title}"),
-                      subtitle: Text("${lastDay.note}"),
-                      trailing: Text("${lastDay.dueDate.toLocal().toString()}"),
+                      title: Text("${lastDay.title}", style: TextStyle(fontSize: 24),),
+                      // subtitle: Text("${lastDay.note}"),
+                      subtitle: Text("${lastDay.lastDate.toLocal().toString()}"),
+                      // trailing: Text("${lastDay.lastDate.toLocal().toString()}"),
+                      trailing: Text("${lastDay.note}"),
                       isThreeLine: true,
                     )
                   ),

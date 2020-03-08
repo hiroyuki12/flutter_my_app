@@ -158,7 +158,8 @@ void _buildIssuesCommits(final data)
       _issues.add(Issue(
         title: issue['title'] as String,
         avatarUrl: issue['user']['avatar_url'] as String,
-        number: issue['number'].toString() as String,
+        // number: issue['number'].toString() as String,
+        number: issue['number'].toString(),
         updatedAt: issue['updated_at'] as String,
       ));
     });

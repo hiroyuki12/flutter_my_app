@@ -21,7 +21,7 @@ class LastDayEditView extends StatelessWidget {
     // 新しいインスタンスを作る
     _newLastDay.id = lastDay.id;
     _newLastDay.title = lastDay.title;
-    _newLastDay.dueDate = lastDay.dueDate;
+    _newLastDay.lastDate = lastDay.lastDate;
     _newLastDay.note = lastDay.note;
   }
 
@@ -34,7 +34,7 @@ class LastDayEditView extends StatelessWidget {
         child: Column(
           children: <Widget>[
             _titleTextFormField(),
-            _dueDateTimeFormField(),
+            _lastDateTimeFormField(),
             _noteTextFormField(),
             _confirmButton(context)
           ],
@@ -45,8 +45,10 @@ class LastDayEditView extends StatelessWidget {
 
   Widget _titleTextFormField() => TextFormField(
     decoration: InputDecoration(labelText: "タイトル"),
-    initialValue: _newLastDay.title,
+    // initialValue: _newLastDay.title,
+    initialValue: 'test',
     onChanged: _setTitle,
+    onTap: () => _newLastDay.title = 'test',
   );
   
   void _setTitle(String title) {
@@ -54,11 +56,11 @@ class LastDayEditView extends StatelessWidget {
   }
 
   // ↓ https://pub.dev/packages/datetime_picker_formfield のサンプルから引用
-  Widget _dueDateTimeFormField() => DateTimeField(
+  Widget _lastDateTimeFormField() => DateTimeField(
     format: _format,
     decoration: InputDecoration(labelText: "締切日"),
-    initialValue: _newLastDay.dueDate ?? DateTime.now(),
-    onChanged: _setDueDate,
+    initialValue: _newLastDay.lastDate ?? DateTime.now(),
+    onChanged: _setLastDate,
     onShowPicker: (context, currentValue) async {
       final date = await showDatePicker(
         context: context,
@@ -78,8 +80,8 @@ class LastDayEditView extends StatelessWidget {
     }
   );
  
-  void _setDueDate(DateTime dt) {
-    _newLastDay.dueDate = dt;
+  void _setLastDate(DateTime dt) {
+    _newLastDay.lastDate = dt;
   }
 
   Widget _noteTextFormField() => TextFormField(

@@ -60,7 +60,7 @@ class _State extends State<CupertinoLocalAuthentication> {
         result = await _localAuth.authenticateWithBiometrics(localizedReason: "認証してください");
       }
     // } on PlatformException catch (e) {
-    //   // TODO
+    //   // 
     // }
     return result;
   }

@@ -27,7 +27,7 @@ class DBProvider {
 
     // import 'package:path/path.dart'; が必要
     // なぜか サジェスチョンが出てこない
-    String path = join(documentsDirectory.path, "LastDayDB.db");
+    String path = join(documentsDirectory.path, "LastDayDB2.db");
 
     return await openDatabase(path, version: 1, onCreate: _createTable);
   }
@@ -39,7 +39,7 @@ class DBProvider {
       "CREATE TABLE $_tableName ("
       "id TEXT PRIMARY KEY,"
       "title TEXT,"
-      "dueDate TEXT,"
+      "lastDate TEXT,"
       "note TEXT"
       ")"
     );

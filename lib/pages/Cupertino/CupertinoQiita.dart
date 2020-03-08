@@ -36,7 +36,6 @@ class _State extends State<CupertinoQiita> {
   Future<void> _load(String _tags, int _page, int _perPage) async {
     var res;
     if(_tags == tagsTrends) {
-      // res = await http.get('http://qiita.com/api/v2/items' + 
       res = await http.get('https://qiita-api.netlify.com/trend.json');
       if(res.statusCode == 200)
       {
@@ -50,9 +49,11 @@ class _State extends State<CupertinoQiita> {
               title: issue['node']['title'] as String,
               profileImageUrl: issue['node']['author']['profileImageUrl'] as String,
               id: issue['node']['author']['urlName'] as String,
-              likesCount: issue['node']['likesCount'].toString() as String,
+              // likesCount: issue['node']['likesCount'].toString() as String,
+              likesCount: issue['node']['likesCount'].toString(),
               createdAt: issue['node']['createdAt'] as String,
-              url: 'https://qiita.com/items/' + issue['node']['uuid'] as String,
+              // url: 'https://qiita.com/items/' + issue['node']['uuid'] as String,
+              url: 'https://qiita.com/items/' + issue['node']['uuid'],
             ));
           });
         });
@@ -72,7 +73,8 @@ class _State extends State<CupertinoQiita> {
               title: issue['title'] as String,
               profileImageUrl: issue['user']['profile_image_url'] as String,
               id: issue['user']['id'] as String,
-              likesCount: issue['likes_count'].toString() as String,
+              // likesCount: issue['likes_count'].toString() as String,
+              likesCount: issue['likes_count'].toString(),
               createdAt: issue['created_at'] as String,
               url: issue['url'] as String,
             ));
