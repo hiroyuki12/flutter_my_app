@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_my_app/pages/Cupertino/CupertinoGridView.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoSignInButton.dart';
@@ -71,7 +72,13 @@ import 'pages/Material/Stack.dart';
 import 'pages/Material/SwitchListTile.dart';
 import 'repositories/LastDayBloc.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,//縦固定
+  ]);
+  runApp(MyApp());
+} 
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -91,8 +98,8 @@ class MyApp extends StatelessWidget {
       // debugShowCheckedModeBanner: false,
       
       // initialRoute: '/home',
-      // initialRoute: '/cupertinoMenu',
-      initialRoute: '/cupertinoQiita',
+      initialRoute: '/cupertinoMenu',
+      // initialRoute: '/cupertinoQiita',
       
       routes: {
         '/helloWorld': (context) => HelloWorld(),
@@ -178,7 +185,8 @@ class MyApp extends StatelessWidget {
       home: Provider<LastDayBloc>(
         create: (context) => new LastDayBloc(),
         dispose: (context, bloc) => bloc.dispose(),
-        child: LastDayListView()
+        child: LastDayListView(),
+        // child: CupertinoMenu(),
       ),
 
       // Twitter
