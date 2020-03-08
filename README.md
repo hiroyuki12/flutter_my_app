@@ -289,5 +289,8 @@ Cupertino SharedPreferences(Stop, Startする。RestartではgetAllメソッド�
 https://pub.dev/packages/shared_preferences#-installing-tab-
 https://qiita.com/yukiyamadajp/items/16ec45a7d5de947a93e3
 
-CupertinoButton Disabled onPressed: null
+CupertinoButton Disabled onPressed: null flutter/github
 https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/button.dart#L91
+
+ThemeData primaryColor flutter/github
+https://naotech.hatenablog.com/entry/2019/05/04/131919
