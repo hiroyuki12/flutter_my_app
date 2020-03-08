@@ -270,3 +270,6 @@ https://qiita.com/popy1017/items/7ada79b07281f4a8e544
 
 popy1017/flutter-sqlite-todo-app
 https://github.com/popy1017/flutter-sqlite-todo-app
+
+縦固定
+https://qiita.com/osamu1203/items/6172df89f5270060a44d
