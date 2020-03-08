@@ -280,3 +280,6 @@ https://qiita.com/fragment/items/97bc51ee5e2afd21731f
 
 Flutterでテキストファイルの出力と読み込み LocalFile
 https://qiita.com/nagahama/items/134fdfb003b700bfebc2
+
+CupertinoPageScaffold SnackBar
+https://stackoverflow.com/questions/55382651/use-snackbar-with-cupertinopagescaffold
