@@ -277,3 +277,6 @@ https://qiita.com/osamu1203/items/6172df89f5270060a44d
 sqlite_viewer
 https://pub.dev/packages/sqlite_viewer#-readme-tab-
 https://qiita.com/fragment/items/97bc51ee5e2afd21731f
+
+Flutterでテキストファイルの出力と読み込み LocalFile
+https://qiita.com/nagahama/items/134fdfb003b700bfebc2
