@@ -283,3 +283,8 @@ https://qiita.com/nagahama/items/134fdfb003b700bfebc2
 
 CupertinoPageScaffold SnackBar
 https://stackoverflow.com/questions/55382651/use-snackbar-with-cupertinopagescaffold
+
+Cupertino SharedPreferences(Stop, Startする。RestartではgetAllメソッドエラー。_incrementCounter()にvoid追加.
+
+https://pub.dev/packages/shared_preferences#-installing-tab-
+https://qiita.com/yukiyamadajp/items/16ec45a7d5de947a93e3
