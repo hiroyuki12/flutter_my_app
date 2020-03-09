@@ -61,7 +61,14 @@ class _State extends State<CupertinoQiita> {
     }
     else {
       res = await http.get('https://qiita.com/api/v2/tags/flutter/items?page=' + _page.toString() + '&per_page=' + _perPage.toString());
-      if(res.statusCode == 200)
+      // if(res.type == 'rate_limit_exceeded') {
+      if(res.statusCode == 400) {
+        setState(() {
+          page = 0;
+        });
+        // throw new Error();
+      }
+      else if(res.statusCode == 200)
       {
         final data = json.decode(res.body);
         setState(() {
@@ -91,7 +98,7 @@ class _State extends State<CupertinoQiita> {
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
-        middle: Text("CupertinoQiita", style: _buildTextStyle()),
+        middle: Text("CupertinoQiita Page " + page.toString() + '/' + perPage.toString() + 'posts/' + (((page-1) * perPage)+1).toString() + '~' , style: _buildTextStyle()),
         // trailing: CupertinoButton(
         //   onPressed: () {
         //     _load(tags);
@@ -135,18 +142,30 @@ class _State extends State<CupertinoQiita> {
                       },
                     ),
                     CupertinoActionSheetAction(
-                      child: const Text('Flutter100'),
+                      child: const Text('Flutter page71/20posts'),
                       onPressed: () {
-                        page = 1;
+                        page = 71;  //max (100page, 10item) (15page, 100item)
+                        perPage = 20;
                         tags = tagsFlutter;
-                        _load(tags, page, 100);
+                        _load(tags, page, perPage);
                         Navigator.pop(context, 'Flutter');
                       },
                     ),
+                    // CupertinoActionSheetAction(
+                    //   child: const Text('Flutter 100item'),
+                    //   onPressed: () {
+                    //     page = 1;
+                    //     perPage = 100;
+                    //     tags = tagsFlutter;
+                    //     _load(tags, page, perPage);
+                    //     Navigator.pop(context, 'Flutter');
+                    //   },
+                    // ),
                     CupertinoActionSheetAction(
-                      child: const Text('Flutter'),
+                      child: const Text('Flutter page1/10posts'),
                       onPressed: () {
                         page = 1;
+                        perPage = 10;
                         tags = tagsFlutter;
                         _load(tags, page, perPage);
                         Navigator.pop(context, 'Flutter');
@@ -156,6 +175,7 @@ class _State extends State<CupertinoQiita> {
                       child: const Text('Trends'),
                       onPressed: () {
                         page = 1;
+                        perPage = 10;
                         tags = tagsTrends;
                         _load(tags, page, perPage);
                         Navigator.pop(context, 'Trends');
