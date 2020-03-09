@@ -29,6 +29,8 @@ class _State extends State<CupertinoAdventCalender> {
     _updateJsonData();
   }
 
+  var _json = 'json/flutterAdventCalender2019-2.json';
+
   void _updateJsonData() {
     setState(() {
       loadJsonAsset();
@@ -36,7 +38,7 @@ class _State extends State<CupertinoAdventCalender> {
   }
   
   Future<void> loadJsonAsset() async {
-    String loadData = await rootBundle.loadString('json/flutterAdventCalender2019.json');
+    String loadData = await rootBundle.loadString(_json);
 
     setState(() {
       final jsonResponse = json.decode(loadData);
@@ -88,10 +90,35 @@ class _State extends State<CupertinoAdventCalender> {
                   //title: const Text('選択した項目が画面に表示されます'),
                   actions: <Widget>[
                     CupertinoActionSheetAction(
-                      child: const Text('Next Page'),
+                      child: const Text('2018-1'),
                       onPressed: () {
+                        _json = 'json/flutterAdventCalender2018.json';
                         loadJsonAsset();
-                        Navigator.pop(context, 'Next Page');
+                        Navigator.pop(context, '2018-1');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('2018-2'),
+                      onPressed: () {
+                        _json = 'json/flutterAdventCalender2018-2.json';
+                        loadJsonAsset();
+                        Navigator.pop(context, '2018-2');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('2019-1'),
+                      onPressed: () {
+                        _json = 'json/flutterAdventCalender2019.json';
+                        loadJsonAsset();
+                        Navigator.pop(context, '2019-1');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('2019-2'),
+                      onPressed: () {
+                        _json = 'json/flutterAdventCalender2019-2.json';
+                        loadJsonAsset();
+                        Navigator.pop(context, '2019-2');
                       },
                     ),
                   ],

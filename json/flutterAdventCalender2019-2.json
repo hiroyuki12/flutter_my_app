@@ -1,0 +1,155 @@
+{
+  "url": "https://qiita.com/advent-calendar/2019/flutter-2",
+  "list": [
+    {
+      "date": "12 / 1",
+      "username": "locker5",
+      "title": "Material componentsとFlutter",
+      "url": "https://qiita.com/locker5/items/3de749b8ef779909328f"
+    },
+    {
+      "date": "12 / 2",
+      "username": "regonn",
+      "title": "最近Flutterで作ってるもの",
+      "url": "https://qiita.com/regonn/items/e8f4a4144cc753cdf90d"
+    },
+    {
+      "date": "12 / 3",
+      "username": "k_mawa82",
+      "title": "FlutterでAndroidアプリをリリースした時に解決したつまづきポイントメモ。",
+      "url": "https://qiita.com/k_mawa82/items/2a519b2f4cb135d2921b"
+    },
+    {
+      "date": "12 / 4",
+      "username": "Amp1290",
+      "title": "FlutterでAirbnbのアニメーションライブラリLottieを使う",
+      "url": "https://qiita.com/Amp1290/items/8da80cedc65c8d87c0b1"
+    },
+    {
+      "date": "12 / 5",
+      "username": "Kurusu_ima",
+      "title": "Flutter始めて1ヶ月のビギナーが週末にコツコツとスマブラのキャラ対策メモアプリを作っている話",
+      "url": "https://qiita.com/Kurusu_ima/items/881c5ee96a42b8966e62"
+    },
+    {
+      "date": "12 / 6",
+      "username": "tetsufe",
+      "title": "学生の個人開発にもFlutterがオススメな理由（リリース例あり）",
+      "url": "https://qiita.com/tetsufe/items/a189034dc17e0059d391"
+    },
+    {
+      "date": "12 / 7",
+      "username": "unsoluble_sugar",
+      "title": "FlutterでFirebase Authenticationを使ったGoogleアカウントログインを実装してみた",
+      "url": "https://qiita.com/unsoluble_sugar/items/95b16c01b456be19f9ac"
+    },
+    {
+      "date": "12 / 8",
+      "username": "yasudadesu",
+      "title": "イケてるFlutterのUIからいい感じの実装を紹介する",
+      "url": "https://qiita.com/yasudadesu/items/8ea634938f7dd82b5661"
+    },
+    {
+      "date": "12 / 9",
+      "username": "ko2ic",
+      "title": "BlendModeについて",
+      "url": "https://qiita.com/ko2ic/items/77521e4344f3bd73d326"
+    },
+    {
+      "date": "12 / 10",
+      "username": "sh-ogawa",
+      "title": "オレオレflutterガイドラインみたいなもの ",
+      "url": "https://www.slideshare.net/mobile/sh-ogawa/effective-flutter-197164995"
+    },
+    {
+      "date": "12 / 11",
+      "username": "aoinakanishi",
+      "title": "Flutter Interact  2019のまとめ",
+      "url": "https://qiita.com/aoinakanishi/items/6ba7b27760e2ec1153d2"
+    },
+    {
+      "date": "12 / 12",
+      "username": "aoinakanishi",
+      "title": "FlutterのGoogle Fontsプラグインgoogle_fontsを解析",
+      "url": "https://qiita.com/aoinakanishi/items/1742f7b87a915ab129d3"
+    },
+    {
+      "date": "12 / 13",
+      "username": "_masaokb",
+      "title": "そのアプリ…文字サイズをデカくしてもUI崩れないですか？",
+      "url": "https://qiita.com/_masaokb/items/660ca3181205807a660b"
+    },
+    {
+      "date": "12 / 14",
+      "username": "YuyaAbo",
+      "title": "DropdownButtonで選択されたテキストのスタイルをドロップダウンの開閉によって変える",
+      "url": "https://qiita.com/YuyaAbo/items/916a6630953c27f318e8"
+    },
+    {
+      "date": "12 / 15",
+      "username": "hidea",
+      "title": "Flutter で OpenCV",
+      "url": "https://qiita.com/hidea/items/9f0a38628fe2204f7a04"
+    },
+    {
+      "date": "12 / 16",
+      "username": "gentle-ohige",
+      "title": "FlutterでNavigatorを使わずにDialogを自作する。",
+      "url": "https://qiita.com/gentle-ohige/items/5bb0530012da1a8e77a5"
+    },
+    {
+      "date": "12 / 17",
+      "username": "0maru",
+      "title": "Supernova Studio を使ってFlutterのコード吐き出してみた",
+      "url": "https://qiita.com/0maru/items/4baa1ab98d58513bdd54"
+    },
+    {
+      "date": "12 / 18",
+      "username": "takamii228",
+      "title": "flutterのバージョンをGitLab CI Runner上で動的に切り替える ",
+      "url": "https://takamii.hatenablog.com/entry/2019/12/20/234109"
+    },
+    {
+      "date": "12 / 19",
+      "username": "ttlg",
+      "title": "まだ BLoC で消耗してるの？ ",
+      "url": "https://ja.unflf.com/flutter/provider/"
+    },
+    {
+      "date": "12 / 20",
+      "username": "D_R_1009",
+      "title": "Flutter for WebをBitriseで自動デプロイしてみた ",
+      "url": "https://blog.dr1009.com/entry/20191220_flutter_for_web_cicd"
+    },
+    {
+      "date": "12 / 21",
+      "username": "akio_r",
+      "title": "Flutter for Webで簡単なToDoリストを作るぞ ",
+      "url": "https://akio-blogger.blogspot.com/2019/12/flutter-for-webtodo.html"
+    },
+    {
+      "date": "12 / 22",
+      "username": "chara06ken",
+      "title": "サーバサイドエンジニア4年目がFlutterやってみた",
+      "url": "https://qiita.com/chara06ken/items/0a15dd1d01c739f183fe"
+    },
+    {
+      "date": "12 / 23",
+      "username": "pco2699",
+      "title": "Cloud AutoML VisionとFlutterを組み合わせてサクッと画像認識アプリを作りたかったが作れなかった",
+      "url": "https://qiita.com/pco2699/items/b83cbad9913a2505674b"
+    },
+    {
+      "date": "12 / 24",
+      "username": "niwatly",
+      "title": "Widgetのbuildはいつ走るのか調べた",
+      "url": "https://qiita.com/niwatly/items/f62f9dfffdd9ecd72924"
+    },
+    {
+      "date": "12 / 25",
+      "username": "mono0926",
+      "title": "Flutter on the web の 2019年末時点での現状まとめ🎄 ",
+      "url": "https://medium.com/flutter-jp/web-e5e971ba2a2f"
+    }
+  ]
+}

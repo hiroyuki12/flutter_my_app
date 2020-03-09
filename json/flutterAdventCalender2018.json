@@ -1,0 +1,155 @@
+{
+  "url": "https://qiita.com/advent-calendar/2018/flutter",
+  "list": [
+    {
+      "date": "12 / 1",
+      "username": "clay4649",
+      "title": "JS ? ReactNative × Redux ? ダサいよ... Flutter × Reduxにしましょう...",
+      "url": "https://qiita.com/clay4649/items/0c36bb400a7af0b8e2d6"
+    },
+    {
+      "date": "12 / 2",
+      "username": "superman9387",
+      "title": "Flutterをできるようになるためにやったことまとめ ",
+      "url": "https://www.shogogeek.com/entry/20181202/1543703400"
+    },
+    {
+      "date": "12 / 3",
+      "username": "nobuhito",
+      "title": "Padding（またはMargin）だけが目的でContainerを使うのは間違ってる（というか分かりづらい） ",
+      "url": "https://note.mu/nbht/n/n768920a8eb1c"
+    },
+    {
+      "date": "12 / 4",
+      "username": "superman9387",
+      "title": "Flutter製アプリ「GroupAlbum」で使ってるプラグイン全部晒します！！！！ ",
+      "url": "https://www.shogogeek.com/entry/20181204/1543876200"
+    },
+    {
+      "date": "12 / 5",
+      "username": "superman9387",
+      "title": "Flutterの好きなところを語る ",
+      "url": "https://www.shogogeek.com/entry/20181205/1543960800"
+    },
+    {
+      "date": "12 / 6",
+      "username": "aoinakanishi",
+      "title": "Google公式Flutter用Google Mapsプラグインを一通り使ってみた",
+      "url": "https://qiita.com/aoinakanishi/items/25f2526fc7c1fe8350c6"
+    },
+    {
+      "date": "12 / 7",
+      "username": "chigichan24",
+      "title": "flutter_blueで両OS対応のSDKを書いてみる",
+      "url": "https://qiita.com/chigichan24/items/89cb686e880f0274ed1c"
+    },
+    {
+      "date": "12 / 8",
+      "username": "shimopata",
+      "title": "codemagicでFirebaseと連携したFlutterアプリをデプロイしてみる",
+      "url": "https://qiita.com/shimopata/items/f158015d2893e2614c49"
+    },
+    {
+      "date": "12 / 9",
+      "username": "pco2699",
+      "title": "flutterとFirebase Cloud Messagingを連携させて通知専用アプリをサクッとつくる ",
+      "url": "https://blog.pco2699.net/entry/2018/12/09/203408"
+    },
+    {
+      "date": "12 / 10",
+      "username": "kikuchy",
+      "title": "Flutterの最後の秘宝、Platform Viewの実装を調べに行く",
+      "url": "https://qiita.com/kikuchy/items/397b7664ad32656748bf"
+    },
+    {
+      "date": "12 / 11",
+      "username": "aoinakanishi",
+      "title": "Google公式Flutter用WebViewプラグインを一通り使ってみた",
+      "url": "https://qiita.com/aoinakanishi/items/e58e7dd537ca1d1b76d6"
+    },
+    {
+      "date": "12 / 12",
+      "username": "azihsoyn",
+      "title": "ネイティブpluginの作り方? ",
+      "url": "https://azihsoyn.hatenablog.com/entry/flutter-advent-calendar-2018-day12"
+    },
+    {
+      "date": "12 / 13",
+      "username": "superman9387",
+      "title": "Flutter 1.0がリリースされたので概要から、環境構築、実装方法、アーキテクチャ、情報収集方法まで全部書く",
+      "url": "https://qiita.com/superman9387/items/a605b6b5690aaa746376"
+    },
+    {
+      "date": "12 / 14",
+      "username": "benridane",
+      "title": "flutterを１からインストール",
+      "url": "https://qiita.com/benridane/items/3263ed9d1f4d1cfb9a4a"
+    },
+    {
+      "date": "12 / 15",
+      "username": "aoinakanishi",
+      "title": "Flutter × Flareで無料で簡単にアニメーションを作る",
+      "url": "https://qiita.com/aoinakanishi/items/fbcf122ab7cf13f66037"
+    },
+    {
+      "date": "12 / 16",
+      "username": "kwmt@github",
+      "title": "Flutter製チャットアプリを支える技術",
+      "url": "https://qiita.com/kwmt@github/items/2e81b46d62beb091d18b"
+    },
+    {
+      "date": "12 / 17",
+      "username": "e-a-st",
+      "title": "新世代のクロスプラットフォーム開発を可能とするFlutter1.0のコードに、ドメイン駆動開発の実践を学ぶ。",
+      "url": "https://qiita.com/Nimimal/items/87d4faf52fdfb99b0941"
+    },
+    {
+      "date": "12 / 18",
+      "username": "mono0926",
+      "title": "Flutter の Widget ツリーの裏側で起こっていること - Widget・State・Element・RenderObject の関係とそのライフサイクルを理解する ",
+      "url": "https://medium.com/flutter-jp/dive-into-flutter-4add38741d07"
+    },
+    {
+      "date": "12 / 19",
+      "username": "sekitaka_1214",
+      "title": "[Flutter] DartのclassとFirestoreデータを相互変換、そしてCRUDへ",
+      "url": "https://qiita.com/sekitaka_1214/items/129f41c2fbb1dc05b5c3"
+    },
+    {
+      "date": "12 / 20",
+      "username": "rkowase",
+      "title": "【Flutter】JSONをデコードする",
+      "url": "https://qiita.com/rkowase/items/f397513f2149a41b6dd2"
+    },
+    {
+      "date": "12 / 21",
+      "username": "t-kashima",
+      "title": "既存のアプリからFlutterを呼び出す",
+      "url": "https://qiita.com/t-kashima/items/f825f7b91b850a3563a9"
+    },
+    {
+      "date": "12 / 22",
+      "username": "ko2ic",
+      "title": "Flutterで1年間開発して利用した使えるライブラリ",
+      "url": "https://qiita.com/ko2ic/items/2a0aa4301011f8f52275"
+    },
+    {
+      "date": "12 / 23",
+      "username": "mono0926",
+      "title": "Stateful Widget のパフォーマンスを考慮した正しい扱い方 ",
+      "url": "https://medium.com/flutter-jp/state-performance-7a5f67d62edd"
+    },
+    {
+      "date": "12 / 24",
+      "username": "kabochapo",
+      "title": "BLoCパターンの問題点とScoped Modelとの比較",
+      "url": "https://qiita.com/kabochapo/items/2b992cc00e9f464c1ea9"
+    },
+    {
+      "date": "12 / 25",
+      "username": "mono0926",
+      "title": "FlutterのBLoC(Business Logic Component)のライフサイクルを正確に管理して提供するProviderパッケージの解説 ",
+      "url": "https://medium.com/flutter-jp/bloc-provider-70e869b11b2f"
+    }
+  ]
+}

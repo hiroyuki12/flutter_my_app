@@ -1,0 +1,155 @@
+{
+  "url": "https://qiita.com/advent-calendar/2018/flutter-2",
+  "list": [
+    {
+      "date": "12 / 1",
+      "username": "karmactonics",
+      "title": "Heroクラスで画面間のWidgetアニメーションを行う ",
+      "url": "http://karmactonics.hatenablog.com/entry/2018/12/01/212726"
+    },
+    {
+      "date": "12 / 2",
+      "username": "keidroid",
+      "title": "Flutterの低レイヤー周り - Flutterでゲーム制作はできそうか調査してみた",
+      "url": "https://qiita.com/keidroid/items/ac213910980bc125995a"
+    },
+    {
+      "date": "12 / 3",
+      "username": "D_R_1009",
+      "title": "Flutterのビルドコマンドを追ってみよう ",
+      "url": "https://dr1009.hatenablog.com/entry/20181205_flutter_build_command?_ga=2.244088322.649798732.1543587442-1406360971.1537918323"
+    },
+    {
+      "date": "12 / 4",
+      "username": "superman9387",
+      "title": "Flutterで画像を複数選択する ",
+      "url": "https://www.shogogeek.com/entry/20181204/1543874400"
+    },
+    {
+      "date": "12 / 5",
+      "username": "D_R_1009",
+      "title": "Flutter + fastlaneでCICDしよう ",
+      "url": "https://dr1009.hatenablog.com/entry/20181205_flutter_ci_cd"
+    },
+    {
+      "date": "12 / 6",
+      "username": "superman9387",
+      "title": "FlutterでFacebookや、YouTubeみたいなかっこいいプログレスを出す ",
+      "url": "https://www.shogogeek.com/entry/20181206/1544047200"
+    },
+    {
+      "date": "12 / 7",
+      "username": "kitoko552",
+      "title": "Flutter with Redux",
+      "url": "https://qiita.com/kitoko552/items/155baf852b059550b0f9"
+    },
+    {
+      "date": "12 / 8",
+      "username": "yujikawa",
+      "title": "【入門】FlutterとElixir/PhoenixのGraphQLでTODOアプリを作る（Flutter編）",
+      "url": "https://qiita.com/yujikawa/items/83c5b88769778c228453"
+    },
+    {
+      "date": "12 / 9",
+      "username": "waytoa",
+      "title": "Flutterの難読化とマップファイル生成のススメ",
+      "url": "https://qiita.com/waytoa/items/afea190f6bcbf97c1551"
+    },
+    {
+      "date": "12 / 10",
+      "username": "aftercider",
+      "title": "Flutterでカメラアプリを作る〜保存編〜 ",
+      "url": "https://blog.aftercider.com/entry/2018/12/10/000000"
+    },
+    {
+      "date": "12 / 11",
+      "username": "imamurh",
+      "title": "Flutter Plugin Package を作ってみる 〜 SkyWay SDK で WebRTC 〜",
+      "url": "https://qiita.com/imamurh/items/43966e33e100956e0998"
+    },
+    {
+      "date": "12 / 12",
+      "username": "welchi",
+      "title": "Flutter+Dialogflowで天気を教えてくれる簡単なチャットボットを作ろう！ ",
+      "url": "https://note.mu/welchi/n/n06d8e4c26aba"
+    },
+    {
+      "date": "12 / 13",
+      "username": "Blacpans",
+      "title": "FlutterでMisskeyのクローンアプリを作りたかった（作ったとは言ってない）",
+      "url": "https://qiita.com/Blacpans/items/fc88236f1824f70c600a"
+    },
+    {
+      "date": "12 / 14",
+      "username": "ttlg",
+      "title": "Flutter, This is it ",
+      "url": "https://link.medium.com/gnpOGtTCDS"
+    },
+    {
+      "date": "12 / 15",
+      "username": "kabochapo",
+      "title": "長めだけどたぶんわかりやすいBLoCパターンの解説",
+      "url": "https://qiita.com/kabochapo/items/8738223894fb74f952d3"
+    },
+    {
+      "date": "12 / 16",
+      "username": "superman9387",
+      "title": "FlutterとFirebaseについて無限に相談にのります ",
+      "url": "https://note.mu/shogoyamada/n/nfdbfab8da3ae"
+    },
+    {
+      "date": "12 / 17",
+      "username": "r-kaga",
+      "title": "Heroウィジェットを使って画面遷移",
+      "url": "https://qiita.com/rykgy/items/3428e466d0f908fd7ca4"
+    },
+    {
+      "date": "12 / 18",
+      "username": "mkosuke",
+      "title": "FlutterでAndroid/iOSのネイティブ画面を表示する",
+      "url": "https://qiita.com/mkosuke/items/b384035e507ad0208c10"
+    },
+    {
+      "date": "12 / 19",
+      "username": "azihsoyn",
+      "title": "小ネタにする ",
+      "url": "https://azihsoyn.hatenablog.com/entry/flutter-advent-calendar2-2018-day19"
+    },
+    {
+      "date": "12 / 20",
+      "username": "kwmt@github",
+      "title": "Flutterでの画面遷移まとめ",
+      "url": "https://qiita.com/kwmt@github/items/8720e7ab21f8ac12695d"
+    },
+    {
+      "date": "12 / 21",
+      "username": "mono0926",
+      "title": "Flutterでの開発をスムーズに行うためのTips集 ",
+      "url": "https://medium.com/flutter-jp/tips-b2487a63a8"
+    },
+    {
+      "date": "12 / 22",
+      "username": "YoshiakiOshima",
+      "title": "FlutterでJSONデータのHTTP通信",
+      "url": "https://qiita.com/YoshiakiOshima/items/40aac200b37fe98b9835"
+    },
+    {
+      "date": "12 / 23",
+      "username": "heavenosk",
+      "title": "FlutterのNavigatorの使い方と仕組み",
+      "url": "https://qiita.com/ryunosukeheaven/items/9e43298955a371221393"
+    },
+    {
+      "date": "12 / 24",
+      "username": "tanakeiQ",
+      "title": "管理しやすい(と思う)Flutterプロジェクトのディレクトリ構造",
+      "url": "https://qiita.com/tanakeiQ/items/2c4a7fcb8e95b9aa55ad"
+    },
+    {
+      "date": "12 / 25",
+      "username": "kat_out",
+      "title": "Flutterでアプリを作った時のあれこれ",
+      "url": "https://qiita.com/kat_out/items/32a6d0966344f45a1288"
+    }
+  ]
+}
