@@ -1,0 +1,203 @@
+{
+  "list": [
+    {
+      "date": "12 / 1",
+      "username": "superman9387",
+      "title": "Flutterで画面遷移してから戻ってきたことを検知する",
+      "url": "https://qiita.com/superman9387/items/0025d23861c6c076e867",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    },
+    {
+      "date": "12 / 2",
+      "username": "YusukeIwaki",
+      "title": "FlutterでGoogle Mapを使ってできること、できないこと（2019年版）",
+      "url": "https://qiita.com/YusukeIwaki/items/a9d62459cbbc8df1dfa5",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 3",
+      "username": "chooyan_eng",
+      "title": "【Flutter】Widget テストの「あれ、これどうやるんだろう？」集",
+      "url": "https://qiita.com/chooyan_eng/items/6ffd5b07de07edafd304",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 4",
+      "username": "kitoko552",
+      "title": "特定の位置までのスクロールを実現する3つのパッケージ ",
+      "url": "https://note.com/kitoko552/n/n52cb06e79d49",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 5",
+      "username": "mkosuke",
+      "title": "Effective Dartまとめ",
+      "url": "https://qiita.com/mkosuke/items/42c19d7edbf111f7fb71",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 6",
+      "username": "kikuchy",
+      "title": "自動コード生成を駆使してFlutter開発を楽にする",
+      "url": "https://qiita.com/kikuchy/items/cdd95bb9a02c4edf8f12",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 7",
+      "username": "takuchalle",
+      "title": "pub.dev に自分のパッケージを登録しよう",
+      "url": "https://qiita.com/takuchalle/items/36f853b98bc2790ff3af",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 8",
+      "username": "mjhd-devlion",
+      "title": "flutter web で firebase を使ったアプリを作成した知見",
+      "url": "https://qiita.com/mjhd-devlion/items/e15e7d0342aca102a732",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 9",
+      "username": "SatoshiN21",
+      "title": "FlutterはWidgetサイズをどうやって決めているのか(BoxConstraints編)",
+      "url": "https://qiita.com/SatoshiN21/items/0432d5e9b32d97a9210c",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 10",
+      "username": "iktakahiro",
+      "title": "Flutter の PlatformView を使って Kotlin で実装したコンポーネントを Widget として読み込む",
+      "url": "https://qiita.com/iktakahiro/items/cb678c2a55c9fd5c9aa0",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 11",
+      "username": "masashi-sutou",
+      "title": "GestureDetectorでSplitViewやMulti-Windowのような画面をつくる",
+      "url": "https://qiita.com/masashi-sutou/items/5e16b6e0a1efefb84e78",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 12",
+      "username": "mono0926",
+      "title": "Flutter Interact ’19 での発表に触れながら Flutter/Dart の最新動向を追う ",
+      "url": "https://medium.com/flutter-jp/flutter-interact-a5a1e021eae1",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 13",
+      "username": "kabochapo",
+      "title": "遠隔演奏できるピアノアプリをFlutterとgRPCで作った",
+      "url": "https://qiita.com/kabochapo/items/547c7e3f39f290fa2c8f",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 14",
+      "username": "KxNxT",
+      "title": "１つのボタンをタップして上にスクロールしたり、前の画面に戻ったり",
+      "url": "https://qiita.com/KxNxT/items/f3a64e9fd648e09e5db2",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 15",
+      "username": "neonankiti",
+      "title": "Flutter sign in/up with Firebase Authentication ",
+      "url": "https://medium.com/@neonankiti/flutter-sign-in-up-with-firebase-authentication-29aa95bbfe8f",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 16",
+      "username": "corocn",
+      "title": "Flutter Web x Firebase Auth x Google認証を実装してみる",
+      "url": "https://qiita.com/corocn/items/f420f32a1633f2c97b1d",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 17",
+      "username": "mirock",
+      "title": "Desktop Embedding for Flutterについて",
+      "url": "https://qiita.com/mirock/items/98e7e7446606cd73a5e4",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 18",
+      "username": "y-temp4",
+      "title": "Webしか触ったことのないアプリ未経験者がFlutterでiOS・Androidのアプリを個人開発でリリースした話",
+      "url": "https://qiita.com/y-temp4/items/9df31146414f6ba45a92",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 19",
+      "username": "kenji1203",
+      "title": "Flutterでゲームイベントアプリ開発した際に使用した各技術の紹介",
+      "url": "https://qiita.com/kenji1203/items/f7ec5c9f1b2c9858ce39",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 20",
+      "username": "jumbOrNot",
+      "title": "Firebase + FlutterでWhereNotInを考える",
+      "url": "https://qiita.com/jumbOrNot/items/e46146110c0b3f591792",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 21",
+      "username": "sensuikan1973",
+      "title": "[Flutter] Sign in with Apple を Cloud Functions 無しで実装する",
+      "url": "https://qiita.com/sensuikan1973/items/3e1a10668d71e0701724",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 22",
+      "username": "__naoya__",
+      "title": "【失敗と後悔】Flutterアプリ開発 七つの大罪 （と二つの余罪）",
+      "url": "https://qiita.com/__naoya__/items/98ac66157a1578be2798",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 23",
+      "username": "IIInaIII",
+      "title": "Rive(旧Flare)でパスモーフィング",
+      "url": "https://qiita.com/IIInaIII/items/2bf49fb3630a25e1fc3e",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 24",
+      "username": "kan_dai",
+      "title": "フロントエンドエンジニアがFlutterを触ってみた",
+      "url": "https://qiita.com/kan_dai/items/1c3fb2da1540e8e92828",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    },
+    {
+      "date": "12 / 25",
+      "username": "yukitaka13-1110",
+      "title": "Codemagicの設定手順＆ハマりそうなところをまとめてみた",
+      "url": "https://qiita.com/yukitaka13-1110/items/2b4fb8a25c1559f3e278",
+      "image_url": "https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F139360%2Fprofile-images%2F1570623277?ixlib=rb-1.2.2&auto=compress%2Cformat&lossless=0&w=48&s=37a45e26ae4696f8965b6f3109a08334"
+    
+    }
+  ]
+}

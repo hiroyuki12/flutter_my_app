@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoDynamicTheme.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoSharedPreferences.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoMenu3 extends StatefulWidget {
@@ -55,8 +58,8 @@ class _State extends State<CupertinoMenu3> {
             //   onPressed: ()=> Navigator.pushNamed(context, '/lastDayListView'),
             // ),
             CupertinoButton(
-              child: Text('Push SqliteViewer'),
-              onPressed: ()=> Navigator.pushNamed(context, '/sqliteViewer'),
+              child: Text('Push Cupertino SqliteViewer'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSqliteViewer'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino LocalFile'),
@@ -71,12 +74,16 @@ class _State extends State<CupertinoMenu3> {
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSharedPreferences'),
             ),
             CupertinoButton(
-              child: Text('Push Cupertino DynamicTheme'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDynamicTheme'),
-            ),
-            CupertinoButton(
               child: Text('Push Cupertino DarkMode Flag'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDarkModeFlag'),
+            ),
+            // CupertinoButton(
+            //   child: Text('Push Cupertino DynamicTheme'),
+            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDynamicTheme'),
+            // ),
+            CupertinoButton(
+              child: Text('Push Cupertino Advent'),
+              onPressed: ()=> Navigator.pushNamed(context, '/CupertinoAdvent'),
             ),
             
           ],

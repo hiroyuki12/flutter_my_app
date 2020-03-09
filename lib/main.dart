@@ -15,6 +15,7 @@ import 'package:flutter_my_app/pages/Material/TextField.dart';
 import 'package:provider/provider.dart';
 import 'pages/Cupertino/CupertinoActionSheet.dart';
 import 'pages/Cupertino/CupertinoActivityIndicator.dart';
+import 'pages/Cupertino/CupertinoAdventCalender.dart';
 import 'pages/Cupertino/CupertinoAlertDialog.dart';
 import 'pages/Cupertino/CupertinoBarcodeReader.dart';
 import 'pages/Cupertino/CupertinoBuildingLayouts.dart';
@@ -39,6 +40,7 @@ import 'pages/Cupertino/CupertinoSettings.dart';
 import 'pages/Cupertino/CupertinoSharedPreferences.dart';
 import 'pages/Cupertino/CupertinoSlider.dart';
 import 'pages/Cupertino/CupertinoSnackBar.dart';
+import 'pages/Cupertino/CupertinoSqliteViewer.dart';
 import 'pages/Cupertino/CupertinoSwitch.dart';
 import 'pages/Cupertino/CupertinoTextField.dart';
 import 'pages/Cupertino/CupertinoTimerPicker.dart';
@@ -179,11 +181,14 @@ class MyApp extends StatelessWidget {
         // '/cupertinoButton2': (context) => MyCupertinoButton2(),
         '/lastDayListView': (context) => LastDayListView(),
         '/sqliteViewer': (context) => SqliteViewer(),
+        '/cupertinoSqliteViewer': (context) => CupertinoSqliteViewer(),
         '/cupertinoLocalFile': (context) => CupertinoLocalFile(),
         '/cupertinoSnackBar': (context) => CupertinoSnackBar(),
         '/cupertinoSharedPreferences': (context) => CupertinoSharedPreferences(),
         '/cupertinoDynamicTheme': (context) => MyCupertinoDynamicTheme(),
         '/cupertinoDarkModeFlag': (context) => CupertinoDarkModeFlag(),
+        '/CupertinoAdvent': (context) => CupertinoAdventCalender2(),
+        
         
         
       },
