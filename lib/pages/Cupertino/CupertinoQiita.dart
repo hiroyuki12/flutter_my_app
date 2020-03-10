@@ -49,10 +49,8 @@ class _State extends State<CupertinoQiita> {
               title: issue['node']['title'] as String,
               profileImageUrl: issue['node']['author']['profileImageUrl'] as String,
               id: issue['node']['author']['urlName'] as String,
-              // likesCount: issue['node']['likesCount'].toString() as String,
               likesCount: issue['node']['likesCount'].toString(),
               createdAt: issue['node']['createdAt'] as String,
-              // url: 'https://qiita.com/items/' + issue['node']['uuid'] as String,
               url: 'https://qiita.com/items/' + issue['node']['uuid'],
             ));
           });
@@ -99,15 +97,6 @@ class _State extends State<CupertinoQiita> {
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
         middle: Text("CupertinoQiita Page " + page.toString() + '/' + perPage.toString() + 'posts/' + (((page-1) * perPage)+1).toString() + '~' , style: _buildTextStyle()),
-        // trailing: CupertinoButton(
-        //   onPressed: () {
-        //     _load(tags);
-        //     if(tags == 'flutter')  tags = tagsAll;
-        //     else tags = 'flutter';
-        //   },
-        //   child: Text(tags, style: _buildTextStyle()),
-        // ),
-        ////////////////////////////////////////////////////////
         trailing: CupertinoButton(
           onPressed: () {
             showCupertinoModalPopup(
@@ -225,7 +214,6 @@ class _State extends State<CupertinoQiita> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (BuildContext context) => MyCupertinoWebView(
-                                // url: 'https://www.yahoo.co.jp/',
                                 url: issue.url,
                               ),
                             ),
@@ -253,33 +241,6 @@ class _State extends State<CupertinoQiita> {
 }
 
 var myValue;
-
-// Widget _buildPickerButton(BuildContext context) {
-//   return CupertinoButton(
-//     onPressed: () {
-//       showCupertinoModalPopup(
-//         context: context,
-//         builder: (context) {
-//           return Container(
-//             height: 300.0,
-//             child: CupertinoPicker(
-//               onSelectedItemChanged: (value) {myValue = value;},
-//               itemExtent: 30.0,
-//               children: <Widget>[
-//                 Center(child: Text("Next Page")),
-//                 Center(child: Text("Prev Page")),
-//                 Center(child: Text("--------")),
-//                 Center(child: Text("Trends")),
-//                 Center(child: Text("Flutter")),
-//               ],
-//             ),
-//           );
-//         }
-//       );
-//     },
-//     child: Text("Tap me"),
-//   );
-// }
 
 class Item {
    Item({
@@ -320,13 +281,3 @@ TextStyle _buildSubTitleTextStyle() {
   color: CupertinoColors.systemYellow,  //black , darkMode=white
   );
 }
-
-// var pickerTextStyle = new TextStyle();
-// TextStyle _buildSubTitleTextStyle() {
-//   return subTitleTextStyle = new TextStyle(
-//   fontWeight: FontWeight.w100,
-//   decoration: TextDecoration.none,
-//   fontSize: 13,
-//   color: CupertinoColors.systemYellow,  //black , darkMode=white
-//   );
-// }

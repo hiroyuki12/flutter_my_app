@@ -31,16 +31,36 @@ class _State extends State<CupertinoMenu> {
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoHelloWorld'),
             ),
             CupertinoButton(
-              child: Text('Push Cupertino Platform'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoPlartform'),
-            ),
-            CupertinoButton(
               child: Text('Push Cupertino Flutter Issues'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoFlutterIssues'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino Qiita'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoQiita'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino Flutter Advent Calender'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoAdvent'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino Camera'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoCamera'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino BarcodeReader'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoBarcodeReader'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino Twitter'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino BuildingLayouts'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoBuildingLayouts'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino SharedPreferences'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSharedPreferences'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino Settings'),
@@ -51,31 +71,7 @@ class _State extends State<CupertinoMenu> {
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoListView'),
             ),
             CupertinoButton(
-              child: Text('Push Cupertino Provider'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoProvider'),
-            ),
-            CupertinoButton(
-              child: Text('Push CupertinoAlertDialog'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoAlertDialog'),
-            ),
-            CupertinoButton(
-              child: Text('Push CupertinoDatePicker'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDatePicker'),
-            ),
-            CupertinoButton(
-              child: Text('Push CupertinoButton'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoButton'),
-            ),
-            CupertinoButton(
-              child: Text('Push CupertinoSlider'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSlider'),
-            ),
-            CupertinoButton(
-              child: Text('Push CupertinoTextField'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTextField'),
-            ),
-            CupertinoButton(
-              child: Text('NEXT PAGE ( Push CupertinoMenu2)'),
+              child: Text('NEXT PAGE (Push CupertinoMenu2)'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMenu2'),
             ),
           ],

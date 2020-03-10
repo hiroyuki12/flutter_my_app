@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_my_app/pages/Cupertino/CupertinoDynamicTheme.dart';
-import 'package:flutter_my_app/pages/Cupertino/CupertinoSharedPreferences.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoMenu3 extends StatefulWidget {
@@ -26,6 +24,26 @@ class _State extends State<CupertinoMenu3> {
         child: Column(
           children: <Widget>[
             CupertinoButton(
+              child: Text('Push CupertinoSwitch'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSwitch'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino WebView'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoWebView'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino TabBar'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
+            ),
+            CupertinoButton(
+              child: Text('Push CupertinoSlidingSegmentedControl'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSlidingSegmentedControl'),
+            ),
+            CupertinoButton(
+              child: Text('Push cupertinoSegmentedControlDemo'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSegmentedControlDemo'),
+            ),
+            CupertinoButton(
               child: Text('Push CupertinoTimePicker'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTimerPicker'),
             ),
@@ -36,14 +54,6 @@ class _State extends State<CupertinoMenu3> {
             CupertinoButton(
               child: Text('Push CupertinoLocalAuthentication'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoLocalAuthentication'),
-            ),
-            CupertinoButton(
-              child: Text('Push Cupertino Camera'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoCamera'),
-            ),
-            CupertinoButton(
-              child: Text('Push Cupertino BarcodeReader'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoBarcodeReader'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino SignInButton'),
@@ -70,10 +80,6 @@ class _State extends State<CupertinoMenu3> {
             //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSnackBar'),
             // ),
             CupertinoButton(
-              child: Text('Push Cupertino SharedPreferences'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSharedPreferences'),
-            ),
-            CupertinoButton(
               child: Text('Push Cupertino DarkMode Flag'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDarkModeFlag'),
             ),
@@ -82,8 +88,8 @@ class _State extends State<CupertinoMenu3> {
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDynamicTheme'),
             ),
             CupertinoButton(
-              child: Text('Push Cupertino Flutter Advent Calender'),
-              onPressed: ()=> Navigator.pushNamed(context, '/CupertinoAdvent'),
+              child: Text('Push Cupertino Share'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoShare'),
             ),
             
           ],

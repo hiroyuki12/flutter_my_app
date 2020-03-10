@@ -37,6 +37,7 @@ import 'pages/Cupertino/CupertinoProvider.dart';
 import 'pages/Cupertino/CupertinoQiita.dart';
 import 'pages/Cupertino/CupertinoSegmentedControl.dart';
 import 'pages/Cupertino/CupertinoSettings.dart';
+import 'pages/Cupertino/CupertinoShare.dart';
 import 'pages/Cupertino/CupertinoSharedPreferences.dart';
 import 'pages/Cupertino/CupertinoSlider.dart';
 import 'pages/Cupertino/CupertinoSnackBar.dart';
@@ -188,7 +189,8 @@ class MyApp extends StatelessWidget {
         '/cupertinoSharedPreferences': (context) => CupertinoSharedPreferences(),
         '/cupertinoDynamicTheme': (context) => MyCupertinoDynamicTheme2(),
         '/cupertinoDarkModeFlag': (context) => CupertinoDarkModeFlag(),
-        '/CupertinoAdvent': (context) => CupertinoAdventCalender2(),
+        '/cupertinoAdvent': (context) => CupertinoAdventCalender2(),
+        '/cupertinoShare': (context) => CupertinoShare(),
         
         
         
