@@ -106,6 +106,7 @@ class MyApp extends StatelessWidget {
       
       // initialRoute: '/home',
       initialRoute: '/cupertinoMenu',
+      // initialRoute: '/helloWorld',
       // initialRoute: '/cupertinoQiita',
       
       routes: {
@@ -185,7 +186,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoLocalFile': (context) => CupertinoLocalFile(),
         '/cupertinoSnackBar': (context) => CupertinoSnackBar(),
         '/cupertinoSharedPreferences': (context) => CupertinoSharedPreferences(),
-        '/cupertinoDynamicTheme': (context) => MyCupertinoDynamicTheme(),
+        '/cupertinoDynamicTheme': (context) => MyCupertinoDynamicTheme2(),
         '/cupertinoDarkModeFlag': (context) => CupertinoDarkModeFlag(),
         '/CupertinoAdvent': (context) => CupertinoAdventCalender2(),
         

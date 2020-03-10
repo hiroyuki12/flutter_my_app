@@ -5,6 +5,15 @@ import 'package:flutter/material.dart';
 import 'DarkModeColor.dart';
 
 
+class MyCupertinoDynamicTheme2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MyCupertinoDynamicTheme(
+      
+    );
+  }
+}
+
 class MyCupertinoDynamicTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

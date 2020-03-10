@@ -146,7 +146,7 @@ class _State extends State<CupertinoAdventCalender> {
                 // ),
                 // child: Image.network(issue.profileImageUrl,
                 //   width: 70,),
-                // child: Container(width: 70,)
+                child: Container(width: 10, height: 60)
               ),
               Expanded(
                 child: Column(

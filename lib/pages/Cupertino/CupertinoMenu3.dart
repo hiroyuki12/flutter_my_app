@@ -77,12 +77,12 @@ class _State extends State<CupertinoMenu3> {
               child: Text('Push Cupertino DarkMode Flag'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDarkModeFlag'),
             ),
-            // CupertinoButton(
-            //   child: Text('Push Cupertino DynamicTheme'),
-            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDynamicTheme'),
-            // ),
             CupertinoButton(
-              child: Text('Push Cupertino Advent'),
+              child: Text('Push Cupertino DynamicTheme'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDynamicTheme'),
+            ),
+            CupertinoButton(
+              child: Text('Push Cupertino Flutter Advent Calender'),
               onPressed: ()=> Navigator.pushNamed(context, '/CupertinoAdvent'),
             ),
             
