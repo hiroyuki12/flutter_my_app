@@ -300,3 +300,6 @@ https://qiita.com/advent-calendar/2019/flutter
 https://qiita.com/furandon_pig/items/f04f60c46d50ec66e2cd
 https://qiita.com/unsoluble_sugar/items/3e0bb6760eb572bc9253
 https://qiita.com/nonkapibara/items/3789073c8c19dd6ecf3d
+
+Share
+https://pub.dev/packages/share#-readme-tab-
