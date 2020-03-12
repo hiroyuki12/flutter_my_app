@@ -303,3 +303,10 @@ https://qiita.com/nonkapibara/items/3789073c8c19dd6ecf3d
 
 Share
 https://pub.dev/packages/share#-readme-tab-
+
+Github Issues API
+url = 'https://api.github.com/repos/' + owner + '/' + repository + '/issues'
+https://qiita.com/YumaInaura/items/ae7c364d4b16207dbb88
+
+Github 東京都 新型コロナウイルス感染症対策サイト / Tokyo COVID-19 Task Force website 
+https://github.com/tokyo-metropolitan-gov/covid19/commits/development
