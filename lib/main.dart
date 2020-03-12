@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoCovid19Issues.dart';
 
 import 'package:flutter_my_app/pages/Cupertino/CupertinoGridView.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoLocalFile.dart';
@@ -193,6 +194,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoAdvent': (context) => CupertinoAdventCalender2(),
         '/cupertinoShare': (context) => CupertinoShare(),
         '/cupertinoMenuListView': (context) => CupertinoMenuListView(),
+        '/cupertinoCovid19Issues': (context) => CupertinoCovid19Issues(),
         
         
         
