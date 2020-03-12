@@ -1,18 +1,13 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_my_app/model/Page.dart';
+import 'package:flutter_my_app/repositories/DBProviderQiita.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'DarkModeColor.dart';
 import 'CupertinoWebView.dart';
-
-class CupertinoQiita2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoQiita(
-      
-    );
-  }
-}
 
 class CupertinoQiita extends StatefulWidget {
   @override
@@ -22,15 +17,22 @@ class CupertinoQiita extends StatefulWidget {
 }
 
 class _State extends State<CupertinoQiita> {
+
+  // final Page page;
+  final Page page = Page.newPage();
+
+  int _sqliteSavedPage = 0;
+  int _sqlliteSavedPerPage = 0;
+
   var tags = 'flutter';
   var tagsTrends = 'trends';
   var tagsFlutter = 'flutter';
-  int page = 1;
-  int perPage = 10;
+  int _savedPage = 1;
+  int _perPage = 10;
   @override
   void initState() {
     super.initState();
-    _load(tags, page, perPage);
+    _load(tags, _savedPage, _perPage);
   }
 
   Future<void> _load(String _tags, int _page, int _perPage) async {
@@ -57,12 +59,13 @@ class _State extends State<CupertinoQiita> {
         });
       }
     }
-    else {
+    else {  //Qiita Flutter
       res = await http.get('https://qiita.com/api/v2/tags/flutter/items?page=' + _page.toString() + '&per_page=' + _perPage.toString());
       // if(res.type == 'rate_limit_exceeded') {
       if(res.statusCode == 400) {
+        print('error!  res.statusCode == 400');
         setState(() {
-          page = 0;
+          _savedPage = 0;
         });
         // throw new Error();
       }
@@ -86,17 +89,25 @@ class _State extends State<CupertinoQiita> {
           });
         });
       }
+      else
+      {
+        print('error! res.statusCode=' + res.statusCode.toString());
+        setState(() {
+          _savedPage = res.statusCode;
+        });
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    _loadSqlitePage();
     isDarkMode = true;  // switch darkMode
     return CupertinoPageScaffold(
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
-        middle: Text("CupertinoQiita Page " + page.toString() + '/' + perPage.toString() + 'posts/' + (((page-1) * perPage)+1).toString() + '~' , style: _buildTextStyle()),
+        middle: Text("CupertinoQiita Page " + _savedPage.toString() + '/' + _perPage.toString() + 'posts/' + (((_savedPage-1) * _perPage)+1).toString() + '~' , style: _buildTextStyle()),
         trailing: CupertinoButton(
           onPressed: () {
             showCupertinoModalPopup(
@@ -108,35 +119,44 @@ class _State extends State<CupertinoQiita> {
                     CupertinoActionSheetAction(
                       child: const Text('Next Page'),
                       onPressed: () {
-                        page++;
-                        _load(tags, page, perPage);
+                        _savedPage++;
+                        _load(tags, _savedPage, _perPage);
                         Navigator.pop(context, 'Next Page');
                       },
                     ),
                     CupertinoActionSheetAction(
                       child: const Text('Next 5Page'),
                       onPressed: () {
-                        page += 5;
-                        _load(tags, page, perPage);
-                        Navigator.pop(context, 'Next Page');
+                        _savedPage += 5;
+                        _load(tags, _savedPage, _perPage);
+                        Navigator.pop(context, 'Next 5Page');
                       },
                     ),
                     CupertinoActionSheetAction(
                       child: const Text('Prev Page'),
                       onPressed: () {
-                        page--;
-                        if(page < 1)  page = 1;
-                        _load(tags, page, perPage);
+                        _savedPage--;
+                        if(_savedPage < 1)  _savedPage = 1;
+                        _load(tags, _savedPage, _perPage);
                         Navigator.pop(context, 'Prev Page');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('Prev 5Page'),
+                      onPressed: () {
+                        _savedPage -= 5;
+                        if(_savedPage < 1)  _savedPage = 1;
+                        _load(tags, _savedPage, _perPage);
+                        Navigator.pop(context, 'Prev 5Page');
                       },
                     ),
                     CupertinoActionSheetAction(
                       child: const Text('Flutter page71/20posts'),
                       onPressed: () {
-                        page = 71;  //max (100page, 10item) (15page, 100item)
-                        perPage = 20;
+                        _savedPage = 71;  //max (100page, 10item) (15page, 100item)
+                        _perPage = 20;
                         tags = tagsFlutter;
-                        _load(tags, page, perPage);
+                        _load(tags, _savedPage, _perPage);
                         Navigator.pop(context, 'Flutter');
                       },
                     ),
@@ -153,21 +173,45 @@ class _State extends State<CupertinoQiita> {
                     CupertinoActionSheetAction(
                       child: const Text('Flutter page1/10posts'),
                       onPressed: () {
-                        page = 1;
-                        perPage = 10;
+                        _savedPage = 1;
+                        _perPage = 10;
                         tags = tagsFlutter;
-                        _load(tags, page, perPage);
+                        _load(tags, _savedPage, _perPage);
                         Navigator.pop(context, 'Flutter');
                       },
                     ),
                     CupertinoActionSheetAction(
                       child: const Text('Trends'),
                       onPressed: () {
-                        page = 1;
-                        perPage = 10;
+                        _savedPage = 1;
+                        _perPage = 10;
                         tags = tagsTrends;
-                        _load(tags, page, perPage);
+                        _load(tags, _savedPage, _perPage);
                         Navigator.pop(context, 'Trends');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: Text('Save Flutter Page ! ' + _savedPage.toString()),
+                      onPressed: () {
+                        _saveSqlitePage();
+                        Navigator.pop(context, 'Flutter');
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: Text('Load Flutter Page !' + _sqliteSavedPage.toString()),
+                      onPressed: () {
+                        _loadSqlitePage();
+
+                        if(_sqliteSavedPage != 0)
+                        {
+                          _savedPage = _sqliteSavedPage;
+                          _load(tags, _sqliteSavedPage, _sqlliteSavedPerPage);
+                        }
+                        else
+                        {
+                          print('_sqliteSavedPage=0');
+                        }
+                        Navigator.pop(context, 'Flutter');
                       },
                     ),
                   ],
@@ -237,8 +281,36 @@ class _State extends State<CupertinoQiita> {
         },
       ),
     );
+  }  //build
+
+  void _saveSqlitePage() async {
+    page.page = _savedPage;
+    page.perPage = _perPage;
+
+    DBProviderQiita.db.deletePage('1');
+    DBProviderQiita.db.createPage(page);
+    //DBProviderQiita.db.updatePage(page);
+
+    _sqliteSavedPage = _savedPage;
+    _sqlliteSavedPerPage = _perPage;
+
+    print('_saveSqlitePage() _sqliteSavedPage $_sqliteSavedPage');
   }
-}
+
+  void _loadSqlitePage() async {
+    List<Page> _pages = <Page>[];
+
+    _pages = await DBProviderQiita.db.getAllPage();
+
+    if(_pages.length > 0)
+    {
+      _sqliteSavedPage = _pages[0].page;
+      _sqlliteSavedPerPage = _pages[0].perPage;
+    }
+
+    print('_loadSqlitePage() _sqliteSavedPage $_sqliteSavedPage');
+  }
+}  //state
 
 var myValue;
 
