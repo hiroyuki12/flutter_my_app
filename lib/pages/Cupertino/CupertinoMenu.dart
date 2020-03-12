@@ -59,21 +59,26 @@ class _State extends State<CupertinoMenu> {
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoBuildingLayouts'),
             ),
             CupertinoButton(
-              child: Text('Push Cupertino SharedPreferences'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSharedPreferences'),
-            ),
-            CupertinoButton(
-              child: Text('Push Cupertino Settings'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoSettings'),
-            ),
-            CupertinoButton(
-              child: Text('Push CupertinoListView'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoListView'),
+              child: Text('Push Cupertino MenuListView'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMenuListView'),
             ),
             CupertinoButton(
               child: Text('NEXT PAGE (Push CupertinoMenu2)'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMenu2'),
             ),
+
+            // CupertinoButton(
+            //   child: Text('Push Cupertino DynamicTheme'),
+            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoDynamicTheme'),
+            // ),
+            // CupertinoButton(
+            //   child: Text('Push CupertinoTabBar'),
+            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTabBar'),
+            // ),
+            // CupertinoButton(
+            //   child: Text('Push cupertinoNavigationBarDemo'),
+            //   onPressed: ()=> Navigator.pushNamed(context, '/cupertinoNavigationBarDemo'),
+            // ),
           ],
         ),
       ),
