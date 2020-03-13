@@ -78,7 +78,7 @@ class _State extends State<CupertinoCovid19Issues> {
         style: _myTextStyle) , 
         onPressed: (){setState(() {
           if(_type==0) {
-            _navigationBarTitle = 'COVID-19 Commits';
+            _navigationBarTitle = 'COVID-19 Commits (development)';
             _buttonTitle = 'Issues';
             _type = 1;
           }
