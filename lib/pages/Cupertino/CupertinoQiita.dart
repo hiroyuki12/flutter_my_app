@@ -33,7 +33,7 @@ class _State extends State<CupertinoQiita> {
 
   Future<void> _load(String _tags, int _page, int _perPage) async {
     var res;
-    if(_tags == tagsTrends) {
+    if(_tags == tagsTrends) {  // Qiita Trends
       res = await http.get('https://qiita-api.netlify.com/trend.json');
       if(res.statusCode == 200)
       {
@@ -70,7 +70,7 @@ class _State extends State<CupertinoQiita> {
         final data = json.decode(res.body);
         setState(() {
           final items = data as List;
-          _items.clear();
+          // _items.clear();
           items.forEach((dynamic element) {
             final issue = element as Map;
             _items.add(Item(
@@ -112,6 +112,17 @@ class _State extends State<CupertinoQiita> {
                 return CupertinoActionSheet(
                   //title: const Text('選択した項目が画面に表示されます'),
                   actions: <Widget>[
+                    CupertinoActionSheetAction(
+                      child: const Text('Clear'),
+                      onPressed: () {
+                        // _savedPage++;
+                        // _load(tags, _savedPage, _perPage);
+                        setState(() {
+                          _items.clear();
+                        });
+                        Navigator.pop(context, 'Clear');
+                      },
+                    ),
                     CupertinoActionSheetAction(
                       child: const Text('Next Page'),
                       onPressed: () {
@@ -156,16 +167,6 @@ class _State extends State<CupertinoQiita> {
                         Navigator.pop(context, 'Flutter');
                       },
                     ),
-                    // CupertinoActionSheetAction(
-                    //   child: const Text('Flutter 100item'),
-                    //   onPressed: () {
-                    //     page = 1;
-                    //     perPage = 100;
-                    //     tags = tagsFlutter;
-                    //     _load(tags, page, perPage);
-                    //     Navigator.pop(context, 'Flutter');
-                    //   },
-                    // ),
                     CupertinoActionSheetAction(
                       child: const Text('Flutter page1/10posts'),
                       onPressed: () {
