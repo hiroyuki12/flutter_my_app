@@ -42,6 +42,11 @@ class _State extends State<CupertinoMenu> {
               child: Text('Push Cupertino COVID-19 Issues'),
               onPressed: ()=> Navigator.pushNamed(context, '/cupertinoCovid19Issues'),
             ),
+            CupertinoButton(
+              child: Text('Push Cupertino MonitoringScroll'),
+              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMonitoringScroll'),
+            ),
+
 
 
 
