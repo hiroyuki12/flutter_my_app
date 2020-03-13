@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'CupertinoWebView.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoCovid19Issues extends StatefulWidget {
@@ -108,8 +109,21 @@ class _State extends State<CupertinoCovid19Issues> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(issue.title, 
-                style: _myTextStyle,),
+              Material(  //for InkWell
+                type: MaterialType.transparency,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => MyCupertinoWebView(
+                          url: issue.htmlUrl,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Text(issue.title, style: _myTextStyle,),
+                )
+              ),
               Text('#' + issue.number + '  opened  ' + issue.updatedAt, 
                 style: _mySubTitleTextStyle,),
             ],
@@ -122,11 +136,13 @@ class _State extends State<CupertinoCovid19Issues> {
   Widget _buildCommitRow(Commit commit, String message) {
     return Row(
       children: <Widget>[
+        // avatarUrl null
         Padding(
           padding: const EdgeInsets.all(6.0),
           // padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: ClipOval(
-            child: Image.network(commit.avatarUrl,
+            // child: Image.network(commit.avatarUrl,
+            child: Image.network('',
               width: 60,),
               // width: 50,height: 55,),
           ),
@@ -136,11 +152,27 @@ class _State extends State<CupertinoCovid19Issues> {
             children: <Widget>[
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(message , 
-                    style: _myTextStyle,),
-                  Text(commit.login + ' committed  ' + commit.date , 
+                children: <Widget>[                
+                  Material(  //for InkWell
+                      type: MaterialType.transparency,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => MyCupertinoWebView(
+                                url: commit.htmlUrl,
+                              ),
+                            ),
+                          );
+                        },
+                        child: Text(message , 
+                          style: _myTextStyle,),   
+                      ),
+                    ),
+                  Text(commit.name + ' committed  ' + commit.date , 
                     style: _mySubTitleTextStyle,),
+                  // Text('committed  ' + commit.date , 
+                  //   style: _mySubTitleTextStyle,),
                 ],
               ),
             ],
@@ -159,6 +191,7 @@ void _buildIssuesCommits(final data)
       final issue = element as Map;
       _issues.add(Issue(
         title: issue['title'] as String,
+        htmlUrl: issue['html_url'] as String,
         avatarUrl: issue['user']['avatar_url'] as String,
         // number: issue['number'].toString() as String,
         number: issue['number'].toString(),
@@ -172,10 +205,11 @@ void _buildIssuesCommits(final data)
       final commit = element as Map;
       _commits.add(Commit(
         message: commit['commit']['message'] as String,
-        avatarUrl: commit['author']['avatar_url'] as String,
+        htmlUrl: commit['html_url'] as String,
+        //avatarUrl: commit['author']['avatar_url'] as String,  //author null
         sha: commit['sha'] as String,
         date: commit['commit']['committer']['date'] as String,
-        login: commit['author']['login'] as String,
+        name: commit['commit']['committer']['name'] as String,
       ));
     });
   }
@@ -189,12 +223,14 @@ String _url = '';
 class Issue {
   Issue({
     this.title,
+    this.htmlUrl,
     this.avatarUrl,
     this.number,
     this.updatedAt,
   });
 
   final String title;
+  final String htmlUrl;
   final String avatarUrl;
   final String number;
   final String updatedAt;
@@ -203,17 +239,19 @@ class Issue {
 class Commit {
   Commit({
     this.message,
+    this.htmlUrl,
     this.avatarUrl,
     this.sha,
     this.date,
-    this.login,
+    this.name,
   });
 
   final String message;
+  final String htmlUrl;
   final String avatarUrl;
   final String sha;
   final String date;
-  final String login;
+  final String name;
 }
 
 var _myTextStyle = new TextStyle();
