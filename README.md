@@ -316,3 +316,6 @@ https://github.com/tokyo-metropolitan-gov/covid19/commits/development
 
 無限スクロール(monitoring scroll)
 https://qiita.com/heavenosk/items/30e9769fcfde5f0fc096
+
+Widget にクリックイベントをつける（Ripple あり）(Text link)
+https://qiita.com/chooyan_eng/items/e7f1fcca1eeb0cf150b5
