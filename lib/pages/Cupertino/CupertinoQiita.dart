@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_my_app/model/Page.dart';
 import 'package:flutter_my_app/repositories/DBProviderQiita.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
 import 'DarkModeColor.dart';
 import 'CupertinoWebView.dart';
 
@@ -17,8 +15,6 @@ class CupertinoQiita extends StatefulWidget {
 }
 
 class _State extends State<CupertinoQiita> {
-
-  // final Page page;
   final Page page = Page.newPage();
 
   int _sqliteSavedPage = 0;
