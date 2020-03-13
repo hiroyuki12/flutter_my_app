@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'CupertinoWebView.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoFlutterIssues extends StatefulWidget {
@@ -107,8 +108,21 @@ class _State extends State<CupertinoFlutterIssues> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(issue.title, 
-                style: _myTextStyle,),
+              Material(  //for InkWell
+                type: MaterialType.transparency,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => MyCupertinoWebView(
+                          url: issue.htmlUrl,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Text(issue.title, style: _myTextStyle,),
+                ),
+              ),
               Text('#' + issue.number + '  opened  ' + issue.updatedAt, 
                 style: _mySubTitleTextStyle,),
             ],
@@ -126,7 +140,7 @@ class _State extends State<CupertinoFlutterIssues> {
           // padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: ClipOval(
             child: Image.network(commit.avatarUrl,
-              width: 50,height: 55,),
+              width: 50,),
           ),
         ),
         Expanded(
@@ -135,8 +149,21 @@ class _State extends State<CupertinoFlutterIssues> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(message , 
-                    style: _myTextStyle,),
+                  Material(  //for InkWell
+                    type: MaterialType.transparency,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => MyCupertinoWebView(
+                              url: commit.htmlUrl,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Text(commit.message, style: _myTextStyle,),
+                    ),
+                  ),
                   Text(commit.login + ' committed  ' + commit.date , 
                     style: _mySubTitleTextStyle,),
                 ],
@@ -157,6 +184,7 @@ void _buildIssuesCommits(final data)
       final issue = element as Map;
       _issues.add(Issue(
         title: issue['title'] as String,
+        htmlUrl: issue['html_url'] as String,
         avatarUrl: issue['user']['avatar_url'] as String,
         // number: issue['number'].toString() as String,
         number: issue['number'].toString(),
@@ -170,6 +198,7 @@ void _buildIssuesCommits(final data)
       final commit = element as Map;
       _commits.add(Commit(
         message: commit['commit']['message'] as String,
+        htmlUrl: commit['html_url'] as String,
         avatarUrl: commit['author']['avatar_url'] as String,
         sha: commit['sha'] as String,
         date: commit['commit']['committer']['date'] as String,
@@ -187,12 +216,14 @@ String _url = '';
 class Issue {
   Issue({
     this.title,
+    this.htmlUrl,
     this.avatarUrl,
     this.number,
     this.updatedAt,
   });
 
   final String title;
+  final String htmlUrl;
   final String avatarUrl;
   final String number;
   final String updatedAt;
@@ -201,6 +232,7 @@ class Issue {
 class Commit {
   Commit({
     this.message,
+    this.htmlUrl,
     this.avatarUrl,
     this.sha,
     this.date,
@@ -208,6 +240,7 @@ class Commit {
   });
 
   final String message;
+  final String htmlUrl;
   final String avatarUrl;
   final String sha;
   final String date;
