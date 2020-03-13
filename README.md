@@ -297,8 +297,11 @@ https://naotech.hatenablog.com/entry/2019/05/04/131919
 
 Flutter Advent Calender 2019
 https://qiita.com/advent-calendar/2019/flutter
+過去のアドベントカレンダーの記事一覧をJSONに変換して取得する。
 https://qiita.com/furandon_pig/items/f04f60c46d50ec66e2cd
+FlutterでローカルのJSONファイルを読み込む
 https://qiita.com/unsoluble_sugar/items/3e0bb6760eb572bc9253
+【Flutter】ローカルJSONファイル読み込み（HTTP通信のテストをテストする時などに使う）
 https://qiita.com/nonkapibara/items/3789073c8c19dd6ecf3d
 
 Share
