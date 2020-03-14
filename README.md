@@ -319,3 +319,6 @@ https://qiita.com/heavenosk/items/30e9769fcfde5f0fc096
 
 Widget にクリックイベントをつける（Ripple あり）(Text link)
 https://qiita.com/chooyan_eng/items/e7f1fcca1eeb0cf150b5
+
+formatの自動保存
+https://gurutaka-log.com/flutter-vscode-tips
