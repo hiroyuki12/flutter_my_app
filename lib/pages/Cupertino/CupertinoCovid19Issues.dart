@@ -7,10 +7,11 @@ import 'DarkModeColor.dart';
 
 class CupertinoCovid19Issues extends StatefulWidget {
   @override
-    State<StatefulWidget> createState() {
+  State<StatefulWidget> createState() {
     return _State();
   }
 }
+
 class _State extends State<CupertinoCovid19Issues> {
   @override
   void initState() {
@@ -19,9 +20,14 @@ class _State extends State<CupertinoCovid19Issues> {
   }
 
   Future<void> _load() async {
-
-    if(_type==0) _url = 'https://api.github.com/repos/tokyo-metropolitan-gov/covid19/issues';
-    else        _url = 'https://api.github.com/repos/tokyo-metropolitan-gov/covid19/commits';
+    if (_type == 0)
+      _url =
+          'https://api.github.com/repos/tokyo-metropolitan-gov/covid19/issues';
+    else
+      _url =
+          'https://api.github.com/repos/tokyo-metropolitan-gov/covid19/commits';
+    // if(_type==0) _url = 'https://api.github.com/repositories/31792824/issues';
+    // else        _url = 'https://api.github.com/repositories/31792824/commits';
     final res = await http.get(_url);
     final data = json.decode(res.body);
     setState(() {
@@ -31,59 +37,58 @@ class _State extends State<CupertinoCovid19Issues> {
 
   @override
   Widget build(BuildContext context) {
-    isDarkMode = true;  // switch darkMode
+    isDarkMode = true; // switch darkMode
     return CupertinoPageScaffold(
-      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+      backgroundColor:
+          isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         middle: Text(_navigationBarTitle, style: _buildTextStyle()),
         trailing: _buildTrailingButton(),
         // backgroundColor: const Color(0xff333333),
-        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        backgroundColor:
+            isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
       ),
       child: _buildListView(context),
     );
   }
 
-  Widget _buildListView(BuildContext context)
-  {
+  Widget _buildListView(BuildContext context) {
     return ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          if(_type == 0) {
-            if (index >= _issues.length) {
-              return null;
-            }
-
-            final issue = _issues[index];
-            return _buildIssuesRow(issue);
+      itemBuilder: (BuildContext context, int index) {
+        if (_type == 0) {
+          if (index >= _issues.length) {
+            return null;
           }
-          else {
-            if (index >= _commits.length) {
-              return null;
-            }
 
-            final commit = _commits[index];
-            String message = commit.message;
-            int maxLength = 80;
-            if(message.length > maxLength) {
-              message = commit.message.substring(0, maxLength);
-            }
-            return _buildCommitRow(commit, message);
+          final issue = _issues[index];
+          return _buildIssuesRow(issue);
+        } else {
+          if (index >= _commits.length) {
+            return null;
           }
-        },
-      );
+
+          final commit = _commits[index];
+          String message = commit.message;
+          int maxLength = 80;
+          if (message.length > maxLength) {
+            message = commit.message.substring(0, maxLength);
+          }
+          return _buildCommitRow(commit, message);
+        }
+      },
+    );
   }
 
   Widget _buildTrailingButton() {
     return FlatButton(
-      child: Text(_buttonTitle,
-        style: _myTextStyle) , 
-        onPressed: (){setState(() {
-          if(_type==0) {
+      child: Text(_buttonTitle, style: _myTextStyle),
+      onPressed: () {
+        setState(() {
+          if (_type == 0) {
             _navigationBarTitle = 'COVID-19 Commits (development)';
             _buttonTitle = 'Issues';
             _type = 1;
-          }
-          else {
+          } else {
             _navigationBarTitle = 'COVID-19 Issues';
             _buttonTitle = 'Commits';
             _type = 0;
@@ -101,15 +106,18 @@ class _State extends State<CupertinoCovid19Issues> {
           padding: const EdgeInsets.all(6.0),
           // padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: ClipOval(
-            child: Image.network(issue.avatarUrl,
-              width: 50,),
+            child: Image.network(
+              issue.avatarUrl,
+              width: 50,
+            ),
           ),
         ),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Material(  //for InkWell
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Material(
+                //for InkWell
                 type: MaterialType.transparency,
                 child: InkWell(
                   onTap: () {
@@ -121,14 +129,17 @@ class _State extends State<CupertinoCovid19Issues> {
                       ),
                     );
                   },
-                  child: Text(issue.title, style: _myTextStyle,),
-                )
-              ),
-              Text('#' + issue.number + '  opened  ' + issue.updatedAt, 
-                style: _mySubTitleTextStyle,),
-            ],
-          )
-        ),
+                  child: Text(
+                    issue.title,
+                    style: _myTextStyle,
+                  ),
+                )),
+            Text(
+              '#' + issue.number + '  opened  ' + issue.updatedAt,
+              style: _mySubTitleTextStyle,
+            ),
+          ],
+        )),
       ],
     );
   }
@@ -142,50 +153,55 @@ class _State extends State<CupertinoCovid19Issues> {
           // padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: ClipOval(
             // child: Image.network(commit.avatarUrl,
-            child: Image.network('',
-              width: 60,),
-              // width: 50,height: 55,),
+            child: Image.network(
+              '',
+              width: 60,
+            ),
+            // width: 50,height: 55,),
           ),
         ),
         Expanded(
-          child: Column(
-            children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[                
-                  Material(  //for InkWell
-                      type: MaterialType.transparency,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext context) => MyCupertinoWebView(
-                                url: commit.htmlUrl,
-                              ),
-                            ),
-                          );
-                        },
-                        child: Text(message , 
-                          style: _myTextStyle,),   
-                      ),
+            child: Column(
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Material(
+                  //for InkWell
+                  type: MaterialType.transparency,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => MyCupertinoWebView(
+                            url: commit.htmlUrl,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      message,
+                      style: _myTextStyle,
                     ),
-                  Text(commit.name + ' committed  ' + commit.date , 
-                    style: _mySubTitleTextStyle,),
-                  // Text('committed  ' + commit.date , 
-                  //   style: _mySubTitleTextStyle,),
-                ],
-              ),
-            ],
-          )
-        ),
+                  ),
+                ),
+                Text(
+                  commit.name + ' committed  ' + commit.date,
+                  style: _mySubTitleTextStyle,
+                ),
+                // Text('committed  ' + commit.date ,
+                //   style: _mySubTitleTextStyle,),
+              ],
+            ),
+          ],
+        )),
       ],
     );
   }
 }
 
-void _buildIssuesCommits(final data)
-{
-  if(_type==0) {
+void _buildIssuesCommits(final data) {
+  if (_type == 0) {
     final issues = data as List;
     issues.forEach((dynamic element) {
       final issue = element as Map;
@@ -198,8 +214,7 @@ void _buildIssuesCommits(final data)
         updatedAt: issue['updated_at'] as String,
       ));
     });
-  }
-  else {
+  } else {
     final commits = data as List;
     commits.forEach((dynamic element) {
       final commit = element as Map;
@@ -257,11 +272,11 @@ class Commit {
 var _myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {
   return _myTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 16,
-  // color: CupertinoColors.white
-  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+    fontWeight: FontWeight.w100,
+    decoration: TextDecoration.none,
+    fontSize: 16,
+    // color: CupertinoColors.white
+    color: isDarkMode ? darkModeForeColor : foreColor, //black , darkMode=white
   );
 }
 

@@ -15,7 +15,6 @@ class _State extends State<CupertinoMonitoringScroll> {
 
   List<String> _items;
 
-
   @override
   void initState() {
     _items = List<String>();
@@ -30,7 +29,6 @@ class _State extends State<CupertinoMonitoringScroll> {
         _addContents();
       }
     });
-
     super.initState();
   }
 
@@ -41,11 +39,10 @@ class _State extends State<CupertinoMonitoringScroll> {
       backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
         backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
-        middle: Text("Cupertino Hello World", style: _buildTextStyle()),
+        middle: Text("Cupertino Monitoring Scroll", style: _buildTextStyle()),
         //trailing: Text("Edit", style: myTextStyle),
       ),
       child: Center(
-        // child: Text("Hello World!", style: _buildTextStyle(),),
         child:  ListView.builder(
           controller: _scrollController,
           itemBuilder: (context, index) {
@@ -78,7 +75,6 @@ class _State extends State<CupertinoMonitoringScroll> {
     });
   }
 }
-
 
 var myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {

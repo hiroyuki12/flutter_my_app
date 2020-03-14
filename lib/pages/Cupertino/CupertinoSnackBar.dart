@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'CupertinoMenu3.dart';
 import 'DarkModeColor.dart';
-import '../../main.dart';
 
 class CupertinoSnackBar extends StatefulWidget {
   @override

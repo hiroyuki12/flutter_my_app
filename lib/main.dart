@@ -86,10 +86,10 @@ import 'repositories/LastDayBloc.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,//縦固定
+    DeviceOrientation.portraitUp, //縦固定
   ]);
   runApp(MyApp());
-} 
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -107,12 +107,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       // theme: ThemeData.light(),
       // debugShowCheckedModeBanner: false,
-      
+
       // initialRoute: '/home',
-      initialRoute: '/cupertinoMenu',
+      // initialRoute: '/cupertinoMenu',
       // initialRoute: '/helloWorld',
       // initialRoute: '/cupertinoQiita',
-      
+
       routes: {
         '/helloWorld': (context) => HelloWorld(),
         '/cupertinoHelloWorld': (context) => CupertinoHelloWorld(),
@@ -168,18 +168,23 @@ class MyApp extends StatelessWidget {
         '/cupertinoMenu': (context) => CupertinoMenu(),
         '/cupertinoMenu2': (context) => CupertinoMenu2(),
         '/cupertinoMenu3': (context) => CupertinoMenu3(),
-        '/cupertinoActivityIndicator': (context) => MyCupertinoActivityIndicator(),
+        '/cupertinoActivityIndicator': (context) =>
+            MyCupertinoActivityIndicator(),
         '/cupertinoBuildingLayouts': (context) => CupertinoBuildingLayouts(),
         '/cupertinoGridView': (context) => MyCupertinoGridView(),
         '/cupertinoPicker': (context) => MyCupertinoPicker(),
-        '/cupertinoSegmentedControl': (context) => MyCupertinoSegmentedControl(),
+        '/cupertinoSegmentedControl': (context) =>
+            MyCupertinoSegmentedControl(),
         '/cupertinoSwitch': (context) => MyCupertinoSwitch(),
         '/cupertinoTabBar': (context) => MyCupertinoTabBar(),
         '/cupertinoWebView': (context) => MyCupertinoWebView(),
-        '/cupertinoSegmentedControlDemo': (context) => CupertinoSegmentedControlDemo(),
-        '/cupertinoNavigationBarDemo': (context) => CupertinoNavigationBarDemo(),
+        '/cupertinoSegmentedControlDemo': (context) =>
+            CupertinoSegmentedControlDemo(),
+        '/cupertinoNavigationBarDemo': (context) =>
+            CupertinoNavigationBarDemo(),
         '/cupertinoTimerPicker': (context) => MyCupertinoTimerPicker(),
-        '/cupertinoLocalAuthentication': (context) => CupertinoLocalAuthentication(),
+        '/cupertinoLocalAuthentication': (context) =>
+            CupertinoLocalAuthentication(),
         '/cupertinoCamera': (context) => CupertinoCamera(),
         '/cupertinoBarcodeReader': (context) => CupertinoBarcodeReader(),
         '/cupertinoSignInButton': (context) => CupertinoSignInButton(),
@@ -189,7 +194,8 @@ class MyApp extends StatelessWidget {
         '/cupertinoSqliteViewer': (context) => CupertinoSqliteViewer(),
         '/cupertinoLocalFile': (context) => CupertinoLocalFile(),
         '/cupertinoSnackBar': (context) => CupertinoSnackBar(),
-        '/cupertinoSharedPreferences': (context) => CupertinoSharedPreferences(),
+        '/cupertinoSharedPreferences': (context) =>
+            CupertinoSharedPreferences(),
         '/cupertinoDynamicTheme': (context) => MyCupertinoDynamicTheme(),
         '/cupertinoDarkModeFlag': (context) => CupertinoDarkModeFlag(),
         '/cupertinoAdvent': (context) => CupertinoAdventCalender2(),
@@ -197,26 +203,18 @@ class MyApp extends StatelessWidget {
         '/cupertinoMenuListView': (context) => CupertinoMenuListView(),
         '/cupertinoCovid19Issues': (context) => CupertinoCovid19Issues(),
         '/cupertinoMonitoringScroll': (context) => CupertinoMonitoringScroll(),
-        
-        
-        
-        
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
-      
-      // home: CupertinoMenu(),                     //CupertinoMenu (no BottomBar)
+
+      home: CupertinoMenu(), //CupertinoMenu (no BottomBar)
       // home: CupertinoHome(),                     //CupertinoTabBar (Bottom)
-      
 
-      home: Provider<LastDayBloc>(
-        create: (context) => new LastDayBloc(),
-        dispose: (context, bloc) => bloc.dispose(),
-        child: LastDayListView(),
-        // child: CupertinoMenu(),
-      ),
-
-      // Twitter
-      // home: CupertinoTwitter(),                     //CupertinoTwitter
+      // home: Provider<LastDayBloc>(
+      //   create: (context) => new LastDayBloc(),
+      //   dispose: (context, bloc) => bloc.dispose(),
+      //   child: LastDayListView(),
+      //   // child: CupertinoMenu(),
+      // ),
     );
   }
 }
