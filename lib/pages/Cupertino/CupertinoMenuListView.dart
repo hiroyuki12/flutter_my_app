@@ -17,36 +17,36 @@ class _State extends State<CupertinoMenuListView> {
     isDarkMode = true; // switch darkMode
 
     List<Map<String, dynamic>> _items = [
-      {'title': 'Push Cupertino Home', 'content': '/cupertinoHome'},
-      {'title': 'Push Hello World', 'content': '/cupertinoHelloWorld'},
-      {
-        'title': 'Push Cupertino Flutter Issues',
-        'content': '/cupertinoFlutterIssues'
-      },
-      {'title': 'Push Cupertino Qiita', 'content': '/cupertinoQiita'},
+      // {'title': 'Push Cupertino Home', 'content': '/cupertinoHome'},
+      // {'title': 'Push Hello World', 'content': '/cupertinoHelloWorld'},
+      // {
+      //   'title': 'Push Cupertino Flutter Issues',
+      //   'content': '/cupertinoFlutterIssues'
+      // },
+      // {'title': 'Push Cupertino Qiita', 'content': '/cupertinoQiita'},
       {
         'title': 'Push Cupertino SqliteViewer',
         'content': '/cupertinoSqliteViewer'
       },
-      {
-        'title': 'Push Cupertino Flutter Advent Calender',
-        'content': '/cupertinoAdvent'
-      },
-      {'title': 'Push Cupertino Camera', 'content': '/cupertinoCamera'},
-      {
-        'title': 'Push Cupertino BarcodeReader',
-        'content': '/cupertinoBarcodeReader'
-      },
-      {'title': 'Push Cupertino Twitter', 'content': '/cupertinoTwitter'},
-      {
-        'title': 'Push Cupertino BuildingLayouts',
-        'content': '/cupertinoBuildingLayouts'
-      },
+      // {
+      //   'title': 'Push Cupertino Flutter Advent Calender',
+      //   'content': '/cupertinoAdvent'
+      // },
+      // {'title': 'Push Cupertino Camera', 'content': '/cupertinoCamera'},
+      // {
+      //   'title': 'Push Cupertino BarcodeReader',
+      //   'content': '/cupertinoBarcodeReader'
+      // },
+      // {'title': 'Push Cupertino Twitter', 'content': '/cupertinoTwitter'},
+      // {
+      //   'title': 'Push Cupertino BuildingLayouts',
+      //   'content': '/cupertinoBuildingLayouts'
+      // },
       // { 'title' : 'Push Cupertino MenuListView',  'content' : '/cupertinoMenuListView' },
-      {
-        'title': 'Push Cupertino SharedPreferences',
-        'content': '/cupertinoSharedPreferences'
-      },
+      // {
+      //   'title': 'Push Cupertino SharedPreferences',
+      //   'content': '/cupertinoSharedPreferences'
+      // },
 
       {'title': 'Push Cupertino Provider', 'content': '/cupertinoProvider'},
       {
@@ -61,7 +61,7 @@ class _State extends State<CupertinoMenuListView> {
         'title': 'Push CupertinoAlertDialog',
         'content': '/cupertinoAlertDialog'
       },
-      {'title': 'ush CupertinoTextField', 'content': '/cupertinoTextField'},
+      {'title': 'Push CupertinoTextField', 'content': '/cupertinoTextField'},
       {
         'title': 'Push CupertinoActionSheet',
         'content': '/cupertinoActionSheet'

@@ -35,6 +35,7 @@ class _State extends State<CupertinoQiita> {
   final _tagFlutter = 'flutter';
   final _tagFlutterWeekly = 'flutterweekly';
   final _tagSwiftUI = 'swiftui';
+  final _tagSwift = 'swift';
   int _savedPage = 1;
   int _perPage = 10;
   @override
@@ -249,17 +250,17 @@ class _State extends State<CupertinoQiita> {
           },
         ),
         CupertinoActionSheetAction(
-          child: const Text('Flutter/SwiftUI'),
+          child: const Text('Flutter/Swift'),
           onPressed: () {
             _items.clear();
-            _savedPage = 1;
+            // _savedPage = 1;
             _perPage = 10;
             if (_tag == _tagFlutter)
-              _tag = _tagSwiftUI;
+              _tag = _tagSwift;
             else
               _tag = _tagFlutter;
             _load(_savedPage, _perPage);
-            Navigator.pop(context, 'Flutter/SwiftUI');
+            Navigator.pop(context, 'Flutter/Swift');
           },
         ),
         CupertinoActionSheetAction(
@@ -294,6 +295,16 @@ class _State extends State<CupertinoQiita> {
             if (_savedPage < 1) _savedPage = 1;
             _load(_savedPage, _perPage);
             Navigator.pop(context, 'Prev 5Page');
+          },
+        ),
+        CupertinoActionSheetAction(
+          child: const Text('Swift page70/100posts'),
+          onPressed: () {
+            _savedPage = 70; //max (100page, 10item) (15page, 100item)
+            _perPage = 100;
+            _tag = _tagSwift;
+            _load(_savedPage, _perPage);
+            Navigator.pop(context, 'Flutter page70/100posts');
           },
         ),
         CupertinoActionSheetAction(
