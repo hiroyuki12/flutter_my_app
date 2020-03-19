@@ -4,7 +4,7 @@ import 'DarkModeColor.dart';
 
 class CupertinoShare extends StatefulWidget {
   @override
-    State<StatefulWidget> createState() {
+  State<StatefulWidget> createState() {
     return _State();
   }
 }
@@ -12,18 +12,22 @@ class CupertinoShare extends StatefulWidget {
 class _State extends State<CupertinoShare> {
   @override
   Widget build(BuildContext context) {
-    isDarkMode = true;  // switch darkMode
+    isDarkMode = true; // switch darkMode
     return CupertinoPageScaffold(
-      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+      backgroundColor:
+          isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        backgroundColor:
+            isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
         middle: Text("Cupertino Hello World", style: _buildTextStyle()),
         //trailing: Text("Edit", style: myTextStyle),
       ),
       child: Center(
         // child: Text("Hello World!", style: _buildTextStyle(),),
-        child: CupertinoButton(child: Text('Share'), 
-          onPressed: () => Share.share('check out my website https://example.com')),
+        child: CupertinoButton(
+            child: Text('Share'),
+            onPressed: () =>
+                Share.share('check out my website https://example.com')),
       ),
     );
   }
@@ -32,9 +36,9 @@ class _State extends State<CupertinoShare> {
 var myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {
   return myTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 16,
-  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+    fontWeight: FontWeight.w100,
+    decoration: TextDecoration.none,
+    fontSize: 16,
+    color: isDarkMode ? darkModeForeColor : foreColor, //black , darkMode=white
   );
 }

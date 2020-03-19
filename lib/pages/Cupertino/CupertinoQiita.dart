@@ -26,10 +26,10 @@ class _State extends State<CupertinoQiita> {
   int _sqliteSavedPage = 0;
   int _sqlliteSavedPerPage = 0;
 
-  // var _tag = 'flutter';
+  var _tag = 'flutter';
   // var _tag = 'flutterweekly';
   // var _tag = 'vim';
-  var _tag = 'swiftui';
+  // var _tag = 'swiftui';
 
   final _tagsTrends = 'trends';
   final _tagFlutter = 'flutter';
@@ -175,8 +175,7 @@ class _State extends State<CupertinoQiita> {
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 MyCupertinoWebView(
-                              url: issue.url,
-                            ),
+                                    url: issue.url, title: issue.title),
                           ),
                         );
                       },

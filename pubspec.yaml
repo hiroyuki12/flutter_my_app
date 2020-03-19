@@ -50,6 +50,7 @@ dependencies:
   shared_preferences: ^0.5.6+2
   dynamic_theme: ^1.0.1
   share: ^0.6.3+6
+  flutter_share: ^1.0.2+1
   #nfc_manager: ^1.2.0
   
   csv: ^4.0.3
