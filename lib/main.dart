@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoMultiProvider.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/Cupertino/CupertinoCovid19Issues.dart';
@@ -81,7 +82,6 @@ import 'pages/Material/Qiita.dart';
 import 'pages/Material/Slider.dart';
 import 'pages/Material/Stack.dart';
 import 'pages/Material/SwitchListTile.dart';
-import 'repositories/LastDayBloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -132,6 +132,7 @@ class MyApp extends StatelessWidget {
         '/drawer': (context) => Drawer(),
         '/provider': (context) => MyProvider(),
         '/cupertinoProvider': (context) => CupertinoProvider(),
+        '/cupertinoMultiProvider': (context) => CupertinoMultiProvider(),
         '/counter': (context) => Counter(),
         '/cupertino': (context) => CupertinoScreen(),
         '/cupertinoHome': (context) => CupertinoHome(),

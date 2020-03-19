@@ -26,8 +26,6 @@ class _State extends State<CupertinoCovid19Issues> {
     else
       _url =
           'https://api.github.com/repos/tokyo-metropolitan-gov/covid19/commits';
-    // if(_type==0) _url = 'https://api.github.com/repositories/31792824/issues';
-    // else        _url = 'https://api.github.com/repositories/31792824/commits';
     final res = await http.get(_url);
     final data = json.decode(res.body);
     setState(() {

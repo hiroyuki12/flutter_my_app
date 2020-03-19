@@ -16,18 +16,25 @@ class CupertinoQiita extends StatefulWidget {
 }
 
 class _State extends State<CupertinoQiita> {
+  ScrollController _scrollController;
+  bool _isLoading = false;
+
+  List<Item> _items = <Item>[];
+
   final Page page = Page.newPage();
 
   int _sqliteSavedPage = 0;
   int _sqlliteSavedPerPage = 0;
 
-  var _tag = 'flutter';
+  // var _tag = 'flutter';
   // var _tag = 'flutterweekly';
   // var _tag = 'vim';
+  var _tag = 'swiftui';
 
   final _tagsTrends = 'trends';
   final _tagFlutter = 'flutter';
   final _tagFlutterWeekly = 'flutterweekly';
+  final _tagSwiftUI = 'swiftui';
   int _savedPage = 1;
   int _perPage = 10;
   @override
@@ -243,6 +250,20 @@ class _State extends State<CupertinoQiita> {
           },
         ),
         CupertinoActionSheetAction(
+          child: const Text('Flutter/SwiftUI'),
+          onPressed: () {
+            _items.clear();
+            _savedPage = 1;
+            _perPage = 10;
+            if (_tag == _tagFlutter)
+              _tag = _tagSwiftUI;
+            else
+              _tag = _tagFlutter;
+            _load(_savedPage, _perPage);
+            Navigator.pop(context, 'Flutter/SwiftUI');
+          },
+        ),
+        CupertinoActionSheetAction(
           child: const Text('Next Page'),
           onPressed: () {
             _savedPage++;
@@ -371,8 +392,6 @@ class Item {
   final String createdAt;
   final String url;
 }
-
-List<Item> _items = <Item>[];
 
 var myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {

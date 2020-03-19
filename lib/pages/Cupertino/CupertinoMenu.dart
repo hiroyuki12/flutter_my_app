@@ -3,7 +3,7 @@ import 'DarkModeColor.dart';
 
 class CupertinoMenu extends StatefulWidget {
   @override
-    State<StatefulWidget> createState() {
+  State<StatefulWidget> createState() {
     return _State();
   }
 }
@@ -11,11 +11,13 @@ class CupertinoMenu extends StatefulWidget {
 class _State extends State<CupertinoMenu> {
   @override
   Widget build(BuildContext context) {
-    isDarkMode = true;  // switch darkMode
+    isDarkMode = true; // switch darkMode
     return CupertinoPageScaffold(
-      backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+      backgroundColor:
+          isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
       navigationBar: CupertinoNavigationBar(
-        backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
+        backgroundColor:
+            isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
         middle: Text("Cupertino Menu", style: _buildTextStyle()),
         //trailing: Text("Edit", style: myTextStyle),
       ),
@@ -24,59 +26,64 @@ class _State extends State<CupertinoMenu> {
           children: <Widget>[
             CupertinoButton(
               child: Text('Push Cupertino Home'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoHome'),
+              onPressed: () => Navigator.pushNamed(context, '/cupertinoHome'),
             ),
             CupertinoButton(
               child: Text('Push Hello World'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoHelloWorld'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoHelloWorld'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino Flutter Issues'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoFlutterIssues'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoFlutterIssues'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino Qiita Flutter'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoQiita'),
+              onPressed: () => Navigator.pushNamed(context, '/cupertinoQiita'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino COVID-19 Issues'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoCovid19Issues'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoCovid19Issues'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino MonitoringScroll'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMonitoringScroll'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoMonitoringScroll'),
             ),
-
-
-
 
             CupertinoButton(
               child: Text('Push Cupertino Flutter Advent Calender'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoAdvent'),
+              onPressed: () => Navigator.pushNamed(context, '/cupertinoAdvent'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino Camera'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoCamera'),
+              onPressed: () => Navigator.pushNamed(context, '/cupertinoCamera'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino BarcodeReader'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoBarcodeReader'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoBarcodeReader'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino Twitter'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoTwitter'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoTwitter'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino BuildingLayouts'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoBuildingLayouts'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoBuildingLayouts'),
             ),
             CupertinoButton(
               child: Text('Push Cupertino MenuListView'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMenuListView'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, '/cupertinoMenuListView'),
             ),
             CupertinoButton(
               child: Text('NEXT PAGE (Push CupertinoMenu2)'),
-              onPressed: ()=> Navigator.pushNamed(context, '/cupertinoMenu2'),
+              onPressed: () => Navigator.pushNamed(context, '/cupertinoMenu2'),
             ),
 
             // CupertinoButton(
@@ -101,9 +108,9 @@ class _State extends State<CupertinoMenu> {
 var myTextStyle = new TextStyle();
 TextStyle _buildTextStyle() {
   return myTextStyle = new TextStyle(
-  fontWeight: FontWeight.w100,
-  decoration: TextDecoration.none,
-  fontSize: 16,
-  color: isDarkMode ? darkModeForeColor : foreColor,  //black , darkMode=white
+    fontWeight: FontWeight.w100,
+    decoration: TextDecoration.none,
+    fontSize: 16,
+    color: isDarkMode ? darkModeForeColor : foreColor, //black , darkMode=white
   );
 }
