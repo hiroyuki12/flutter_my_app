@@ -322,3 +322,9 @@ https://qiita.com/chooyan_eng/items/e7f1fcca1eeb0cf150b5
 
 formatの自動保存
 https://gurutaka-log.com/flutter-vscode-tips
+
+MultiProvider
+https://qiita.com/tinpay/items/8564e056b458802c048b
+
+flutter_share. 共有するときに、ページのタイトルを追加(text:)
+https://pub.dev/packages/flutter_share#-readme-tab-
