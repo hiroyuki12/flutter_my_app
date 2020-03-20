@@ -78,6 +78,7 @@ class _State extends State<CupertinoQiita> {
               likesCount: issue['likes_count'].toString(),
               createdAt: issue['created_at'] as String,
               url: issue['url'] as String,
+              // tags: issue['tags'] as List,
             ));
           });
         });
@@ -198,6 +199,10 @@ class _State extends State<CupertinoQiita> {
                       ),
                     ],
                   ),
+                  // Text(
+                  //   // issue.tags.length == 1 ? issue.tags[0][0] : "",
+                  //   issue.tags.name,
+                  // ),
                 ],
               )),
             ],
@@ -393,6 +398,7 @@ class Item {
     this.likesCount,
     this.createdAt,
     this.url,
+    this.tags,
   });
 
   final String title;
@@ -401,6 +407,17 @@ class Item {
   final String likesCount;
   final String createdAt;
   final String url;
+  final Tag tags;
+}
+
+class Tag {
+  Tag({
+    this.name,
+    this.versions,
+  });
+
+  final String name;
+  final String versions;
 }
 
 var myTextStyle = new TextStyle();
