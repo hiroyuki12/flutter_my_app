@@ -37,11 +37,38 @@ class _State extends State<CupertinoQiita> {
   final _tagSwiftUI = 'swiftui';
   final _tagSwift = 'swift';
   int _savedPage = 1;
-  int _perPage = 10;
+  int _perPage = 20;
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(_scrollListener); // ←追加
     _load(_savedPage, _perPage);
+  }
+
+  void _scrollListener() {
+    // スクロールを検知したときに呼ばれる
+    double positionRate =
+        _scrollController.offset / _scrollController.position.maxScrollExtent;
+    if (positionRate > 0.99) {
+      if (_isLoading == false) {
+        _isLoading = true;
+        _savedPage++;
+        _load(_savedPage, _perPage);
+        //positionRate = 0;
+        print('_load');
+        print(positionRate);
+      }
+    } else {
+      _isLoading = false;
+      print(positionRate);
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Future<void> _load(int _page, int _perPage) async {
@@ -144,6 +171,7 @@ class _State extends State<CupertinoQiita> {
         ),
       ),
       child: ListView.builder(
+        controller: _scrollController,
         itemBuilder: (BuildContext context, int index) {
           if (index >= _items.length) {
             return null;
@@ -259,7 +287,7 @@ class _State extends State<CupertinoQiita> {
           onPressed: () {
             _items.clear();
             // _savedPage = 1;
-            _perPage = 10;
+            _perPage = 20;
             if (_tag == _tagFlutter)
               _tag = _tagSwift;
             else
@@ -315,19 +343,19 @@ class _State extends State<CupertinoQiita> {
         CupertinoActionSheetAction(
           child: const Text('Flutter page71/20posts'),
           onPressed: () {
-            _savedPage = 71; //max (100page, 10item) (15page, 100item)
-            _perPage = 20;
+            _savedPage = 71; //max 100page
+            _perPage = 20; //max 100item
             _tag = _tagFlutter;
             _load(_savedPage, _perPage);
             Navigator.pop(context, 'Flutter');
           },
         ),
         CupertinoActionSheetAction(
-          child: const Text('Flutter page1/10posts'),
+          child: const Text('Flutter page1/20posts'),
           onPressed: () {
             _items.clear();
             _savedPage = 1;
-            _perPage = 10;
+            _perPage = 20;
             _tag = _tagFlutter;
             _load(_savedPage, _perPage);
             Navigator.pop(context, 'Flutter');
@@ -338,7 +366,7 @@ class _State extends State<CupertinoQiita> {
           onPressed: () {
             _items.clear();
             _savedPage = 1;
-            _perPage = 10;
+            _perPage = 20;
             _tag = _tagsTrends;
             _load(_savedPage, _perPage);
             Navigator.pop(context, 'Trends');
@@ -349,7 +377,7 @@ class _State extends State<CupertinoQiita> {
           onPressed: () {
             _items.clear();
             _savedPage = 1;
-            _perPage = 10;
+            _perPage = 20;
             _tag = _tagFlutterWeekly;
             _load(_savedPage, _perPage);
             Navigator.pop(context, 'Flutter Weekly');
