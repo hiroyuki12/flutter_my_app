@@ -151,7 +151,9 @@ class _State extends State<CupertinoQiita> {
         backgroundColor:
             isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
         middle: Text(
-            "CupertinoQiita Page " +
+            // "CupertinoQiita Page " +
+            _tag +
+                " Page " +
                 _savedPage.toString() +
                 '/' +
                 _perPage.toString() +
@@ -304,14 +306,14 @@ class _State extends State<CupertinoQiita> {
             Navigator.pop(context, 'Next Page');
           },
         ),
-        CupertinoActionSheetAction(
-          child: const Text('Next 5Page'),
-          onPressed: () {
-            _savedPage += 5;
-            _load(_savedPage, _perPage);
-            Navigator.pop(context, 'Next 5Page');
-          },
-        ),
+        // CupertinoActionSheetAction(
+        //   child: const Text('Next 5Page'),
+        //   onPressed: () {
+        //     _savedPage += 5;
+        //     _load(_savedPage, _perPage);
+        //     Navigator.pop(context, 'Next 5Page');
+        //   },
+        // ),
         CupertinoActionSheetAction(
           child: const Text('Prev Page'),
           onPressed: () {
@@ -321,33 +323,44 @@ class _State extends State<CupertinoQiita> {
             Navigator.pop(context, 'Prev Page');
           },
         ),
+        // CupertinoActionSheetAction(
+        //   child: const Text('Prev 5Page'),
+        //   onPressed: () {
+        //     _savedPage -= 5;
+        //     if (_savedPage < 1) _savedPage = 1;
+        //     _load(_savedPage, _perPage);
+        //     Navigator.pop(context, 'Prev 5Page');
+        //   },
+        // ),
+        // CupertinoActionSheetAction(
+        //   child: const Text('Swift page70/100posts'),
+        //   onPressed: () {
+        //     _savedPage = 70; //max (100page, 10item) (15page, 100item)
+        //     _perPage = 100;
+        //     _tag = _tagSwift;
+        //     _load(_savedPage, _perPage);
+        //     Navigator.pop(context, 'Flutter page70/100posts');
+        //   },
+        // ),
+        // CupertinoActionSheetAction(
+        //   child: const Text('Flutter page71/20posts'),
+        //   onPressed: () {
+        //     _savedPage = 71; //max 100page
+        //     _perPage = 20; //max 100item
+        //     _tag = _tagFlutter;
+        //     _load(_savedPage, _perPage);
+        //     Navigator.pop(context, 'Flutter');
+        //   },
+        // ),
         CupertinoActionSheetAction(
-          child: const Text('Prev 5Page'),
+          child: const Text('Swift page1/20posts'),
           onPressed: () {
-            _savedPage -= 5;
-            if (_savedPage < 1) _savedPage = 1;
-            _load(_savedPage, _perPage);
-            Navigator.pop(context, 'Prev 5Page');
-          },
-        ),
-        CupertinoActionSheetAction(
-          child: const Text('Swift page70/100posts'),
-          onPressed: () {
-            _savedPage = 70; //max (100page, 10item) (15page, 100item)
-            _perPage = 100;
+            _items.clear();
+            _savedPage = 1;
+            _perPage = 20;
             _tag = _tagSwift;
             _load(_savedPage, _perPage);
-            Navigator.pop(context, 'Flutter page70/100posts');
-          },
-        ),
-        CupertinoActionSheetAction(
-          child: const Text('Flutter page71/20posts'),
-          onPressed: () {
-            _savedPage = 71; //max 100page
-            _perPage = 20; //max 100item
-            _tag = _tagFlutter;
-            _load(_savedPage, _perPage);
-            Navigator.pop(context, 'Flutter');
+            Navigator.pop(context, 'Swift');
           },
         ),
         CupertinoActionSheetAction(
@@ -361,28 +374,28 @@ class _State extends State<CupertinoQiita> {
             Navigator.pop(context, 'Flutter');
           },
         ),
-        CupertinoActionSheetAction(
-          child: const Text('Trends'),
-          onPressed: () {
-            _items.clear();
-            _savedPage = 1;
-            _perPage = 20;
-            _tag = _tagsTrends;
-            _load(_savedPage, _perPage);
-            Navigator.pop(context, 'Trends');
-          },
-        ),
-        CupertinoActionSheetAction(
-          child: const Text('Flutter Weekly'),
-          onPressed: () {
-            _items.clear();
-            _savedPage = 1;
-            _perPage = 20;
-            _tag = _tagFlutterWeekly;
-            _load(_savedPage, _perPage);
-            Navigator.pop(context, 'Flutter Weekly');
-          },
-        ),
+        // CupertinoActionSheetAction(
+        //   child: const Text('Trends'),
+        //   onPressed: () {
+        //     _items.clear();
+        //     _savedPage = 1;
+        //     _perPage = 20;
+        //     _tag = _tagsTrends;
+        //     _load(_savedPage, _perPage);
+        //     Navigator.pop(context, 'Trends');
+        //   },
+        // ),
+        // CupertinoActionSheetAction(
+        //   child: const Text('Flutter Weekly'),
+        //   onPressed: () {
+        //     _items.clear();
+        //     _savedPage = 1;
+        //     _perPage = 20;
+        //     _tag = _tagFlutterWeekly;
+        //     _load(_savedPage, _perPage);
+        //     Navigator.pop(context, 'Flutter Weekly');
+        //   },
+        // ),
         CupertinoActionSheetAction(
           child: Text('Save Flutter Page ! ' + _savedPage.toString()),
           onPressed: () {
@@ -396,6 +409,7 @@ class _State extends State<CupertinoQiita> {
             _loadSqlitePage();
 
             if (_sqliteSavedPage != 0) {
+              _items.clear();
               _savedPage = _sqliteSavedPage;
               _load(_sqliteSavedPage, _sqlliteSavedPerPage);
             } else {
@@ -405,13 +419,13 @@ class _State extends State<CupertinoQiita> {
           },
         ),
       ],
-      // cancelButton: CupertinoActionSheetAction(
-      //   child: const Text('Cancel'),
-      //   isDefaultAction: true,
-      //   onPressed: () {
-      //     Navigator.pop(context, 'Cancel');
-      //   },
-      // ),
+      cancelButton: CupertinoActionSheetAction(
+        child: const Text('Cancel'),
+        isDefaultAction: true,
+        onPressed: () {
+          Navigator.pop(context, 'Cancel');
+        },
+      ),
     );
   }
 } //state
