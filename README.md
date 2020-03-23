@@ -328,3 +328,7 @@ https://qiita.com/tinpay/items/8564e056b458802c048b
 
 flutter_share. 共有するときに、ページのタイトルを追加(text:)
 https://pub.dev/packages/flutter_share#-readme-tab-
+
+無限スクロール ScrollController ListViewのスクロール位置を計算 infinite scroll
+https://kwmt27.net/2018/09/03/flutter-scroll/
+
