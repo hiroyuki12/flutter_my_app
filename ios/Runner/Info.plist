@@ -60,5 +60,7 @@
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
+    <key>NFCReaderUsageDescription</key>
+    <string>We are going to use you NFC!</string>
 </dict>
 </plist>

@@ -25,6 +25,10 @@ class _State extends State<CupertinoMenu> {
         child: Column(
           children: <Widget>[
             CupertinoButton(
+              child: Text('Push Cupertino Nfc'),
+              onPressed: () => Navigator.pushNamed(context, '/cupertinoNfc'),
+            ),
+            CupertinoButton(
               child: Text('Push Cupertino Home'),
               onPressed: () => Navigator.pushNamed(context, '/cupertinoHome'),
             ),

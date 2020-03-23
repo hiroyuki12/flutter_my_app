@@ -25,6 +25,7 @@ import 'package:flutter_my_app/pages/Cupertino/CupertinoMenu3.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoMenuListView.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoMonitoringScroll.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoMultiProvider.dart';
+import 'package:flutter_my_app/pages/Cupertino/CupertinoNfc.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoPicker.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoPlatform.dart';
 import 'package:flutter_my_app/pages/Cupertino/CupertinoProvider.dart';
@@ -202,6 +203,7 @@ class MyApp extends StatelessWidget {
         '/cupertinoMenuListView': (context) => CupertinoMenuListView(),
         '/cupertinoCovid19Issues': (context) => CupertinoCovid19Issues(),
         '/cupertinoMonitoringScroll': (context) => CupertinoMonitoringScroll(),
+        '/cupertinoNfc': (context) => CupertinoNfc(),
       },
       // home: MyHomeMaterial(title: 'main'),  //BottomNavigationBar
 
