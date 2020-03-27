@@ -33,8 +33,8 @@ class _State extends State<CupertinoQiita> {
 
   final _tagsTrends = 'trends';
   final _tagFlutter = 'flutter';
-  final _tagFlutterWeekly = 'flutterweekly';
-  final _tagSwiftUI = 'swiftui';
+  // final _tagFlutterWeekly = 'flutterweekly';
+  // final _tagSwiftUI = 'swiftui';
   final _tagSwift = 'swift';
   int _savedPage = 1;
   int _perPage = 20;
@@ -55,7 +55,6 @@ class _State extends State<CupertinoQiita> {
         _isLoading = true;
         _savedPage++;
         _load(_savedPage, _perPage);
-        //positionRate = 0;
         print('_load');
         print(positionRate);
       }
