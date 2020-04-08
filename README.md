@@ -332,3 +332,7 @@ https://pub.dev/packages/flutter_share#-readme-tab-
 無限スクロール ScrollController ListViewのスクロール位置を計算 infinite scroll
 https://kwmt27.net/2018/09/03/flutter-scroll/
 
+Xcode 11.4でFlutterの実機デバッグでエラー。Flutter v1.15.3以降が必要。$ flutter --version。$ flutter channel beta
+https://qiita.com/zizi4n5/items/e94738e1cc326833c141
+https://qiita.com/qst_exe/items/b5cf125e44d4dd51335c
+
