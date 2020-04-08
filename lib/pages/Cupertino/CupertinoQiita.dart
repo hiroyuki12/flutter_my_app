@@ -21,7 +21,7 @@ class _State extends State<CupertinoQiita> {
 
   List<Item> _items = <Item>[];
 
-  final Page page = Page.newPage();
+  final MyPage page = MyPage.newPage();
 
   int _sqliteSavedPage = 0;
   int _sqlliteSavedPerPage = 0;
@@ -256,7 +256,7 @@ class _State extends State<CupertinoQiita> {
   }
 
   void _loadSqlitePage() async {
-    List<Page> _pages = <Page>[];
+    List<MyPage> _pages = <MyPage>[];
 
     _pages = await DBProviderQiita.db.getAllPage();
 

@@ -44,7 +44,7 @@ class DBProviderQiita {
     );
   }
 
-  createPage(Page page) async {
+  createPage(MyPage page) async {
     final db = await database;
     var res = await db.insert(_tableName, page.toMap());
     return res;
@@ -53,12 +53,12 @@ class DBProviderQiita {
   getAllPage() async {
     final db = await database;
     var res = await db.query(_tableName);
-    List<Page> list =
-        res.isNotEmpty ? res.map((c) => Page.fromMap(c)).toList() : [];
+    List<MyPage> list =
+        res.isNotEmpty ? res.map((c) => MyPage.fromMap(c)).toList() : [];
     return list;
   }
 
-  updatePage(Page page) async {
+  updatePage(MyPage page) async {
     final db = await database;
     var res  = await db.update(
       _tableName, 

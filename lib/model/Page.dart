@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Page {
+class MyPage {
   int id;
   int page;
   int perPage;
 
-  Page({this.id, @required this.page, @required this.perPage});
-  Page.newPage() {
+  MyPage({this.id, @required this.page, @required this.perPage});
+  MyPage.newPage() {
     page = 1;
     perPage = 10;
   }
@@ -16,7 +16,7 @@ class Page {
   }
 
   // staticでも同じ？
-  factory Page.fromMap(Map<String, dynamic> json) => Page(
+  factory MyPage.fromMap(Map<String, dynamic> json) => MyPage(
     id: json["id"],
     page: json["page"],
     perPage: json["perPage"]
