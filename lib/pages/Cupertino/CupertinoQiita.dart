@@ -26,7 +26,8 @@ class _State extends State<CupertinoQiita> {
   int _sqliteSavedPage = 0;
   int _sqlliteSavedPerPage = 0;
 
-  var _tag = 'flutter';
+  var _tag = 'swift';
+  //var _tag = 'flutter';
   // var _tag = 'flutterweekly';
   // var _tag = 'vim';
   // var _tag = 'swiftui';
@@ -356,6 +357,17 @@ class _State extends State<CupertinoQiita> {
           onPressed: () {
             _items.clear();
             _savedPage = 1;
+            _perPage = 20;
+            _tag = _tagSwift;
+            _load(_savedPage, _perPage);
+            Navigator.pop(context, 'Swift');
+          },
+        ),
+        CupertinoActionSheetAction(
+          child: const Text('Swift page50/20posts'),
+          onPressed: () {
+            _items.clear();
+            _savedPage = 50;
             _perPage = 20;
             _tag = _tagSwift;
             _load(_savedPage, _perPage);
