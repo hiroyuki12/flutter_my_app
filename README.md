@@ -3,8 +3,8 @@
 http.get _ Flutter Issues
 https://employment.en-japan.com/engineerhub/entry/2019/08/06/103000
 
-BottomNav
-https://www.virment.com/how-to-put-bottom-nav-flutter/
+CupertinoTabBar
+https://www.choge-blog.com/programming/fluttercupertino-bottomnavigationbar/
 
 http.get _ Qiita Item
 https://qiita.com/yamazaki_sensei/items/1badc515e4a4d6eddebe
