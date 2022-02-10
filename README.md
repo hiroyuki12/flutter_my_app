@@ -7,6 +7,7 @@ CupertinoTabBar
 https://www.choge-blog.com/programming/fluttercupertino-bottomnavigationbar/
 
 http.get _ Qiita Item
+FlutterでQiitaのクライアントを作ってみた話
 https://qiita.com/yamazaki_sensei/items/1badc515e4a4d6eddebe
 
 drawer
