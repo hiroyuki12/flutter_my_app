@@ -15,7 +15,7 @@ class _State extends State<MyAlertDialog> {
         title: Text("AlertDialog"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text(
             'AlertDialog',
             //style: TextStyle(
@@ -38,11 +38,11 @@ class _State extends State<MyAlertDialog> {
           title: Text('Use camera?'),
           content: Text('Description goes here.'),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('CANCEL'),
               onPressed: () => _useCamera(context, false),
             ),
-            FlatButton(
+            TextButton(
               child: Text('AGREE'),
               onPressed: () => _useCamera(context, true),
             ),

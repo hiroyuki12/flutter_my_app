@@ -21,19 +21,18 @@ class PictureCard extends StatelessWidget {
           ),
           //Image.asset('assets/$_picture'),
           Image.asset('images/$_picture'),
-          ButtonTheme.bar(
-            child: ButtonBar(
-              children: <Widget>[
-                FlatButton(
-                  child: const Text('DIRECTION'),
-                  onPressed: () {},
-                ),
-                FlatButton(
-                  child: const Text('MAP'),
-                  onPressed: () {},
-                ),
-              ],
-            ),
+          OverflowBar(
+            alignment: MainAxisAlignment.end,
+            children: <Widget>[
+              TextButton(
+                child: const Text('DIRECTION'),
+                onPressed: () {},
+              ),
+              TextButton(
+                child: const Text('MAP'),
+                onPressed: () {},
+              ),
+            ],
           ),
         ],
       ),

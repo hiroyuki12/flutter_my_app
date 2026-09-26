@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sqlite_viewer/sqlite_viewer.dart';
+import 'package:sqlite_viewer2/sqlite_viewer.dart';
 
 class SqliteViewer extends StatefulWidget {
   @override
@@ -17,7 +17,7 @@ class _State extends State<SqliteViewer> {
         title: Text("SqliteViewer"),
       ),
       body: Center(
-        child: FlatButton(
+        child: TextButton(
           child: Text('SqliteViewer'),
           // onPressed: _onPressed,
           onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => DatabaseList())),

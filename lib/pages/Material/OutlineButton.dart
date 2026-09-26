@@ -13,10 +13,10 @@ class _State extends State<MyOutlineButton> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("OutlineButton"),
+        title: Text("OutlinedButton"),
       ),
       body: Center(
-        child: OutlineButton(
+        child: OutlinedButton(
           child: Text('OK'),
           onPressed: _onPressed,
         ),

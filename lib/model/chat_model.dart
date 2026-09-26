@@ -4,7 +4,7 @@ class ChatModel {
   final String datetime;
   final String message;
 
-  ChatModel({this.avatarUrl, this.name, this.datetime, this.message});
+  ChatModel({required this.avatarUrl, required this.name, required this.datetime, required this.message});
 
   static final List<ChatModel> dummyData = [
     ChatModel(

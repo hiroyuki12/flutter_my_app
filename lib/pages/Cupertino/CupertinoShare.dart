@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoShare extends StatefulWidget {
@@ -27,7 +27,7 @@ class _State extends State<CupertinoShare> {
         child: CupertinoButton(
             child: Text('Share'),
             onPressed: () =>
-                Share.share('check out my website https://example.com')),
+                SharePlus.instance.share(ShareParams(text: 'check out my website https://example.com'))),
       ),
     );
   }

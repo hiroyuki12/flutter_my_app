@@ -18,9 +18,9 @@ class _State extends State<MyCheckbox> {
       body: Center(
         child: Checkbox(
           value: _checkBox1,
-          onChanged: (bool value) {
+          onChanged: (bool? value) {
            setState(() {
-            _checkBox1 = value;
+            _checkBox1 = value ?? false;
            });
           },
         ),

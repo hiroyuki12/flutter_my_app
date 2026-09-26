@@ -17,9 +17,9 @@ class _State extends State<MySnackBar> {
         title: Text("MySnackBar"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('OK'),
-          onPressed: () => _scaffoldKey.currentState.showSnackBar(
+          onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: const Text('Hello snackbar'),
               duration: const Duration(seconds: 5),

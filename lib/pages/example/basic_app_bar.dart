@@ -57,7 +57,7 @@ class _BasicAppBarSampleState extends State<BasicAppBarSample> {
 }
 
 class Choice {
-  const Choice({ this.title, this.icon });
+  const Choice({ required this.title, required this.icon });
   final String title;
   final IconData icon;
 }
@@ -72,13 +72,13 @@ const List<Choice> choices = <Choice>[
 ];
 
 class ChoiceCard extends StatelessWidget {
-  const ChoiceCard({ Key key, this.choice }) : super(key: key);
+  const ChoiceCard({ Key? key, required this.choice }) : super(key: key);
 
   final Choice choice;
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = Theme.of(context).textTheme.display1;
+    final TextStyle textStyle = Theme.of(context).textTheme.headlineMedium!;
     return Card(
       color: Colors.white,
       child: Center(

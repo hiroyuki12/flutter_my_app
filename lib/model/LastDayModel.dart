@@ -7,12 +7,12 @@ class LastDay {
   DateTime lastDate;
   String note;
 
-  LastDay({this.id, @required this.title, @required this.lastDate, @required this.note});
-  LastDay.newLastDay() {
-    title = "";
-    lastDate = DateTime.now();
-    note = "";
-  }
+  LastDay({required this.id, required this.title, required this.lastDate, required this.note});
+  LastDay.newLastDay()
+      : id = "",
+        title = "",
+        lastDate = DateTime.now(),
+        note = "";
 
   assignUUID() {
     id = Uuid().v4();

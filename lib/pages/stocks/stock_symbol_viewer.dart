@@ -8,7 +8,7 @@ import 'stock_arrow.dart';
 import 'stock_data.dart';
 
 class _StockSymbolView extends StatelessWidget {
-  const _StockSymbolView({ this.stock, this.arrow });
+  const _StockSymbolView({ required this.stock, required this.arrow });
 
   final Stock stock;
   final Widget arrow;
@@ -21,7 +21,7 @@ class _StockSymbolView extends StatelessWidget {
     if (stock.percentChange > 0)
       changeInPrice = '+' + changeInPrice;
 
-    final TextStyle headings = Theme.of(context).textTheme.body2;
+    final TextStyle headings = Theme.of(context).textTheme.bodyMedium!;
     return Container(
       padding: const EdgeInsets.all(20.0),
       child: Column(
@@ -30,7 +30,7 @@ class _StockSymbolView extends StatelessWidget {
             children: <Widget>[
               Text(
                 '${stock.symbol}',
-                style: Theme.of(context).textTheme.display2,
+                style: Theme.of(context).textTheme.displaySmall,
               ),
               arrow,
             ],
@@ -64,7 +64,7 @@ class _StockSymbolView extends StatelessWidget {
 }
 
 class StockSymbolPage extends StatelessWidget {
-  const StockSymbolPage({ this.symbol, this.stocks });
+  const StockSymbolPage({ required this.symbol, required this.stocks });
 
   final String symbol;
   final StockData stocks;
@@ -73,8 +73,8 @@ class StockSymbolPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: stocks,
-      builder: (BuildContext context, Widget child) {
-        final Stock stock = stocks[symbol];
+      builder: (BuildContext context, Widget? child) {
+        final Stock? stock = stocks[symbol];
         return Scaffold(
           appBar: AppBar(
             title: Text(stock?.name ?? symbol),
@@ -112,7 +112,7 @@ class StockSymbolPage extends StatelessWidget {
 }
 
 class StockSymbolBottomSheet extends StatelessWidget {
-  const StockSymbolBottomSheet({ this.stock });
+  const StockSymbolBottomSheet({ required this.stock });
 
   final Stock stock;
 

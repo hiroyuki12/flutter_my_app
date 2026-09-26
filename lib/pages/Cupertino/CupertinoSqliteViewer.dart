@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sqlite_viewer/sqlite_viewer.dart';
+import 'package:sqlite_viewer2/sqlite_viewer.dart';
 
 import 'DarkModeColor.dart';
 

@@ -60,8 +60,8 @@ class _SecondPage extends StatelessWidget {
 /// A CupertinoPageRoute without any transition animations.
 class _NoAnimationCupertinoPageRoute<T> extends CupertinoPageRoute<T> {
   _NoAnimationCupertinoPageRoute({
-    @required WidgetBuilder builder,
-    String title,
+    required WidgetBuilder builder,
+    String? title,
   }) : super(builder: builder, title: title);
 
   @override

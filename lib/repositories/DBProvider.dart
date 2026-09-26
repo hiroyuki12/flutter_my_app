@@ -10,16 +10,12 @@ class DBProvider {
   DBProvider._();
   static final DBProvider db = DBProvider._();
 
-  static Database _database;
+  static Database? _database;
   static final _tableName = "LastDay";
 
   Future<Database> get database async {
-    if (_database != null)
-      return _database;
-
     // DBがなかったら作る
-    _database = await initDB();
-    return _database;
+    return _database ??= await initDB();
   }
 
   Future<Database> initDB() async {

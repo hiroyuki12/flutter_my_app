@@ -66,7 +66,7 @@ class _CupertinoSegmentedControlDemoState
                   padding: const EdgeInsets.all(16),
                   child: CupertinoSlidingSegmentedControl<int>(
                     children: children,
-                    onValueChanged: onValueChanged,
+                    onValueChanged: (int? value) => onValueChanged(value!),
                     groupValue: currentSegment,
                   ),
                 ),

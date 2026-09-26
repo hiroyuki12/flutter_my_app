@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoSignInButton extends StatefulWidget {
@@ -24,7 +24,7 @@ class _State extends State<CupertinoSignInButton> {
         child: Column(
           children: <Widget>[
             // SignInButton(
-            //   Buttons.Google,
+            //   Buttons.google,
             //   text: "Sign up with Google",  // with custom text
             //   onPressed: () {},
             // SignInButtonBuilder(
@@ -36,39 +36,39 @@ class _State extends State<CupertinoSignInButton> {
             // ),
             // Divider(),
             SignInButton(
-              Buttons.Google,
+              Buttons.google,
               onPressed: () {},
             ),
             SizedBox(height: 5,),
             SignInButton(
-              Buttons.GitHub,
+              Buttons.gitHub,
               onPressed: () {},
             ),
             SizedBox(height: 5,),
             SignInButton(
-              Buttons.Twitter,
+              Buttons.twitter,
               text: "Use Twitter",
               onPressed: () {},
             ),
             SizedBox(height: 5,),
             SignInButton(
-              Buttons.Apple,
+              Buttons.apple,
               onPressed: () {},
             ),
             SizedBox(height: 5,),
             SignInButton(
-              Buttons.Facebook,
+              Buttons.facebook,
               onPressed: () {},
             ),
             SizedBox(height: 5,),
             SignInButton(
-              Buttons.Pinterest,
+              Buttons.pinterest,
               text: "Sign up with Pinterest",
               onPressed: () {},
             ),
             SizedBox(height: 5,),
             SignInButton(
-              Buttons.Email,
+              Buttons.email,
               text: "Get going with Email",
               onPressed: () {},
             ),

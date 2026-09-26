@@ -12,7 +12,7 @@ class CupertinoLocalAuthentication extends StatefulWidget {
 class _State extends State<CupertinoLocalAuthentication> {
   LocalAuthentication _localAuth = LocalAuthentication();
 
-  List<BiometricType> availableBiometricType;
+  List<BiometricType> availableBiometricType = [];
 
   @override
   void initState() {
@@ -57,7 +57,7 @@ class _State extends State<CupertinoLocalAuthentication> {
 
     // try {
       if (availableBiometricTypes.contains(BiometricType.face) || availableBiometricTypes.contains(BiometricType.fingerprint)) {
-        result = await _localAuth.authenticateWithBiometrics(localizedReason: "認証してください");
+        result = await _localAuth.authenticate(localizedReason: "認証してください", biometricOnly: true);
       }
     // } on PlatformException catch (e) {
     //   // 

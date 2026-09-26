@@ -11,10 +11,10 @@ class FlutterIssues extends StatefulWidget {
 
 class Issue {
   Issue({
-    this.title,
-    this.avatarUrl,
-    this.number,
-    this.updatedAt,
+    required this.title,
+    required this.avatarUrl,
+    required this.number,
+    required this.updatedAt,
   });
 
   final String title;
@@ -33,7 +33,7 @@ class _State extends State<FlutterIssues> {
 
   // This widget is the root of your application.
   Future<void> _load() async {
-    final res = await http.get('https://api.github.com/repositories/31792824/issues');
+    final res = await http.get(Uri.parse('https://api.github.com/repositories/31792824/issues'));
     final data = json.decode(res.body);
     setState(() {
       final issues = data as List;

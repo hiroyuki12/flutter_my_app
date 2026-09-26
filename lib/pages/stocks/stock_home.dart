@@ -25,7 +25,7 @@ class _NotImplementedDialog extends StatelessWidget {
       title: const Text('Not Implemented'),
       content: const Text('This feature has not yet been implemented.'),
       actions: <Widget>[
-        FlatButton(
+        TextButton(
           onPressed: debugDumpApp,
           child: Row(
             children: <Widget>[
@@ -40,7 +40,7 @@ class _NotImplementedDialog extends StatelessWidget {
             ],
           ),
         ),
-        FlatButton(
+        TextButton(
           onPressed: () {
             Navigator.pop(context, false);
           },
@@ -69,7 +69,7 @@ class StockHomeState extends State<StockHome> {
   bool _autorefresh = false;
 
   void _handleSearchBegin() {
-    ModalRoute.of(context).addLocalHistoryEntry(LocalHistoryEntry(
+    ModalRoute.of(context)!.addLocalHistoryEntry(LocalHistoryEntry(
       onRemove: () {
         setState(() {
           _isSearching = false;
@@ -146,7 +146,7 @@ class StockHomeState extends State<StockHome> {
             trailing: Radio<StockMode>(
               value: StockMode.optimistic,
               groupValue: widget.configuration.stockMode,
-              onChanged: _handleStockModeChange,
+              onChanged: (StockMode? value) => _handleStockModeChange(value!),
             ),
             onTap: () {
               _handleStockModeChange(StockMode.optimistic);
@@ -158,7 +158,7 @@ class StockHomeState extends State<StockHome> {
             trailing: Radio<StockMode>(
               value: StockMode.pessimistic,
               groupValue: widget.configuration.stockMode,
-              onChanged: _handleStockModeChange,
+              onChanged: (StockMode? value) => _handleStockModeChange(value!),
             ),
             onTap: () {
               _handleStockModeChange(StockMode.pessimistic);
@@ -188,7 +188,7 @@ class StockHomeState extends State<StockHome> {
     showAboutDialog(context: context);
   }
 
-  Widget buildAppBar() {
+  PreferredSizeWidget buildAppBar() {
     return AppBar(
       elevation: 0.0,
       title: Text(StockStrings.of(context).title),
@@ -231,8 +231,8 @@ class StockHomeState extends State<StockHome> {
   }
 
   static Iterable<Stock> _getStockList(StockData stocks, Iterable<String> symbols) {
-    return symbols.map<Stock>((String symbol) => stocks[symbol])
-        .where((Stock stock) => stock != null);
+    return symbols.map<Stock?>((String symbol) => stocks[symbol])
+        .whereType<Stock>();
   }
 
   Iterable<Stock> _filterBySearchQuery(Iterable<Stock> stocks) {
@@ -247,7 +247,7 @@ class StockHomeState extends State<StockHome> {
       stock.percentChange = 100.0 * (1.0 / stock.lastSale);
       stock.lastSale += 1.0;
     });
-    _scaffoldKey.currentState.showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text('Purchased ${stock.symbol} for ${stock.lastSale}'),
       action: SnackBarAction(
         label: 'BUY MORE',
@@ -266,7 +266,7 @@ class StockHomeState extends State<StockHome> {
         Navigator.pushNamed(context, '/stock', arguments: stock.symbol);
       },
       onShow: (Stock stock) {
-        _scaffoldKey.currentState.showBottomSheet<void>((BuildContext context) => StockSymbolBottomSheet(stock: stock));
+        _scaffoldKey.currentState!.showBottomSheet((BuildContext context) => StockSymbolBottomSheet(stock: stock));
       },
     );
   }
@@ -275,7 +275,7 @@ class StockHomeState extends State<StockHome> {
     return AnimatedBuilder(
       key: ValueKey<StockHomeTab>(tab),
       animation: Listenable.merge(<Listenable>[_searchQuery, widget.stocks]),
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return _buildStockList(context, _filterBySearchQuery(_getStockList(widget.stocks, stockSymbols)).toList(), tab);
       },
     );
@@ -283,10 +283,10 @@ class StockHomeState extends State<StockHome> {
 
   static const List<String> portfolioSymbols = <String>['AAPL','FIZZ', 'FIVE', 'FLAT', 'ZINC', 'ZNGA'];
 
-  Widget buildSearchBar() {
+  PreferredSizeWidget buildSearchBar() {
     return AppBar(
       leading: BackButton(
-        color: Theme.of(context).accentColor,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       title: TextField(
         controller: _searchQuery,
@@ -310,7 +310,7 @@ class StockHomeState extends State<StockHome> {
     return FloatingActionButton(
       tooltip: 'Create company',
       child: const Icon(Icons.add),
-      backgroundColor: Theme.of(context).accentColor,
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       onPressed: _handleCreateCompany,
     );
   }
@@ -328,7 +328,7 @@ class StockHomeState extends State<StockHome> {
         body: TabBarView(
           dragStartBehavior: DragStartBehavior.down,
           children: <Widget>[
-            _buildStockTab(context, StockHomeTab.market, widget.stocks.allSymbols),
+            _buildStockTab(context, StockHomeTab.market, widget.stocks.allSymbols.toList()),
             _buildStockTab(context, StockHomeTab.portfolio, portfolioSymbols),
           ],
         ),

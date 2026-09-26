@@ -88,7 +88,7 @@ class _MyNavigator2State extends State<MyNavigator2> {
                 ),
                 const SizedBox(height: 24.0),
                 new Center(
-                  child: new RaisedButton(
+                  child: new ElevatedButton(
                     child: const Text('Login'),
                     onPressed: () {
                       // ホーム画面へ
@@ -116,7 +116,7 @@ class Home extends StatelessWidget {
         title: const Text("Home"),
       ),
       body: new Center(
-        child: new RaisedButton(
+        child: new ElevatedButton(
           child: const Text("Launch Next Screen"),
           onPressed: () {
             // その他の画面へ
@@ -147,7 +147,7 @@ class _NextState extends State<Next> {
         child: new Column(
           children: <Widget>[
             const SizedBox(height: 24.0),
-            new RaisedButton(
+            new ElevatedButton(
               child: const Text("Launch Next Screen"),
               onPressed: () {
                 // その他の画面へ
@@ -155,7 +155,7 @@ class _NextState extends State<Next> {
               },
             ),
             const SizedBox(height: 24.0),
-            new RaisedButton(
+            new ElevatedButton(
               child: const Text("Home"),
               onPressed: () {
                 // ホーム画面へ戻る　
@@ -163,7 +163,7 @@ class _NextState extends State<Next> {
               },
             ),
             const SizedBox(height: 24.0),
-            new RaisedButton(
+            new ElevatedButton(
               child: const Text("Logout"),
               onPressed: () {
                 // 確認ダイアログ表示
@@ -173,14 +173,14 @@ class _NextState extends State<Next> {
                     return new AlertDialog(
                       content: const Text('Do you want logout?'),
                       actions: <Widget>[
-                        new FlatButton(
+                        new TextButton(
                           child: const Text('No'),
                           onPressed: () {
                             // 引数をfalseでダイアログ閉じる
                             Navigator.of(context).pop(false);
                           },
                         ),
-                        new FlatButton(
+                        new TextButton(
                           child: const Text('Yes'),
                           onPressed: () {
                             // 引数をtrueでダイアログ閉じる
@@ -192,7 +192,7 @@ class _NextState extends State<Next> {
                   },
                 ).then<void>((aBool) {
                   // ダイアログがYESで閉じられたら...
-                  if (aBool) {
+                  if (aBool == true) {
                     // 画面をすべて除いてスプラッシュを表示
                     Navigator.pushAndRemoveUntil(
                         context,

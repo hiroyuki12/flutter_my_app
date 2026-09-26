@@ -20,10 +20,10 @@ class LastDayListView extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot<List<LastDay>> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
-              itemCount: snapshot.data.length,
+              itemCount: snapshot.data!.length,
               itemBuilder: (BuildContext context, int index) {
                 
-                LastDay lastDay = snapshot.data[index];
+                LastDay lastDay = snapshot.data![index];
 
                 return Dismissible(
                   key: Key(lastDay.id),

@@ -10,14 +10,13 @@ class CupertinoMonitoringScroll extends StatefulWidget {
 }
 
 class _State extends State<CupertinoMonitoringScroll> {
-  ScrollController _scrollController;
+  late ScrollController _scrollController;
   bool _isLoading = false;
 
-  List<String> _items;
+  List<String> _items = [];
 
   @override
   void initState() {
-    _items = List<String>();
     Contents.forEach((content) => _items.add(content));
 
     _scrollController = ScrollController();

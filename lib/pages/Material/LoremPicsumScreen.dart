@@ -11,8 +11,8 @@ class LoremPicsum extends StatefulWidget {
 
 class Item {
    Item({
-     this.author,
-     this.downloadUrl,
+     required this.author,
+     required this.downloadUrl,
    });
 
    final String author;
@@ -29,7 +29,7 @@ class _State extends State<LoremPicsum> {
   
   // This widget is the root of your application.
   Future<void> _load() async {
-    final res = await http.get('https://picsum.photos/v2/list?page=2&limit=20');
+    final res = await http.get(Uri.parse('https://picsum.photos/v2/list?page=2&limit=20'));
     final data = json.decode(res.body);
     setState(() {
       final issues = data as List;

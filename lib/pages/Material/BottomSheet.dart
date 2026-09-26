@@ -17,7 +17,7 @@ class _State extends State<MyBottomSheet> {
         title: Text("BottomSheet"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Show Options'),
           onPressed: _showModalBottomSheet,
         ),

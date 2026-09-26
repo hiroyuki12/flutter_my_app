@@ -10,7 +10,7 @@ class AppBarBottomSample extends StatefulWidget {
 }
 
 class _AppBarBottomSampleState extends State<AppBarBottomSample> with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -52,7 +52,7 @@ class _AppBarBottomSampleState extends State<AppBarBottomSample> with SingleTick
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48.0),
             child: Theme(
-              data: Theme.of(context).copyWith(accentColor: Colors.white),
+              data: Theme.of(context).copyWith(colorScheme: Theme.of(context).colorScheme.copyWith(secondary: Colors.white)),
               child: Container(
                 height: 48.0,
                 alignment: Alignment.center,
@@ -76,7 +76,7 @@ class _AppBarBottomSampleState extends State<AppBarBottomSample> with SingleTick
 }
 
 class Choice {
-  const Choice({ this.title, this.icon });
+  const Choice({ required this.title, required this.icon });
   final String title;
   final IconData icon;
 }
@@ -91,13 +91,13 @@ const List<Choice> choices = <Choice>[
 ];
 
 class ChoiceCard extends StatelessWidget {
-  const ChoiceCard({ Key key, this.choice }) : super(key: key);
+  const ChoiceCard({ Key? key, required this.choice }) : super(key: key);
 
   final Choice choice;
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = Theme.of(context).textTheme.display1;
+    final TextStyle textStyle = Theme.of(context).textTheme.headlineMedium!;
     return Card(
       color: Colors.white,
       child: Center(
