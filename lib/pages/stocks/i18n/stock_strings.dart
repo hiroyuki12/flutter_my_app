@@ -69,7 +69,7 @@ class StockStrings {
   }
 
   static StockStrings of(BuildContext context) {
-    return Localizations.of<StockStrings>(context, StockStrings);
+    return Localizations.of<StockStrings>(context, StockStrings)!;
   }
 
   static const LocalizationsDelegate<StockStrings> delegate = _StockStringsDelegate();

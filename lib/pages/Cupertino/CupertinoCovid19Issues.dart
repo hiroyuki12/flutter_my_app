@@ -26,7 +26,7 @@ class _State extends State<CupertinoCovid19Issues> {
     else
       _url =
           'https://api.github.com/repos/tokyo-metropolitan-gov/covid19/commits';
-    final res = await http.get(_url);
+    final res = await http.get(Uri.parse(_url));
     final data = json.decode(res.body);
     setState(() {
       _buildIssuesCommits(data);
@@ -78,7 +78,7 @@ class _State extends State<CupertinoCovid19Issues> {
   }
 
   Widget _buildTrailingButton() {
-    return FlatButton(
+    return TextButton(
       child: Text(_buttonTitle, style: _myTextStyle),
       onPressed: () {
         setState(() {
@@ -235,11 +235,11 @@ String _url = '';
 
 class Issue {
   Issue({
-    this.title,
-    this.htmlUrl,
-    this.avatarUrl,
-    this.number,
-    this.updatedAt,
+    required this.title,
+    required this.htmlUrl,
+    required this.avatarUrl,
+    required this.number,
+    required this.updatedAt,
   });
 
   final String title;
@@ -251,12 +251,12 @@ class Issue {
 
 class Commit {
   Commit({
-    this.message,
-    this.htmlUrl,
-    this.avatarUrl,
-    this.sha,
-    this.date,
-    this.name,
+    required this.message,
+    required this.htmlUrl,
+    this.avatarUrl = '',
+    required this.sha,
+    required this.date,
+    required this.name,
   });
 
   final String message;

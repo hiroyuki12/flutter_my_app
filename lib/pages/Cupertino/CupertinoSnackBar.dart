@@ -36,7 +36,7 @@ class SnackBarPage extends StatelessWidget {
 }
 
 class SnackBarBody extends StatefulWidget {
-  SnackBarBody({Key key,}):super(key: key);
+  SnackBarBody({Key? key,}):super(key: key);
 
   @override
   _SnackBarBodyState createState() => new _SnackBarBodyState();
@@ -57,7 +57,7 @@ class _SnackBarBodyState extends State<SnackBarBody> {
                 ),
               );
               // Find the Scaffold in the Widget tree and use it to show a SnackBar!
-              Scaffold.of(context).showSnackBar(snackBar);
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             child: Text('Show SnackBar', style: _buttonTextStyleNoBackground),
           ),

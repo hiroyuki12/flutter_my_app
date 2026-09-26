@@ -1,4 +1,4 @@
-import 'package:device_info/device_info.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -184,7 +184,7 @@ class _State extends State<Setting> {
               },
             ),
             ListTile(
-              title: Text('Push FlatButton'),
+              title: Text('Push TextButton'),
               onTap: () {
                 Navigator.pop(context);
                 setState(() => Navigator.pushNamed(context, '/flatButton'));
@@ -198,7 +198,7 @@ class _State extends State<Setting> {
               },
             ),
             ListTile(
-              title: Text('Push OutlineButton'),
+              title: Text('Push OutlinedButton'),
               onTap: () {
                 Navigator.pop(context);
                 setState(() => Navigator.pushNamed(context, '/outlineButton'));
@@ -212,7 +212,7 @@ class _State extends State<Setting> {
               },
             ),
             ListTile(
-              title: Text('Push RaisedButton'),
+              title: Text('Push ElevatedButton'),
               onTap: () {
                 Navigator.pop(context);
                 setState(() => Navigator.pushNamed(context, '/raisedButton'));
@@ -313,7 +313,7 @@ class _State extends State<Setting> {
               */
               /*
               //シンプルダイアログ
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Please select'),
                 onPressed: _showSimpleDialog,
               ),
@@ -469,7 +469,7 @@ class _State extends State<Setting> {
 
   //ドロップダウンリスト
   List<DropdownMenuItem<String>> buildAndGetDropDownMenuItems(List fruits) {
-    List<DropdownMenuItem<String>> items = List();
+    List<DropdownMenuItem<String>> items = [];
     for (String fruit in fruits) {
       items.add(DropdownMenuItem(value: fruit, child: Text(fruit)));
     }

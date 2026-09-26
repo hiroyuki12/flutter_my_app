@@ -16,10 +16,9 @@ class _State extends State<MyRraisedButton> {
         title: Text("RraisedButton"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('OK'),
-          color: Colors.orange,
-          textColor: Colors.white,
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.orange, foregroundColor: Colors.white),
           onPressed: _onPressed,
         ),
       ),

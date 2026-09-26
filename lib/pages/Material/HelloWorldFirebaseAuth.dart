@@ -49,7 +49,7 @@
 //               ),
 //               const SizedBox(height: 24.0),
 //               new Center(
-//                 child: new RaisedButton(
+//                 child: new ElevatedButton(
 //                   child: const Text('Login'),
 //                   onPressed: () {
 //                     var email = emailInputController.text;

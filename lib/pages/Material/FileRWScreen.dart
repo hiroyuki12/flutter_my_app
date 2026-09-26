@@ -27,7 +27,7 @@ class FileRW extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   // 📝 Add to
-  MyHomePage({Key key, this.title, this.storage}) : super(key: key);
+  MyHomePage({Key? key, required this.title, required this.storage}) : super(key: key);
 
   final String title;
 
@@ -41,7 +41,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>  {
 
   // 📝 Update to
-  int _counter;
+  int _counter = 0;
 
   // 📝 Add to
   @override
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage>  {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),

@@ -22,7 +22,7 @@ class _State extends State<MyAnimatedCrossFade> {
             secondChild: const FlutterLogo(style: FlutterLogoStyle.stacked, size: 100.0),
             crossFadeState: _first ? CrossFadeState.showFirst : CrossFadeState.showSecond,
           ),
-          FlatButton(
+          TextButton(
             child: Text('Click Me!'),
             onPressed: _onPressed,
           ),

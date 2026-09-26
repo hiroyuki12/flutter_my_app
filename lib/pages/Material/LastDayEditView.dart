@@ -1,4 +1,4 @@
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:datetime_picker_formfield_new/datetime_picker_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_my_app/model/LastDayModel.dart';
 import 'package:flutter_my_app/repositories/LastDayBloc.dart';
@@ -15,7 +15,7 @@ class LastDayEditView extends StatelessWidget {
   final LastDay lastDay;
   final LastDay _newLastDay = LastDay.newLastDay();
 
-  LastDayEditView({Key key, @required this.lastDayBloc, @required this.lastDay}){
+  LastDayEditView({Key? key, required this.lastDayBloc, required this.lastDay}){
     // Dartでは参照渡しが行われるため、lastDayをそのまま編集してしまうと、
     // 更新せずにリスト画面に戻ったときも値が更新されてしまうため、
     // 新しいインスタンスを作る
@@ -59,7 +59,7 @@ class LastDayEditView extends StatelessWidget {
   Widget _lastDateTimeFormField() => DateTimeField(
     format: _format,
     decoration: InputDecoration(labelText: "締切日"),
-    initialValue: _newLastDay.lastDate ?? DateTime.now(),
+    initialValue: _newLastDay.lastDate,
     onChanged: _setLastDate,
     onShowPicker: (context, currentValue) async {
       final date = await showDatePicker(
@@ -80,8 +80,10 @@ class LastDayEditView extends StatelessWidget {
     }
   );
  
-  void _setLastDate(DateTime dt) {
-    _newLastDay.lastDate = dt;
+  void _setLastDate(DateTime? dt) {
+    if (dt != null) {
+      _newLastDay.lastDate = dt;
+    }
   }
 
   Widget _noteTextFormField() => TextFormField(
@@ -95,14 +97,14 @@ class LastDayEditView extends StatelessWidget {
     _newLastDay.note = note;
   }
 
-  Widget _confirmButton(BuildContext context) => RaisedButton.icon(
+  Widget _confirmButton(BuildContext context) => ElevatedButton.icon(
     icon: Icon(
       Icons.tag_faces,
       color: Colors.white,
     ),
     label: Text("決定"),
     onPressed: () { 
-      if (_newLastDay.id == null) {
+      if (_newLastDay.id.isEmpty) {
         lastDayBloc.create(_newLastDay);
       } else {
         lastDayBloc.update(_newLastDay);
@@ -110,8 +112,10 @@ class LastDayEditView extends StatelessWidget {
       
       Navigator.of(context).pop();
     },
-    shape: StadiumBorder(),
-    color: Colors.green,
-    textColor: Colors.white,
+    style: ElevatedButton.styleFrom(
+      shape: StadiumBorder(),
+      backgroundColor: Colors.green,
+      foregroundColor: Colors.white,
+    ),
   );
 }

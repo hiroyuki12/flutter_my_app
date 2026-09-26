@@ -190,11 +190,11 @@ var myValue;
 
 class Item {
    Item({
-     this.title,
-     this.profileImageUrl,
-     this.id,
-     this.createdAt,
-     this.url,
+     required this.title,
+     required this.profileImageUrl,
+     required this.id,
+     required this.createdAt,
+     required this.url,
    });
 
    final String title;

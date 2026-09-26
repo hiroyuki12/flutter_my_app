@@ -1,4 +1,3 @@
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,21 +13,31 @@ import 'DarkModeColor.dart';
 //   }
 // }
 
-class MyCupertinoDynamicTheme extends StatelessWidget {
+// dynamic_theme パッケージ（廃止）の代わりに、明暗の切り替えを自前で保持する
+class MyCupertinoDynamicTheme extends StatefulWidget {
+  @override
+  State<MyCupertinoDynamicTheme> createState() => DynamicThemeState();
+}
+
+class DynamicThemeState extends State<MyCupertinoDynamicTheme> {
+  Brightness _brightness = Brightness.light;
+
+  static DynamicThemeState of(BuildContext context) =>
+      context.findAncestorStateOfType<DynamicThemeState>()!;
+
+  void setBrightness(Brightness brightness) {
+    setState(() => _brightness = brightness);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return DynamicTheme(
-        defaultBrightness: Brightness.light,
-        data: (brightness) => ThemeData(
-              primarySwatch: Colors.indigo,
-              brightness: brightness,
-            ),
-        themedWidgetBuilder: (context, theme) {
-          return MaterialApp(
-            theme: theme,
-            home: MyHomePage(),
-          );
-        });
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        brightness: _brightness,
+      ),
+      home: MyHomePage(),
+    );
   }
 }
 
@@ -68,7 +77,7 @@ class _State extends State<MyHomePage> {
 
   // テーマ変更
   void changeTheme() {
-    DynamicTheme.of(context).setBrightness(
+    DynamicThemeState.of(context).setBrightness(
         Theme.of(context).brightness == Brightness.dark
             ? Brightness.light
             : Brightness.dark);

@@ -19,15 +19,15 @@ class _State extends State<CupertinoScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
-            title: Text('Home'),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.settings_solid),
-            title: Text('Setting'),
+            label: 'Setting',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.refresh),
-            title: Text('ListViewScreen'),
+            label: 'ListViewScreen',
           ),
         ]
       ), 

@@ -17,9 +17,8 @@ class StockSettings extends StatefulWidget {
 }
 
 class StockSettingsState extends State<StockSettings> {
-  void _handleOptimismChanged(bool value) {
-    value ??= false;
-    sendUpdates(widget.configuration.copyWith(stockMode: value ? StockMode.optimistic : StockMode.pessimistic));
+  void _handleOptimismChanged(bool? value) {
+    sendUpdates(widget.configuration.copyWith(stockMode: (value ?? false) ? StockMode.optimistic : StockMode.pessimistic));
   }
 
   void _handleBackupChanged(bool value) {
@@ -72,13 +71,13 @@ class StockSettingsState extends State<StockSettings> {
               title: const Text('Change mode?'),
               content: const Text('Optimistic mode means everything is awesome. Are you sure you can handle that?'),
               actions: <Widget>[
-                FlatButton(
+                TextButton(
                   child: const Text('NO THANKS'),
                   onPressed: () {
                     Navigator.pop(context, false);
                   },
                 ),
-                FlatButton(
+                TextButton(
                   child: const Text('AGREE'),
                   onPressed: () {
                     Navigator.pop(context, true);
@@ -97,7 +96,7 @@ class StockSettingsState extends State<StockSettings> {
       widget.updater(value);
   }
 
-  Widget buildAppBar(BuildContext context) {
+  PreferredSizeWidget buildAppBar(BuildContext context) {
     return AppBar(
       title: const Text('Settings'),
     );
@@ -111,7 +110,7 @@ class StockSettingsState extends State<StockSettings> {
         onTap: _confirmOptimismChange,
         trailing: Checkbox(
           value: widget.configuration.stockMode == StockMode.optimistic,
-          onChanged: (bool value) => _confirmOptimismChange(),
+          onChanged: (bool? value) => _confirmOptimismChange(),
         ),
       ),
       ListTile(

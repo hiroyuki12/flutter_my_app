@@ -9,7 +9,7 @@ class MyCard extends StatefulWidget {
 }
 
 class _State extends State<MyCard> {
-  var _cardList = List<PictureCard>();
+  var _cardList = <PictureCard>[];
 
   @override
   void initState() {

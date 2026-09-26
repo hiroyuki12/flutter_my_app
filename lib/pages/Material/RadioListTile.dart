@@ -48,7 +48,8 @@ class _State extends State<MyRadioListTile> {
   }
 
   //ラジオボタン変更時
-  void _onChanged(Fruits value) {
+  void _onChanged(Fruits? value) {
+    if (value == null) return;
     if(value == Fruits.Orange)  _radValText = "Orange";
     else if(value == Fruits.Apple)  _radValText = "Apple";
     else if(value == Fruits.Grape)  _radValText = "Grape";

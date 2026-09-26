@@ -5,11 +5,11 @@ class MyPage {
   int page;
   int perPage;
 
-  MyPage({this.id, @required this.page, @required this.perPage});
-  MyPage.newPage() {
-    page = 1;
-    perPage = 10;
-  }
+  MyPage({required this.id, required this.page, required this.perPage});
+  MyPage.newPage()
+      : id = 1,
+        page = 1,
+        perPage = 10;
 
   assignUUID() {
     id = 1;

@@ -15,7 +15,7 @@ class _State extends State<MyNavigator> {
         title: Text("Navigator"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Push Flutter Issues'),
           onPressed: ()=> Navigator.pushNamed(context, '/flutterIssues'),
         ),

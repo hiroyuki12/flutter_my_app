@@ -13,8 +13,8 @@ class CupertinoCamera extends StatefulWidget {
 }
 
 class _State extends State<CupertinoCamera> {
-  List<CameraDescription> _cameras;   //カメラリスト
-  CameraController _controller;       //カメラコントローラ
+  List<CameraDescription> _cameras = [];   //カメラリスト
+  CameraController? _controller;       //カメラコントローラ
 
   @override
   void initState() {
@@ -29,8 +29,9 @@ class _State extends State<CupertinoCamera> {
     _cameras = await availableCameras();
 
     if (_cameras.length != 0) {
-      _controller = CameraController(_cameras[0], ResolutionPreset.high);
-      _controller.initialize().then((_) {
+      final controller = CameraController(_cameras[0], ResolutionPreset.high);
+      _controller = controller;
+      controller.initialize().then((_) {
         if (!mounted) {
           return;
         }
@@ -56,11 +57,11 @@ class _State extends State<CupertinoCamera> {
         middle: Text("Cupertino Camera", style: _buildTextStyle()),
         // trailing: Text("Edit", style: _buildTextStyle()),
       ),
-      child: _controller != null && _controller.value.isInitialized
+      child: _controller != null && _controller!.value.isInitialized
         ? AspectRatio(
           aspectRatio:
-          _controller.value.aspectRatio,
-          child: CameraPreview(_controller)) : Container(),
+          _controller!.value.aspectRatio,
+          child: CameraPreview(_controller!)) : Container(),
     );
   }
 }

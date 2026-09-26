@@ -17,10 +17,10 @@ import 'package:flutter/material.dart';
 /// Users that do not use a screen reader will just see a regular dropdown menu.
 class AdjustableDropdownListTile extends StatelessWidget {
   const AdjustableDropdownListTile({
-    this.label,
-    this.value,
-    this.items,
-    this.onChanged,
+    required this.label,
+    required this.value,
+    required this.items,
+    required this.onChanged,
   });
 
   final String label;
@@ -49,7 +49,7 @@ class AdjustableDropdownListTile extends StatelessWidget {
           title: Text(label),
           trailing: DropdownButton<String>(
             value: value,
-            onChanged: onChanged,
+            onChanged: (String? v) => onChanged(v!),
             items: items.map<DropdownMenuItem<String>>((String item) {
               return DropdownMenuItem<String>(
                 value: item,
@@ -93,7 +93,7 @@ class AdjustableDropdownExampleState extends State<AdjustableDropdownExample> {
     '30 seconds',
     '1 minute',
   ];
-  String timeout;
+  String? timeout;
 
   @override
   Widget build(BuildContext context) {

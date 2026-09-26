@@ -13,10 +13,10 @@ class _State extends State<MyFlatButton> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FlatButton"),
+        title: Text("TextButton"),
       ),
       body: Center(
-        child: FlatButton(
+        child: TextButton(
           child: Text('OK'),
           onPressed: _onPressed,
         ),

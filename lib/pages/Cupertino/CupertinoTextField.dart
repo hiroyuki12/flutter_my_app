@@ -9,7 +9,7 @@ class MyCupertinoTextField extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoTextField> {
-  TextEditingController _textController;
+  late TextEditingController _textController;
 
   @override
   void initState() {

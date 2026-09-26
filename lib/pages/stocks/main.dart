@@ -25,7 +25,7 @@ class StocksApp extends StatefulWidget {
 }
 
 class StocksAppState extends State<StocksApp> {
-  StockData stocks;
+  late StockData stocks;
 
   StockConfiguration _configuration = StockConfiguration(
     stockMode: StockMode.optimistic,
@@ -61,17 +61,17 @@ class StocksAppState extends State<StocksApp> {
         );
       case StockMode.pessimistic:
         return ThemeData(
-          brightness: Brightness.dark,
-          accentColor: Colors.redAccent,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.redAccent,
+            brightness: Brightness.dark,
+          ).copyWith(secondary: Colors.redAccent),
         );
     }
-    assert(_configuration.stockMode != null);
-    return null;
   }
 
-  Route<dynamic> _getRoute(RouteSettings settings) {
+  Route<dynamic>? _getRoute(RouteSettings settings) {
     if (settings.name == '/stock') {
-      final String symbol = settings.arguments;
+      final String symbol = settings.arguments as String;
       return MaterialPageRoute<void>(
         settings: settings,
         builder: (BuildContext context) => StockSymbolPage(symbol: symbol, stocks: stocks),

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_share/flutter_share.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'DarkModeColor.dart';
 
 class MyCupertinoWebView extends StatefulWidget {
-  MyCupertinoWebView({Key key, this.url, this.title}) : super(key: key);
+  MyCupertinoWebView({Key? key, this.url = '', this.title = ''}) : super(key: key);
 
   final String url;
   final String title;
@@ -17,7 +17,15 @@ class MyCupertinoWebView extends StatefulWidget {
 }
 
 class _State extends State<MyCupertinoWebView> {
-  WebViewController _controller;
+  late final WebViewController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(Uri.parse(widget.url));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +35,8 @@ class _State extends State<MyCupertinoWebView> {
       navigationBar: CupertinoNavigationBar(
         middle: Text("CupertinoWebView", style: _buildTextStyle()),
         trailing: GestureDetector(
-          onTap: () => FlutterShare.share(
-              title: 'title', text: widget.title, linkUrl: widget.url),
+          onTap: () => SharePlus.instance.share(ShareParams(
+              title: 'title', text: '${widget.title} ${widget.url}')),
           // chooserTitle: widget.title),
           child: Icon(
             CupertinoIcons.share,
@@ -39,13 +47,7 @@ class _State extends State<MyCupertinoWebView> {
             isDarkMode ? darkModeBackColor : backColor, //white , darkMode=black
       ),
       child: Center(
-        child: WebView(
-          initialUrl: widget.url,
-          javascriptMode: JavascriptMode.unrestricted,
-          onWebViewCreated: (WebViewController controller) {
-            _controller = controller;
-          },
-        ),
+        child: WebViewWidget(controller: _controller),
       ),
     );
   }

@@ -15,7 +15,7 @@ final _fileName = 'editTextField.txt';
 String _out = '';
 
 class CupertinoLocalFile extends StatefulWidget {
-  CupertinoLocalFile({Key key, this.title}) : super(key: key);
+  CupertinoLocalFile({Key? key, this.title = ''}) : super(key: key);
   final String title;
 
   @override

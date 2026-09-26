@@ -13,7 +13,7 @@ class _State extends State<MyDatePicker> {
   var _labelText = 'Select Date';
 
   Future<void> _selectDate(BuildContext context) async {
-    final DateTime selected = await showDatePicker(
+    final DateTime? selected = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2015),

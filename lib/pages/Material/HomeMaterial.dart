@@ -5,7 +5,7 @@ import 'HelloWorld.dart';
 import 'SettingScreen.dart';
 
 class MyHomeMaterial extends StatefulWidget {
-  MyHomeMaterial({Key key, this.title}) : super(key: key);
+  MyHomeMaterial({Key? key, this.title = ''}) : super(key: key);
   final String title;
 
   @override
@@ -14,7 +14,7 @@ class MyHomeMaterial extends StatefulWidget {
 
 class _MyHomeMaterialState extends State<MyHomeMaterial> {
   // ページ切り替え用のコントローラを定義
-  PageController _pageController;
+  late PageController _pageController;
   // ページインデックス保存用
   int _screen = 0;
   // ページ下部に並べるナビゲーションメニューの一覧
@@ -22,15 +22,15 @@ class _MyHomeMaterialState extends State<MyHomeMaterial> {
     return [
       BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        title: const Text(''),
+        label: '',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.settings),
-        title: const Text(''),
+        label: '',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.repeat),
-        title: const Text(''),
+        label: '',
       ),
     ];
   }

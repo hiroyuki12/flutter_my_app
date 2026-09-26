@@ -9,8 +9,8 @@ class MyListView extends StatefulWidget {
 
 class Item {
   Item({
-    this.title,
-    this.profileImageUrl,
+    required this.title,
+    required this.profileImageUrl,
   });
 
   final String title;
@@ -34,7 +34,7 @@ class _State extends State<MyListView> {
   /*
   // This widget is the root of your application.
   Future<void> _load() async {
-    final res = await http.get('http://qiita.com/api/v2/items');
+    final res = await http.get(Uri.parse('http://qiita.com/api/v2/items'));
     final data = json.decode(res.body);
     setState(() {
       final issues = data as List;
@@ -110,12 +110,12 @@ class _State extends State<MyListView> {
                 });
                 // スワイプ方向がendToStart（画面左から右）の場合の処理
                 if (direction == DismissDirection.endToStart) {
-                  Scaffold.of(context).showSnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text("削除しました"))
                   );
                 // スワイプ方向がstartToEnd（画面右から左）の場合の処理  
                 } else {
-                  Scaffold.of(context).showSnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text("登録しました"))
                   );
                 }

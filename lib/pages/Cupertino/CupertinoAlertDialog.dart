@@ -72,12 +72,12 @@ Widget _buildCupertinoAlertDiaglog(BuildContext context) {
   //         title: Text('Use camera?'),
   //         content: Text('Description goes here.'),
   //         actions: <Widget>[
-  //           FlatButton(
+  //           TextButton(
   //             child: Text('CANCEL'),
   //             // onPressed: () => _useCamera(context, false),
   //             onPressed: () => print('CANCEL'),
   //           ),
-  //           FlatButton(
+  //           TextButton(
   //             child: Text('AGREE'),
   //             // onPressed: () => _useCamera(context, true),
   //             onPressed: () => print('AGREE'),

@@ -20,12 +20,12 @@ class _State extends State<MyCupertinoTabBar> {
           BottomNavigationBarItem(
             backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
             icon: Icon(CupertinoIcons.book_solid),
-            title: Text('Articles'),
+            label: 'Articles',
           ),
           BottomNavigationBarItem(
             backgroundColor: isDarkMode ? darkModeBackColor : backColor,  //white , darkMode=black
             icon: Icon(CupertinoIcons.eye_solid),
-            title: Text('Views'),
+            label: 'Views',
           ),
         ]
       ), 

@@ -9,7 +9,7 @@ class ListView2 extends StatefulWidget {
 }
 
 class _State extends State<ListView2> with SingleTickerProviderStateMixin{
-  AnimationController animationController;
+  late AnimationController animationController;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _State extends State<ListView2> with SingleTickerProviderStateMixin{
     super.dispose();
   }
 
-  bool favorite;
+  bool favorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class _State extends State<ListView2> with SingleTickerProviderStateMixin{
                     ],
                   ),
                   subtitle: Text(_model.message),
-                  trailing: new FlatButton(
+                  trailing: new TextButton(
                     child: new ScaleTransition(
                       scale: CurvedAnimation(
                         parent: animationController,

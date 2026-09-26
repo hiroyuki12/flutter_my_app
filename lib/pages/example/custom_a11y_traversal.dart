@@ -35,7 +35,7 @@ import 'package:flutter/semantics.dart';
 ///  * [SemanticSortKey] for the base class of all semantic sort keys.
 ///  * [OrdinalSortKey] for a concrete sort key that sorts based on the given ordinal.
 class RowColumnTraversal extends StatelessWidget {
-  const RowColumnTraversal({this.rowOrder, this.columnOrder, this.child});
+  const RowColumnTraversal({required this.rowOrder, required this.columnOrder, required this.child});
 
   final int rowOrder;
   final int columnOrder;
@@ -62,13 +62,13 @@ class RowColumnTraversal extends StatelessWidget {
 /// set its traversal order.
 class SpinnerButton extends StatelessWidget {
   const SpinnerButton({
-    Key key,
-    this.onPressed,
-    this.icon,
-    this.rowOrder,
-    this.columnOrder,
-    this.field,
-    this.increment,
+    Key? key,
+    required this.onPressed,
+    required this.icon,
+    required this.rowOrder,
+    required this.columnOrder,
+    required this.field,
+    required this.increment,
   }) : super(key: key);
 
   final VoidCallback onPressed;
@@ -100,13 +100,13 @@ class SpinnerButton extends StatelessWidget {
 /// set its traversal order.
 class FieldWidget extends StatelessWidget {
   const FieldWidget({
-    Key key,
-    this.rowOrder,
-    this.columnOrder,
-    this.onIncrease,
-    this.onDecrease,
-    this.value,
-    this.field,
+    Key? key,
+    required this.rowOrder,
+    required this.columnOrder,
+    required this.onIncrease,
+    required this.onDecrease,
+    required this.value,
+    required this.field,
   }) : super(key: key);
 
   final int rowOrder;
@@ -153,7 +153,6 @@ String _fieldToName(Field field) {
     case Field.FISH:
       return 'Fish';
   }
-  return null;
 }
 
 // --------------- Main app ---------------------

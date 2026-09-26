@@ -31,6 +31,7 @@ class LoginStore with ChangeNotifier {
 
   bool validate(String email) {
     // validation処理を書く
+    return true;
   }
 }
 

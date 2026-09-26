@@ -16,7 +16,7 @@ class CupertinoQiita extends StatefulWidget {
 }
 
 class _State extends State<CupertinoQiita> {
-  ScrollController _scrollController;
+  late ScrollController _scrollController;
   bool _isLoading = false;
 
   List<Item> _items = <Item>[];
@@ -76,13 +76,13 @@ class _State extends State<CupertinoQiita> {
 
     if (_tag != _tagsTrends) {
       //Qiita Flutter
-      res = await http.get('https://qiita.com/api/v2/tags/' +
+      res = await http.get(Uri.parse('https://qiita.com/api/v2/tags/' +
           _tag +
           '/items?page=' +
           _page.toString() +
           '&per_page=' +
-          _perPage.toString());
-      // res = await http.get('https://qiita.com/api/v2/tags/flutterweekly/items?page=' + _page.toString() + '&per_page=' + _perPage.toString());
+          _perPage.toString()));
+      // res = await http.get(Uri.parse('https://qiita.com/api/v2/tags/flutterweekly/items?page=' + _page.toString() + '&per_page=' + _perPage.toString()));
       // if(res.type == 'rate_limit_exceeded') {
       if (res.statusCode == 400) {
         print('error!  res.statusCode == 400');
@@ -117,7 +117,7 @@ class _State extends State<CupertinoQiita> {
       }
     } else if (_tag == _tagsTrends) {
       // Qiita Trends
-      res = await http.get('https://qiita-api.netlify.com/trend.json');
+      res = await http.get(Uri.parse('https://qiita-api.netlify.com/trend.json'));
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
         setState(() {
@@ -445,12 +445,12 @@ var myValue;
 
 class Item {
   Item({
-    this.title,
-    this.profileImageUrl,
-    this.id,
-    this.likesCount,
-    this.createdAt,
-    this.url,
+    required this.title,
+    required this.profileImageUrl,
+    required this.id,
+    required this.likesCount,
+    required this.createdAt,
+    required this.url,
     this.tags,
   });
 
@@ -460,13 +460,13 @@ class Item {
   final String likesCount;
   final String createdAt;
   final String url;
-  final Tag tags;
+  final Tag? tags;
 }
 
 class Tag {
   Tag({
-    this.name,
-    this.versions,
+    required this.name,
+    required this.versions,
   });
 
   final String name;

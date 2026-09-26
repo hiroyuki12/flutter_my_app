@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nfc_manager/nfc_manager.dart';
-import 'package:nfc_manager/platform_tags.dart';
+import 'package:nfc_manager/nfc_manager_android.dart';
+import 'package:nfc_manager/nfc_manager_ios.dart';
 import 'DarkModeColor.dart';
 
 class CupertinoNfc extends StatefulWidget {
@@ -12,8 +13,8 @@ class CupertinoNfc extends StatefulWidget {
 
 class _State extends State<CupertinoNfc> {
   int balance = 0;
-  NfcF nfcf;
-  FeliCa felica;
+  NfcFAndroid? nfcf;
+  FeliCaIos? felica;
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +40,15 @@ class _State extends State<CupertinoNfc> {
   }
 
   _readTag() {
-    NfcManager.instance.startTagSession(onDiscovered: (NfcTag tag) async {
-      nfcf = NfcF.fromTag(tag);
-    });
+    NfcManager.instance.startSession(
+      pollingOptions: {NfcPollingOption.iso18092},
+      onDiscovered: (NfcTag tag) async {
+        nfcf = NfcFAndroid.from(tag);
+        felica = FeliCaIos.from(tag);
+      },
+    );
 
-    if (nfcf == null) {
+    if (nfcf == null && felica == null) {
       print("効果は無いみたいだ・・・");
     } else {
       print("nfcf ok");
